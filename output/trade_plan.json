@@ -3,190 +3,82 @@
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 99.64,
-  "cash_balance_gbp": 39.4286,
-  "available_for_buys_gbp": 36.4394,
+  "portfolio_equity_gbp": 99.46,
+  "cash_balance_gbp": 8.7867,
+  "available_for_buys_gbp": 0.5701,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 0.36,
+  "portfolio_drawdown_pct": 0.54,
   "strategy_profile": "balanced",
   "candidates_considered": [
-    {
-      "ticker": "SHEL.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.72,
-      "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.75,
-        "risk_reward": 0.7,
-        "liquidity": 0.9,
-        "diversification": 0.5
-      },
-      "rejected_reason": null
-    },
     {
       "ticker": "RIO.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.68,
+      "confidence": 0.78,
       "confidence_components": {
-        "trend": 0.92,
-        "setup": 0.7,
-        "risk_reward": 0.65,
+        "trend": 1.0,
+        "setup": 0.75,
+        "risk_reward": 0.7,
         "liquidity": 0.85,
-        "diversification": 0.5
+        "diversification": 0.8
       },
-      "rejected_reason": "Lower confidence than SHEL.L; Materials sector already underrepresented"
-    },
-    {
-      "ticker": "GLEN.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.65,
-      "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.68,
-        "risk_reward": 0.62,
-        "liquidity": 0.8,
-        "diversification": 0.45
-      },
-      "rejected_reason": "Confidence below SHEL.L; Materials sector diversification concern"
+      "rejected_reason": "Insufficient cash (notional 71.16 > available 0.5701)"
     },
     {
       "ticker": "GSK.L",
-      "entry_type": "PULLBACK",
+      "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.7,
+      "confidence": 0.74,
       "confidence_components": {
-        "trend": 0.93,
+        "trend": 1.0,
         "setup": 0.72,
         "risk_reward": 0.68,
-        "liquidity": 0.88,
-        "diversification": 0.52
+        "liquidity": 0.82,
+        "diversification": 0.78
       },
-      "rejected_reason": "Healthcare sector concentration (AZN.L already held); max_new_positions_per_day=1 exceeded"
-    }
-  ],
-  "decisions": [
-    {
-      "ticker": "AZN.L",
-      "action": "HOLD",
-      "confidence": 0.72,
-      "confidence_components": {
-        "trend": 0.95,
-        "stop_distance": 0.68,
-        "position_age": 0.7,
-        "profitability": 0.5
-      },
-      "entry": {
-        "type": "HISTORICAL",
-        "price_gbp": 155.3752
-      },
-      "size": {
-        "quantity": 0.3879,
-        "notional_gbp": 60.2098
-      },
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 151.25,
-        "execution_mode": "DAILY_CHECK",
-        "distance_gbp": 4.1252,
-        "stop_reason": "ATR-based: entry - (3.9157 * 1.05)"
-      },
-      "gap_risk_buffer_applied": true,
-      "take_profit": {
-        "type": "RULE",
-        "price_gbp": 160.88,
-        "rule": "Breakout target: high_20d + 0.5*ATR"
-      },
-      "time_stop_days": null,
-      "costs_estimate_gbp": {
-        "fees": 0.0,
-        "stamp_duty": 0.0,
-        "slippage": 0.0
-      },
-      "rationale": [
-        "Position entered today (day 0); within min_position_age_days protection period",
-        "Trend: close(155.22) > SMA50(139.024) > SMA200(121.742) FULL uptrend",
-        "ATR-based stop at 151.25 provides 2.65% downside protection",
-        "Stop not breached; low_gbp(151.74) > stop(151.25)",
-        "Holding to allow setup to develop; insufficient days for trend-break exit logic"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": [
-        "Position age < min_position_age_days; protected from exit unless stop breached",
-        "No unrealised loss justification for exit at this time",
-        "Stop is active; monitored daily via DAILY_CHECK"
-      ]
+      "rejected_reason": "Insufficient cash (notional 22.39 > available 0.5701)"
     },
     {
-      "ticker": "SHEL.L",
-      "action": "BUY",
-      "confidence": 0.72,
+      "ticker": "NG.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.71,
       "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.75,
-        "risk_reward": 0.7,
-        "liquidity": 0.9,
-        "diversification": 0.5
+        "trend": 1.0,
+        "setup": 0.68,
+        "risk_reward": 0.65,
+        "liquidity": 0.8,
+        "diversification": 0.75
       },
-      "entry": {
-        "type": "MKT",
-        "price_gbp": 28.67
+      "rejected_reason": "Insufficient cash (notional 13.765 > available 0.5701)"
+    },
+    {
+      "ticker": "TSCO.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.68,
+      "confidence_components": {
+        "trend": 1.0,
+        "setup": 0.65,
+        "risk_reward": 0.62,
+        "liquidity": 0.78,
+        "diversification": 0.72
       },
-      "size": {
-        "quantity": 1.0624,
-        "notional_gbp": 30.4574
-      },
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 27.7112,
-        "execution_mode": "DAILY_CHECK",
-        "distance_gbp": 0.9588,
-        "stop_reason": "ATR-based: entry - (0.6278 * 1.05) with 10% gap risk buffer"
-      },
-      "gap_risk_buffer_applied": true,
-      "take_profit": {
-        "type": "RULE",
-        "price_gbp": 29.64,
-        "rule": "Breakout target: high_20d + 0.3*ATR"
-      },
-      "time_stop_days": 10,
-      "costs_estimate_gbp": {
-        "fees": 0.0,
-        "stamp_duty": 0.1523,
-        "slippage": 0.0305
-      },
-      "rationale": [
-        "PULLBACK IN UPTREND: Trend filter FULL (close 28.67 > SMA50 27.40 > SMA200 26.85)",
-        "Drawdown from 20d high: 2.55% (healthy pullback, within balanced profile 1-5% threshold)",
-        "Close above SMA50; volume_ratio_20d 0.85 (low volume pullback = healthier setup)",
-        "ATR14: 0.6278 provides tight stops; risk/reward favorable at 1.05 ATR",
-        "Confidence 0.72 above minimum threshold (0.60 for balanced profile)",
-        "Liquidity strong: avg_gbp_volume_20d \u00a3300.4M >> min requirement \u00a350k"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": [
-        "Sector: Energy; portfolio will have 0.61% Energy exposure (limit 40%)",
-        "Single name: 0.31% portfolio (limit 30%)",
-        "Notional with costs: \u00a330.64 < available \u00a336.44",
-        "Turnover will be 6.19% of \u00a399.64 portfolio (limit 30%)",
-        "Fractional shares enabled: 1.0624 shares acceptable",
-        "No correlation issues; diversifies away from Healthcare (AZN.L)"
-      ]
+      "rejected_reason": "Insufficient cash (notional 4.945 > available 0.5701)"
     }
   ],
+  "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 2,
-    "turnover_pct": 0.0619,
-    "largest_position_pct": 0.3008,
-    "cash_buffer_pct": 0.03,
+    "turnover_pct": 0.0,
+    "largest_position_pct": 60.52,
+    "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Healthcare": 60.42,
-      "Energy": 30.57
+      "Healthcare": 60.52,
+      "Energy": 30.65
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 0.36
+    "portfolio_drawdown_pct": 0.54
   }
 }

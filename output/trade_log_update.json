@@ -1,15 +1,4 @@
 {
   "as_of_date": "2026-02-17",
-  "entries": [
-    {
-      "ticker": "SHEL.L",
-      "action": "BUY",
-      "planned_price_gbp": 28.67,
-      "planned_quantity": 1.0624,
-      "stop_price_gbp": 27.7112,
-      "confidence": 0.72,
-      "entry_type": "PULLBACK",
-      "rationale_summary": "Pullback in full uptrend (close > SMA50 > SMA200). Drawdown 2.55% from 20d high within balanced profile range. Low-volume pullback (vol_ratio 0.85). Confidence 0.72 above min 0.60. Energy sector diversifies away from healthcare. Risk per trade 1.01% (gap-adjusted)."
-    }
-  ]
+  "entries": []
 }
