@@ -1,2 +1,2 @@
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-1,AZN.L,BUY,MKT,0.3879,,DAY,151.25,BREAKOUT: Close at 20d high; positive uptrend; confidence 0.82
+1,SHEL.L,BUY,MKT,1.0624,,DAY,27.7112,PULLBACK_IN_UPTREND

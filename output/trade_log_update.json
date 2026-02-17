@@ -2,14 +2,14 @@
   "as_of_date": "2026-02-17",
   "entries": [
     {
-      "ticker": "AZN.L",
+      "ticker": "SHEL.L",
       "action": "BUY",
-      "planned_price_gbp": 155.22,
-      "planned_quantity": 0.3879,
-      "stop_price_gbp": 151.25,
-      "confidence": 0.82,
-      "entry_type": "BREAKOUT",
-      "rationale_summary": "Price at 20-day high (155.22) with volume ratio 1.00x confirms breakout in strong uptrend (close > SMA50 > SMA200, positive slope). Healthcare sector. Risk/reward 3.97 GBP stop distance affordable in \u00a3100 portfolio when sized to available cash (0.3879 shares, \u00a360.18 entry cost). Excellent liquidity (\u00a3351.3M avg daily volume). Max 1 new position per day; AZN.L highest confidence (0.82) among eligible setups. Gap risk buffered; stop monitored daily."
+      "planned_price_gbp": 28.67,
+      "planned_quantity": 1.0624,
+      "stop_price_gbp": 27.7112,
+      "confidence": 0.72,
+      "entry_type": "PULLBACK",
+      "rationale_summary": "Pullback in full uptrend (close > SMA50 > SMA200). Drawdown 2.55% from 20d high within balanced profile range. Low-volume pullback (vol_ratio 0.85). Confidence 0.72 above min 0.60. Energy sector diversifies away from healthcare. Risk per trade 1.01% (gap-adjusted)."
     }
   ]
 }

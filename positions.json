@@ -1,21 +1,33 @@
 {
   "as_of_date": "2026-02-17",
-  "cash_balance_gbp": 39.4286,
+  "cash_balance_gbp": 8.7867,
   "unsettled_sell_proceeds_gbp": 0.0,
   "settlement_due_date": null,
-  "equity_value_gbp": 99.7,
+  "equity_value_gbp": 99.49,
   "portfolio_peak_equity_gbp": 100.0,
   "positions": [
     {
       "ticker": "AZN.L",
       "quantity": 0.3879,
       "avg_cost_gbp": 155.3752,
-      "market_value_gbp": 60.27,
-      "unrealised_pnl_gbp": 0.0,
+      "market_value_gbp": 60.2098,
+      "unrealised_pnl_gbp": -0.0602,
       "sector": "Healthcare",
       "entry_date": "2026-02-17",
       "days_held": 0,
       "current_stop_gbp": 151.25,
+      "status": "ACTIVE"
+    },
+    {
+      "ticker": "SHEL.L",
+      "quantity": 1.0624,
+      "avg_cost_gbp": 28.6987,
+      "market_value_gbp": 30.4895,
+      "unrealised_pnl_gbp": 0.0,
+      "sector": "Energy",
+      "entry_date": "2026-02-17",
+      "days_held": 0,
+      "current_stop_gbp": 27.7112,
       "status": "ACTIVE"
     }
   ]
