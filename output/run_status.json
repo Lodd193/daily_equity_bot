@@ -1,0 +1,24 @@
+{
+  "status": "OK",
+  "as_of_date": "2026-02-17",
+  "reason": "Trading day active. Market data fresh. All required columns present. Portfolio equity \u00a3100.00. No drawdown limit breached. Strategy: balanced swing. Eligible universe: 25 tickers. Proceeding with entry evaluation.",
+  "data_checks": {
+    "market_data_fresh": true,
+    "all_required_columns_present": true,
+    "trading_day": true,
+    "is_half_day": false,
+    "portfolio_drawdown_pct": 0.0,
+    "drawdown_limit_breached": false
+  },
+  "risk_checks": {
+    "kill_switch": false,
+    "base_currency_valid": true,
+    "account_type_cash": true,
+    "allow_shorting_false": true,
+    "execution_sequence_valid": true,
+    "settlement_days_valid": true
+  },
+  "currency": "GBP",
+  "execution_sequence": "SELL_THEN_BUY",
+  "stop_execution_mode": "DAILY_CHECK"
+}

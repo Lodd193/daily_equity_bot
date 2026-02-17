@@ -1,0 +1,26 @@
+ticker,name,sector,instrument_type,currency,exchange,uk_equity_flag,status
+SHEL.L,Shell,Energy,EQUITY,GBP,LSE,true,ACTIVE
+AZN.L,AstraZeneca,Healthcare,EQUITY,GBP,LSE,true,ACTIVE
+HSBA.L,HSBC,Financials,EQUITY,GBP,LSE,true,ACTIVE
+ULVR.L,Unilever,Consumer Staples,EQUITY,GBP,LSE,true,ACTIVE
+BP.L,BP,Energy,EQUITY,GBP,LSE,true,ACTIVE
+GSK.L,GSK,Healthcare,EQUITY,GBP,LSE,true,ACTIVE
+RIO.L,Rio Tinto,Materials,EQUITY,GBP,LSE,true,ACTIVE
+DGE.L,Diageo,Consumer Staples,EQUITY,GBP,LSE,true,ACTIVE
+LSEG.L,London Stock Exchange Group,Financials,EQUITY,GBP,LSE,true,ACTIVE
+REL.L,RELX,Industrials,EQUITY,GBP,LSE,true,ACTIVE
+NG.L,National Grid,Utilities,EQUITY,GBP,LSE,true,ACTIVE
+BARC.L,Barclays,Financials,EQUITY,GBP,LSE,true,ACTIVE
+LLOY.L,Lloyds Banking,Financials,EQUITY,GBP,LSE,true,ACTIVE
+RKT.L,Reckitt Benckiser,Consumer Staples,EQUITY,GBP,LSE,true,ACTIVE
+IMB.L,Imperial Brands,Consumer Staples,EQUITY,GBP,LSE,true,ACTIVE
+BA.L,BAE Systems,Industrials,EQUITY,GBP,LSE,true,ACTIVE
+GLEN.L,Glencore,Materials,EQUITY,GBP,LSE,true,ACTIVE
+TSCO.L,Tesco,Consumer Staples,EQUITY,GBP,LSE,true,ACTIVE
+AAL.L,Anglo American,Materials,EQUITY,GBP,LSE,true,ACTIVE
+NWG.L,NatWest Group,Financials,EQUITY,GBP,LSE,true,ACTIVE
+VUAG.L,Vanguard S&P500 UCITS ETF,Broad Market,ETF,GBP,LSE,false,ACTIVE
+VWRP.L,Vanguard FTSE All-World ETF,Broad Market,ETF,GBP,LSE,false,ACTIVE
+ISF.L,iShares Core FTSE 100 ETF,UK Market,ETF,GBP,LSE,false,ACTIVE
+VMID.L,Vanguard FTSE 250 ETF,UK Mid Cap,ETF,GBP,LSE,false,ACTIVE
+CSP1.L,iShares Core S&P 500 ETF,US Market,ETF,GBP,LSE,false,ACTIVE

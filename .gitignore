@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/market_data.csv
+data/trading_calendar.json
+output/raw_response.txt
+.claude/
+~$*.docx

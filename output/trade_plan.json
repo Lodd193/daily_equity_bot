@@ -1,0 +1,177 @@
+{
+  "as_of_date": "2026-02-17",
+  "currency": "GBP",
+  "execution_sequence": "SELL_THEN_BUY",
+  "stop_execution_mode": "DAILY_CHECK",
+  "portfolio_equity_gbp": 100.0,
+  "cash_balance_gbp": 100.0,
+  "available_for_buys_gbp": 97.0,
+  "unsettled_proceeds_gbp": 0.0,
+  "portfolio_drawdown_pct": 0.0,
+  "strategy_profile": "balanced",
+  "candidates_considered": [
+    {
+      "ticker": "AZN.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.82,
+      "confidence_components": {
+        "trend": 0.95,
+        "setup": 0.85,
+        "risk_reward": 0.72,
+        "liquidity": 0.92,
+        "diversification": 0.68
+      },
+      "rejected_reason": null
+    },
+    {
+      "ticker": "RIO.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.78,
+      "confidence_components": {
+        "trend": 0.98,
+        "setup": 0.78,
+        "risk_reward": 0.65,
+        "liquidity": 0.88,
+        "diversification": 0.72
+      },
+      "rejected_reason": null
+    },
+    {
+      "ticker": "NG.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.75,
+      "confidence_components": {
+        "trend": 0.92,
+        "setup": 0.8,
+        "risk_reward": 0.68,
+        "liquidity": 0.85,
+        "diversification": 0.65
+      },
+      "rejected_reason": null
+    },
+    {
+      "ticker": "SHEL.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.71,
+      "confidence_components": {
+        "trend": 0.9,
+        "setup": 0.68,
+        "risk_reward": 0.62,
+        "liquidity": 0.88,
+        "diversification": 0.55
+      },
+      "rejected_reason": "Low diversification; Energy sector concentration with RIO.L candidate"
+    },
+    {
+      "ticker": "LSEG.L",
+      "entry_type": "NONE",
+      "trend_status": "NONE",
+      "confidence": 0.0,
+      "confidence_components": {
+        "trend": 0.0,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 0.0,
+        "diversification": 0.0
+      },
+      "rejected_reason": "Trend broken: 20 consecutive days below SMA50; close_vs_sma50_pct -0.105; SMA50 slope negative"
+    },
+    {
+      "ticker": "REL.L",
+      "entry_type": "NONE",
+      "trend_status": "NONE",
+      "confidence": 0.0,
+      "confidence_components": {
+        "trend": 0.0,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 0.0,
+        "diversification": 0.0
+      },
+      "rejected_reason": "Trend broken: 22 consecutive days below SMA50; close_vs_sma50_pct -0.207; SMA50 slope negative"
+    },
+    {
+      "ticker": "VUAG.L",
+      "entry_type": "NONE",
+      "trend_status": "NONE",
+      "confidence": 0.0,
+      "confidence_components": {
+        "trend": 0.0,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 0.0,
+        "diversification": 0.0
+      },
+      "rejected_reason": "Trend broken: 18 consecutive days below SMA50; close_vs_sma50_pct -0.009; SMA50 slope negative"
+    }
+  ],
+  "decisions": [
+    {
+      "ticker": "AZN.L",
+      "action": "BUY",
+      "confidence": 0.82,
+      "confidence_components": {
+        "trend": 0.95,
+        "setup": 0.85,
+        "risk_reward": 0.72,
+        "liquidity": 0.92,
+        "diversification": 0.68
+      },
+      "entry": {
+        "type": "MKT",
+        "price_gbp": 155.22
+      },
+      "size": {
+        "quantity": 0.3879,
+        "notional_gbp": 60.18
+      },
+      "stop": {
+        "type": "HARD",
+        "price_gbp": 151.25,
+        "execution_mode": "DAILY_CHECK"
+      },
+      "gap_risk_buffer_applied": true,
+      "take_profit": {
+        "type": "RULE",
+        "price_gbp": null,
+        "rule": "Close below SMA50 or 20+ days at risk/reward exit point"
+      },
+      "time_stop_days": 20,
+      "costs_estimate_gbp": {
+        "fees": 0.0,
+        "stamp_duty": 0.3,
+        "slippage": 0.1
+      },
+      "rationale": [
+        "Full uptrend: close (155.22) > SMA50 (139.02) > SMA200 (121.74) and positive slope",
+        "Breakout setup: at 20-day high (155.22), volume ratio 1.00x (breakout confirmation)",
+        "Risk/reward: 3.97 bps stop distance; 0.387 shares affordable at \u00a3100 portfolio size",
+        "Liquidity excellent: avg_gbp_volume_20d \u00a3351.3M; well above \u00a350K minimum",
+        "Healthcare sector; no correlated positions yet"
+      ],
+      "constraints_passed": true,
+      "constraint_notes": [
+        "Position size 60.2% of equity after entry; within 30% single-name max",
+        "Turnover 62.1% of daily limit (0.301 notional / \u00a3100 equity with costs)",
+        "Cash after: \u00a336.52 (36.5%); above 3% buffer requirement",
+        "First of max 1 new position per day"
+      ]
+    }
+  ],
+  "portfolio_constraints_summary": {
+    "positions_count_after": 1,
+    "turnover_pct": 0.6209,
+    "largest_position_pct": 60.18,
+    "cash_buffer_pct": 36.52,
+    "sector_exposures_pct": {
+      "Healthcare": 60.18
+    },
+    "portfolio_beta": null,
+    "max_pairwise_correlation": null,
+    "portfolio_drawdown_pct": 0.0
+  }
+}
