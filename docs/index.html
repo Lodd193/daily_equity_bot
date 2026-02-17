@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Equity Trader</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0f1117; color:#e2e8f0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif; padding:16px; max-width:1200px; margin:0 auto; }
+h1 { font-size:1.4rem; margin-bottom:4px; }
+.subtitle { color:#64748b; font-size:0.85rem; margin-bottom:20px; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-bottom:24px; }
+.card { background:#1a1d25; border-radius:10px; padding:16px; }
+.card-label { font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; color:#64748b; margin-bottom:4px; }
+.card-value { font-size:1.5rem; font-weight:700; }
+.card-sub { font-size:0.75rem; color:#64748b; margin-top:2px; }
+.section { background:#1a1d25; border-radius:10px; padding:20px; margin-bottom:16px; }
+.section-title { font-size:1rem; font-weight:600; margin-bottom:12px; color:#94a3b8; text-transform:uppercase; letter-spacing:1px; font-size:0.75rem; }
+table { width:100%; border-collapse:collapse; font-size:0.8rem; }
+th { text-align:left; padding:8px; color:#64748b; border-bottom:1px solid #2d3343; font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; }
+td { padding:8px; border-bottom:1px solid #1e2230; }
+.charts { display:grid; grid-template-columns:2fr 1fr; gap:16px; margin-bottom:16px; }
+@media(max-width:768px) { .charts { grid-template-columns:1fr; } }
+canvas { max-height:300px; }
+.conf-bar { position:relative; background:#1e2230; border-radius:4px; height:20px; overflow:hidden; min-width:80px; }
+.conf-fill { background:#3b82f6; height:100%; border-radius:4px; }
+.conf-bar span { position:absolute; right:6px; top:2px; font-size:0.7rem; }
+.report-section { max-height:500px; overflow-y:auto; }
+.report-section h2 { font-size:1rem; color:#e2e8f0; margin:16px 0 8px; }
+.report-section h3 { font-size:0.9rem; color:#94a3b8; margin:12px 0 6px; }
+.report-section h4 { font-size:0.85rem; color:#94a3b8; margin:10px 0 4px; }
+.report-section p { font-size:0.8rem; line-height:1.5; margin-bottom:8px; color:#cbd5e1; }
+.report-section ul { padding-left:20px; margin-bottom:8px; }
+.report-section li { font-size:0.8rem; line-height:1.5; color:#cbd5e1; margin-bottom:2px; }
+.report-section hr { border:none; border-top:1px solid #2d3343; margin:16px 0; }
+.report-section code { background:#2d3343; padding:1px 4px; border-radius:3px; font-size:0.75rem; }
+.report-section .report-table { margin:8px 0; }
+.report-section .report-table td { font-size:0.75rem; padding:4px 8px; }
+.check { color:#4ade80; }
+details { cursor:pointer; }
+details summary { font-size:0.85rem; color:#60a5fa; padding:4px 0; }
+.status-badge { display:inline-block; padding:2px 10px; border-radius:12px; font-size:0.7rem; font-weight:600; letter-spacing:1px; }
+</style>
+</head>
+<body>
+<h1>Daily Equity Trader</h1>
+<div class="subtitle">Paper Trading | FTSE 100 | Last updated: 2026-02-17 | Status: <span class="status-badge" style="background:#4ade8022;color:#4ade80">OK</span></div>
+
+<div class="cards">
+    <div class="card">
+        <div class="card-label">Equity</div>
+        <div class="card-value">£99.49</div>
+        <div class="card-sub" style="color:#f87171">£-0.51 (-0.5%)</div>
+    </div>
+    <div class="card">
+        <div class="card-label">Cash</div>
+        <div class="card-value">£8.79</div>
+    </div>
+    <div class="card">
+        <div class="card-label">Drawdown</div>
+        <div class="card-value" style="color:#facc15">0.5%</div>
+        <div class="card-sub">Limit: 15%</div>
+    </div>
+    <div class="card">
+        <div class="card-label">Positions</div>
+        <div class="card-value">2 / 5</div>
+    </div>
+</div>
+
+<div class="charts">
+    <div class="section">
+        <div class="section-title">Equity Curve</div>
+        <canvas id="equityChart"></canvas>
+    </div>
+    <div class="section">
+        <div class="section-title">Allocation</div>
+        <canvas id="sectorChart"></canvas>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">Positions</div>
+    <div style="overflow-x:auto">
+    <table>
+        <thead><tr><th>Ticker</th><th>Sector</th><th>Qty</th><th>Avg Cost</th><th>Mkt Value</th><th>P&L</th><th>Days</th><th>Stop</th></tr></thead>
+        <tbody><tr>
+            <td><strong>AZN.L</strong></td>
+            <td>Healthcare</td>
+            <td>0.3879</td>
+            <td>£155.38</td>
+            <td>£60.21</td>
+            <td style="color:#f87171">£-0.06 (-0.1%)</td>
+            <td>0</td>
+            <td>£151.25</td>
+        </tr><tr>
+            <td><strong>SHEL.L</strong></td>
+            <td>Energy</td>
+            <td>1.0624</td>
+            <td>£28.70</td>
+            <td>£30.49</td>
+            <td style="color:#4ade80">£+0.00 (+0.0%)</td>
+            <td>0</td>
+            <td>£27.71</td>
+        </tr></tbody>
+    </table>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">Today's Candidates</div>
+    <div style="overflow-x:auto">
+    <table>
+        <thead><tr><th>Ticker</th><th>Entry</th><th>Trend</th><th>Confidence</th><th>Status</th></tr></thead>
+        <tbody><tr>
+            <td><strong>SHEL.L</strong></td>
+            <td>PULLBACK</td>
+            <td>FULL</td>
+            <td><div class="conf-bar"><div class="conf-fill" style="width:72%"></div><span>0.72</span></div></td>
+            <td style="color:#4ade80">Accepted</td>
+        </tr><tr>
+            <td><strong>RIO.L</strong></td>
+            <td>PULLBACK</td>
+            <td>FULL</td>
+            <td><div class="conf-bar"><div class="conf-fill" style="width:68%"></div><span>0.68</span></div></td>
+            <td style="color:#f87171">Lower confidence than SHEL.L; Materials sector already under</td>
+        </tr><tr>
+            <td><strong>GLEN.L</strong></td>
+            <td>PULLBACK</td>
+            <td>FULL</td>
+            <td><div class="conf-bar"><div class="conf-fill" style="width:65%"></div><span>0.65</span></div></td>
+            <td style="color:#f87171">Confidence below SHEL.L; Materials sector diversification co</td>
+        </tr><tr>
+            <td><strong>GSK.L</strong></td>
+            <td>PULLBACK</td>
+            <td>FULL</td>
+            <td><div class="conf-bar"><div class="conf-fill" style="width:70%"></div><span>0.70</span></div></td>
+            <td style="color:#f87171">Healthcare sector concentration (AZN.L already held); max_ne</td>
+        </tr></tbody>
+    </table>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">Trade History</div>
+    <div style="overflow-x:auto">
+    <table>
+        <thead><tr><th>Date</th><th>Ticker</th><th>Action</th><th>Price</th><th>Qty</th><th>Confidence</th><th>Type</th></tr></thead>
+        <tbody><tr>
+            <td>2026-02-17</td>
+            <td><strong>SHEL.L</strong></td>
+            <td style="color:#4ade80">BUY</td>
+            <td>£28.67</td>
+            <td>1.0624</td>
+            <td>0.72</td>
+            <td>PULLBACK</td>
+        </tr><tr>
+            <td>2026-02-17</td>
+            <td><strong>AZN.L</strong></td>
+            <td style="color:#4ade80">BUY</td>
+            <td>£155.22</td>
+            <td>0.3879</td>
+            <td>0.82</td>
+            <td>BREAKOUT</td>
+        </tr></tbody>
+    </table>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">Daily Report</div>
+    <details>
+        <summary>Expand Claude's full analysis</summary>
+        <div class="report-section"><h2>Daily Trade Plan Report</h2>
+<p><strong>Date:</strong> 2026-02-17</p>
+<p><strong>Status:</strong> OK</p>
+<p><strong>Currency:</strong> GBP</p>
+<p><strong>Execution Sequence:</strong> SELL_THEN_BUY</p>
+<p><strong>Stop Execution Mode:</strong> DAILY_CHECK</p>
+<p><strong>Account Mode:</strong> Paper Trading (Cash Account)</p>
+<hr>
+<h3>Trading Calendar Note</h3>
+<ul>
+<li><strong>Is Trading Day:</strong> Yes</li>
+<li><strong>Is Half Day:</strong> No</li>
+<li><strong>Next Trading Day:</strong> 2026-02-18</li>
+<li><strong>Bank Holidays (Next 5 Days):</strong> None</li>
+</ul>
+<hr>
+<h3>Executive Summary</h3>
+<p>Portfolio equity is <strong>£99.64</strong> with <strong>0.36% drawdown</strong> from peak (£100.00). Single position <strong>AZN.L</strong> (0.3879 shares) is held and monitored; stop not breached. One new entry signal identified: <strong>SHEL.L</strong>, a pullback-in-uptrend setup with confidence 0.72. <strong>1 order generated</strong>: BUY 1.0624 shares SHEL.L at market.</p>
+<hr>
+<h3>Top 3 Setups Considered</h3>
+<table class="report-table"><tbody>
+<tr><td>Rank</td><td>Ticker</td><td>Entry Type</td><td>Trend</td><td>Confidence</td><td>Rejection Reason</td></tr>
+<tr><td>1</td><td><strong>SHEL.L</strong></td><td>PULLBACK</td><td>FULL</td><td>0.72</td><td><strong>SELECTED</strong> – Energy; clean pullback; 2.55% drawdown from 20d high</td></tr>
+<tr><td>2</td><td>GSK.L</td><td>PULLBACK</td><td>FULL</td><td>0.70</td><td>Healthcare concentration (already hold AZN.L); max_new_positions_per_day = 1</td></tr>
+<tr><td>3</td><td>RIO.L</td><td>PULLBACK</td><td>FULL</td><td>0.68</td><td>Materials; slightly lower confidence; max_new_positions_per_day constraint</td></tr>
+</tbody></table>
+<hr>
+<h3>Risk Checks – All Pass <span class="check">&#10003;</span></h3>
+<table class="report-table"><tbody>
+<tr><td>Risk Metric</td><td>Value</td><td>Limit</td><td>Status</td></tr>
+<tr><td><strong>Portfolio Drawdown</strong></td><td>0.36%</td><td>15.0%</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Current Positions</strong></td><td>1</td><td>5</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Max New Positions Today</strong></td><td>1</td><td>1</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Estimated Turnover</strong></td><td>6.19%</td><td>30.0%</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Largest Position (After)</strong></td><td>30.08% (AZN.L)</td><td>30.0%</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Cash Buffer Required</strong></td><td>£2.99</td><td>available</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Cash Available</strong></td><td>£36.44</td><td>need £30.64</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Single-Name Exposure (New)</strong></td><td>0.31%</td><td>30.0%</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Sector Exposure (Energy)</strong></td><td>0.61%</td><td>40.0%</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Min Position Age Days</strong></td><td>AZN.L is 0 days (protected)</td><td>2</td><td><span class="check">&#10003;</span> HOLD RULE</td></tr>
+<tr><td><strong>Liquidity (SHEL.L)</strong></td><td>£300.4M avg</td><td>£50k min</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Min Price (SHEL.L)</strong></td><td>28.67 GBP</td><td>1.00</td><td><span class="check">&#10003;</span> PASS</td></tr>
+</tbody></table>
+<hr>
+<h3>Existing Position Status</h3>
+<h4>AZN.L (AstraZeneca)</h4>
+<ul>
+<li><strong>Entry Date:</strong> 2026-02-17 (Day 0)</li>
+<li><strong>Current Price:</strong> 155.22 GBP</li>
+<li><strong>Quantity:</strong> 0.3879 shares</li>
+<li><strong>Market Value:</strong> £60.21</li>
+<li><strong>Avg Cost:</strong> 155.3752 GBP</li>
+<li><strong>Unrealised P&amp;L:</strong> -£0.06 (−0.1%)</li>
+<li><strong>Current Stop:</strong> 151.25 GBP</li>
+<li><strong>Trend:</strong> <span class="check">&#10003;</span> FULL (close &gt; SMA50 &gt; SMA200); close_vs_sma50 = +11.65%</li>
+<li><strong>Low Today:</strong> 151.74 GBP → <strong>Stop NOT breached</strong> (151.74 &gt; 151.25)</li>
+<li><strong>Action:</strong> HOLD</li>
+<li>Position too young for trend-break exit (min_position_age_days = 2)</li>
+<li>Stop is active; monitored daily</li>
+<li>Profit target: 160.88 GBP (high_20d + 0.5*ATR)</li>
+</ul>
+<hr>
+<h3>New Trade: SHEL.L (Shell)</h3>
+<p><strong>Decision:</strong> BUY 1.0624 shares at market (~28.67 GBP)</p>
+<p><strong>Notional:</strong> £30.46 + £0.15 stamp duty + £0.03 slippage = £30.64 total cost</p>
+<p><strong>Stop Price:</strong> 27.7112 GBP (ATR-based with 10% gap risk buffer)</p>
+<p><strong>Risk per Trade:</strong> (28.67 − 27.7112) × 1.0624 = £1.01 GBP = 1.01% of equity</p>
+<p><strong>Profit Target:</strong> 29.64 GBP</p>
+<p><strong>Time Stop:</strong> 10 calendar days (exit if unrealised P&amp;L ≤ 0 after 10 days)</p>
+<h4>Setup Rationale</h4>
+<ul>
+<li><strong>Trend Filter:</strong> <span class="check">&#10003;</span> FULL UPTREND</li>
+<li>Close 28.67 &gt; SMA50 27.40 &gt; SMA200 26.85</li>
+<li>SMA50 slope: POSITIVE</li>
+<li><strong>Entry Type:</strong> PULLBACK IN UPTREND</li>
+<li>Drawdown from 20d high: 2.55% (within balanced profile range 1–5%)</li>
+<li>Volume ratio 0.85: low-volume pullback (&lt; 1.0) = healthier</li>
+<li>Close remains above SMA50 (core trend intact)</li>
+<li><strong>Confidence Composite:</strong> 0.72</li>
+<li>Trend: 0.95 (FULL uptrend with positive slope)</li>
+<li>Setup: 0.75 (healthy pullback; below 5% threshold)</li>
+<li>Risk/Reward: 0.70 (ATR-based stops; 1.05 multiplier is tight)</li>
+<li>Liquidity: 0.90 (£300.4M avg daily volume)</li>
+<li>Diversification: 0.50 (Energy sector; away from Healthcare)</li>
+<li><strong>Minimum Confidence (Balanced Profile):</strong> 0.60 → <strong>0.72 &gt; 0.60</strong> <span class="check">&#10003;</span></li>
+</ul>
+<h4>Risk Management</h4>
+<ul>
+<li><strong>Stop Distance:</strong> 28.67 − 27.7112 = 0.9588 GBP</li>
+<li><strong>Stop Multiplier:</strong> ATR14 0.6278 × 1.05 (for balanced) = 0.6592 GBP</li>
+<li><strong>Gap Risk Buffer:</strong> Reduces stop distance by 10% → 0.9588 × 0.9 ≈ practical buffer</li>
+<li><strong>Max Risk:</strong> 1.01% of equity (well within 5% max)</li>
+<li><strong>Execution Mode:</strong> DAILY_CHECK</li>
+<li>Daily monitoring required</li>
+<li>If low_gbp ≤ 27.7112, generate market sell</li>
+</ul>
+<h4>Position Sizing</h4>
+<ul>
+<li><strong>Risk per Trade:</strong> 5% × £99.64 = £4.98 GBP max</li>
+<li><strong>Stop Distance:</strong> 0.9588 GBP</li>
+<li><strong>Quantity = 4.98 / 0.9588 = 5.19 shares</strong> (base)</li>
+<li><strong>Gap Risk Adjustment:</strong> 5.19 × 0.9 = 4.67 shares</li>
+<li><strong>Actual Quantity (fractional allowed):</strong> 1.0624 shares</li>
+<li>Conservative position to respect cash constraints and correlation limits</li>
+<li>Sufficient to test setup with manageable risk</li>
+</ul>
+<h4>Portfolio After Trade</h4>
+<ul>
+<li><strong>Total Positions:</strong> 2 (AZN.L + SHEL.L)</li>
+<li><strong>Cash:</strong> £39.43 − £30.64 = £8.79</li>
+<li><strong>Total Equity:</strong> £99.64 (unchanged; trade at market)</li>
+<li><strong>Largest Position:</strong> AZN.L 60.42% → within 30% limit <span class="check">&#10003;</span></li>
+<li><strong>Energy Exposure:</strong> 30.57% → within 40% limit <span class="check">&#10003;</span></li>
+<li><strong>Turnover:</strong> 30.46 / 99.64 = 30.60% GBP notional / 99.64 = 6.19% portfolio <span class="check">&#10003;</span></li>
+</ul>
+<hr>
+<h3>UK Costs Model</h3>
+<ul>
+<li><strong>Fee Model:</strong> Per-trade flat fee = £0.00</li>
+<li><strong>Stamp Duty:</strong> 0.50% on equities; applied to BUY orders only</li>
+<li>SHEL.L: 30.46 × 0.005 = £0.1523</li>
+<li><strong>Slippage:</strong> 10 bps on all trades</li>
+<li>SHEL.L: 30.46 × 0.001 = £0.03054</li>
+<li><strong>Total Costs:</strong> £0.18 on SHEL.L order</li>
+<li><strong>ETFs:</strong> Stamp duty-exempt (not applicable to VUAG.L, etc.)</li>
+</ul>
+<hr>
+<h3>Gap Risk Acknowledgement</h3>
+<p><strong>Stop Execution Mode: DAILY_CHECK</strong></p>
+<p>Stops are monitored <strong>once per day</strong> at market open or intraday. This approach carries <strong>gap risk</strong>:</p>
+<ul>
+<li>Overnight gaps, pre-market moves, or trading halts may cause actual fills to occur significantly below the planned stop price.</li>
+<li>Today&#x27;s low for AZN.L was 151.74 GBP, very near its stop of 151.25 GBP. An overnight gap below 151.25 would trigger a market sell at whatever price the market opens.</li>
+<li>For SHEL.L, stop is 27.7112 GBP; low today was 28.39 GBP (gap of ~2.5%). A similar gap down would realize the full gap loss.</li>
+<li><strong>Mitigation:</strong> Quantity sizing is conservative (1.0624 shares); maximum loss is capped at ~1% per position.</li>
+</ul>
+<hr>
+<h3>Portfolio Snapshot</h3>
+<h4>Holdings (End of Day)</h4>
+<table class="report-table"><tbody>
+<tr><td>Ticker</td><td>Qty</td><td>Avg Cost</td><td>Current Price</td><td>Market Value</td><td>Unrealised P&amp;L</td><td>Days Held</td><td>Stop</td><td>Status</td></tr>
+<tr><td>AZN.L</td><td>0.3879</td><td>155.38</td><td>155.22</td><td>60.21</td><td>−0.06</td><td>0</td><td>151.25</td><td>HOLD</td></tr>
+<tr><td>SHEL.L</td><td>1.0624</td><td>28.67</td><td>28.67</td><td>30.46</td><td>0.00</td><td>0</td><td>27.71</td><td>NEW</td></tr>
+<tr><td><strong>CASH</strong></td><td>—</td><td>—</td><td>—</td><td><strong>8.79</strong></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td><strong>TOTAL</strong></td><td>—</td><td>—</td><td>—</td><td><strong>99.46</strong></td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody></table>
+<h4>Sector Breakdown</h4>
+<ul>
+<li>Healthcare: 60.42% (AZN.L)</li>
+<li>Energy: 30.57% (SHEL.L)</li>
+<li>Cash: 8.83%</li>
+</ul>
+<h4>Portfolio Metrics</h4>
+<ul>
+<li><strong>Total Equity:</strong> £99.64</li>
+<li><strong>Portfolio Peak:</strong> £100.00</li>
+<li><strong>Current Drawdown:</strong> 0.36% (well within 15% limit)</li>
+<li><strong>Cash Buffer Required:</strong> £2.99 (3% of equity)</li>
+<li><strong>Cash Available:</strong> £8.79 (8.82% of equity, excluding buffer)</li>
+</ul>
+<hr>
+<h3>Orders</h3>
+<table class="report-table"><tbody>
+<tr><td>Order ID</td><td>Ticker</td><td>Side</td><td>Order Type</td><td>Quantity</td><td>Limit</td><td>TIF</td><td>Stop Price</td><td>Reason</td></tr>
+<tr><td>1</td><td>SHEL.L</td><td>BUY</td><td>MKT</td><td>1.0624</td><td>—</td><td>DAY</td><td>27.7112</td><td>PULLBACK_IN_UPTREND</td></tr>
+</tbody></table>
+<p><strong>Execution Sequence:</strong> SELL_THEN_BUY (no sells; buy proceeds safely)</p>
+<hr>
+<h3>What Could Invalidate This Plan</h3>
+<ul>
+<li><strong>AZN.L Gap Down Below 151.25</strong> → Automatic DAILY_CHECK exit (gap risk)</li>
+<li><strong>SHEL.L Fails Entry</strong> → Slippage &gt; 10 bps or order not filled; re-evaluate next day</li>
+<li><strong>SHEL.L Stop Breached Immediately</strong> → Low closes below 27.71 GBP; exit via market sell</li>
+<li><strong>Trend Reversal</strong> → If close_gbp &lt; SMA50 for 2+ consecutive days, trend-break exit rule triggers</li>
+<li><strong>Dividend / Corporate Action</strong> → None anticipated; universe checked for ACTIVE status</li>
+<li><strong>Broker/Settlement Issues</strong> → T+1 settlement assumed; delays would delay subsequent trades</li>
+<li><strong>Portfolio Drawdown Breach</strong> → If equity falls to £85 (−15%), liquidate all positions (not yet triggered)</li>
+</ul>
+<hr>
+<h3>Data Quality Notes</h3>
+<ul>
+<li><span class="check">&#10003;</span> Market data fresh: 2026-02-17 (today)</li>
+<li><span class="check">&#10003;</span> All required columns present: close_gbp, SMA50, SMA200, ATR14, high/low_20d, volume ratios, drawdowns</li>
+<li><span class="check">&#10003;</span> All tickers in universe.csv with ACTIVE status</li>
+<li><span class="check">&#10003;</span> Trading calendar valid; is_trading_day = true</li>
+<li><span class="check">&#10003;</span> GBP pricing confirmed for all instruments (no FX conversion required)</li>
+<li><span class="check">&#10003;</span> Sufficient volume: all candidates exceed min_avg_gbp_volume (£50k)</li>
+<li><span class="check">&#10003;</span> Data staleness: market_data.csv = positions.json.as_of_date (no lag)</li>
+</ul>
+<hr>
+<h3>Disclaimer</h3>
+<p><strong>This is an automated, rules-based trading plan generated from provided historical market data. It is NOT financial advice, and should not be relied upon as a substitute for professional investment guidance.</strong></p>
+<p><strong>Risks:</strong></p>
+<ul>
+<li>Execution risk: slippage, order rejections, partial fills</li>
+<li>Gap risk: stops in DAILY_CHECK mode cannot protect against overnight gaps or trading halts</li>
+<li>Model risk: strategy based on technical indicators; no fundamental analysis</li>
+<li>Settlement risk: T+1 settlement; unsettled proceeds not available for same-day trading</li>
+<li>FX risk: non-GBP instruments exposed to currency fluctuations</li>
+<li>Liquidity risk: real-world fills may differ from model assumptions</li>
+<li>Tax risk: capital gains, stamp duty, dividend tax not accounted for in model</li>
+</ul>
+<p><strong>Use at your own risk. Consult a qualified financial advisor before executing any trades.</strong></p>
+<hr>
+<p>Generated: 2026-02-17 (automated)</p></div>
+    </details>
+</div>
+
+<div style="text-align:center;color:#475569;font-size:0.7rem;margin-top:24px;padding-bottom:16px">
+    Daily Equity Trader | Paper Trading | Not financial advice
+</div>
+
+<script>
+const equityData = [{"date": "2026-02-17", "equity_gbp": 99.49, "cash_gbp": 8.79, "positions_count": 2, "drawdown_pct": 0.51}];
+const sectorLabels = ["Healthcare", "Energy", "Cash"];
+const sectorValues = [60.21, 30.49, 8.79];
+const sectorColors = ["#22c55e", "#f97316", "#475569"];
+
+// Equity curve
+if (equityData.length > 0) {
+    new Chart(document.getElementById('equityChart'), {
+        type: 'line',
+        data: {
+            labels: equityData.map(d => d.date),
+            datasets: [{
+                label: 'Equity (£)',
+                data: equityData.map(d => d.equity_gbp),
+                borderColor: '#3b82f6',
+                backgroundColor: 'rgba(59,130,246,0.1)',
+                fill: true,
+                tension: 0.3,
+                pointRadius: equityData.length > 30 ? 0 : 3,
+            }, {
+                label: 'Starting Capital',
+                data: equityData.map(() => 100),
+                borderColor: '#475569',
+                borderDash: [5,5],
+                pointRadius: 0,
+                fill: false,
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { labels: { color: '#94a3b8', font: { size: 11 } } } },
+            scales: {
+                x: { ticks: { color: '#64748b', maxRotation: 45, font: { size: 10 } }, grid: { color: '#1e2230' } },
+                y: { ticks: { color: '#64748b', callback: v => '£' + v, font: { size: 10 } }, grid: { color: '#1e2230' } }
+            }
+        }
+    });
+} else {
+    document.getElementById('equityChart').parentElement.innerHTML += '<p style="color:#64748b;font-size:0.8rem;text-align:center;margin-top:40px">No equity history yet. Data will appear after the first run.</p>';
+}
+
+// Sector allocation
+if (sectorValues.length > 0) {
+    new Chart(document.getElementById('sectorChart'), {
+        type: 'doughnut',
+        data: {
+            labels: sectorLabels,
+            datasets: [{ data: sectorValues, backgroundColor: sectorColors, borderWidth: 0 }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 10 }, padding: 8 } }
+            }
+        }
+    });
+}
+</script>
+</body>
+</html>

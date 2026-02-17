@@ -178,6 +178,9 @@ def run(dry_run=False):
     if trade_log_entry and trade_log_entry.get("entries"):
         _append_trade_log(trade_log_entry)
 
+    # Step 9: Record equity snapshot for dashboard history
+    _append_equity_history(pos, today)
+
     log.info("=" * 60)
     log.info("Run complete.")
     log.info("=" * 60)
@@ -237,6 +240,42 @@ def _append_trade_log(entry):
         json.dump(existing, f, indent=2)
 
     log.info("Trade log updated: %d total entries", len(existing))
+
+
+def _append_equity_history(positions, as_of_date):
+    """Append daily equity snapshot for dashboard equity curve."""
+    history_path = BASE_DIR / "equity_history.json"
+
+    existing = []
+    if history_path.exists():
+        with open(history_path) as f:
+            try:
+                existing = json.load(f)
+            except json.JSONDecodeError:
+                existing = []
+
+    # Avoid duplicate entries for the same date
+    date_str = as_of_date.isoformat()
+    existing = [e for e in existing if e.get("date") != date_str]
+
+    peak = positions.get("portfolio_peak_equity_gbp", 100)
+    equity = positions["equity_value_gbp"]
+    drawdown = (peak - equity) / peak * 100 if peak > 0 else 0
+
+    existing.append({
+        "date": date_str,
+        "equity_gbp": round(equity, 2),
+        "cash_gbp": round(positions["cash_balance_gbp"], 2),
+        "positions_count": len(positions["positions"]),
+        "drawdown_pct": round(drawdown, 2),
+    })
+
+    existing.sort(key=lambda x: x["date"])
+
+    with open(history_path, "w") as f:
+        json.dump(existing, f, indent=2)
+
+    log.info("Equity history: %d snapshots", len(existing))
 
 
 if __name__ == "__main__":
