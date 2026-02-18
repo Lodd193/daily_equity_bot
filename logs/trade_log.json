@@ -28,5 +28,20 @@
         "rationale_summary": "Pullback in full uptrend (close > SMA50 > SMA200). Drawdown 2.55% from 20d high within balanced profile range. Low-volume pullback (vol_ratio 0.85). Confidence 0.72 above min 0.60. Energy sector diversifies away from healthcare. Risk per trade 1.01% (gap-adjusted)."
       }
     ]
+  },
+  {
+    "as_of_date": "2026-02-18",
+    "entries": [
+      {
+        "ticker": "GLEN.L",
+        "action": "BUY",
+        "planned_price_gbp": 5.077,
+        "planned_quantity": 1.035,
+        "stop_price_gbp": 4.8573,
+        "confidence": 0.74,
+        "entry_type": "PULLBACK",
+        "rationale_summary": "Pullback entry in full uptrend (close > sma50 > sma200). Drawdown 4.89% within balanced profile threshold. Healthy volume structure (ratio 0.89). ATR-based stop at 4.8573 GBP. Materials sector adds diversification to Healthcare-heavy portfolio. Gap risk buffer 10% applied to quantity sizing."
+      }
+    ]
   }
 ]

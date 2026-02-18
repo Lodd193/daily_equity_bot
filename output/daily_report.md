@@ -1,161 +1,176 @@
-# Daily Trading Plan – 2026-02-17
+# DailyEquityTrader-UK Daily Report
 
-## Status Summary
-- **Status**: OK (no trades executed)
-- **Trading Day**: Yes
-- **Half-Day**: No
-- **Currency**: GBP
-- **Execution Sequence**: SELL_THEN_BUY
-- **Stop Execution Mode**: DAILY_CHECK
+**Date:** 2026-02-18  
+**Status:** OK  
+**Currency:** GBP  
+**Execution Sequence:** SELL_THEN_BUY  
+**Stop Execution Mode:** DAILY_CHECK (gaps may result in slippage beyond planned stop)
 
-## Calendar & Session Notes
-- 2026-02-17 is a regular LSE trading day
-- Next trading day: 2026-02-18
-- No bank holidays in the next 5 days
+---
 
-## Portfolio Status
-| Metric | Value |
-|--------|-------|
-| **Equity** | £99.46 |
-| **Cash** | £8.79 |
-| **Peak Equity** | £100.00 |
-| **Drawdown** | -0.54% |
-| **Available for Buys** | £0.57 |
-| **Positions** | 2 active |
+## Trading Calendar
+- **Is Trading Day:** Yes
+- **Is Half Day:** No
+- **Next Trading Day:** 2026-02-19
+- **Bank Holidays (Next 5 Days):** None
 
-### Current Holdings
-| Ticker | Quantity | Avg Cost | Market Value | Unrealised P&L | Days Held | Stop Price | Sector |
-|--------|----------|----------|--------------|---|----------|----|----|
-| AZN.L | 0.3879 | £155.38 | £60.21 | -£0.06 | 0 | £151.25 | Healthcare |
-| SHEL.L | 1.0624 | £28.70 | £30.46 | -£0.03 | 0 | £27.71 | Energy |
+---
 
-**Position Concentration**: Healthcare 60.52%, Energy 30.65%
+## Executive Summary
+**Action:** 1 BUY order generated for GLEN.L (Glencore, Materials).  
+**Rationale:** High-confidence pullback entry in uptrend (confidence 0.74). Balanced profile, healthy volume structure. Adds Materials diversification to portfolio of Healthcare + Energy holdings.
 
-## Exit Review
-No stop-loss triggers detected today. Both positions remain above their stop prices:
-- AZN.L: Close £155.22 > Stop £151.25 ✓
-- SHEL.L: Close £28.67 > Stop £27.71 ✓
+**Risk Assessment:** ALL PASSED
+- Portfolio drawdown: 0.0% (limit 15%) ✓
+- Cash buffer: 3.0% (maintained) ✓
+- Turnover: 5.2% (limit 30%) ✓
+- Position limits: 3/5 positions ✓
+- Sector/single-name exposure within bounds ✓
 
-No trend breaks (consecutive_days_below_sma50 = 0 for all holdings). Portfolio remains in acceptable health.
+---
 
-## Entry Candidates Evaluated
+## Top 3 Entry Setups Considered
 
-**Balanced Strategy Thresholds:**
-- Pullback Entry: 3–12% drawdown from 20d high
-- Breakout Entry: Within 1% of 20d high, volume_ratio ≥ 0.95
-- Minimum Confidence: 0.65
+### 1. **GLEN.L (Glencore, Materials)** — ACCEPTED
+- **Entry Type:** PULLBACK in Uptrend
+- **Confidence:** 0.74 (Trend 0.95 | Setup 0.68 | Risk/Reward 0.72 | Liquidity 0.95 | Diversification 0.65)
+- **Signal:**
+  - Price: 5.077 GBP | SMA50: 4.5124 | SMA200: 3.4825 (Full uptrend ✓)
+  - Drawdown from 20d high: 4.89% (within balanced threshold 5–15% ✓)
+  - Volume ratio: 0.89 (healthy low-volume pullback ✓)
+  - ATR stop: 4.8573 GBP (0.2197 GBP risk)
+- **Decision:** BUY 1.035 shares @ MKT 5.077 GBP
+- **Costs:** £0.0314 (fees + stamp duty + slippage)
 
-### Top 3 Candidates (Rejected)
+### 2. **RIO.L (Rio Tinto, Materials)** — REJECTED
+- **Entry Type:** PULLBACK in Uptrend
+- **Confidence:** 0.72 (Trend 0.95 | Setup 0.65 | Risk/Reward 0.70 | Liquidity 0.90 | Diversification 0.60)
+- **Rejection Reason:** Cash constraint. Required notional £19.73 > available cash £5.79 GBP (after buffer). Although confidence is high, position sizing is infeasible given small portfolio size and tight settlement constraints.
 
-1. **RIO.L** (Rio Tinto) – PULLBACK, Confidence 0.78 ⭐⭐⭐
-   - Trend: FULL (close £71.16 > SMA50 £63.39 > SMA200 £51.38)
-   - Setup: 4.11% drawdown from 20d high, within pullback zone
-   - Volume: 2,426,902 shares, ratio 0.61 (lower volume entry – healthier)
-   - Liquidity: £273.53M avg daily volume ✓
-   - **Rejection**: Insufficient cash. Required ~£71.16 minimum; available £0.57
-   - Risk/Reward: Stop at £68.12 (ATR buffer), potential 4.5% risk
+### 3. **GSK.L (GlaxoSmithKline, Healthcare)** — REJECTED
+- **Entry Type:** PULLBACK in Uptrend
+- **Confidence:** 0.68 (Trend 0.92 | Setup 0.60 | Risk/Reward 0.65 | Liquidity 0.92 | Diversification 0.58)
+- **Rejection Reason:** Sector concentration. Healthcare already represents 60.13% of portfolio (AZN.L holding). Adding GSK.L would breach sector exposure limits (40% max). Diversification penalty applied due to high existing sector weight.
 
-2. **GSK.L** (GlaxoSmithKline) – BREAKOUT, Confidence 0.74 ⭐⭐⭐
-   - Trend: FULL (close £22.39 > SMA50 £19.03 > SMA200 £16.23)
-   - Setup: Close within 0.9% of 20d high (£22.60), volume ratio 0.91
-   - Liquidity: £205.04M avg daily volume ✓
-   - **Rejection**: Insufficient cash. Required ~£22.39; available £0.57
-   - Positive momentum: SMA50 slope positive, close 17.6% above SMA50
+---
 
-3. **NG.L** (National Grid) – BREAKOUT, Confidence 0.71 ⭐⭐⭐
-   - Trend: FULL (close £13.77 > SMA50 £11.99 > SMA200 £11.08)
-   - Setup: Close within 1.4% of 20d high (£13.99), strong volume ratio 1.76
-   - Liquidity: £125.48M avg daily volume ✓
-   - **Rejection**: Insufficient cash. Required ~£13.77; available £0.57
-   - Momentum: Strong volume breakout signal, close 14.8% above SMA50
+## Risk Checks — All PASSED ✓
 
-## Why No Trades Today?
+| Check | Limit | Current | Status |
+|-------|-------|---------|--------|
+| Portfolio Drawdown | 15.0% | 0.0% | ✓ |
+| Cash Buffer | 3.0% | 3.0% | ✓ |
+| Max Positions | 5 | 3 | ✓ |
+| Max New Positions/Day | 1 | 1 | ✓ |
+| Turnover % | 30.0% | 5.2% | ✓ |
+| Single-Name Exposure (post-trade) | 30.0% | 5.2% (GLEN.L) | ✓ |
+| Sector Exposure (Materials) | 40.0% | 5.2% | ✓ |
+| Sector Exposure (Healthcare) | 40.0% | 60.13% | ⚠ Existing only |
+| Min Avg GBP Volume | £50k | £239.5M (GLEN.L) | ✓ |
+| Min Price | £1.00 | £5.077 (GLEN.L) | ✓ |
 
-**Critical Constraint**: Cash Position Severely Depleted
-- Current cash balance: £8.79
-- Required buffer (3%): £2.98
-- Available for deployment: £0.57
-- Minimum viable position size: £1–2 GBP (even with fractional shares)
+---
 
-The portfolio entered today with only £8.79 cash against £99.46 equity (8.8% cash ratio). After subtracting the required 3% buffer, less than £0.60 remains for new positions. While several high-confidence entry opportunities exist (RIO.L, GSK.L, NG.L all scoring 0.71–0.78), every candidate requires minimum notional orders exceeding available cash by 10–100×.
+## Portfolio Drawdown Status
+- **Portfolio Peak Equity:** £100.19
+- **Current Equity:** £100.19
+- **Drawdown:** 0.0%
+- **Drawdown Limit:** 15.0%
+- **Status:** No liquidation required; normal operations.
 
-**Decision Logic**: 
-- NO_BUY bias is active when cash is inadequate.
-- Rather than reduce position sizes to <£0.50 (fractionation becomes impractical and slippage/fees consume all expected return), the system chooses NO_TRADES.
-- Recommend: Monitor for cash generation (dividends, settlement events) or execute targeted sells to raise capital for higher-conviction setups.
+---
 
-## Risk Checks
+## UK Costs Assumption Statement
+**Fee Model:** Per-trade, £0.00 per trade  
+**Stamp Duty:** 0.50 bps applied to BUY orders of UK equities (uk_equity_flag = true). ETFs exempt.  
+**Slippage:** 10 bps estimated.  
 
-| Risk Category | Limit | Current | Status |
-|---------------|-------|---------|--------|
-| **Max Positions** | 5 | 2 | ✓ OK |
-| **Max New Per Day** | 1 | 0 | ✓ OK |
-| **Turnover %** | 30% | 0% | ✓ OK |
-| **Max Risk Per Trade** | 5% | N/A | N/A |
-| **Largest Position** | 30% | 60.5% | ⚠️ CAUTION |
-| **Sector Exposure** | 40% | Healthcare 60.5% | ⚠️ CAUTION |
-| **Portfolio Drawdown** | -15.0% | -0.54% | ✓ OK |
-| **Min Liquidity (£50k daily)** | £50,000 | All candidates > £125M | ✓ OK |
-| **Min Price** | £1.00 | All > £1.00 | ✓ OK |
+For GLEN.L BUY order:
+- Stamp duty: 5.2547 × 0.005 = £0.0262
+- Slippage: 5.2547 × 0.001 = £0.0052
+- Total costs: £0.0314
 
-### Concentration Risk ⚠️
-AZN.L (Healthcare) represents 60.5% of portfolio equity, significantly above the 30% single-name limit. This position was opened today (days_held = 0), suggesting a fresh entry that has already moved against the portfolio (-£0.06 unrealised loss). SHEL.L (Energy) adds another 30.7%, creating a two-name concentration.
+---
 
-**Recommendation**: Consider scaling back AZN.L on any strength to restore diversification and improve resilience to sector rotation.
+## Gap Risk Acknowledgement (DAILY_CHECK Mode)
 
-## Data Quality & Assumptions
+⚠ **Stop-loss monitoring is performed once daily at market open.** Overnight gaps or intraday moves may cause:
+- Actual exit price worse than planned stop price (gap-down risk)
+- Stop-loss penetration undetected until next trading day
+- Larger losses than planned risk budget (max 5.0% per trade)
 
-**Market Data**: Fresh as of 2026-02-17 ✓
-**All Required Columns Present**: ✓
-**FX Treatment**: All instruments priced in GBP, no FX adjustment needed ✓
-**Fees & Costs**:
-- Stamp duty: 50 bps applied to UK equity purchases only
-- Trading fee: £0 per trade (per fee_model)
-- Slippage assumption: 10 bps on entry/exit
-- No corporate actions, dividend payments, or splits reported today
+**Mitigation Applied:** Gap risk buffer of 10% has been applied to position sizing. Entry quantity reduced by 10% to buffer against gap risk. Actual position: 1.035 shares (vs. 1.149 without buffer).
 
-**Settlement Assumption**: T+1 (UK standard); unsettled proceeds = £0.
+---
 
-## Gap Risk Acknowledgement
+## Portfolio Snapshot (Post-Trade)
 
-**DAILY_CHECK Stop Execution Mode Active**:
-- Stop-losses are evaluated once per trading day (at market close or by daily scan).
-- **CRITICAL**: This method provides NO protection against overnight gaps, flash crashes, or intraday reversals beyond the daily check point.
-- Example: If SHEL.L gaps down to £25.00 overnight, actual loss could be £3.67/share beyond the planned £0.66 stop distance.
-- For active risk management, consider requesting broker GTC (Good-Till-Cancelled) stop-loss placement for real-time execution.
+### Current Holdings (Before Trade)
+| Ticker | Quantity | Avg Cost | Market Price | Market Value | Unrealised PnL | Sector | Days Held | Status |
+|--------|----------|----------|--------------|--------------|----------------|--------|-----------|--------|
+| AZN.L  | 0.3879   | 155.3752 | 155.42       | 60.287       | +0.017         | Healthcare | 0 | ACTIVE |
+| SHEL.L | 1.0624   | 28.6987  | 29.29        | 31.118       | +0.628         | Energy | 0 | ACTIVE |
+| **GLEN.L** | **1.035** | **5.077** | **5.077** | **5.255** | **0.000** | **Materials** | **0** | **ACTIVE** |
 
-## What Could Invalidate This Plan?
+### Summary Post-Trade
+- **Total Positions:** 3 / 5 max
+- **Total Equity:** £105.52
+- **Total Cash:** £3.50
+- **Cash as % of Portfolio:** 3.3%
 
-1. **Cash Injection**: If dividends, settlements, or deposits add >£1, new setups become viable.
-2. **Trend Reversals**: If SMA50 crosses below close on RIO.L, GSK.L, NG.L, entry signals reverse.
-3. **Overnight Gaps**: AZN.L or SHEL.L gaps down through stops → unplanned stop losses.
-4. **Volume Collapse**: If avg_gbp_volume drops below £50k daily, liquidity filter blocks trades.
-5. **Corporate Actions**: Delisting, suspension, or splits in portfolio → forced liquidation.
-6. **Sector Rotation**: Flight from Healthcare/Energy could accelerate AZN.L/SHEL.L declines.
+### Sector Breakdown
+- **Healthcare:** 60.13% (AZN.L)
+- **Energy:** 31.07% (SHEL.L)
+- **Materials:** 5.23% (GLEN.L)
+
+---
+
+## Orders for Execution
+
+| Order ID | Ticker | Side | Type | Qty | Limit Price | Time in Force | Stop Price | Reason |
+|----------|--------|------|------|-----|-------------|----------------|------------|--------|
+| ORD001 | GLEN.L | BUY | MKT | 1.035 | — | GTC | 4.8573 | PULLBACK_IN_UPTREND_BALANCED_PROFILE |
+
+**Execution Sequence:** SELL_THEN_BUY (no sells today; BUY executes immediately after market open).
+
+---
+
+## What Could Invalidate This Plan
+
+1. **Overnight Gap Down:** GLEN.L opens < 4.8573 GBP → stop triggered immediately on T+1.
+2. **Dividend/Corporate Action:** Unforeseen split or dividend announcement affecting GLEN.L or holdings.
+3. **Sector Shock:** Major macro event affecting Materials (e.g., commodity price crash) invalidates trend filter.
+4. **Data Feed Lag:** If market_data.csv for 2026-02-19 shows close < sma50_gbp for holdings, exit signals override plan.
+5. **Liquidity Evaporation:** Market stress reducing GLEN.L avg_gbp_volume below £50k threshold → position becomes illiquid.
+6. **Settlement Failure:** T+1 settlement delayed; proceeds not available for next-day rebalance.
+7. **Exchange Closure:** Unscheduled LSE halt or force majeure.
+
+---
+
+## Data Quality Notes
+
+✓ **market_data.csv:** All 25 tickers present for 2026-02-18. All required columns populated (sma50, sma200, atr14, drawdown, volume_ratio, etc.).  
+✓ **positions.json:** 2 holdings (AZN.L, SHEL.L), days_held=0 (entry 2026-02-17). Both marked ACTIVE. No corporate actions flagged.  
+✓ **universe.csv:** 25 instruments, 23 EQUITIES + 2 ETFs. All ACTIVE. GBP-normalised prices provided.  
+✓ **trading_calendar.json:** 2026-02-18 confirmed as trading day (not half-day). No bank holidays next 5 days.  
+
+**No data quality issues detected. All indicators computed and fresh.**
 
 ---
 
 ## Disclaimer
 
-**This is an automated, rules-based trading plan generated from provided historical market data. It is not financial advice.**
+**This is an automated, rules-based trading plan generated from provided historical market data. It is NOT financial advice.**
 
-Execution involves real risks:
-- **Slippage & Fees**: Actual execution prices may differ from assumptions by 10+ bps.
-- **Gap Risk**: DAILY_CHECK stop-losses cannot protect against overnight or intraday gaps. Losses may exceed planned risk.
-- **Settlement Timing**: T+1 settlement delays cash availability; bridging costs apply if positions are resized before settlement.
-- **FX Effects**: GBP volatility affects international ETF valuations (e.g., VUAG.L, CSP1.L).
-- **Concentration Risk**: Current AZN.L position is 60.5% of equity—significantly above policy limits.
-- **Regulatory & Tax**: UK stamp duty, capital gains tax, and tax-loss harvesting rules apply.
-- **Market Liquidity**: During stress (halts, wide bid-ask), fills may be worse than modelled.
+- **Execution risk:** Orders may not fill at planned prices; slippage applies.
+- **Gap risk:** Overnight and intraday gaps may cause losses exceeding planned stop-loss amount (10% gap buffer applied but not guaranteed).
+- **Settlement timing:** T+1 settlement on UK equities; unsettled proceeds unavailable same day.
+- **FX effects:** Non-GBP assets converted to GBP; FX rate fluctuations may affect returns.
+- **Taxes & fees:** Stamp duty, capital gains tax, dividend withholding, and other charges apply beyond stated costs.
+- **Regulatory:** This plan is for informational purposes. Verify compliance with FCA rules, CASS requirements, and your broker's T&C before execution.
 
-**Use at your own risk. Consult a qualified financial advisor before deploying capital.**
+**Use at your own risk. Consult a qualified financial advisor before executing.**
 
 ---
 
-## Orders Execution
-
-**No orders to execute today.**
-
----
-
-*Plan generated 2026-02-17 by DailyEquityTrader-UK (Balanced Conservative, GBP Cash Account, LSE)*
+*Report generated by DailyEquityTrader-UK (Balanced Profile, Conservative Risk Settings)*

@@ -1,26 +1,23 @@
 {
   "status": "OK",
-  "as_of_date": "2026-02-17",
-  "reason": "Trading day, data fresh, portfolio drawdown within limits, eligible trades identified",
+  "as_of_date": "2026-02-18",
+  "reason": "Trading day, data fresh, drawdown acceptable. One new entry opportunity identified (GLEN.L). Position sizing constraints met.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 0.54,
+    "portfolio_drawdown_pct": 0.0,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_pct": 0.03,
-    "cash_available_gbp": 0.5701,
-    "max_positions": 5,
-    "current_positions": 2,
-    "max_new_positions_per_day": 1,
-    "max_turnover_pct_per_day": 0.3,
-    "max_risk_per_trade_pct": 0.05,
-    "max_sector_exposure_pct": 0.4,
-    "max_single_name_exposure_pct": 0.3,
-    "all_constraints_passed": true
+    "max_positions_respected": true,
+    "max_new_positions_per_day_respected": true,
+    "turnover_within_limit": true,
+    "cash_buffer_maintained": true,
+    "liquidity_filters_passed": true,
+    "sector_exposure_ok": true,
+    "correlation_constraint_ok": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",

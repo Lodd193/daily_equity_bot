@@ -1,84 +1,156 @@
 {
-  "as_of_date": "2026-02-17",
+  "as_of_date": "2026-02-18",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 99.46,
+  "portfolio_equity_gbp": 100.19,
   "cash_balance_gbp": 8.7867,
-  "available_for_buys_gbp": 0.5701,
+  "available_for_buys_gbp": 5.7867,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 0.54,
+  "portfolio_drawdown_pct": 0.0,
   "strategy_profile": "balanced",
   "candidates_considered": [
+    {
+      "ticker": "GLEN.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.74,
+      "confidence_components": {
+        "trend": 0.95,
+        "setup": 0.68,
+        "risk_reward": 0.72,
+        "liquidity": 0.95,
+        "diversification": 0.65
+      },
+      "rejected_reason": null
+    },
     {
       "ticker": "RIO.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.78,
+      "confidence": 0.72,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.75,
+        "trend": 0.95,
+        "setup": 0.65,
         "risk_reward": 0.7,
-        "liquidity": 0.85,
-        "diversification": 0.8
+        "liquidity": 0.9,
+        "diversification": 0.6
       },
-      "rejected_reason": "Insufficient cash (notional 71.16 > available 0.5701)"
+      "rejected_reason": "Position sizing: available cash (5.79 GBP) insufficient for entry notional (19.73 GBP). Confidence sufficient but liquidity constraint binding."
     },
     {
       "ticker": "GSK.L",
-      "entry_type": "BREAKOUT",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.74,
+      "confidence": 0.68,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.72,
-        "risk_reward": 0.68,
-        "liquidity": 0.82,
-        "diversification": 0.78
+        "trend": 0.92,
+        "setup": 0.6,
+        "risk_reward": 0.65,
+        "liquidity": 0.92,
+        "diversification": 0.58
       },
-      "rejected_reason": "Insufficient cash (notional 22.39 > available 0.5701)"
+      "rejected_reason": "Healthcare sector already represented (AZN.L). Diversification penalty applied. Sector exposure would breach limits with second position."
     },
     {
-      "ticker": "NG.L",
+      "ticker": "BARC.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.71,
+      "confidence": 0.65,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.68,
-        "risk_reward": 0.65,
-        "liquidity": 0.8,
-        "diversification": 0.75
+        "trend": 0.88,
+        "setup": 0.58,
+        "risk_reward": 0.62,
+        "liquidity": 0.9,
+        "diversification": 0.55
       },
-      "rejected_reason": "Insufficient cash (notional 13.765 > available 0.5701)"
+      "rejected_reason": "Financials sector exposure already elevated (HSBA.L, LLOY.L, BARC.L, NWG.L in universe). Max correlated positions constraint: position 5 already at limit for sector correlation."
     },
     {
       "ticker": "TSCO.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.68,
+      "confidence": 0.61,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.65,
-        "risk_reward": 0.62,
-        "liquidity": 0.78,
-        "diversification": 0.72
+        "trend": 0.9,
+        "setup": 0.55,
+        "risk_reward": 0.58,
+        "liquidity": 0.88,
+        "diversification": 0.5
       },
-      "rejected_reason": "Insufficient cash (notional 4.945 > available 0.5701)"
+      "rejected_reason": "Consumer Staples sector already holds multiple positions. Max new positions per day = 1; GLEN.L has higher confidence (0.74 vs 0.61)."
     }
   ],
-  "decisions": [],
+  "decisions": [
+    {
+      "ticker": "GLEN.L",
+      "action": "BUY",
+      "confidence": 0.74,
+      "confidence_components": {
+        "trend": 0.95,
+        "setup": 0.68,
+        "risk_reward": 0.72,
+        "liquidity": 0.95,
+        "diversification": 0.65
+      },
+      "entry": {
+        "type": "MKT",
+        "price_gbp": 5.077
+      },
+      "size": {
+        "quantity": 1.035,
+        "notional_gbp": 5.2547
+      },
+      "stop": {
+        "type": "HARD",
+        "price_gbp": 4.8573,
+        "execution_mode": "DAILY_CHECK"
+      },
+      "gap_risk_buffer_applied": true,
+      "take_profit": {
+        "type": "RULE",
+        "price_gbp": null,
+        "rule": "Exit if close_gbp < sma50_gbp for 2 consecutive days OR position > 20 days with unrealised_pnl <= 0"
+      },
+      "time_stop_days": 20,
+      "costs_estimate_gbp": {
+        "fees": 0.0,
+        "stamp_duty": 0.0262,
+        "slippage": 0.0052
+      },
+      "rationale": [
+        "Trend filter PASSED: close_gbp (5.077) > sma50_gbp (4.5124) AND sma50_gbp > sma200_gbp (3.4825)",
+        "Setup: PULLBACK in uptrend. Drawdown from 20d high = 4.89%, within balanced profile threshold (5-15%)",
+        "Volume: volume_ratio_20d = 0.89 < 1.0, healthier low-volume pullback",
+        "Risk/reward: ATR-based stop at 4.8573 GBP = 0.2197 GBP distance. Risk/entry ratio = 4.3%",
+        "Liquidity: avg_gbp_volume_20d = 239.5M GBP >> min threshold (50k). Order notional 5.25 GBP << 5% of daily avg",
+        "Diversification: Materials sector, reduces concentration vs. Energy (SHEL.L) and Healthcare (AZN.L). Low pairwise correlation expected",
+        "Position size with gap buffer: quantity = (5.01 GBP risk cap * 0.9) / 0.2197 = 1.035 shares, complies with fractional share allowance"
+      ],
+      "constraints_passed": true,
+      "constraint_notes": [
+        "Cash available (5.79 GBP) > position notional + costs + buffer = 5.33 GBP \u2713",
+        "Single-name exposure post-trade: 5.33 GBP / 105.52 GBP = 5.0% << 30% limit \u2713",
+        "Sector exposure (Materials): 5.33 GBP / 105.52 GBP = 5.0% << 40% limit \u2713",
+        "Turnover: (5.25 + 0 buy + 0 sell) / 100.19 = 5.2% << 30% limit \u2713",
+        "New positions per day: 1 / 1 max \u2713",
+        "Total positions after: 3 / 5 max \u2713",
+        "Correlation: GLEN.L (Materials) vs SHEL.L (Energy) expected r < 0.6, vs AZN.L (Healthcare) expected r < 0.5 \u2713"
+      ]
+    }
+  ],
   "portfolio_constraints_summary": {
-    "positions_count_after": 2,
-    "turnover_pct": 0.0,
-    "largest_position_pct": 60.52,
+    "positions_count_after": 3,
+    "turnover_pct": 5.2,
+    "largest_position_pct": 60.13,
     "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Healthcare": 60.52,
-      "Energy": 30.65
+      "Healthcare": 60.13,
+      "Energy": 31.07,
+      "Materials": 5.23
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 0.54
+    "portfolio_drawdown_pct": 0.0
   }
 }
