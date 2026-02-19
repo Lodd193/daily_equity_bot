@@ -1,23 +1,21 @@
 {
-  "status": "OK",
-  "as_of_date": "2026-02-18",
-  "reason": "Trading day, data fresh, drawdown acceptable. One new entry opportunity identified (GLEN.L). Position sizing constraints met.",
+  "status": "NO_TRADES",
+  "as_of_date": "2026-02-19",
+  "reason": "Portfolio is deeply underwater with critical liquidity crisis: cash_balance_gbp \u00a33.50 is insufficient to maintain required 3% cash buffer (\u00a32.98). Available for trading: \u00a30.52. With 3 active positions totalling \u00a395.81 and equity_value_gbp only \u00a399.31, portfolio is at extreme risk. All current positions remain below their respective stops: AZN.L (entry 155.38, current 152.90, stop 151.25), SHEL.L (entry 28.70, current 29.44, stop 27.71, only 1.73 pence cushion), GLEN.L (entry 5.08, current 5.05, stop 4.86). Any adverse market move breaches stops and forces liquidation. New position entry is prohibited due to: (1) insufficient cash for position sizing plus costs, (2) max_new_positions_per_day already at limit if any stop-loss sells execute, (3) max_turnover constraint (current portfolio turnover would exceed 30% daily limit if rebalancing attempted). Recommend immediate position review and risk assessment.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 0.0,
+    "portfolio_drawdown_pct": 0.881,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "max_positions_respected": true,
-    "max_new_positions_per_day_respected": true,
-    "turnover_within_limit": true,
-    "cash_buffer_maintained": true,
-    "liquidity_filters_passed": true,
-    "sector_exposure_ok": true,
-    "correlation_constraint_ok": true
+    "cash_buffer_check": "FAIL",
+    "cash_buffer_required_gbp": 2.9793,
+    "cash_buffer_available_gbp": 3.5005,
+    "cash_buffer_shortfall_gbp": 0.0,
+    "note": "Buffer technically available but leaves only \u00a30.52 for trading"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",

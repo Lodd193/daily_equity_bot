@@ -1,156 +1,104 @@
 {
-  "as_of_date": "2026-02-18",
+  "as_of_date": "2026-02-19",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 100.19,
-  "cash_balance_gbp": 8.7867,
-  "available_for_buys_gbp": 5.7867,
+  "portfolio_equity_gbp": 99.31,
+  "cash_balance_gbp": 3.5005,
+  "available_for_buys_gbp": 0.5212,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 0.0,
+  "portfolio_drawdown_pct": 0.881,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "GLEN.L",
-      "entry_type": "PULLBACK",
+      "ticker": "SHEL.L",
+      "entry_type": "NONE",
       "trend_status": "FULL",
-      "confidence": 0.74,
+      "confidence": 0.0,
       "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.68,
-        "risk_reward": 0.72,
+        "trend": 1.0,
+        "setup": 0.8,
+        "risk_reward": 0.7,
         "liquidity": 0.95,
-        "diversification": 0.65
+        "diversification": 0.5
       },
-      "rejected_reason": null
+      "rejected_reason": "Position already held with days_held=1 (min_position_age_days=2 not yet satisfied for re-entry). Anti-churn rule prevents immediate adjustment."
     },
     {
       "ticker": "RIO.L",
-      "entry_type": "PULLBACK",
+      "entry_type": "NONE",
       "trend_status": "FULL",
       "confidence": 0.72,
       "confidence_components": {
-        "trend": 0.95,
+        "trend": 1.0,
         "setup": 0.65,
         "risk_reward": 0.7,
-        "liquidity": 0.9,
+        "liquidity": 0.92,
         "diversification": 0.6
       },
-      "rejected_reason": "Position sizing: available cash (5.79 GBP) insufficient for entry notional (19.73 GBP). Confidence sufficient but liquidity constraint binding."
+      "rejected_reason": "Insufficient cash for position sizing. Required \u00a30 (stop distance 2.27, risk per trade \u00a34.97, quantity would be ~2.19, cost \u00a3157.29 + stamp duty \u00a378.65 + slippage \u00a315.73 = \u00a3251.67). Available: \u00a30.52."
     },
     {
-      "ticker": "GSK.L",
-      "entry_type": "PULLBACK",
+      "ticker": "AZN.L",
+      "entry_type": "NONE",
       "trend_status": "FULL",
       "confidence": 0.68,
       "confidence_components": {
-        "trend": 0.92,
+        "trend": 1.0,
         "setup": 0.6,
         "risk_reward": 0.65,
-        "liquidity": 0.92,
-        "diversification": 0.58
+        "liquidity": 0.93,
+        "diversification": 0.4
       },
-      "rejected_reason": "Healthcare sector already represented (AZN.L). Diversification penalty applied. Sector exposure would breach limits with second position."
-    },
-    {
-      "ticker": "BARC.L",
-      "entry_type": "BREAKOUT",
-      "trend_status": "FULL",
-      "confidence": 0.65,
-      "confidence_components": {
-        "trend": 0.88,
-        "setup": 0.58,
-        "risk_reward": 0.62,
-        "liquidity": 0.9,
-        "diversification": 0.55
-      },
-      "rejected_reason": "Financials sector exposure already elevated (HSBA.L, LLOY.L, BARC.L, NWG.L in universe). Max correlated positions constraint: position 5 already at limit for sector correlation."
-    },
-    {
-      "ticker": "TSCO.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.61,
-      "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.55,
-        "risk_reward": 0.58,
-        "liquidity": 0.88,
-        "diversification": 0.5
-      },
-      "rejected_reason": "Consumer Staples sector already holds multiple positions. Max new positions per day = 1; GLEN.L has higher confidence (0.74 vs 0.61)."
+      "rejected_reason": "Position already held with days_held=1. Current price 152.90 is above stop 151.25 but below entry 155.38. Close to stop-loss trigger on any weakness."
     }
   ],
-  "decisions": [
+  "decisions": [],
+  "stop_loss_exits": [
+    {
+      "ticker": "SHEL.L",
+      "action": "MONITOR",
+      "current_price_gbp": 29.44,
+      "stop_price_gbp": 27.7112,
+      "distance_pct": 0.0623,
+      "low_20d_gbp": 26.6566,
+      "gap_risk": "HIGH - low_20d is 1.73 pence below stop. Single poor-volume day could trigger stop.",
+      "note": "Stop is still 1.73 pence above 20-day low but margin is extremely thin."
+    },
+    {
+      "ticker": "AZN.L",
+      "action": "MONITOR",
+      "current_price_gbp": 152.9,
+      "stop_price_gbp": 151.25,
+      "distance_pct": 0.0109,
+      "low_20d_gbp": 133.2463,
+      "gap_risk": "MODERATE - stop is 1.65 pence below current price. Adequate 20-day floor.",
+      "note": "Stop is 1.65 pence below current price. 20-day low is 133.25 so downside room exists but stop is tight."
+    },
     {
       "ticker": "GLEN.L",
-      "action": "BUY",
-      "confidence": 0.74,
-      "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.68,
-        "risk_reward": 0.72,
-        "liquidity": 0.95,
-        "diversification": 0.65
-      },
-      "entry": {
-        "type": "MKT",
-        "price_gbp": 5.077
-      },
-      "size": {
-        "quantity": 1.035,
-        "notional_gbp": 5.2547
-      },
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 4.8573,
-        "execution_mode": "DAILY_CHECK"
-      },
-      "gap_risk_buffer_applied": true,
-      "take_profit": {
-        "type": "RULE",
-        "price_gbp": null,
-        "rule": "Exit if close_gbp < sma50_gbp for 2 consecutive days OR position > 20 days with unrealised_pnl <= 0"
-      },
-      "time_stop_days": 20,
-      "costs_estimate_gbp": {
-        "fees": 0.0,
-        "stamp_duty": 0.0262,
-        "slippage": 0.0052
-      },
-      "rationale": [
-        "Trend filter PASSED: close_gbp (5.077) > sma50_gbp (4.5124) AND sma50_gbp > sma200_gbp (3.4825)",
-        "Setup: PULLBACK in uptrend. Drawdown from 20d high = 4.89%, within balanced profile threshold (5-15%)",
-        "Volume: volume_ratio_20d = 0.89 < 1.0, healthier low-volume pullback",
-        "Risk/reward: ATR-based stop at 4.8573 GBP = 0.2197 GBP distance. Risk/entry ratio = 4.3%",
-        "Liquidity: avg_gbp_volume_20d = 239.5M GBP >> min threshold (50k). Order notional 5.25 GBP << 5% of daily avg",
-        "Diversification: Materials sector, reduces concentration vs. Energy (SHEL.L) and Healthcare (AZN.L). Low pairwise correlation expected",
-        "Position size with gap buffer: quantity = (5.01 GBP risk cap * 0.9) / 0.2197 = 1.035 shares, complies with fractional share allowance"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": [
-        "Cash available (5.79 GBP) > position notional + costs + buffer = 5.33 GBP \u2713",
-        "Single-name exposure post-trade: 5.33 GBP / 105.52 GBP = 5.0% << 30% limit \u2713",
-        "Sector exposure (Materials): 5.33 GBP / 105.52 GBP = 5.0% << 40% limit \u2713",
-        "Turnover: (5.25 + 0 buy + 0 sell) / 100.19 = 5.2% << 30% limit \u2713",
-        "New positions per day: 1 / 1 max \u2713",
-        "Total positions after: 3 / 5 max \u2713",
-        "Correlation: GLEN.L (Materials) vs SHEL.L (Energy) expected r < 0.6, vs AZN.L (Healthcare) expected r < 0.5 \u2713"
-      ]
+      "action": "MONITOR",
+      "current_price_gbp": 5.05,
+      "stop_price_gbp": 4.8573,
+      "distance_pct": 0.0371,
+      "low_20d_gbp": 4.56,
+      "gap_risk": "CRITICAL - low_20d 4.56 is 0.29 pence below stop 4.86. Stop is extremely tight.",
+      "note": "Position entered yesterday (days_held=0). Price 5.05 already below entry 5.08. Stop 4.86 is only 1.9 pence above recent low. CRITICAL: 20-day low is 4.56, only 0.30 pence cushion below stop."
     }
   ],
   "portfolio_constraints_summary": {
+    "positions_count_current": 3,
     "positions_count_after": 3,
-    "turnover_pct": 5.2,
-    "largest_position_pct": 60.13,
-    "cash_buffer_pct": 3.0,
+    "turnover_pct": 0.0,
+    "largest_position_pct": 59.75,
+    "cash_buffer_pct": 3.52,
     "sector_exposures_pct": {
-      "Healthcare": 60.13,
-      "Energy": 31.07,
-      "Materials": 5.23
+      "Healthcare": 59.75,
+      "Energy": 31.52,
+      "Materials": 5.27
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 0.0
+    "portfolio_drawdown_pct": 0.881
   }
 }
