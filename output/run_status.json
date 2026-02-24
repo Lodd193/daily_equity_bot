@@ -1,21 +1,27 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-02-19",
-  "reason": "Portfolio is deeply underwater with critical liquidity crisis: cash_balance_gbp \u00a33.50 is insufficient to maintain required 3% cash buffer (\u00a32.98). Available for trading: \u00a30.52. With 3 active positions totalling \u00a395.81 and equity_value_gbp only \u00a399.31, portfolio is at extreme risk. All current positions remain below their respective stops: AZN.L (entry 155.38, current 152.90, stop 151.25), SHEL.L (entry 28.70, current 29.44, stop 27.71, only 1.73 pence cushion), GLEN.L (entry 5.08, current 5.05, stop 4.86). Any adverse market move breaches stops and forces liquidation. New position entry is prohibited due to: (1) insufficient cash for position sizing plus costs, (2) max_new_positions_per_day already at limit if any stop-loss sells execute, (3) max_turnover constraint (current portfolio turnover would exceed 30% daily limit if rebalancing attempted). Recommend immediate position review and risk assessment.",
+  "as_of_date": "2026-02-24",
+  "reason": "All existing positions healthy (no stops breached, trend intact, hold age OK). Two high-confidence entry signals identified (VWRP.L 0.83, GSK.L 0.75) but insufficient cash reserves (\u00a33.50 available, \u00a396+ required). Would require position liquidation to fund new entries; no existing position meets exit criteria. Preferring capital preservation over forced rebalance.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 0.881,
+    "portfolio_drawdown_pct": 0.3,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_check": "FAIL",
-    "cash_buffer_required_gbp": 2.9793,
-    "cash_buffer_available_gbp": 3.5005,
-    "cash_buffer_shortfall_gbp": 0.0,
-    "note": "Buffer technically available but leaves only \u00a30.52 for trading"
+    "positions_count": 3,
+    "max_positions_limit": 5,
+    "positions_within_limit": true,
+    "cash_buffer_pct": 3.5,
+    "cash_buffer_required_pct": 3.0,
+    "cash_sufficient_for_new_positions": false,
+    "max_turnover_constraint": "0% vs 30% limit",
+    "portfolio_beta_to_benchmark": null,
+    "max_sector_exposure_pct": 40,
+    "largest_sector_exposure": 40,
+    "sector_constraint_passed": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
