@@ -1,155 +1,71 @@
 {
-  "as_of_date": "2026-02-24",
+  "as_of_date": "2026-02-25",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 99.89,
-  "cash_balance_gbp": 3.5,
-  "available_for_buys_gbp": 0.5,
+  "portfolio_equity_gbp": 100.05,
+  "cash_balance_gbp": 3.5005,
+  "available_for_buys_gbp": 0.499,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 0.3,
+  "portfolio_drawdown_pct": 0.1393,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "VWRP.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.83,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.8,
-        "risk_reward": 0.76,
-        "liquidity": 0.92,
-        "diversification": 0.88
-      },
-      "rejected_reason": "Insufficient cash. Required \u00a3164.04 (1.2566 shares @ \u00a3130.38 + \u00a30.16 slippage), available \u00a30.50."
-    },
-    {
-      "ticker": "GSK.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.75,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.85,
-        "risk_reward": 0.78,
-        "liquidity": 0.65,
-        "diversification": 0.78
-      },
-      "rejected_reason": "Insufficient cash. Required \u00a396.95 (4.357 shares @ \u00a322.01 + \u00a30.58 costs), available \u00a30.50."
-    },
-    {
-      "ticker": "BA.L",
+      "ticker": "SHEL.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
       "confidence": 0.76,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.5,
-        "risk_reward": 0.75,
-        "liquidity": 0.92,
-        "diversification": 0.85
+        "trend": 0.95,
+        "setup": 0.72,
+        "risk_reward": 0.68,
+        "liquidity": 0.99,
+        "diversification": 0.65
       },
-      "rejected_reason": "Insufficient cash. Required \u00a367.88 (3.167 shares @ \u00a321.41 + \u00a30.48 costs), available \u00a30.50."
+      "rejected_reason": "Insufficient capital. Required notional GBP 8.50 exceeds available GBP 0.50 after buffer."
     },
     {
       "ticker": "RIO.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.71,
+      "confidence": 0.74,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.55,
-        "risk_reward": 0.72,
-        "liquidity": 0.88,
-        "diversification": 0.82
+        "trend": 0.94,
+        "setup": 0.7,
+        "risk_reward": 0.67,
+        "liquidity": 0.98,
+        "diversification": 0.68
       },
-      "rejected_reason": "Insufficient cash. Required \u00a3141.67 (1.948 shares @ \u00a372.69 + \u00a30.25 costs), available \u00a30.50."
-    },
-    {
-      "ticker": "TSCO.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.68,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.48,
-        "risk_reward": 0.71,
-        "liquidity": 0.88,
-        "diversification": 0.8
-      },
-      "rejected_reason": "Insufficient cash. Required \u00a322.14 (4.413 shares @ \u00a35.012 + \u00a30.06 costs), available \u00a30.50. Also below position size viability threshold."
-    }
-  ],
-  "decisions": [
-    {
-      "ticker": "AZN.L",
-      "action": "HOLD",
-      "confidence": 1.0,
-      "entry_type": "EXISTING_POSITION",
-      "days_held": 2,
-      "rationale": [
-        "Position within hold period (2 days \u2265 min_position_age_days 2)",
-        "Stop at \u00a3151.25, low today \u00a3151.84 - no breach",
-        "Trend intact: close \u00a3153.26 > sma50 \u00a3140.79 > sma200 \u00a3123.00",
-        "Unrealised PnL -\u00a30.82 but trend conviction remains positive",
-        "No exit signal triggered"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": []
-    },
-    {
-      "ticker": "SHEL.L",
-      "action": "HOLD",
-      "confidence": 1.0,
-      "entry_type": "EXISTING_POSITION",
-      "days_held": 2,
-      "rationale": [
-        "Position within hold period (2 days \u2265 min_position_age_days 2)",
-        "Stop at \u00a327.71, low today \u00a329.61 - no breach",
-        "Trend intact: close \u00a329.715 > sma50 \u00a327.611 > sma200 \u00a326.965",
-        "Unrealised PnL +\u00a31.08, position profitable",
-        "No exit signal triggered"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": []
+      "rejected_reason": "Insufficient capital. Required notional GBP 10.20 exceeds available GBP 0.50 after buffer."
     },
     {
       "ticker": "GLEN.L",
-      "action": "HOLD",
-      "confidence": 1.0,
-      "entry_type": "EXISTING_POSITION",
-      "days_held": 1,
-      "rationale": [
-        "Position age 1 day < min_position_age_days 2 - anti-churn rule applies",
-        "Stop at \u00a34.86, low today \u00a35.10 - no breach",
-        "Trend intact: close \u00a35.193 > sma50 \u00a34.592 > sma200 \u00a33.522",
-        "Unrealised PnL +\u00a30.11, position profitable",
-        "No exit signal triggered; holding to satisfy minimum age rule"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": [
-        "Anti-churn: position too new (1 day) to exit without signal"
-      ]
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.71,
+      "confidence_components": {
+        "trend": 0.92,
+        "setup": 0.68,
+        "risk_reward": 0.66,
+        "liquidity": 0.96,
+        "diversification": 0.7
+      },
+      "rejected_reason": "Already in position (1.035 shares). Anti-churn rule: days_held=6, minimum required=2. May add only via systematic pyramid rule if setup remains valid and capital permits."
     }
   ],
+  "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 3,
-    "max_positions": 5,
     "turnover_pct": 0.0,
-    "largest_position_pct": 59.6,
-    "cash_buffer_pct": 3.5,
+    "largest_position_pct": 0.591,
+    "cash_buffer_pct": 0.03,
     "sector_exposures_pct": {
-      "Healthcare": 59.6,
-      "Energy": 31.61,
-      "Materials": 5.38
+      "Healthcare": 0.591,
+      "Energy": 0.32,
+      "Materials": 0.089
     },
-    "sector_max_pct": 59.6,
-    "max_sector_limit_pct": 40.0,
-    "sector_constraint_violated": true,
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 0.3,
-    "comment": "Healthcare sector exposure (AZN.L) at 59.60% exceeds 40% limit. Position was inherited from previous session. No new buy would exceed this limit. If liquidating to fund new entry, would clear violation."
+    "portfolio_drawdown_pct": 0.1393
   }
 }
