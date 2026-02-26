@@ -1,71 +1,71 @@
 {
-  "as_of_date": "2026-02-25",
+  "as_of_date": "2026-02-26",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 100.05,
+  "portfolio_equity_gbp": 99.68,
   "cash_balance_gbp": 3.5005,
-  "available_for_buys_gbp": 0.499,
+  "available_for_buys_gbp": 0.5101,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 0.1393,
+  "portfolio_drawdown_pct": 0.51,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "SHEL.L",
+      "ticker": "RIO.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.78,
+      "confidence_components": {
+        "trend": 0.95,
+        "setup": 0.75,
+        "risk_reward": 0.68,
+        "liquidity": 0.85,
+        "diversification": 0.65
+      },
+      "rejected_reason": "INSUFFICIENT_CAPITAL: required_buy_notional_gbp 40.75 exceeds available_for_buys_gbp 0.51"
+    },
+    {
+      "ticker": "ULVR.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
       "confidence": 0.76,
       "confidence_components": {
-        "trend": 0.95,
+        "trend": 0.92,
         "setup": 0.72,
-        "risk_reward": 0.68,
-        "liquidity": 0.99,
-        "diversification": 0.65
+        "risk_reward": 0.72,
+        "liquidity": 0.88,
+        "diversification": 0.68
       },
-      "rejected_reason": "Insufficient capital. Required notional GBP 8.50 exceeds available GBP 0.50 after buffer."
+      "rejected_reason": "INSUFFICIENT_CAPITAL: required_buy_notional_gbp 38.80 exceeds available_for_buys_gbp 0.51"
     },
     {
-      "ticker": "RIO.L",
+      "ticker": "GSK.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
       "confidence": 0.74,
       "confidence_components": {
-        "trend": 0.94,
+        "trend": 0.9,
         "setup": 0.7,
-        "risk_reward": 0.67,
-        "liquidity": 0.98,
-        "diversification": 0.68
+        "risk_reward": 0.68,
+        "liquidity": 0.82,
+        "diversification": 0.72
       },
-      "rejected_reason": "Insufficient capital. Required notional GBP 10.20 exceeds available GBP 0.50 after buffer."
-    },
-    {
-      "ticker": "GLEN.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.71,
-      "confidence_components": {
-        "trend": 0.92,
-        "setup": 0.68,
-        "risk_reward": 0.66,
-        "liquidity": 0.96,
-        "diversification": 0.7
-      },
-      "rejected_reason": "Already in position (1.035 shares). Anti-churn rule: days_held=6, minimum required=2. May add only via systematic pyramid rule if setup remains valid and capital permits."
+      "rejected_reason": "INSUFFICIENT_CAPITAL: required_buy_notional_gbp 35.20 exceeds available_for_buys_gbp 0.51"
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 3,
     "turnover_pct": 0.0,
-    "largest_position_pct": 0.591,
-    "cash_buffer_pct": 0.03,
+    "largest_position_pct": 58.61,
+    "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Healthcare": 0.591,
-      "Energy": 0.32,
-      "Materials": 0.089
+      "Healthcare": 58.61,
+      "Energy": 32.27,
+      "Materials": 5.46
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 0.1393
+    "portfolio_drawdown_pct": 0.51
   }
 }
