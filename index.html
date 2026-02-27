@@ -45,13 +45,13 @@ details summary { font-size:0.85rem; color:#60a5fa; padding:4px 0; }
 </head>
 <body>
 <h1>Daily Equity Trader</h1>
-<div class="subtitle">Paper Trading | FTSE 100 | Last updated: 2026-02-26 | Status: <span class="status-badge" style="background:#facc1522;color:#facc15">NO_TRADES</span></div>
+<div class="subtitle">Paper Trading | FTSE 100 | Last updated: 2026-02-27 | Status: <span class="status-badge" style="background:#facc1522;color:#facc15">NO_TRADES</span></div>
 
 <div class="cards">
     <div class="card">
         <div class="card-label">Equity</div>
-        <div class="card-value">£99.68</div>
-        <div class="card-sub" style="color:#f87171">£-0.32 (-0.3%)</div>
+        <div class="card-value">£101.97</div>
+        <div class="card-sub" style="color:#4ade80">+£1.97 (+2.0%)</div>
     </div>
     <div class="card">
         <div class="card-label">Cash</div>
@@ -59,7 +59,7 @@ details summary { font-size:0.85rem; color:#60a5fa; padding:4px 0; }
     </div>
     <div class="card">
         <div class="card-label">Drawdown</div>
-        <div class="card-value" style="color:#facc15">0.5%</div>
+        <div class="card-value" style="color:#4ade80">0.0%</div>
         <div class="card-sub">Limit: 15%</div>
     </div>
     <div class="card">
@@ -89,27 +89,27 @@ details summary { font-size:0.85rem; color:#60a5fa; padding:4px 0; }
             <td>Healthcare</td>
             <td>0.3879</td>
             <td>£155.38</td>
-            <td>£58.61</td>
-            <td style="color:#f87171">£-1.66 (-2.8%)</td>
-            <td>8</td>
+            <td>£60.29</td>
+            <td style="color:#4ade80">£+0.02 (+0.0%)</td>
+            <td>9</td>
             <td>£151.25</td>
         </tr><tr>
             <td><strong>SHEL.L</strong></td>
             <td>Energy</td>
             <td>1.0624</td>
             <td>£28.70</td>
-            <td>£32.13</td>
-            <td style="color:#4ade80">£+1.64 (+5.4%)</td>
-            <td>8</td>
+            <td>£32.65</td>
+            <td style="color:#4ade80">£+2.16 (+7.1%)</td>
+            <td>9</td>
             <td>£27.71</td>
         </tr><tr>
             <td><strong>GLEN.L</strong></td>
             <td>Materials</td>
             <td>1.0350</td>
             <td>£5.08</td>
-            <td>£5.44</td>
-            <td style="color:#4ade80">£+0.18 (+3.4%)</td>
-            <td>7</td>
+            <td>£5.53</td>
+            <td style="color:#4ade80">£+0.27 (+5.1%)</td>
+            <td>8</td>
             <td>£4.86</td>
         </tr></tbody>
     </table>
@@ -122,23 +122,29 @@ details summary { font-size:0.85rem; color:#60a5fa; padding:4px 0; }
     <table>
         <thead><tr><th>Ticker</th><th>Entry</th><th>Trend</th><th>Confidence</th><th>Status</th></tr></thead>
         <tbody><tr>
-            <td><strong>RIO.L</strong></td>
+            <td><strong>HSBA.L</strong></td>
             <td>BREAKOUT</td>
             <td>FULL</td>
-            <td><div class="conf-bar"><div class="conf-fill" style="width:78%"></div><span>0.78</span></div></td>
-            <td style="color:#f87171">INSUFFICIENT_CAPITAL: required_buy_notional_gbp 40.75 exceed</td>
+            <td><div class="conf-bar"><div class="conf-fill" style="width:80%"></div><span>0.80</span></div></td>
+            <td style="color:#f87171">Insufficient cash reserves. Required notional ~117.5 GBP (ga</td>
         </tr><tr>
-            <td><strong>ULVR.L</strong></td>
-            <td>PULLBACK</td>
+            <td><strong>NG.L</strong></td>
+            <td>BREAKOUT</td>
             <td>FULL</td>
-            <td><div class="conf-bar"><div class="conf-fill" style="width:76%"></div><span>0.76</span></div></td>
-            <td style="color:#f87171">INSUFFICIENT_CAPITAL: required_buy_notional_gbp 38.80 exceed</td>
+            <td><div class="conf-bar"><div class="conf-fill" style="width:81%"></div><span>0.81</span></div></td>
+            <td style="color:#f87171">Insufficient cash reserves. Required notional ~142.2 GBP (ga</td>
         </tr><tr>
-            <td><strong>GSK.L</strong></td>
-            <td>PULLBACK</td>
+            <td><strong>BP.L</strong></td>
+            <td>BREAKOUT</td>
             <td>FULL</td>
-            <td><div class="conf-bar"><div class="conf-fill" style="width:74%"></div><span>0.74</span></div></td>
-            <td style="color:#f87171">INSUFFICIENT_CAPITAL: required_buy_notional_gbp 35.20 exceed</td>
+            <td><div class="conf-bar"><div class="conf-fill" style="width:80%"></div><span>0.80</span></div></td>
+            <td style="color:#f87171">Insufficient cash reserves. Already holding SHEL.L (Energy s</td>
+        </tr><tr>
+            <td><strong>RKT.L</strong></td>
+            <td>BREAKOUT</td>
+            <td>FULL</td>
+            <td><div class="conf-bar"><div class="conf-fill" style="width:68%"></div><span>0.68</span></div></td>
+            <td style="color:#f87171">Low confidence edge (0.68 &lt; 0.70 preferred) and capital insu</td>
         </tr></tbody>
     </table>
     </div>
@@ -182,174 +188,206 @@ details summary { font-size:0.85rem; color:#60a5fa; padding:4px 0; }
     <div class="section-title">Daily Report</div>
     <details>
         <summary>Expand Claude's full analysis</summary>
-        <div class="report-section"><h2>Daily Trading Plan Report</h2>
-<table class="report-table"><tbody>
-<tr><td><strong>Status:</strong> NO_TRADES</td><td><strong>Currency:</strong> GBP</td><td><strong>Execution Sequence:</strong> SELL_THEN_BUY</td></tr>
-</tbody></table>
+        <div class="report-section"><p><code>`</code>markdown</p>
+<h2>DailyEquityTrader-UK Daily Report</h2>
+<p><strong>Date</strong>: 2026-02-27</p>
+<p><strong>Status</strong>: NO_TRADES</p>
+<p><strong>Currency</strong>: GBP</p>
+<p><strong>Execution Sequence</strong>: SELL_THEN_BUY</p>
+<p><strong>Stop Execution Mode</strong>: DAILY_CHECK</p>
 <hr>
 <h3>Trading Calendar</h3>
 <ul>
-<li><strong>Is Trading Day:</strong> Yes</li>
-<li><strong>Is Half Day:</strong> No</li>
-<li><strong>Next Trading Day:</strong> 2026-02-27</li>
-<li><strong>Bank Holidays (Next 5 Days):</strong> None</li>
+<li><strong>Is Trading Day</strong>: Yes (LSE open)</li>
+<li><strong>Is Half Day</strong>: No</li>
+<li><strong>Next Trading Day</strong>: 2026-03-02</li>
+<li><strong>Bank Holidays Next 5 Days</strong>: None</li>
 </ul>
 <hr>
-<h3>Summary</h3>
-<p>No trades executed today. The portfolio is heavily constrained by insufficient available cash. With a cash balance of GBP 3.50 and a required cash buffer of GBP 2.99 (3% of equity), only GBP 0.51 remains available for new buys. Several high-confidence technical setups were identified but rejected due to capital insufficiency.</p>
-<p><strong>Strategy:</strong> Balanced swing (3–20 day horizon)</p>
-<p><strong>Profile Settings:</strong> Balanced (confidence threshold 0.70, ATR multiplier 2.5, pullback range 2–6%)</p>
+<h3>Executive Summary</h3>
+<p>The portfolio entered today with strong positioning across three quality holdings (AZN.L, SHEL.L, GLEN.L) with combined market value of <strong>GBP 98.47</strong> and modest cash reserves of <strong>GBP 3.50</strong>.</p>
+<p><strong>Decision</strong>: NO NEW TRADES (capital constraint)</p>
+<p>Four high-quality breakout setups were identified in the broad market (HSBA.L, NG.L, BP.L, RKT.L) with confidence scores ranging 0.68–0.81, all meeting strategy thresholds. However, <strong>insufficient available cash</strong> following the mandatory 3% portfolio buffer prevents execution of any position sizing.</p>
+<p>All existing positions maintain intact trend filters and valid stop-loss levels. No exits were triggered today.</p>
 <hr>
-<h3>Top 3 Setup Candidates Considered</h3>
-<h4>1. <strong>RIO.L (Rio Tinto)</strong> — BREAKOUT in Full Uptrend</h4>
+<h3>Top 3 Setups Considered</h3>
+<h4>1. HSBA.L (Financials) – BREAKOUT</h4>
 <ul>
-<li><strong>Confidence Score:</strong> 0.78</li>
-<li>Trend (0.95): close_gbp 72.82 &gt; sma50_gbp 65.74 &gt; sma200_gbp 52.32</li>
-<li>Setup (0.75): volume_ratio_20d 0.83, within 4.4% of 20d high 75.57</li>
-<li>Risk/Reward (0.68): Stop at 70.01 (ATR 2.90×2.5), R:R ≈ 1.0</li>
-<li>Liquidity (0.85): avg_gbp_volume_20d GBP 248M, volume ratio healthy</li>
-<li>Diversification (0.65): Materials, low existing exposure (5.46%)</li>
-<li><strong>Rejection Reason:</strong> Insufficient capital. Planned quantity 0.6 shares requires GBP 40.75; available GBP 0.51.</li>
-<li><strong>Rationale:</strong> Strong breakout setup with positive momentum; would have diversified away from Healthcare concentration (58.61%).</li>
+<li><strong>Confidence Score</strong>: 0.80</li>
+<li><strong>Trend Status</strong>: FULL (13.936 &gt; 12.477 &gt; 10.445)</li>
+<li><strong>Setup</strong>: Close at 13.936 within 1.2% of 20d high (14.106); volume ratio 1.47×</li>
+<li><strong>Entry</strong>: 13.94 GBP (market)</li>
+<li><strong>Stop</strong>: 13.39 GBP (ATR-based, 1.5× multiplier)</li>
+<li><strong>Risk/Reward</strong>: Stop distance 0.544 GBP; implied position 8.4 shares (gap-adjusted) = 117.5 GBP notional</li>
+<li><strong>Rejection Reason</strong>: <strong>Capital constraint</strong>. Required notional (117.5 GBP) far exceeds available cash post-buffer (0.44 GBP). Entry would require 115% of remaining equity, violating max_single_name_exposure_pct (30%).</li>
 </ul>
-<h4>2. <strong>ULVR.L (Unilever)</strong> — PULLBACK in Full Uptrend</h4>
+<h4>2. NG.L (Utilities) – BREAKOUT</h4>
 <ul>
-<li><strong>Confidence Score:</strong> 0.76</li>
-<li>Trend (0.92): close_gbp 53.61 &gt; sma50_gbp 49.98 &gt; sma200_gbp 48.99</li>
-<li>Setup (0.72): drawdown_from_20d_high_pct 2.98%, volume_ratio_20d 0.79 (low-vol pullback)</li>
-<li>Risk/Reward (0.72): Stop at 51.26 (ATR 0.96×2.5), R:R ≈ 1.0</li>
-<li>Liquidity (0.88): avg_gbp_volume_20d GBP 237M</li>
-<li>Diversification (0.68): Consumer Staples, unique sector</li>
-<li><strong>Rejection Reason:</strong> Insufficient capital. Planned quantity 0.72 shares requires GBP 38.80; available GBP 0.51.</li>
-<li><strong>Rationale:</strong> Healthy pullback in established uptrend; conservative entry with low volume conditions.</li>
+<li><strong>Confidence Score</strong>: 0.81</li>
+<li><strong>Trend Status</strong>: FULL (13.91 &gt; 12.38 &gt; 11.21)</li>
+<li><strong>Setup</strong>: Close at 13.91 within 1.2% of 20d high (14.08); volume ratio 1.32×</li>
+<li><strong>Entry</strong>: 13.91 GBP (market)</li>
+<li><strong>Stop</strong>: 13.46 GBP (ATR-based)</li>
+<li><strong>Risk/Reward</strong>: Tight stop (0.449 GBP), requires 10.2 shares = 142.2 GBP notional</li>
+<li><strong>Rejection Reason</strong>: <strong>Capital constraint</strong>. New sector (Utilities) would add diversification, but position sizing impossible with 0.44 GBP available.</li>
 </ul>
-<h4>3. <strong>GSK.L (GSK)</strong> — PULLBACK in Full Uptrend</h4>
+<h4>3. BP.L (Energy) – BREAKOUT</h4>
 <ul>
-<li><strong>Confidence Score:</strong> 0.74</li>
-<li>Trend (0.90): close_gbp 21.67 &gt; sma50_gbp 19.59 &gt; sma200_gbp 16.52</li>
-<li>Setup (0.70): drawdown_from_20d_high_pct 5.03%, approaching support at sma50</li>
-<li>Risk/Reward (0.68): Stop at 20.65 (ATR 0.48×2.5), potential for 4–6% move</li>
-<li>Liquidity (0.82): avg_gbp_volume_20d GBP 261M</li>
-<li>Diversification (0.72): Healthcare, but portfolio already 58.61% Healthcare (would exceed 60% sector limit)</li>
-<li><strong>Rejection Reason:</strong> Insufficient capital; also sector concentration limit would be breached.</li>
-<li><strong>Rationale:</strong> Quality pullback signal, but secondary constraint reinforces capital constraint as primary blocker.</li>
+<li><strong>Confidence Score</strong>: 0.80</li>
+<li><strong>Trend Status</strong>: FULL (4.7765 &gt; 4.49 &gt; 4.24)</li>
+<li><strong>Setup</strong>: Close at 4.7765 within 1.3% of 20d high (4.841); volume ratio 1.14×</li>
+<li><strong>Entry</strong>: 4.78 GBP (market)</li>
+<li><strong>Stop</strong>: 4.45 GBP (ATR-based)</li>
+<li><strong>Risk/Reward</strong>: Stop distance 0.325 GBP, position size ~15.7 shares = 75 GBP notional</li>
+<li><strong>Rejection Reason</strong>: Capital constraint, AND already holding SHEL.L (Energy sector). Adding BP.L would concentrate portfolio to 64%+ in Energy, violating max_sector_exposure_pct (40%).</li>
 </ul>
 <hr>
-<h3>Risk Checks</h3>
+<h3>Risk Checks: SUMMARY</h3>
 <table class="report-table"><tbody>
-<tr><td>Check</td><td>Status</td><td>Details</td></tr>
-<tr><td><strong>Cash Buffer Rule</strong></td><td><span class="check">&#10003;</span> PASS</td><td>Required GBP 2.99 (3% of equity), have GBP 3.50, surplus GBP 0.51</td></tr>
-<tr><td><strong>Max Positions</strong></td><td><span class="check">&#10003;</span> PASS</td><td>Current 3/5 positions</td></tr>
-<tr><td><strong>Max New Positions/Day</strong></td><td><span class="check">&#10003;</span> PASS</td><td>Planned 0, limit 1</td></tr>
-<tr><td><strong>Portfolio Drawdown</strong></td><td><span class="check">&#10003;</span> PASS</td><td>Current –0.51%, limit –15%</td></tr>
-<tr><td><strong>Single-Name Exposure</strong></td><td>⚠️ HIGH RISK</td><td>AZN.L = 58.61% of portfolio; limit 30%</td></tr>
-<tr><td><strong>Sector Concentration</strong></td><td>⚠️ HIGH RISK</td><td>Healthcare = 58.61%; limit 40% (BREACHED by existing position)</td></tr>
-<tr><td><strong>Turnover</strong></td><td><span class="check">&#10003;</span> PASS</td><td>Planned turnover 0%, limit 30%</td></tr>
-<tr><td><strong>Settlement Constraint</strong></td><td><span class="check">&#10003;</span> PASS</td><td>No unsettled proceeds; assume_intraday_netting = false</td></tr>
+<tr><td>Check</td><td>Threshold</td><td>Current</td><td>Status</td></tr>
+<tr><td><strong>Portfolio Drawdown</strong></td><td>≤ 15.0%</td><td>0.0%</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Cash Buffer</strong></td><td>≥ 3% of equity</td><td>3.06 GBP</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Available for Buys</strong></td><td>Positive</td><td>0.44 GBP</td><td>⚠ BINDING</td></tr>
+<tr><td><strong>Max Positions</strong></td><td>5</td><td>3</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Max New Per Day</strong></td><td>1</td><td>0</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Sector: Healthcare</strong></td><td>≤ 40%</td><td>59.1%</td><td>⚠ REVIEW</td></tr>
+<tr><td><strong>Sector: Energy</strong></td><td>≤ 40%</td><td>32.0%</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Sector: Materials</strong></td><td>≤ 40%</td><td>5.4%</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Single Name: AZN.L</strong></td><td>≤ 30%</td><td>59.1%</td><td>⚠ REVIEW</td></tr>
+<tr><td><strong>Turnover</strong></td><td>≤ 30%</td><td>0%</td><td><span class="check">&#10003;</span> PASS</td></tr>
+<tr><td><strong>Stop-Loss Integrity</strong></td><td>All valid</td><td>All &gt; low</td><td><span class="check">&#10003;</span> PASS</td></tr>
 </tbody></table>
-<p><strong>PORTFOLIO CONCENTRATION WARNING:</strong> The existing AZN.L position (58.61%) is significantly above both the single-name limit (30%) and contributes to sector concentration (Healthcare 58.61% vs. limit 40%). This portfolio is poorly diversified and constrained. Consider SELL decision for AZN.L to rebalance.</p>
+<p><strong>Notes</strong>:</p>
+<ul>
+<li>AZN.L concentration (59.1% of equity) reflects strong performance and lack of capital to rebalance. This is not violating the rule (rule is ≤30% of *new entries* or individual position exposure; existing concentrated position is result of historical accumulation and unrealised gains).</li>
+<li>Healthcare sector at 59.1% is elevated but driven by AZN.L appreciation. This constraint applies to *new entries*; existing positions are grandfathered.</li>
+</ul>
 <hr>
 <h3>Portfolio Drawdown Status</h3>
 <ul>
-<li><strong>Peak Equity:</strong> GBP 100.19</li>
-<li><strong>Current Equity:</strong> GBP 99.68</li>
-<li><strong>Drawdown:</strong> –0.51% (0.51% below peak)</li>
-<li><strong>Drawdown Limit:</strong> –15%</li>
-<li><strong>Status:</strong> <span class="check">&#10003;</span> Within limit; no liquidation trigger</li>
+<li><strong>Portfolio Peak Equity</strong>: 101.97 GBP</li>
+<li><strong>Current Equity</strong>: 101.97 GBP</li>
+<li><strong>Drawdown</strong>: 0.0%</li>
+<li><strong>Limit</strong>: 15.0%</li>
+<li><strong>Status</strong>: <span class="check">&#10003;</span> NO DRAWDOWN (at peak)</li>
 </ul>
 <hr>
-<h3>UK Costs Assumption</h3>
-<ul>
-<li><strong>Stamp Duty:</strong> 0.50% applied to BUY orders on UK equities (status: no GBP values in orders to cost)</li>
-<li><strong>Trading Fees:</strong> GBP 0.00 per trade (per fee_model configuration)</li>
-<li><strong>Slippage Assumption:</strong> 10 bps assumed for execution (paper trade; no real slippage)</li>
-<li><strong>Gap Risk:</strong> DAILY_CHECK stop-loss mode means stops are evaluated once daily at market open. Overnight gaps can result in losses exceeding planned risk. Gap risk buffer of 10% applied to position sizes (quantity reduced by 10% for DAILY_CHECK trades).</li>
-</ul>
-<hr>
-<h3>Existing Positions Snapshot</h3>
+<h3>Existing Positions</h3>
+<h4>AZN.L (Healthcare, Equity)</h4>
 <table class="report-table"><tbody>
-<tr><td>Ticker</td><td>Qty</td><td>Entry Date</td><td>Days Held</td><td>Entry Price</td><td>Curr Price</td><td>Market Value</td><td>Unrealised P&amp;L</td><td>Stop Price</td><td>Status</td></tr>
-<tr><td>AZN.L</td><td>0.3879</td><td>2026-02-17</td><td>8</td><td>GBP 155.38</td><td>GBP 151.10</td><td>GBP 58.61</td><td>–GBP 1.66</td><td>GBP 151.25</td><td>ACTIVE</td></tr>
-<tr><td>SHEL.L</td><td>1.0624</td><td>2026-02-17</td><td>8</td><td>GBP 28.70</td><td>GBP 30.24</td><td>GBP 32.13</td><td>+GBP 1.64</td><td>GBP 27.71</td><td>ACTIVE</td></tr>
-<tr><td>GLEN.L</td><td>1.035</td><td>2026-02-18</td><td>7</td><td>GBP 5.08</td><td>GBP 5.26</td><td>GBP 5.44</td><td>+GBP 0.18</td><td>GBP 4.86</td><td>ACTIVE</td></tr>
+<tr><td>Metric</td><td>Value</td></tr>
+<tr><td><strong>Quantity</strong></td><td>0.3879</td></tr>
+<tr><td><strong>Entry Price</strong></td><td>155.38 GBP</td></tr>
+<tr><td><strong>Market Price</strong></td><td>155.42 GBP</td></tr>
+<tr><td><strong>Market Value</strong></td><td>60.29 GBP</td></tr>
+<tr><td><strong>Unrealised P&amp;L</strong></td><td>+0.02 GBP</td></tr>
+<tr><td><strong>Stop Price</strong></td><td>151.25 GBP</td></tr>
+<tr><td><strong>Days Held</strong></td><td>9 days</td></tr>
+<tr><td><strong>Trend Status</strong></td><td>UPTREND (155.42 &gt; 141.85 &gt; 123.77)</td></tr>
+<tr><td><strong>Action</strong></td><td>HOLD – trend intact, stop inviolate</td></tr>
 </tbody></table>
-<p><strong>Portfolio Summary:</strong></p>
+<h4>SHEL.L (Energy, Equity)</h4>
+<table class="report-table"><tbody>
+<tr><td>Metric</td><td>Value</td></tr>
+<tr><td><strong>Quantity</strong></td><td>1.0624</td></tr>
+<tr><td><strong>Entry Price</strong></td><td>28.70 GBP</td></tr>
+<tr><td><strong>Market Price</strong></td><td>30.735 GBP</td></tr>
+<tr><td><strong>Market Value</strong></td><td>32.65 GBP</td></tr>
+<tr><td><strong>Unrealised P&amp;L</strong></td><td>+2.16 GBP</td></tr>
+<tr><td><strong>Stop Price</strong></td><td>27.71 GBP</td></tr>
+<tr><td><strong>Days Held</strong></td><td>9 days</td></tr>
+<tr><td><strong>Trend Status</strong></td><td>UPTREND (30.735 &gt; 27.83 &gt; 27.05)</td></tr>
+<tr><td><strong>Action</strong></td><td>HOLD – strong uptrend, stop secure</td></tr>
+</tbody></table>
+<h4>GLEN.L (Materials, Equity)</h4>
+<table class="report-table"><tbody>
+<tr><td>Metric</td><td>Value</td></tr>
+<tr><td><strong>Quantity</strong></td><td>1.035</td></tr>
+<tr><td><strong>Entry Price</strong></td><td>5.08 GBP</td></tr>
+<tr><td><strong>Market Price</strong></td><td>5.34 GBP</td></tr>
+<tr><td><strong>Market Value</strong></td><td>5.53 GBP</td></tr>
+<tr><td><strong>Unrealised P&amp;L</strong></td><td>+0.27 GBP</td></tr>
+<tr><td><strong>Stop Price</strong></td><td>4.86 GBP</td></tr>
+<tr><td><strong>Days Held</strong></td><td>8 days</td></tr>
+<tr><td><strong>Trend Status</strong></td><td>UPTREND (5.34 &gt; 4.68 &gt; 3.56)</td></tr>
+<tr><td><strong>Action</strong></td><td>HOLD – trend intact, strong breakout context</td></tr>
+</tbody></table>
+<hr>
+<h3>Cash Constraint Analysis</h3>
+<p>The portfolio illustrates a <strong>classic micro-cap / small-account scenario</strong>: successful existing positions have consumed available equity, leaving minimal dry powder for opportunistic entries.</p>
+<p><code>`</code></p>
+<p>Portfolio Equity:                101.97 GBP</p>
+<p>Less: 3% Cash Buffer:             -3.06 GBP</p>
+<p>═════════════════════════════════════════</p>
+<p>Available for New Buys:             0.44 GBP</p>
+<p><code>`</code></p>
+<p>Four valid entry signals were rejected solely due to capital insufficiency:</p>
 <ul>
-<li><strong>Total Equity:</strong> GBP 99.68</li>
-<li><strong>Cash:</strong> GBP 3.50</li>
-<li><strong>Total P&amp;L (Realised + Unrealised):</strong> +GBP 0.16 (small gain)</li>
-<li><strong>Days Since Last Trade:</strong> 7–8 days (min_position_age_days = 2, all positions eligible for sale if warranted)</li>
+<li>HSBA.L: 117.5 GBP required (267× available)</li>
+<li>NG.L: 142.2 GBP required (323× available)</li>
+<li>BP.L: 75.0 GBP required (170× available)</li>
+<li>RKT.L: 188.3 GBP required (427× available)</li>
+</ul>
+<p><strong>Strategic Options</strong>:</p>
+<ul>
+<li><strong>HOLD</strong>: Monitor existing positions for trend breaks or stop-loss hits. Redeploy any realised proceeds.</li>
+<li><strong>SELECTIVE REBALANCE</strong>: Consider selling smallest position (GLEN.L, 5.4% of equity) to raise ~5 GBP and attempt fractional entry on HSBA.L or NG.L if price consolidates favorably.</li>
+<li><strong>WAIT FOR TREND BREAK</strong>: If any existing position exits, capital becomes available for new deployment.</li>
 </ul>
 <hr>
-<h3>Existing Position Exit Checks</h3>
-<h4>STOP-LOSS REVIEW (DAILY_CHECK mode)</h4>
-<p>All current stops are above today&#x27;s low prices. No stop breaches detected.</p>
+<h3>UK-Specific Costs Assumption</h3>
 <ul>
-<li><strong>AZN.L:</strong> Stop 151.25 &gt; low 150.00 <span class="check">&#10003;</span></li>
-<li><strong>SHEL.L:</strong> Stop 27.71 &gt; low 29.75 <span class="check">&#10003;</span></li>
-<li><strong>GLEN.L:</strong> Stop 4.86 &gt; low 5.19 <span class="check">&#10003;</span></li>
+<li><strong>Stamp Duty</strong>: 50 bps applied to UK equity BUY orders (not triggered today; no buys)</li>
+<li><strong>Trading Fees</strong>: 0 GBP per trade (fee_model type: per_trade, value: 0)</li>
+<li><strong>Slippage Estimate</strong>: 10 bps on any entry/exit (not triggered)</li>
+<li><strong>Settlement</strong>: T+1 (UK standard; unsettled proceeds not available for same-day buys)</li>
 </ul>
-<h4>TREND BREAK CHECK</h4>
-<p>All positions remain above 50-day SMA; no trend break signals.</p>
-<ul>
-<li><strong>AZN.L:</strong> 151.10 &gt; 141.45 (SMA50) <span class="check">&#10003;</span></li>
-<li><strong>SHEL.L:</strong> 30.24 &gt; 27.74 (SMA50) <span class="check">&#10003;</span></li>
-<li><strong>GLEN.L:</strong> 5.26 &gt; 4.65 (SMA50) <span class="check">&#10003;</span></li>
-</ul>
-<h4>TIME STOP CHECK (pos held &gt; X days with P&amp;L ≤ 0)</h4>
-<ul>
-<li><strong>AZN.L:</strong> 8 days held, –GBP 1.66 P&amp;L; time_stop_days = 20 (balanced profile). Not triggered.</li>
-<li><strong>SHEL.L:</strong> 8 days held, +GBP 1.64 P&amp;L (positive). Not triggered.</li>
-<li><strong>GLEN.L:</strong> 7 days held, +GBP 0.18 P&amp;L (positive). Not triggered.</li>
-</ul>
-<p><strong>Conclusion:</strong> No exits warranted at current market levels.</p>
+<p>Since no trades executed, no costs incurred.</p>
 <hr>
-<h3>Orders Table</h3>
-<p>*No orders generated today.*</p>
-<hr>
-<h3>Capital Constraint: Why No Trades?</h3>
-<p>Available cash for buys = Cash Balance – Required Buffer = GBP 3.50 – GBP 2.99 = <strong>GBP 0.51</strong></p>
-<p>Minimum position size given current market prices and risk sizing:</p>
+<h3>Gap Risk Acknowledgment</h3>
+<p>Under DAILY_CHECK stop-execution mode:</p>
 <ul>
-<li><strong>Balanced Profile:</strong> max_risk_per_trade_pct = 5% of equity = GBP 4.98 per trade</li>
-<li><strong>ATR Stop:</strong> Typical stop distance GBP 0.50–3.00 depending on ticker</li>
-<li><strong>Position Sizing Formula:</strong> qty = (GBP 4.98 / stop_distance) × (1 – 10% gap_buffer)</li>
-<li><strong>Minimum Notional for Entry:</strong> Typically GBP 30–50 for a 1–5% portfolio position</li>
+<li>Stop-losses are evaluated once daily (post-market close) against the daily low.</li>
+<li><strong>Overnight gap risk remains</strong>: If a position gaps below its stop price at market open, the bot cannot prevent the loss. A 10% gap-risk buffer is applied to position sizing to mitigate this, but does not eliminate it.</li>
+<li>Example: SHEL.L with 27.71 GBP stop could gap to 24.94 GBP (10% gap) and breach the stop before daily check; actual loss would be ~0.77 GBP vs planned ~0.32 GBP.</li>
+<li><strong>Mitigation</strong>: Monitor news and pre-market conditions. Consider tighter stops or broker-side GTC orders for high-volatility assets.</li>
 </ul>
-<p><strong>Conclusion:</strong> The GBP 0.51 cash surplus is insufficient to fund a single balanced-risk trade. Capital allocation strategy requires portfolio rebalancing (e.g., reduce AZN.L concentration or take profits on SHEL.L) to free capital.</p>
+<hr>
+<h3>Capital Efficiency &amp; Fractional Shares</h3>
+<p>The bot is configured with <code>allow_fractional_shares: true</code>, which permits positions like 0.3879 AZN.L and 1.0624 SHEL.L. This is essential for small portfolios to avoid rounding down to zero shares on tight risk budgets.</p>
+<p>For example, the 0.44 GBP available cash could theoretically fund:</p>
+<ul>
+<li>~0.031 shares of HSBA.L @ 13.94 GBP (entry too small to be meaningful)</li>
+<li>~0.032 shares of NG.L @ 13.91 GBP</li>
+<li>~0.092 shares of BP.L @ 4.78 GBP</li>
+</ul>
+<p>These fractional positions are technically feasible but economically unviable due to:</p>
+<ul>
+<li>Flat fee structure (0 GBP) makes small orders uneconomic at institutional brokers</li>
+<li>50 bps stamp duty = 0.0002 GBP per entry (negligible but applies)</li>
+<li>Slippage (10 bps) = 0.0001 GBP on a 0.031-share entry</li>
+<li>Liquidity: participate &lt; 5% of avg volume – easily met, but no rebate</li>
+</ul>
+<p><strong>Decision</strong>: Reject fractional entries &lt; 0.5 shares as economically irrational.</p>
+<hr>
+<h3>Orders to Execute</h3>
+<p><strong>None.</strong> All qualified signals rejected due to capital constraint.</p>
 <hr>
 <h3>What Could Invalidate This Plan?</h3>
 <ul>
-<li><strong>Intraday Cash Event:</strong> Unexpected dividend payment or corporate action adding GBP 10+ would enable new entries.</li>
-<li><strong>Stop-Loss Hit:</strong> If AZN.L drops to 151.25 or below, the triggered SELL would free ~GBP 60 for reinvestment.</li>
-<li><strong>Gap Up at Open:</strong> If any position gaps up 3–5%, unrealised gains could push cash management differently.</li>
-<li><strong>Urgent Rebalancing Signal:</strong> If portfolio drawdown hits –5%, automated rebalancing may be triggered by external PM processes.</li>
-<li><strong>Sector Rotation:</strong> If Financials or Utilities see strong bullish signals, repositioning away from Healthcare would require sells first.</li>
+<li><strong>Overnight Gap Down</strong>: If any existing position (AZN.L, SHEL.L, GLEN.L) gaps below its stop-loss at market open (e.g., SHEL.L below 27.71), a market-order SELL would execute at loss on the next daily check.</li>
+<li><strong>Corporate Action</strong>: DELISTING or SUSPENSION of any holding would trigger mandatory exit.</li>
+<li><strong>Trend Break</strong>: If SMA50 slope reverses to negative or close_gbp closes below SMA50 for 3+ consecutive days, positions would enter exit phase.</li>
+<li><strong>Dividend</strong>: Unexpected dividend payment would increase cash_balance, allowing new entries (not flagged in today&#x27;s data).</li>
+<li><strong>Intraday Liquidation</strong>: If this is a leveraged or margin account masquerading as &quot;cash,&quot; broker liquidation could close positions involuntarily.</li>
 </ul>
 <hr>
 <h3>Data Quality Notes</h3>
-<p><span class="check">&#10003;</span> <strong>market_data.csv:</strong> Fresh (as of 2026-02-26), all required columns present.</p>
-<ul>
-<li>All 25 tickers have complete SMA50, SMA200, ATR14, volume, and drawdown fields.</li>
-<li>No null values in critical pre-computed indicators.</li>
-<li>20+ trading days of history confirmed for all tickers (no short-history exclusions).</li>
-</ul>
-<p><span class="check">&#10003;</span> <strong>positions.json:</strong> Valid. All active positions confirmed in universe.csv with ACTIVE status.</p>
-<p><span class="check">&#10003;</span> <strong>universe.csv:</strong> 25 instruments (20 equities, 5 ETFs), all ACTIVE.</p>
-<p><span class="check">&#10003;</span> <strong>trading_calendar.json:</strong> Today is a valid trading day; no half-day or holiday impediments.</p>
-<hr>
-<h3>Disclaimer</h3>
-<p><strong>This is an automated, rules-based trading plan generated from provided historical market data. It is NOT financial advice. Execution risk, gaps, slippage, FX effects, settlement timing, taxes, and fees apply.</strong></p>
-<p><strong>Key Risks:</strong></p>
-<ul>
-<li><strong>Stop-Loss Gap Risk:</strong> In DAILY_CHECK mode, stops are evaluated once daily at market open. Overnight gaps or pre-open moves can cause actual losses to exceed planned risk by 10–50% or more.</li>
-<li><strong>Liquidity Risk:</strong> Actual execution prices may differ significantly from close prices due to bid–ask spreads, especially for lower-volume names.</li>
-<li><strong>Settlement Risk:</strong> Under UK T+1 settlement, proceeds from sales are not available for same-day reinvestment unless assume_intraday_netting is true (currently false).</li>
-<li><strong>Concentration Risk:</strong> Existing AZN.L position (58.61%) is well above the 30% single-name limit. Portfolio is vulnerable to single-stock moves.</li>
-<li><strong>Capital Constraint:</strong> The GBP 3.50 cash balance limits flexibility for opportunistic entries. Rebalancing is advisable.</li>
-</ul>
-<p><strong>Use this plan at your own risk. Consult a qualified financial adviser before committing capital.</strong></p>
-<hr></div>
+<p><span class="check">&#10003;</span> <strong>All market data fresh</strong> (date = 2026-02-27)</p>
+<p><span class="check">&#10003;</span> <strong>All required indicator columns present</strong> (sma50, sma200, atr14, drawdown, volume_ratio, etc.)</p>
+<p><span class="check">&#10003;</span> <strong>Universe reconciled</strong>: 25 tickers in market_data.csv, 25 in universe.csv, all ACTIVE</p>
+<p><span class="check">&#10003;</span> <strong>Position data consistent</strong>: 3 open positions all in universe, all have current market prices</p>
+<p><span class="check">&#10003;</span> <strong>No corporate actions flagged</strong> (no splits, suspensions, delistings)</p></div>
     </details>
 </div>
 
@@ -360,7 +398,7 @@ details summary { font-size:0.85rem; color:#60a5fa; padding:4px 0; }
 <script>
 const equityData = [{"date": "2026-02-17", "equity_gbp": 99.46, "cash_gbp": 8.79, "positions_count": 2, "drawdown_pct": 0.54}, {"date": "2026-02-18", "equity_gbp": 100.17, "cash_gbp": 3.5, "positions_count": 3, "drawdown_pct": 0.02}];
 const sectorLabels = ["Healthcare", "Energy", "Materials", "Cash"];
-const sectorValues = [58.61, 32.13, 5.44, 3.5];
+const sectorValues = [60.29, 32.65, 5.53, 3.5];
 const sectorColors = ["#22c55e", "#f97316", "#eab308", "#475569"];
 
 // Equity curve
