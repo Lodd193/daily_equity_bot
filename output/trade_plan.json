@@ -1,71 +1,85 @@
 {
-  "as_of_date": "2026-02-26",
+  "as_of_date": "2026-02-27",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 99.68,
+  "portfolio_equity_gbp": 101.97,
   "cash_balance_gbp": 3.5005,
-  "available_for_buys_gbp": 0.5101,
+  "available_for_buys_gbp": 0.44,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 0.51,
+  "portfolio_drawdown_pct": 0.0,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "RIO.L",
+      "ticker": "HSBA.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.78,
+      "confidence": 0.8,
       "confidence_components": {
-        "trend": 0.95,
+        "trend": 0.85,
         "setup": 0.75,
-        "risk_reward": 0.68,
-        "liquidity": 0.85,
-        "diversification": 0.65
+        "risk_reward": 0.7,
+        "liquidity": 0.95,
+        "diversification": 0.75
       },
-      "rejected_reason": "INSUFFICIENT_CAPITAL: required_buy_notional_gbp 40.75 exceeds available_for_buys_gbp 0.51"
+      "rejected_reason": "Insufficient cash reserves. Required notional ~117.5 GBP (gap-adjusted 8.4 shares @ 13.94) exceeds available 0.44 GBP."
     },
     {
-      "ticker": "ULVR.L",
-      "entry_type": "PULLBACK",
+      "ticker": "NG.L",
+      "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.76,
+      "confidence": 0.81,
       "confidence_components": {
-        "trend": 0.92,
-        "setup": 0.72,
+        "trend": 0.85,
+        "setup": 0.78,
         "risk_reward": 0.72,
-        "liquidity": 0.88,
-        "diversification": 0.68
+        "liquidity": 0.92,
+        "diversification": 0.8
       },
-      "rejected_reason": "INSUFFICIENT_CAPITAL: required_buy_notional_gbp 38.80 exceeds available_for_buys_gbp 0.51"
+      "rejected_reason": "Insufficient cash reserves. Required notional ~142.2 GBP (gap-adjusted 10.2 shares @ 13.91) exceeds available 0.44 GBP."
     },
     {
-      "ticker": "GSK.L",
-      "entry_type": "PULLBACK",
+      "ticker": "BP.L",
+      "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.74,
+      "confidence": 0.8,
       "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.7,
-        "risk_reward": 0.68,
-        "liquidity": 0.82,
-        "diversification": 0.72
+        "trend": 0.85,
+        "setup": 0.75,
+        "risk_reward": 0.7,
+        "liquidity": 0.9,
+        "diversification": 0.75
       },
-      "rejected_reason": "INSUFFICIENT_CAPITAL: required_buy_notional_gbp 35.20 exceeds available_for_buys_gbp 0.51"
+      "rejected_reason": "Insufficient cash reserves. Already holding SHEL.L (Energy sector), combined position would violate sector exposure limits."
+    },
+    {
+      "ticker": "RKT.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.68,
+      "confidence_components": {
+        "trend": 0.85,
+        "setup": 0.7,
+        "risk_reward": 0.65,
+        "liquidity": 0.8,
+        "diversification": 0.7
+      },
+      "rejected_reason": "Low confidence edge (0.68 < 0.70 preferred) and capital insufficient (188 GBP required vs 0.44 available)."
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 3,
     "turnover_pct": 0.0,
-    "largest_position_pct": 58.61,
+    "largest_position_pct": 59.1,
     "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Healthcare": 58.61,
-      "Energy": 32.27,
-      "Materials": 5.46
+      "Healthcare": 59.1,
+      "Energy": 32.0,
+      "Materials": 5.4
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 0.51
+    "portfolio_drawdown_pct": 0.0
   }
 }

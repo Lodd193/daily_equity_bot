@@ -1,37 +1,29 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-02-26",
-  "reason": "Portfolio heavily constrained by insufficient cash and high existing position concentration. Cash balance GBP 3.50 is minimal; after 3% buffer (GBP 2.99) and settlement considerations, no funds available for new buys. Portfolio already at 3/5 max positions. Rebalancing needed before new entry opportunities. All new entry candidates rejected due to capital constraint despite meeting technical criteria.",
+  "as_of_date": "2026-02-27",
+  "reason": "Eligible entry candidates identified (HSBA.L breakout, NG.L breakout, BP.L breakout, RKT.L breakout) but insufficient available cash reserves to execute any position sizing. Portfolio equity constrained: equity_value_gbp=101.97, cash_balance_gbp=3.50, required_buffer_gbp=3.06, available_for_buys_gbp=0.44. All qualified entries require notional GBP >= 100. Existing 3 positions (AZN.L, SHEL.L, GLEN.L) all maintain trend integrals and stop levels; no exit signals triggered.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 0.51,
+    "portfolio_drawdown_pct": 0.0,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_pct_rule": {
-      "required_buffer_gbp": 2.9904,
-      "available_cash_gbp": 3.5005,
-      "surplus_deficit_gbp": 0.5101,
-      "status": "PASS"
-    },
-    "max_positions": {
-      "current": 3,
-      "max": 5,
-      "status": "PASS"
-    },
-    "max_new_positions_per_day": {
-      "planned": 0,
-      "max": 1,
-      "status": "PASS"
-    },
-    "portfolio_equity_check": {
-      "current_equity_gbp": 99.68,
-      "status": "PASS"
-    },
-    "all_positions_active": true
+    "portfolio_peak_equity_gbp": 101.97,
+    "current_equity_gbp": 101.97,
+    "current_drawdown_pct": 0.0,
+    "drawdown_limit_pct": 15.0,
+    "cash_constraint": "BINDING",
+    "available_for_new_buys_gbp": 0.44,
+    "max_new_positions_per_day": 1,
+    "new_positions_planned": 0,
+    "max_positions_limit": 5,
+    "current_positions": 3,
+    "sector_exposure_check": "PASS",
+    "single_name_exposure_check": "REVIEW (AZN.L at 59.1%)",
+    "turnover_constraint": "SATISFIED (zero trades)"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
