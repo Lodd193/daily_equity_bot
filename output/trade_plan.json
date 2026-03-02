@@ -1,85 +1,72 @@
 {
-  "as_of_date": "2026-02-27",
+  "as_of_date": "2026-03-02",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 101.97,
-  "cash_balance_gbp": 3.5005,
-  "available_for_buys_gbp": 0.44,
+  "portfolio_equity_gbp": 101.47,
+  "cash_balance_gbp": 3.5,
+  "available_for_buys_gbp": 0.46,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 0.0,
+  "portfolio_drawdown_pct": 0.49,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "HSBA.L",
-      "entry_type": "BREAKOUT",
-      "trend_status": "FULL",
-      "confidence": 0.8,
-      "confidence_components": {
-        "trend": 0.85,
-        "setup": 0.75,
-        "risk_reward": 0.7,
-        "liquidity": 0.95,
-        "diversification": 0.75
-      },
-      "rejected_reason": "Insufficient cash reserves. Required notional ~117.5 GBP (gap-adjusted 8.4 shares @ 13.94) exceeds available 0.44 GBP."
-    },
-    {
       "ticker": "NG.L",
-      "entry_type": "BREAKOUT",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.81,
+      "confidence": 0.72,
       "confidence_components": {
-        "trend": 0.85,
-        "setup": 0.78,
-        "risk_reward": 0.72,
-        "liquidity": 0.92,
-        "diversification": 0.8
-      },
-      "rejected_reason": "Insufficient cash reserves. Required notional ~142.2 GBP (gap-adjusted 10.2 shares @ 13.91) exceeds available 0.44 GBP."
-    },
-    {
-      "ticker": "BP.L",
-      "entry_type": "BREAKOUT",
-      "trend_status": "FULL",
-      "confidence": 0.8,
-      "confidence_components": {
-        "trend": 0.85,
-        "setup": 0.75,
-        "risk_reward": 0.7,
+        "trend": 0.95,
+        "setup": 0.8,
+        "risk_reward": 0.75,
         "liquidity": 0.9,
-        "diversification": 0.75
+        "diversification": 0.4
       },
-      "rejected_reason": "Insufficient cash reserves. Already holding SHEL.L (Energy sector), combined position would violate sector exposure limits."
+      "rejected_reason": "Insufficient cash (\u00a30.46 available vs \u00a35.07 min risk allocation)"
     },
     {
-      "ticker": "RKT.L",
-      "entry_type": "BREAKOUT",
+      "ticker": "BA.L",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
       "confidence": 0.68,
       "confidence_components": {
-        "trend": 0.85,
-        "setup": 0.7,
-        "risk_reward": 0.65,
-        "liquidity": 0.8,
-        "diversification": 0.7
+        "trend": 0.92,
+        "setup": 0.75,
+        "risk_reward": 0.7,
+        "liquidity": 0.88,
+        "diversification": 0.5
       },
-      "rejected_reason": "Low confidence edge (0.68 < 0.70 preferred) and capital insufficient (188 GBP required vs 0.44 available)."
+      "rejected_reason": "Insufficient cash (\u00a30.46 available vs \u00a35.07 min risk allocation)"
+    },
+    {
+      "ticker": "RIO.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.65,
+      "confidence_components": {
+        "trend": 0.9,
+        "setup": 0.7,
+        "risk_reward": 0.68,
+        "liquidity": 0.85,
+        "diversification": 0.45
+      },
+      "rejected_reason": "Insufficient cash (\u00a30.46 available vs \u00a35.07 min risk allocation)"
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 3,
     "turnover_pct": 0.0,
-    "largest_position_pct": 59.1,
+    "largest_position_pct": 58.3,
     "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Healthcare": 59.1,
-      "Energy": 32.0,
-      "Materials": 5.4
+      "Healthcare": 58.3,
+      "Energy": 32.8,
+      "Materials": 5.4,
+      "Cash": 3.5
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 0.0
+    "portfolio_drawdown_pct": 0.49
   }
 }
