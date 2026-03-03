@@ -1,72 +1,99 @@
 {
-  "as_of_date": "2026-03-02",
+  "as_of_date": "2026-03-03",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 101.47,
-  "cash_balance_gbp": 3.5,
-  "available_for_buys_gbp": 0.46,
+  "portfolio_equity_gbp": 99.94,
+  "cash_balance_gbp": 3.5005,
+  "available_for_buys_gbp": 0.502,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 0.49,
+  "portfolio_drawdown_pct": 1.99,
   "strategy_profile": "balanced",
   "candidates_considered": [
-    {
-      "ticker": "NG.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.72,
-      "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.8,
-        "risk_reward": 0.75,
-        "liquidity": 0.9,
-        "diversification": 0.4
-      },
-      "rejected_reason": "Insufficient cash (\u00a30.46 available vs \u00a35.07 min risk allocation)"
-    },
-    {
-      "ticker": "BA.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.68,
-      "confidence_components": {
-        "trend": 0.92,
-        "setup": 0.75,
-        "risk_reward": 0.7,
-        "liquidity": 0.88,
-        "diversification": 0.5
-      },
-      "rejected_reason": "Insufficient cash (\u00a30.46 available vs \u00a35.07 min risk allocation)"
-    },
     {
       "ticker": "RIO.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.65,
+      "confidence": 0.8,
       "confidence_components": {
         "trend": 0.9,
-        "setup": 0.7,
-        "risk_reward": 0.68,
+        "setup": 0.8,
+        "risk_reward": 0.75,
         "liquidity": 0.85,
-        "diversification": 0.45
+        "diversification": 0.7
       },
-      "rejected_reason": "Insufficient cash (\u00a30.46 available vs \u00a35.07 min risk allocation)"
+      "rejected_reason": "Insufficient available cash (\u00a30.502 vs \u00a369.29 required)"
+    },
+    {
+      "ticker": "BA.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.81,
+      "confidence_components": {
+        "trend": 0.9,
+        "setup": 0.82,
+        "risk_reward": 0.78,
+        "liquidity": 0.8,
+        "diversification": 0.75
+      },
+      "rejected_reason": "Insufficient available cash (\u00a30.502 vs \u00a346.72 required)"
+    },
+    {
+      "ticker": "GSK.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.76,
+      "confidence_components": {
+        "trend": 0.9,
+        "setup": 0.78,
+        "risk_reward": 0.72,
+        "liquidity": 0.82,
+        "diversification": 0.6
+      },
+      "rejected_reason": "Insufficient available cash AND sector concentration (already hold AZN.L Healthcare)"
+    },
+    {
+      "ticker": "NG.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.8,
+      "confidence_components": {
+        "trend": 0.9,
+        "setup": 0.75,
+        "risk_reward": 0.72,
+        "liquidity": 0.8,
+        "diversification": 0.85
+      },
+      "rejected_reason": "Insufficient available cash (\u00a30.502 vs \u00a358.34 required)"
+    },
+    {
+      "ticker": "TSCO.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.76,
+      "confidence_components": {
+        "trend": 0.9,
+        "setup": 0.8,
+        "risk_reward": 0.7,
+        "liquidity": 0.75,
+        "diversification": 0.65
+      },
+      "rejected_reason": "Insufficient available cash AND sector concentration (Consumer Staples already has 3 holdings)"
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 3,
     "turnover_pct": 0.0,
-    "largest_position_pct": 58.3,
-    "cash_buffer_pct": 3.0,
+    "largest_position_pct": 58.0,
+    "cash_buffer_pct": 3.5,
     "sector_exposures_pct": {
-      "Healthcare": 58.3,
-      "Energy": 32.8,
-      "Materials": 5.4,
-      "Cash": 3.5
+      "Healthcare": 58.0,
+      "Energy": 33.1,
+      "Materials": 5.5
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 0.49
+    "portfolio_drawdown_pct": 1.99
   }
 }
