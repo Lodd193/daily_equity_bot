@@ -1,165 +1,195 @@
-# Daily Trading Report
-**Date:** 2026-03-03  
-**Status:** NO_TRADES  
-**Currency:** GBP  
-**Execution Sequence:** SELL_THEN_BUY  
-**Stop Execution Mode:** DAILY_CHECK
-
----
-
-## Trading Calendar
-- **Is Trading Day:** Yes
-- **Is Half Day:** No
-- **Next Trading Day:** 2026-03-04
-- **Bank Holidays (Next 5 Days):** None
+# Daily Trading Plan & Execution Report
+**Date:** 2026-03-04 | **Status:** OK | **Currency:** GBP | **Account Type:** Cash (Paper)
 
 ---
 
 ## Executive Summary
+**Trading Calendar:** LSE trading day, no half-day or holidays.  
+**Portfolio Peak:** 101.97 GBP | **Current Equity:** 100.04 GBP | **Drawdown:** 1.91% (limit: 15%)
 
-No trades executed today. While 5 high-quality setups were identified in liquid, trending securities, the portfolio lacks sufficient available cash to execute any BUY orders after applying the mandatory 3% cash buffer. All existing positions remain in healthy uptrends with no exit signals. Per the capital preservation principle, no forced liquidations were performed.
+**Actions Today:**
+- **1 SELL (Mandatory Stop-Loss):** AZN.L (0.3879 shares @ 150.88 GBP ≈ 58.53 GBP notional)
+- **0 BUY (Insufficient Cash):** Evaluated 3 high-conviction setups; all rejected due to cash shortage
 
----
-
-## Candidate Opportunities (Top 5 Considered)
-
-| Rank | Ticker | Setup Type | Confidence | Reason Considered | Reason Rejected |
-|------|--------|-----------|------------|-------------------|-----------------|
-| 1 | RIO.L | Pullback in Uptrend | 0.80 | Full trend (71.0 > SMA50 66.66 > SMA200 52.71), 6.04% pullback from 20d high, volume ratio 1.14 | Requires £69.29; only £0.50 available |
-| 2 | BA.L | Confirmed Breakout | 0.81 | Full trend, confirmed breakout at 22.2 within 1.56% of 20d high (22.55), strong volume 1.10 | Requires £46.72; cash insufficient |
-| 3 | NG.L | Pullback in Uptrend | 0.80 | Full trend (13.46 > 12.47 > 11.23), 5.81% pullback, very strong volume 1.97, uncorrelated sector | Requires £58.34; cash insufficient |
-| 4 | GSK.L | Low-Volume Pullback | 0.76 | Full trend, 7.0% pullback from 20d high, low-volume entry indicator | Healthcare concentration risk + cash shortage |
-| 5 | TSCO.L | Pullback in Uptrend | 0.76 | Full trend, 7.1% pullback, exceptional volume 2.82 | Consumer Staples sector already has 3 holdings + insufficient cash |
+**Execution Sequence:** SELL_THEN_BUY | **Stop Mode:** DAILY_CHECK
 
 ---
 
-## Exit Evaluation (Existing Positions)
+## Position Management
 
-### Position 1: AZN.L (AstraZeneca)
-- **Quantity:** 0.3879 shares | **Market Value:** £57.92 | **Days Held:** 13
-- **Entry Price:** £155.38 | **Current Price:** £149.32 | **Unrealised PnL:** -£2.35
-- **Current Stop:** £151.25 | **Low Today:** £148.34
-- **Trend Status:** ✓ PASS (close 149.32 > SMA50 142.47, 0 days below SMA50)
-- **Stop-Loss Breach:** NO (low 148.34 > stop 151.25? No, but price below stop at close)
-- **Status:** HOLD - Position still in trend despite mild underwater status. Stop not yet triggered intraday.
+### Exit: AZN.L (Healthcare)
+| Field | Value |
+|-------|-------|
+| Current Price | 150.88 GBP |
+| Stop Price | 151.25 GBP |
+| Today's Low | 149.12 GBP |
+| **Trigger** | **LOW BREACHED STOP** |
+| Days Held | 14 |
+| Unrealised P&L | -1.7436 GBP |
+| Sell Proceeds (pre-costs) | 58.5264 GBP |
+| Estimated Slippage (10 bps) | 0.0586 GBP |
+| **Net Settlement (T+1)** | **~58.47 GBP** |
 
-### Position 2: SHEL.L (Shell)
-- **Quantity:** 1.0624 shares | **Market Value:** £33.07 | **Days Held:** 13
-- **Entry Price:** £28.70 | **Current Price:** £31.13 | **Unrealised PnL:** +£2.58
-- **Current Stop:** £27.71 | **Low Today:** £30.71
-- **Trend Status:** ✓ PASS (close 31.13 > SMA50 28.02, positive trend)
-- **Stop-Loss Breach:** NO (well above stop)
-- **Status:** HOLD - Profitable, clean uptrend, no exit signals.
+**Rationale:** Stop-loss condition breached. Low (149.12) fell below hard stop (151.25). This is a mandatory exit to enforce risk management. Given the 14-day hold period and intraday volatility, the breach constitutes a clear signal to exit. Proceeds will settle T+1 and become available for future buys.
 
-### Position 3: GLEN.L (Glencore)
-- **Quantity:** 1.035 shares | **Market Value:** £5.45 | **Days Held:** 12
-- **Entry Price:** £5.08 | **Current Price:** £5.26 | **Unrealised PnL:** +£0.19
-- **Current Stop:** £4.86 | **Low Today:** £5.13
-- **Trend Status:** ✓ PASS (close 5.26 > SMA50 4.75, positive slope, full trend)
-- **Stop-Loss Breach:** NO (above stop)
-- **Status:** HOLD - Small position in established uptrend, no exit triggers.
-
-**Summary:** All 3 positions remain healthy. No stop-losses breached. No trend breaks detected (0-2 days below SMA50 threshold not reached). No time-stop exits warranted.
+### Holds: SHEL.L, GLEN.L
+- **SHEL.L:** Energy, 14 days held, +2.06 GBP P&L. Trend remains positive (close > SMA50 > SMA200). Stop at 27.71 GBP not breached. **HOLD.**
+- **GLEN.L:** Materials, 13 days held, +0.21 GBP P&L. Trend positive. Stop at 4.86 GBP not breached. **HOLD.**
 
 ---
 
-## Risk Checks Summary
+## New Entry Evaluation
 
-### Cash & Liquidity
-- **Cash Balance:** £3.50
-- **Cash Buffer Required (3%):** £2.998
-- **Available for New Buys:** £0.502
-- **Portfolio Equity:** £99.94
-- **Status:** ❌ INSUFFICIENT for any meaningful BUY order
+### Cash Constraint Analysis
+| Item | GBP |
+|------|-----|
+| Current Cash Balance | 3.5005 |
+| Required Buffer (3% of 100.04) | -3.0012 |
+| **Available for Buys Today** | **0.4993** |
 
-### Position Limits
-- **Current Positions:** 3
-- **Max Allowed:** 5
-- **Status:** ✓ PASS (3 < 5)
+**Verdict:** Severely constrained. No new position can be funded.
 
-### Sector Exposure
-- **Healthcare:** 58.0% (AZN.L)
-- **Energy:** 33.1% (SHEL.L)
-- **Materials:** 5.5% (GLEN.L)
-- **Max Sector Limit:** 40%
-- **Status:** ⚠️ CAUTION - Healthcare exceeds limit, but no new positions being added
+### Top 3 Setups Evaluated (All Rejected)
 
-### Turnover
-- **Today's Turnover:** 0% (no trades)
-- **Max Daily Turnover:** 30%
-- **Status:** ✓ PASS
+#### 1. RIO.L (Rio Tinto, Materials) — Pullback in Uptrend
+| Metric | Value |
+|--------|-------|
+| Trend Status | FULL (close > SMA50 > SMA200) |
+| Pullback Depth | 4.86% (within 3–8% range ✓) |
+| Volume Ratio | 1.24 (volume above 20d avg) |
+| Confidence Score | 0.83 (high) |
+| Entry Price | 71.90 GBP |
+| Stop Price (ATR 1.5×) | 67.44 GBP |
+| Position Size (after gap buffer) | 1.01 shares |
+| **Total Cost (incl. stamp duty + slippage)** | **72.87 GBP** |
+| **Rejection** | **Insufficient funds (0.50 GBP available)** |
 
-### Portfolio Drawdown
-- **Current Equity:** £99.94
-- **Peak Equity (All-Time):** £101.97
-- **Drawdown:** 1.99%
-- **Limit:** 15%
-- **Status:** ✓ PASS (well within limit)
+#### 2. BA.L (BAE Systems, Industrials) — Breakout
+| Metric | Value |
+|--------|-------|
+| Trend Status | FULL (close > SMA50 > SMA200) |
+| Proximity to 20d High | 0.61% (within 2% ✓) |
+| Volume Ratio | 0.95 (below 20d avg, neutral for breakout) |
+| Confidence Score | 0.83 (high) |
+| Entry Price | 22.69 GBP |
+| Stop Price (ATR 1.5×) | 21.69 GBP |
+| Position Size (after gap buffer) | 4.50 shares |
+| **Total Cost (incl. stamp duty + slippage)** | **102.78 GBP** |
+| **Rejection** | **Insufficient funds (0.50 GBP available)** |
 
----
+#### 3. TSCO.L (Tesco, Consumer Staples) — Pullback in Uptrend
+| Metric | Value |
+|--------|-------|
+| Trend Status | FULL (close > SMA50 > SMA200) |
+| Pullback Depth | 6.30% (within 3–8% range ✓) |
+| Volume Ratio | 0.84 (below 20d avg, healthy pullback ✓) |
+| Confidence Score | 0.80 (good) |
+| Entry Price | 4.762 GBP |
+| Stop Price (ATR 1.5×) | 4.597 GBP |
+| Position Size (after gap buffer) | 27.28 shares |
+| **Total Cost (incl. stamp duty + slippage)** | **130.69 GBP** |
+| **Rejection** | **Insufficient funds (0.50 GBP available)** |
 
-## Cost Model Assumptions
-
-**Fee Model:** Per-trade fee = £0.00  
-**Stamp Duty:** 50 bps on UK equity BUYs (not applied today; no trades)  
-**Slippage:** 10 bps estimated on all orders (not applied; no trades)  
-**Settlement:** T+1 (standard LSE); intraday netting DISABLED
-
----
-
-## Gap Risk Acknowledgement
-
-This bot operates in **DAILY_CHECK** stop-loss mode. Stop-loss prices are evaluated once per trading day against the low price. **In the event of an overnight gap down below the stop price, the actual loss may exceed the planned risk allocation.** This is particularly relevant for volatile sectors (Energy, Materials, Healthcare) which represent 96.6% of this portfolio. 
-
-For today, with no new positions being opened, gap risk is limited to the 3 existing holdings, all of which remain comfortably above their stops.
-
----
-
-## Portfolio Snapshot
-
-| Ticker | Type | Qty | Entry (GBP) | Current (GBP) | Market Value (GBP) | Unrealised PnL (GBP) | Stop (GBP) | Days Held | Sector |
-|--------|------|-----|-------------|---------------|-------------------|---------------------|-----------|----------|--------|
-| AZN.L | EQUITY | 0.388 | 155.38 | 149.32 | 57.92 | -2.35 | 151.25 | 13 | Healthcare |
-| SHEL.L | EQUITY | 1.062 | 28.70 | 31.13 | 33.07 | +2.58 | 27.71 | 13 | Energy |
-| GLEN.L | EQUITY | 1.035 | 5.08 | 5.26 | 5.45 | +0.19 | 4.86 | 12 | Materials |
-| **CASH** | — | — | — | — | **3.50** | — | — | — | — |
-| **TOTAL** | | | | | **99.94** | **0.42** | | | |
+**Summary:** All three setups passed technical and liquidity filters and achieved high confidence scores (0.80–0.83). However, even the cheapest trade (RIO.L at 72.87 GBP) exceeds available cash by 146×. The portfolio is under-capitalised for active swing trading.
 
 ---
 
-## Why No Trades Today?
+## Risk & Constraint Validation
 
-1. **Liquidity Constraint:** Only £0.50 available after mandatory 3% buffer (£2.998 of £3.50).
-2. **Portfolio Fully Invested:** 99.5% of equity deployed in 3 positions, no cash for new positions.
-3. **Quality Setups Identified:** RIO.L, BA.L, NG.L all scored 0.80+ confidence with full trends and pullbacks/breakouts, but each requires £46-£69 to trade.
-4. **Capital Preservation Logic:** Liquidating a healthy position (SHEL.L +£2.58, GLEN.L +£0.19) just to fund a new trade violates risk-first principle and incurs unnecessary costs.
-5. **Existing Positions Healthy:** All 3 holdings in clean uptrends, no exit signals, no stop-losses breached.
+| Constraint | Limit | Current | Status |
+|-----------|-------|---------|--------|
+| **Max Positions** | 5 | 2 (post-exit) | ✓ PASS |
+| **New Positions/Day** | 1 | 0 | ✓ PASS |
+| **Turnover (%)** | 30% | 58.48% | ⚠ EXCEEDED (stop-loss exempt) |
+| **Max Single-Name Exp.** | 30% | 32.48% (SHEL.L) | ⚠ TEMPORARY (after AZN.L exit) |
+| **Max Sector Exp.** | 40% | 32.48% (Energy) | ✓ PASS |
+| **Portfolio Drawdown** | 15% | 1.91% | ✓ PASS |
+| **Min Avg GBP Volume** | 50,000 | All tickers >>50k | ✓ PASS |
+| **Min Price** | 1.00 GBP | All tickers >1.0 | ✓ PASS |
+| **Cash Buffer** | 3.00 GBP | 3.50 GBP | ✓ PASS |
 
-**Conclusion:** The optimal action is HOLD existing positions and wait for more cash availability (via dividends, external deposits, or position liquidation by other signals).
+**Note:** Turnover percentage reflects the mandatory stop-loss exit. Stop-loss and drawdown-triggered exits are exempt from discretionary turnover limits by design.
+
+---
+
+## Portfolio Snapshot (Post-Execution)
+
+### Holdings After Today's Exit
+
+| Ticker | Qty | Entry Cost (£) | Entry Date | Current Price (£) | Market Value (£) | P&L (£) | % of Portfolio | Days Held | Status |
+|--------|-----|---|---|---|---|---|---|---|---|
+| SHEL.L | 1.0624 | 28.70 | 2026-02-17 | 30.635 | 32.55 | +2.06 | 32.5% | 14 | ACTIVE |
+| GLEN.L | 1.0350 | 5.08 | 2026-02-18 | 5.284 | 5.47 | +0.21 | 5.5% | 13 | ACTIVE |
+| **Cash** | — | — | — | — | **3.50** | — | **62.0%** | — | — |
+| **TOTAL** | — | — | — | — | **100.04** | — | 100% | — | — |
+
+**Portfolio Beta:** Not calculated (insufficient correlation data)  
+**Largest Correlation:** Not calculated
+
+---
+
+## Order Execution Plan
+
+**Execution Sequence:** SELL_THEN_BUY
+1. **SELL AZN.L** (0.3879 shares, market order, time_in_force=DAY)
+   - Reason: Stop-loss at 151.25 GBP breached by low of 149.12 GBP
+   - Estimated settlement: 2026-03-05 (T+1)
+   - Estimated proceeds: 58.47 GBP (post-slippage)
+
+**No BUY orders** due to insufficient cash post-exit.
+
+---
+
+## UK Costs Assumptions
+
+| Cost Component | Rate | Applied | Notes |
+|---|---|---|---|
+| **Fees (Trade)** | 0 bps | No | fee_model.value = 0 |
+| **Stamp Duty** | 50 bps | Yes (buys only) | UK equities only; ETFs exempt |
+| **Slippage** | 10 bps | Yes (all orders) | Conservative estimate for LSE liquidity |
+| **FX Impact** | N/A | No | All data in GBP; no FX exposure |
+
+---
+
+## Gap Risk & DAILY_CHECK Mode
+
+**Stop Execution Mode:** DAILY_CHECK
+
+**How It Works:**
+- Stop-loss prices are monitored once daily (at session open/close).
+- If the session low breaches the stop price, a market sell is triggered.
+- **Gap Risk:** Overnight gaps or intraday gaps can cause actual fills far from the stop price, especially for small-cap or illiquid names.
+
+**Today's AZN.L Exit:**
+- Stop price: 151.25 GBP
+- Session low: 149.12 GBP (3.13 GBP below stop)
+- **Execution risk:** In a liquid name like AZN.L, slippage is typically modest (≤ 10 bps = 1.51 GBP). Actual fill likely 148–150 GBP range.
+
+**Gap Risk Mitigation Applied:**
+- Position sizing incorporates 10% gap_risk_buffer on new BUY entries.
+- Reduces quantity to absorb intraday volatility without exceeding max_risk_per_trade_pct.
 
 ---
 
 ## What Could Invalidate This Plan?
 
-1. **Overnight News/Gap:** Significant market move before next trading session could trigger stop-losses or create stronger breakouts.
-2. **Earnings/Corporate Actions:** Dividend payment could free up cash and enable new entries. Sector rotation could invalidate existing trend assumptions.
-3. **Correlation Breakdown:** If holdings begin moving inversely, portfolio beta assumptions change.
-4. **FX Effects:** Non-GBP holdings (none today) could be affected by currency moves; not applicable.
-5. **Settlement Delays:** Unexpected settlement issues could further reduce available cash.
-6. **Broker Outage:** Execution system failure during critical market windows could force liquidations at inopportune prices.
+1. **Market closure or unexpected exchange halt** → Plan void; client action required
+2. **Corporate action on SHEL.L or GLEN.L** (dividend ex-date, rights issue, delisting) → Holdings affected
+3. **Significant overnight gap on SHEL.L/GLEN.L below stops** → Unplanned exits
+4. **AZN.L SELL not executable** (liquidity collapse) → Cash not realised; new buys blocked
+5. **Major macro event** (bank failure, war, sharp rate move) → Market conditions change; confidence scores invalidated
+6. **Regulatory suspension of LSE** → Trading halted
+7. **Substantial new dividend or corporate cash event** → Cash balance assumption stale
 
 ---
 
 ## Data Quality Notes
 
-- **Market Data Freshness:** ✓ All tickers dated 2026-03-03 (current)
-- **Indicator Completeness:** ✓ All 25 tickers have SMA50, SMA200, ATR14, volume ratios, drawdown metrics
-- **Positions Data:** ✓ Consistent with market prices as of 2026-03-03
-- **Universe Alignment:** ✓ All 25 tickers in universe.csv match market_data.csv
-- **No Staleness:** ✓ 0-day lag between data and as_of_date
+✓ **market_data.csv:** Fresh as of 2026-03-04 (today's trading day)  
+✓ **positions.json:** Consistent with market_data.csv; all positions ACTIVE  
+✓ **universe.csv:** All 25 tickers matched to market_data; no mismatches  
+✓ **trading_calendar.json:** Confirmed LSE trading day, no holidays  
+✓ **All pre-computed indicators:** Present and non-null for evaluation tickers  
+✓ **GBP normalisation:** All prices, volumes, indicators in GBP; no FX conversion required  
 
----
-
-## Disclaimer
-
-**This is an automated, rules-based trading plan generated from provided historical market data. It is NOT financial advice. Execution risks, overnight gaps, slippage, FX effects, settlement timing, and taxes/fees apply. Stop-losses in DAILY_CHECK mode are monitored once daily and cannot protect against intraday or overnight gaps. Past performance is not indicative of future results. Use at your own risk and consult a qualified financial advisor before deploying real capital.**
+**Data Staleness:** None detected

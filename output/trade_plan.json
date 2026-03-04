@@ -1,99 +1,112 @@
 {
-  "as_of_date": "2026-03-03",
+  "as_of_date": "2026-03-04",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 99.94,
+  "portfolio_equity_gbp": 100.04,
   "cash_balance_gbp": 3.5005,
-  "available_for_buys_gbp": 0.502,
+  "available_for_buys_gbp": 0.4993,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 1.99,
+  "portfolio_drawdown_pct": 1.91,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
       "ticker": "RIO.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.8,
+      "confidence": 0.83,
       "confidence_components": {
         "trend": 0.9,
-        "setup": 0.8,
-        "risk_reward": 0.75,
-        "liquidity": 0.85,
-        "diversification": 0.7
+        "setup": 0.75,
+        "risk_reward": 0.7,
+        "liquidity": 1.0,
+        "diversification": 0.8
       },
-      "rejected_reason": "Insufficient available cash (\u00a30.502 vs \u00a369.29 required)"
+      "rejected_reason": "Insufficient available cash (0.50 GBP). Trade requires 72.87 GBP. Not executable."
     },
     {
       "ticker": "BA.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.81,
+      "confidence": 0.83,
       "confidence_components": {
         "trend": 0.9,
-        "setup": 0.82,
-        "risk_reward": 0.78,
-        "liquidity": 0.8,
-        "diversification": 0.75
-      },
-      "rejected_reason": "Insufficient available cash (\u00a30.502 vs \u00a346.72 required)"
-    },
-    {
-      "ticker": "GSK.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.76,
-      "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.78,
-        "risk_reward": 0.72,
-        "liquidity": 0.82,
-        "diversification": 0.6
-      },
-      "rejected_reason": "Insufficient available cash AND sector concentration (already hold AZN.L Healthcare)"
-    },
-    {
-      "ticker": "NG.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.8,
-      "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.75,
-        "risk_reward": 0.72,
-        "liquidity": 0.8,
+        "setup": 0.65,
+        "risk_reward": 0.75,
+        "liquidity": 1.0,
         "diversification": 0.85
       },
-      "rejected_reason": "Insufficient available cash (\u00a30.502 vs \u00a358.34 required)"
+      "rejected_reason": "Insufficient available cash (0.50 GBP). Trade requires 102.78 GBP. Not executable."
     },
     {
       "ticker": "TSCO.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.76,
+      "confidence": 0.8,
       "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.8,
+        "trend": 0.85,
+        "setup": 0.75,
         "risk_reward": 0.7,
-        "liquidity": 0.75,
-        "diversification": 0.65
+        "liquidity": 0.9,
+        "diversification": 0.8
       },
-      "rejected_reason": "Insufficient available cash AND sector concentration (Consumer Staples already has 3 holdings)"
+      "rejected_reason": "Insufficient available cash (0.50 GBP). Trade requires 130.69 GBP. Not executable."
     }
   ],
-  "decisions": [],
+  "decisions": [
+    {
+      "ticker": "AZN.L",
+      "action": "SELL",
+      "confidence": 1.0,
+      "confidence_components": {
+        "trend": 0.0,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 1.0,
+        "exit_trigger": 1.0
+      },
+      "entry": null,
+      "size": {
+        "quantity": 0.3879,
+        "notional_gbp": 58.5264
+      },
+      "stop": {
+        "type": "HARD",
+        "price_gbp": 151.25,
+        "execution_mode": "DAILY_CHECK",
+        "trigger_reason": "Stop-loss breach detected (low_gbp 149.12 < stop_price 151.25)"
+      },
+      "gap_risk_buffer_applied": false,
+      "take_profit": null,
+      "time_stop_days": null,
+      "costs_estimate_gbp": {
+        "fees": 0.0,
+        "stamp_duty": 0.0,
+        "slippage": 0.0586
+      },
+      "rationale": [
+        "Stop-loss condition met: low_gbp (149.12) breached stop_price (151.25)",
+        "Mandatory exit to preserve capital",
+        "Proceeds settle T+1, unavailable for same-day buys"
+      ],
+      "constraints_passed": true,
+      "constraint_notes": [
+        "Stop-loss exits are exempt from turnover discretionary limits",
+        "Settlement T+1 under UK LSE rules"
+      ]
+    }
+  ],
   "portfolio_constraints_summary": {
-    "positions_count_after": 3,
-    "turnover_pct": 0.0,
-    "largest_position_pct": 58.0,
-    "cash_buffer_pct": 3.5,
+    "positions_count_after": 2,
+    "turnover_pct": 58.48,
+    "largest_position_pct": 32.48,
+    "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Healthcare": 58.0,
-      "Energy": 33.1,
-      "Materials": 5.5
+      "Energy": 32.48,
+      "Materials": 5.47
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 1.99
+    "portfolio_drawdown_pct": 1.91
   }
 }

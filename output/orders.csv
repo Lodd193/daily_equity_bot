@@ -1,2 +1,2 @@
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-(No orders generated - insufficient available cash after buffer requirement)
+1,AZN.L,SELL,MKT,0.3879,,DAY,151.25,STOP_LOSS_EXIT
