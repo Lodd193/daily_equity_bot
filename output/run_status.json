@@ -1,24 +1,21 @@
 {
   "status": "OK",
-  "as_of_date": "2026-03-04",
-  "reason": "Trading day. Stop-loss exit executed for AZN.L. No new entries due to insufficient cash (0.50 GBP available vs. minimum 72+ GBP required for candidates). All constraints validated.",
+  "as_of_date": "2026-03-05",
+  "reason": "Trading day; all data fresh; portfolio drawdown 1.62% is within limit; eligible candidates identified",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 1.91,
+    "portfolio_drawdown_pct": 1.62,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "max_positions_constraint": "PASS (3 held, 5 max)",
-    "max_new_positions_per_day": "PASS (0 new, 1 max)",
-    "max_turnover_pct": "COMPLIANT (stop-loss exit exempt from discretionary limit)",
-    "max_single_name_exposure_pct": "PASS (largest post-exit 32.5%)",
-    "max_sector_exposure_pct": "PASS (largest Energy 32.5%)",
-    "cash_buffer_requirement": "MAINTAINED (3.00 GBP required, 3.50 GBP held)",
-    "liquidity_filter": "PASS (all tickers > 50k GBP daily volume)",
-    "stop_execution_feasibility": "PASS (AZN.L stop breached, executed)"
+    "kill_switch": false,
+    "max_positions_ok": true,
+    "turnover_ok": true,
+    "liquidity_ok": true,
+    "cash_buffer_ok": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",

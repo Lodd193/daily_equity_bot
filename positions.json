@@ -1,20 +1,20 @@
 {
-  "as_of_date": "2026-03-04",
-  "cash_balance_gbp": 3.5005,
-  "unsettled_sell_proceeds_gbp": 58.4678,
-  "settlement_due_date": "2026-03-05",
-  "equity_value_gbp": 99.98,
+  "as_of_date": "2026-03-05",
+  "cash_balance_gbp": 15.8432,
+  "unsettled_sell_proceeds_gbp": 0.0,
+  "settlement_due_date": null,
+  "equity_value_gbp": 100.09,
   "portfolio_peak_equity_gbp": 101.97,
   "positions": [
     {
       "ticker": "SHEL.L",
       "quantity": 1.0624,
       "avg_cost_gbp": 28.6987,
-      "market_value_gbp": 32.5466,
-      "unrealised_pnl_gbp": 2.0571,
+      "market_value_gbp": 33.0194,
+      "unrealised_pnl_gbp": 2.5299,
       "sector": "Energy",
       "entry_date": "2026-02-17",
-      "days_held": 14,
+      "days_held": 15,
       "current_stop_gbp": 27.7112,
       "status": "ACTIVE"
     },
@@ -22,12 +22,24 @@
       "ticker": "GLEN.L",
       "quantity": 1.035,
       "avg_cost_gbp": 5.0821,
-      "market_value_gbp": 5.4689,
-      "unrealised_pnl_gbp": 0.2089,
+      "market_value_gbp": 5.3334,
+      "unrealised_pnl_gbp": 0.0734,
       "sector": "Materials",
       "entry_date": "2026-02-18",
-      "days_held": 13,
+      "days_held": 14,
       "current_stop_gbp": 4.8573,
+      "status": "ACTIVE"
+    },
+    {
+      "ticker": "BP.L",
+      "quantity": 9.32,
+      "avg_cost_gbp": 4.9244,
+      "market_value_gbp": 45.8956,
+      "unrealised_pnl_gbp": 0.0,
+      "sector": "Energy",
+      "entry_date": "2026-03-05",
+      "days_held": 0,
+      "current_stop_gbp": 4.6827,
       "status": "ACTIVE"
     }
   ]

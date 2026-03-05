@@ -1,2 +1,2 @@
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-1,AZN.L,SELL,MKT,0.3879,,DAY,151.25,STOP_LOSS_EXIT
+1,BP.L,BUY,MKT,9.32,,GTC,4.6827,PULLBACK in uptrend; strong trend; 1.11% pullback from 20d high; excellent liquidity

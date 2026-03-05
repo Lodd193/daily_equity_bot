@@ -19,5 +19,12 @@
     "cash_gbp": 3.5,
     "positions_count": 2,
     "drawdown_pct": 1.95
+  },
+  {
+    "date": "2026-03-05",
+    "equity_gbp": 100.09,
+    "cash_gbp": 15.84,
+    "positions_count": 3,
+    "drawdown_pct": 1.84
   }
 ]

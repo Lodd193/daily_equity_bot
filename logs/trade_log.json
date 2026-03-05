@@ -43,5 +43,20 @@
         "rationale_summary": "Pullback entry in full uptrend (close > sma50 > sma200). Drawdown 4.89% within balanced profile threshold. Healthy volume structure (ratio 0.89). ATR-based stop at 4.8573 GBP. Materials sector adds diversification to Healthcare-heavy portfolio. Gap risk buffer 10% applied to quantity sizing."
       }
     ]
+  },
+  {
+    "as_of_date": "2026-03-05",
+    "entries": [
+      {
+        "ticker": "BP.L",
+        "action": "BUY",
+        "planned_price_gbp": 4.9195,
+        "planned_quantity": 9.32,
+        "stop_price_gbp": 4.6827,
+        "confidence": 0.78,
+        "entry_type": "PULLBACK",
+        "rationale_summary": "Strong uptrend (close > SMA50 > SMA200, positive slope). Healthy 1.11% pullback from 20d high with low volume ratio 0.78. Excellent liquidity (241M GBP avg vol). Risk-reward favorable: 2.4% stop distance vs 4.1% max risk allocation. Energy sector opportunity with macro tailwinds. Diversifies existing Materials holding (GLEN.L). Balanced confidence 0.78 >> 0.72 threshold."
+      }
+    ]
   }
 ]
