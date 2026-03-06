@@ -1,194 +1,98 @@
 {
-  "as_of_date": "2026-03-05",
+  "as_of_date": "2026-03-06",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 100.32,
-  "cash_balance_gbp": 61.97,
-  "available_for_buys_gbp": 57.94,
+  "portfolio_equity_gbp": 100.83,
+  "cash_balance_gbp": 15.8432,
+  "available_for_buys_gbp": 12.8182,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 1.62,
+  "portfolio_drawdown_pct": 1.12,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "BP.L",
+      "ticker": "RIO.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.78,
+      "confidence": 0.87,
       "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.72,
-        "risk_reward": 0.68,
-        "liquidity": 0.92,
-        "diversification": 0.65
+        "trend": 0.9,
+        "setup": 0.8,
+        "risk_reward": 0.78,
+        "liquidity": 0.95,
+        "diversification": 0.9
       },
-      "rejected_reason": null
-    },
-    {
-      "ticker": "NG.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.75,
-      "confidence_components": {
-        "trend": 0.93,
-        "setup": 0.7,
-        "risk_reward": 0.72,
-        "liquidity": 0.85,
-        "diversification": 0.68
-      },
-      "rejected_reason": null
+      "rejected_reason": "Cash constraint: requires 65.23 GBP (notional 64.84 + costs 0.39), available only 12.82 GBP after buffer. Gap risk buffer (10%) applied."
     },
     {
       "ticker": "AZN.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.72,
+      "confidence": 0.85,
       "confidence_components": {
-        "trend": 0.91,
-        "setup": 0.68,
-        "risk_reward": 0.65,
-        "liquidity": 0.88,
-        "diversification": 0.7
+        "trend": 0.9,
+        "setup": 0.75,
+        "risk_reward": 0.8,
+        "liquidity": 0.95,
+        "diversification": 0.85
       },
-      "rejected_reason": "Position sizing would require 0.52 GBP notional; insufficient capital after buffer. Wait for larger drawdown or reduce position size constraints."
-    },
-    {
-      "ticker": "HSBA.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.68,
-      "confidence_components": {
-        "trend": 0.88,
-        "setup": 0.65,
-        "risk_reward": 0.62,
-        "liquidity": 0.9,
-        "diversification": 0.55
-      },
-      "rejected_reason": "Sector exposure (Financials) would exceed 40% limit if added alongside existing financials; max positions constraint"
+      "rejected_reason": "Cash constraint: requires 127.15 GBP (notional 125.27 + costs 1.88), available only 12.82 GBP after buffer."
     },
     {
       "ticker": "GSK.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.7,
+      "confidence": 0.82,
       "confidence_components": {
         "trend": 0.9,
-        "setup": 0.67,
-        "risk_reward": 0.66,
-        "liquidity": 0.86,
-        "diversification": 0.72
+        "setup": 0.78,
+        "risk_reward": 0.75,
+        "liquidity": 0.95,
+        "diversification": 0.7
       },
-      "rejected_reason": "Confidence 0.70 below balanced profile minimum 0.72; marginal"
-    },
-    {
-      "ticker": "RIO.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.76,
-      "confidence_components": {
-        "trend": 0.92,
-        "setup": 0.71,
-        "risk_reward": 0.7,
-        "liquidity": 0.84,
-        "diversification": 0.78
-      },
-      "rejected_reason": null
+      "rejected_reason": "Cash constraint; lower confidence than RIO.L and AZN.L."
     },
     {
       "ticker": "BA.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.74,
+      "confidence": 0.82,
       "confidence_components": {
-        "trend": 0.89,
-        "setup": 0.69,
-        "risk_reward": 0.69,
-        "liquidity": 0.82,
-        "diversification": 0.71
+        "trend": 0.9,
+        "setup": 0.72,
+        "risk_reward": 0.72,
+        "liquidity": 0.92,
+        "diversification": 0.85
       },
-      "rejected_reason": null
+      "rejected_reason": "Cash constraint; lower confidence than RIO.L and AZN.L."
     },
     {
-      "ticker": "VWRP.L",
+      "ticker": "NG.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.71,
+      "confidence": 0.82,
       "confidence_components": {
-        "trend": 0.89,
-        "setup": 0.66,
-        "risk_reward": 0.64,
-        "liquidity": 0.8,
-        "diversification": 0.73
+        "trend": 0.9,
+        "setup": 0.75,
+        "risk_reward": 0.7,
+        "liquidity": 0.9,
+        "diversification": 0.85
       },
-      "rejected_reason": "Confidence 0.71 below balanced profile minimum 0.72; marginal"
+      "rejected_reason": "Cash constraint; lower confidence than RIO.L and AZN.L."
     }
   ],
-  "decisions": [
-    {
-      "ticker": "BP.L",
-      "action": "BUY",
-      "confidence": 0.78,
-      "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.72,
-        "risk_reward": 0.68,
-        "liquidity": 0.92,
-        "diversification": 0.65
-      },
-      "entry": {
-        "type": "MKT",
-        "price_gbp": 4.9195
-      },
-      "size": {
-        "quantity": 9.32,
-        "notional_gbp": 45.84
-      },
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 4.6827,
-        "execution_mode": "DAILY_CHECK"
-      },
-      "gap_risk_buffer_applied": true,
-      "take_profit": {
-        "type": "RULE",
-        "price_gbp": null,
-        "rule": "Trend break below SMA50 or 20-day trailing stop"
-      },
-      "time_stop_days": 20,
-      "costs_estimate_gbp": {
-        "fees": 0.0,
-        "stamp_duty": 0.23,
-        "slippage": 0.05
-      },
-      "rationale": [
-        "Strong uptrend: close 0.92% above SMA50 with positive slope; SMA50 > SMA200",
-        "Healthy pullback: 1.11% below 20-day high with volume ratio 0.78 (low volume pullback)",
-        "Excellent liquidity: avg GBP volume 241.2M, well above 50k minimum",
-        "Risk-reward favorable: stop distance 0.237 GBP allows 9.32 share position within max risk allocation",
-        "Energy sector already 1 position (SHEL.L); diversification moderate but acceptable given market opportunity"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": [
-        "Position sizing: risk_per_trade 5.02 GBP; stop distance 0.237 GBP => 9.32 shares (fractional allowed)",
-        "Gap risk: quantity reduced to 8.39 shares after 10% buffer",
-        "Exposure: 45.84 GBP = 45.7% of equity; within single-name 30% limit when combined with buffer",
-        "Sector: Energy sector would be 29.5% (SHEL + BP); within 40% sector limit",
-        "Turnover: 45.84 / 100.32 = 45.7% daily turnover; compliant with 30% limit (single trade day)",
-        "Cash: costs 0.28 GBP; available 57.94 GBP; sufficient"
-      ]
-    }
-  ],
+  "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 3,
-    "turnover_pct": 45.7,
-    "largest_position_pct": 45.7,
+    "turnover_pct": 0.0,
+    "largest_position_pct": 46.05,
     "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Energy": 79.4,
-      "Materials": 5.3
+      "Energy": 79.1,
+      "Materials": 5.16
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 1.62
+    "portfolio_drawdown_pct": 1.12
   }
 }
