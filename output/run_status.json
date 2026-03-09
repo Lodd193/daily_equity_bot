@@ -1,21 +1,21 @@
 {
-  "status": "NO_TRADES",
-  "as_of_date": "2026-03-06",
-  "reason": "Cash constraint prevents execution of quality entry setups. Portfolio equity 100.83 GBP with 15.84 GBP cash. After 3% buffer (3.03 GBP), only 12.81 GBP available for buys. All high-confidence trade candidates (RIO.L: 0.87, AZN.L: 0.85) require 65\u2013127 GBP notional + costs. Gap risk buffer (10%) further reduces viable position size. No existing positions trigger exit signals. Prudent to hold and await lower-cost entry opportunities or portfolio growth.",
+  "status": "OK",
+  "as_of_date": "2026-03-09",
+  "reason": "Trading day with valid data. One new BUY opportunity identified within constraints.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 1.12,
+    "portfolio_drawdown_pct": 0.0,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_adequate": false,
-    "max_positions_ok": true,
-    "max_new_per_day_ok": true,
-    "portfolio_drawdown_ok": true,
-    "liquidity_filters_pass": true
+    "portfolio_constraint_pass": true,
+    "cash_buffer_sufficient": true,
+    "turnover_within_limit": true,
+    "max_positions_not_exceeded": true,
+    "liquidity_checks_pass": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",

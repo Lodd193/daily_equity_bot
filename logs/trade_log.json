@@ -58,5 +58,20 @@
         "rationale_summary": "Strong uptrend (close > SMA50 > SMA200, positive slope). Healthy 1.11% pullback from 20d high with low volume ratio 0.78. Excellent liquidity (241M GBP avg vol). Risk-reward favorable: 2.4% stop distance vs 4.1% max risk allocation. Energy sector opportunity with macro tailwinds. Diversifies existing Materials holding (GLEN.L). Balanced confidence 0.78 >> 0.72 threshold."
       }
     ]
+  },
+  {
+    "as_of_date": "2026-03-09",
+    "entries": [
+      {
+        "ticker": "BA.L",
+        "action": "BUY",
+        "planned_price_gbp": 22.59,
+        "planned_quantity": 0.2378,
+        "stop_price_gbp": 21.5,
+        "confidence": 0.78,
+        "entry_type": "PULLBACK",
+        "rationale_summary": "Pullback in strong uptrend. Close (22.59) > SMA50 (20.14) > SMA200 (18.84). 1.5% drawdown from 20d high (22.94) indicates healthy pullback. Positive SMA50 slope, volume declining (0.86 ratio). Excellent liquidity (\u00a3161.3M avg). Risk-reward 1.09 GBP stop distance. Gap risk buffer applied (10%). Industrials sector adds diversification."
+      }
+    ]
   }
 ]
