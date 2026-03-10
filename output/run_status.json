@@ -1,21 +1,28 @@
 {
-  "status": "OK",
-  "as_of_date": "2026-03-09",
-  "reason": "Trading day with valid data. One new BUY opportunity identified within constraints.",
+  "status": "NO_TRADES",
+  "as_of_date": "2026-03-10",
+  "reason": "No trades executed. All high-confidence buy candidates require notional + costs between \u00a362\u2013\u00a3104, but only \u00a37.39 cash available after 3% buffer (required buffer: \u00a33.05 out of \u00a310.44). Existing positions remain HOLD (all above stops, no forced exits). Consider raising capital via strategic reduces if desired to enable new entry.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 0.0,
+    "portfolio_drawdown_pct": 1.119,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "portfolio_constraint_pass": true,
-    "cash_buffer_sufficient": true,
-    "turnover_within_limit": true,
-    "max_positions_not_exceeded": true,
-    "liquidity_checks_pass": true
+    "cash_available_gbp": 7.39,
+    "cash_buffer_required_gbp": 3.05,
+    "min_buy_order_size_gbp": 62.26,
+    "positions_count": 4,
+    "max_positions": 5,
+    "sector_concentration": {
+      "Energy": 0.403,
+      "Materials": 0.054,
+      "Industrials": 0.053
+    },
+    "largest_position_pct": 0.403,
+    "turnover_today_pct": 0.0
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",

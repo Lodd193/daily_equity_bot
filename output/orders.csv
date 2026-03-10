@@ -1,2 +1,1 @@
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-1,BA.L,BUY,MKT,0.2378,,DAY,21.5,Pullback in uptrend with strong trend confirmation and good risk-reward
