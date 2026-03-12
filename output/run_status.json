@@ -1,28 +1,25 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-03-10",
-  "reason": "No trades executed. All high-confidence buy candidates require notional + costs between \u00a362\u2013\u00a3104, but only \u00a37.39 cash available after 3% buffer (required buffer: \u00a33.05 out of \u00a310.44). Existing positions remain HOLD (all above stops, no forced exits). Consider raising capital via strategic reduces if desired to enable new entry.",
+  "as_of_date": "2026-03-12",
+  "reason": "All qualified entry candidates rejected due to insufficient available cash (\u00a37.26 after 3% buffer vs minimum \u00a360+ required for smallest viable position). Portfolio equity \u00a3106.08 is capital-constrained for position sizing discipline under balanced profile with 5% max risk per trade.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 1.119,
+    "portfolio_drawdown_pct": 0.0,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_available_gbp": 7.39,
-    "cash_buffer_required_gbp": 3.05,
-    "min_buy_order_size_gbp": 62.26,
-    "positions_count": 4,
-    "max_positions": 5,
-    "sector_concentration": {
-      "Energy": 0.403,
-      "Materials": 0.054,
-      "Industrials": 0.053
-    },
-    "largest_position_pct": 0.403,
-    "turnover_today_pct": 0.0
+    "max_positions_compliance": true,
+    "max_new_positions_compliance": true,
+    "turnover_compliance": true,
+    "sector_exposure_compliance": true,
+    "single_name_exposure_compliance": true,
+    "cash_constraint_compliance": false,
+    "liquidity_constraint_compliance": true,
+    "portfolio_beta_compliance": true,
+    "correlation_constraint_compliance": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
