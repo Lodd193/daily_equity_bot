@@ -1,124 +1,68 @@
 {
-  "as_of_date": "2026-03-09",
+  "as_of_date": "2026-03-16",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 102.69,
-  "cash_balance_gbp": 15.8432,
-  "available_for_buys_gbp": 12.93,
+  "portfolio_equity_gbp": 107.94,
+  "cash_balance_gbp": 10.439,
+  "available_for_buys_gbp": 7.2,
   "unsettled_proceeds_gbp": 0.0,
   "portfolio_drawdown_pct": 0.0,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
       "ticker": "BA.L",
-      "entry_type": "PULLBACK",
+      "entry_type": "NONE",
       "trend_status": "FULL",
-      "confidence": 0.78,
+      "confidence": 0.68,
       "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.75,
-        "risk_reward": 0.65,
-        "liquidity": 0.9,
-        "diversification": 0.72
-      },
-      "rejected_reason": null
-    },
-    {
-      "ticker": "AZN.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.72,
-      "confidence_components": {
-        "trend": 0.92,
-        "setup": 0.7,
-        "risk_reward": 0.62,
+        "trend": 1.0,
+        "setup": 0.65,
+        "risk_reward": 0.5,
         "liquidity": 0.85,
-        "diversification": 0.68
+        "diversification": 0.6
       },
-      "rejected_reason": "Insufficient cash after BA.L purchase"
+      "rejected_reason": "Position already held (days_held=3, min_position_age_days=2). Anti-churn rule: do not re-enter within min_position_age_days unless stop-loss triggered."
     },
     {
       "ticker": "NG.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.68,
+      "confidence": 0.72,
       "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.65,
-        "risk_reward": 0.6,
-        "liquidity": 0.88,
+        "trend": 1.0,
+        "setup": 0.75,
+        "risk_reward": 0.7,
+        "liquidity": 0.85,
         "diversification": 0.65
       },
-      "rejected_reason": "Max 1 new position per day; BA.L selected as higher confidence"
-    }
-  ],
-  "decisions": [
+      "rejected_reason": "Insufficient cash after buffer. Required notional at risk (5.40 GBP) exceeds available (7.20 GBP) after accounting for slippage and stamp duty."
+    },
     {
-      "ticker": "BA.L",
-      "action": "BUY",
-      "confidence": 0.78,
+      "ticker": "TSCO.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.7,
       "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.75,
+        "trend": 1.0,
+        "setup": 0.72,
         "risk_reward": 0.65,
-        "liquidity": 0.9,
-        "diversification": 0.72
+        "liquidity": 0.8,
+        "diversification": 0.62
       },
-      "entry": {
-        "type": "MKT",
-        "price_gbp": 22.59
-      },
-      "size": {
-        "quantity": 0.2378,
-        "notional_gbp": 5.375
-      },
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 21.5,
-        "execution_mode": "DAILY_CHECK"
-      },
-      "gap_risk_buffer_applied": true,
-      "take_profit": {
-        "type": "RULE",
-        "price_gbp": 24.5,
-        "rule": "Exit if close < SMA50 or hold max 20 days"
-      },
-      "time_stop_days": 20,
-      "costs_estimate_gbp": {
-        "fees": 0.0,
-        "stamp_duty": 0.027,
-        "slippage": 0.011
-      },
-      "rationale": [
-        "Full uptrend confirmed: close (22.59) > SMA50 (20.14) > SMA200 (18.84)",
-        "Pullback in uptrend: 1.5% drawdown from 20d high (22.94)",
-        "Strong trend slope indicator (positive)",
-        "Good liquidity: avg_gbp_volume_20d = \u00a3161.3M, volume_ratio = 0.86",
-        "Industrials sector not overexposed (0% currently held)",
-        "Risk-reward: 1.09 GBP stop distance, risk 0.05*102.69 = 5.13 GBP, size accordingly",
-        "Gap risk buffer reduces quantity by 10% to mitigate DAILY_CHECK gap risk"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": [
-        "Cash available after buffer: 12.93 GBP, order cost 5.41 GBP (including stamp duty + slippage)",
-        "Position size 0.2378 shares = 0.23% of equity (within 30% single-name limit)",
-        "Turnover: 5.375/102.69 = 5.2% (well within 30% daily limit)",
-        "Would bring portfolio to 4 positions (within 5 limit)",
-        "New position age check: will be ACTIVE after purchase",
-        "Fractional shares enabled: 0.2378 shares acceptable"
-      ]
+      "rejected_reason": "Insufficient cash after buffer. Position sizing to 5% portfolio risk requires 5.40 GBP notional; only 7.20 GBP available after costs."
     }
   ],
+  "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 4,
-    "turnover_pct": 0.052,
-    "largest_position_pct": 0.463,
-    "cash_buffer_pct": 0.0298,
+    "turnover_pct": 0.0,
+    "largest_position_pct": 46.61,
+    "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Energy": 0.401,
-      "Materials": 0.051,
-      "Industrials": 0.005
+      "Energy": 45.39,
+      "Materials": 4.95,
+      "Industrials": 5.12
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,

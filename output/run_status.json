@@ -1,7 +1,7 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-03-12",
-  "reason": "All qualified entry candidates rejected due to insufficient available cash (\u00a37.26 after 3% buffer vs minimum \u00a360+ required for smallest viable position). Portfolio equity \u00a3106.08 is capital-constrained for position sizing discipline under balanced profile with 5% max risk per trade.",
+  "as_of_date": "2026-03-16",
+  "reason": "Portfolio is severely cash-constrained (cash_balance_gbp=10.439 GBP, equity_value=107.94 GBP). Required cash buffer (3.24 GBP) leaves only 7.20 GBP available for new positions. No new entry opportunities can be sized to meet risk_per_trade_pct constraint (max_risk_per_trade_pct=5% = 5.40 GBP). Existing positions are ACTIVE with no exit signals triggered. No stop-loss breaches, trend breaks, or time stops identified.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
@@ -11,15 +11,13 @@
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "max_positions_compliance": true,
-    "max_new_positions_compliance": true,
-    "turnover_compliance": true,
-    "sector_exposure_compliance": true,
-    "single_name_exposure_compliance": true,
-    "cash_constraint_compliance": false,
-    "liquidity_constraint_compliance": true,
-    "portfolio_beta_compliance": true,
-    "correlation_constraint_compliance": true
+    "portfolio_drawdown": "0.0% (limit: 15.0%)",
+    "cash_buffer_check": "PASS (10.44 GBP available, 3.24 GBP buffer required)",
+    "max_positions": "4 of 5 (PASS)",
+    "available_for_buys_after_buffer": 7.2,
+    "max_risk_per_single_trade": 5.4,
+    "trading_day_valid": true,
+    "kill_switch_status": "OFF"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
