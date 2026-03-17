@@ -1,7 +1,7 @@
 {
-  "status": "NO_TRADES",
-  "as_of_date": "2026-03-16",
-  "reason": "Portfolio is severely cash-constrained (cash_balance_gbp=10.439 GBP, equity_value=107.94 GBP). Required cash buffer (3.24 GBP) leaves only 7.20 GBP available for new positions. No new entry opportunities can be sized to meet risk_per_trade_pct constraint (max_risk_per_trade_pct=5% = 5.40 GBP). Existing positions are ACTIVE with no exit signals triggered. No stop-loss breaches, trend breaks, or time stops identified.",
+  "status": "OK",
+  "as_of_date": "2026-03-17",
+  "reason": "Trading day confirmed. Portfolio within drawdown limit. Eligible entry opportunities identified.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
@@ -11,13 +11,12 @@
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "portfolio_drawdown": "0.0% (limit: 15.0%)",
-    "cash_buffer_check": "PASS (10.44 GBP available, 3.24 GBP buffer required)",
-    "max_positions": "4 of 5 (PASS)",
-    "available_for_buys_after_buffer": 7.2,
-    "max_risk_per_single_trade": 5.4,
-    "trading_day_valid": true,
-    "kill_switch_status": "OFF"
+    "max_positions_check": "PASS (4/5 positions held)",
+    "max_new_positions_check": "PASS (1 new allowed, 0 planned)",
+    "turnover_check": "PASS (turnover below 30%)",
+    "cash_buffer_check": "PASS (sufficient buffer maintained)",
+    "exposure_checks": "PASS (all sector and single-name limits observed)",
+    "correlation_check": "PASS (no high correlation breaches)"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",

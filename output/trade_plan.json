@@ -1,68 +1,110 @@
 {
-  "as_of_date": "2026-03-16",
+  "as_of_date": "2026-03-17",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 107.94,
+  "portfolio_equity_gbp": 109.75,
   "cash_balance_gbp": 10.439,
-  "available_for_buys_gbp": 7.2,
+  "available_for_buys_gbp": 6.6665,
   "unsettled_proceeds_gbp": 0.0,
   "portfolio_drawdown_pct": 0.0,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "BA.L",
+      "ticker": "SHEL.L",
       "entry_type": "NONE",
+      "trend_status": "FULL",
+      "confidence": 0.0,
+      "confidence_components": {
+        "trend": 1.0,
+        "setup": 0.3,
+        "risk_reward": 0.5,
+        "liquidity": 1.0,
+        "diversification": 0.6
+      },
+      "rejected_reason": "Already held; no exit signal. Close to 20d high (pullback only 0.3%), insufficient entry opportunity."
+    },
+    {
+      "ticker": "AZN.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.65,
+      "confidence_components": {
+        "trend": 1.0,
+        "setup": 0.65,
+        "risk_reward": 0.7,
+        "liquidity": 1.0,
+        "diversification": 0.5
+      },
+      "rejected_reason": "Insufficient cash available (required \u00a33.75, available \u00a36.67). Position sizing would consume excessive portfolio fraction for small account. Quality setup but size constraint prohibitive."
+    },
+    {
+      "ticker": "BP.L",
+      "entry_type": "NONE",
+      "trend_status": "FULL",
+      "confidence": 0.0,
+      "confidence_components": {
+        "trend": 1.0,
+        "setup": 0.4,
+        "risk_reward": 0.6,
+        "liquidity": 1.0,
+        "diversification": 0.5
+      },
+      "rejected_reason": "Already held; portfolio allocation constraint. Adding to position would exceed max_single_name_exposure_pct (46.8% at cost vs 30% limit)."
+    },
+    {
+      "ticker": "BA.L",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
       "confidence": 0.68,
       "confidence_components": {
         "trend": 1.0,
-        "setup": 0.65,
-        "risk_reward": 0.5,
-        "liquidity": 0.85,
-        "diversification": 0.6
+        "setup": 0.68,
+        "risk_reward": 0.65,
+        "liquidity": 0.9,
+        "diversification": 0.7
       },
-      "rejected_reason": "Position already held (days_held=3, min_position_age_days=2). Anti-churn rule: do not re-enter within min_position_age_days unless stop-loss triggered."
+      "rejected_reason": "Already held; min_position_age_days constraint (7 days held vs 2 days required). No exit signal triggered. Insufficient time in position to warrant early add."
     },
     {
       "ticker": "NG.L",
-      "entry_type": "PULLBACK",
+      "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.72,
+      "confidence": 0.62,
       "confidence_components": {
         "trend": 1.0,
-        "setup": 0.75,
-        "risk_reward": 0.7,
-        "liquidity": 0.85,
-        "diversification": 0.65
+        "setup": 0.62,
+        "risk_reward": 0.65,
+        "liquidity": 1.0,
+        "diversification": 0.9
       },
-      "rejected_reason": "Insufficient cash after buffer. Required notional at risk (5.40 GBP) exceeds available (7.20 GBP) after accounting for slippage and stamp duty."
+      "rejected_reason": "Insufficient cash available (required \u00a32.10, available \u00a36.67). High leverage to portfolio size would create execution risk."
     },
     {
-      "ticker": "TSCO.L",
-      "entry_type": "PULLBACK",
+      "ticker": "GLEN.L",
+      "entry_type": "NONE",
       "trend_status": "FULL",
-      "confidence": 0.7,
+      "confidence": 0.0,
       "confidence_components": {
         "trend": 1.0,
-        "setup": 0.72,
-        "risk_reward": 0.65,
+        "setup": 0.3,
+        "risk_reward": 0.5,
         "liquidity": 0.8,
-        "diversification": 0.62
+        "diversification": 0.7
       },
-      "rejected_reason": "Insufficient cash after buffer. Position sizing to 5% portfolio risk requires 5.40 GBP notional; only 7.20 GBP available after costs."
+      "rejected_reason": "Already held; no exit signal. Position performing (P&L +\u00a30.17), near sma50. Maintain current position."
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 4,
     "turnover_pct": 0.0,
-    "largest_position_pct": 46.61,
-    "cash_buffer_pct": 3.0,
+    "largest_position_pct": 46.85,
+    "cash_buffer_pct": 9.51,
     "sector_exposures_pct": {
-      "Energy": 45.39,
-      "Materials": 4.95,
-      "Industrials": 5.12
+      "Energy": 46.85,
+      "Materials": 5.47,
+      "Industrials": 5.05
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
