@@ -1,7 +1,7 @@
 {
   "status": "OK",
-  "as_of_date": "2026-03-17",
-  "reason": "Trading day confirmed. Portfolio within drawdown limit. Eligible entry opportunities identified.",
+  "as_of_date": "2026-03-18",
+  "reason": "Trading day with valid data. One high-confidence entry identified. Portfolio below drawdown limit.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
@@ -11,12 +11,13 @@
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "max_positions_check": "PASS (4/5 positions held)",
-    "max_new_positions_check": "PASS (1 new allowed, 0 planned)",
-    "turnover_check": "PASS (turnover below 30%)",
-    "cash_buffer_check": "PASS (sufficient buffer maintained)",
-    "exposure_checks": "PASS (all sector and single-name limits observed)",
-    "correlation_check": "PASS (no high correlation breaches)"
+    "kill_switch_active": false,
+    "cash_buffer_sufficient": true,
+    "max_positions_breached": false,
+    "max_sector_exposure_breached": false,
+    "max_correlated_positions_breached": false,
+    "turnover_limit_ok": true,
+    "liquidity_filters_ok": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
