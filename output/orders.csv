@@ -1,2 +1,2 @@
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-1,AZN.L,BUY,MKT,0.0383,,GTC,137.18,PULLBACK in uptrend; drawdown 8.22% in balanced profile range [5-10%]; volume_ratio 0.43 (low volume pullback); confidence 0.74
+===

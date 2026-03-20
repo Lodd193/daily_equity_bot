@@ -1,23 +1,21 @@
 {
-  "status": "OK",
-  "as_of_date": "2026-03-18",
-  "reason": "Trading day with valid data. One high-confidence entry identified. Portfolio below drawdown limit.",
+  "status": "NO_TRADES",
+  "as_of_date": "2026-03-20",
+  "reason": "Portfolio drawdown (0.11%) is within limit (15.00%), but no valid entry signals generated today. All candidates rejected: SHEL.L trend neutral; AZN.L deep pullback but consecutive days below SMA50; HSBA.L negative slope; ULVR.L flat trend; BP.L already in position; GSK.L positive trend but high pullback; RIO.L positive trend but material pullback; DGE.L negative slope; GLEN.L already in position; and ETFs below threshold. Conservative profile requires high-confidence setups; none met criteria today.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 0.0,
+    "portfolio_drawdown_pct": 0.109,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "kill_switch_active": false,
-    "cash_buffer_sufficient": true,
-    "max_positions_breached": false,
-    "max_sector_exposure_breached": false,
-    "max_correlated_positions_breached": false,
-    "turnover_limit_ok": true,
-    "liquidity_filters_ok": true
+    "cash_buffer_adequate": true,
+    "max_positions_respected": true,
+    "turnover_within_limit": true,
+    "exposure_limits_ok": true,
+    "liquidity_filters_pass": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",

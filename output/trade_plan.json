@@ -1,439 +1,144 @@
 {
-  "as_of_date": "2026-03-18",
+  "as_of_date": "2026-03-20",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 110.0,
-  "cash_balance_gbp": 10.439,
-  "available_for_buys_gbp": 7.212,
+  "portfolio_equity_gbp": 109.88,
+  "cash_balance_gbp": 4.9385,
+  "available_for_buys_gbp": 1.6754,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 0.0,
+  "portfolio_drawdown_pct": 0.109,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "SHEL.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.0,
+      "ticker": "AZN.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "NONE",
+      "confidence": 0.32,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 1.0,
-        "diversification": 0.0
+        "trend": 0.0,
+        "setup": 0.6,
+        "risk_reward": 0.5,
+        "liquidity": 0.95,
+        "diversification": 0.4
       },
-      "rejected_reason": "Already held in portfolio; anti-churn rule prevents re-entry within 2 days of last trade (held 28 days, no trade bias for existing holding)"
+      "rejected_reason": "Trend filter failed: sma50_slope=flat, close_vs_sma50=-0.036 (below SMA50), consecutive_days_below_sma50=7. Not eligible for new entries despite pullback setup."
+    },
+    {
+      "ticker": "GSK.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "PARTIAL",
+      "confidence": 0.41,
+      "confidence_components": {
+        "trend": 0.7,
+        "setup": 0.55,
+        "risk_reward": 0.35,
+        "liquidity": 0.92,
+        "diversification": 0.5
+      },
+      "rejected_reason": "Pullback depth (12.2%) exceeds conservative threshold (8%) for balanced profile. Risk-reward unfavourable; stop distance 0.457 GBP vs entry 19.505 gives poor ratio."
+    },
+    {
+      "ticker": "RIO.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "PARTIAL",
+      "confidence": 0.38,
+      "confidence_components": {
+        "trend": 0.7,
+        "setup": 0.5,
+        "risk_reward": 0.3,
+        "liquidity": 0.88,
+        "diversification": 0.45
+      },
+      "rejected_reason": "Pullback depth (17.3%) well above threshold (8%). Material drawdown from 20-day high; risk-reward unfavourable for balanced profile."
     },
     {
       "ticker": "BP.L",
       "entry_type": "NONE",
       "trend_status": "FULL",
       "confidence": 0.0,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 1.0,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Already held in portfolio; held 12 days with positive unrealised PnL; maintain existing position"
+      "confidence_components": {},
+      "rejected_reason": "Already held in portfolio (9.32 shares, 47.7% of equity). No additional entry warranted; focus on management of existing position."
     },
     {
       "ticker": "GLEN.L",
       "entry_type": "NONE",
       "trend_status": "FULL",
       "confidence": 0.0,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 1.0,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Already held in portfolio; held 27 days with positive unrealised PnL; maintain existing position"
+      "confidence_components": {},
+      "rejected_reason": "Already held in portfolio (1.035 shares, 4.9% of equity). No additional entry warranted."
     },
     {
-      "ticker": "BA.L",
+      "ticker": "SHEL.L",
       "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.0,
+      "trend_status": "NEUTRAL",
+      "confidence": 0.35,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 1.0,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Already held in portfolio; held 8 days with positive unrealised PnL; maintain existing position"
-    },
-    {
-      "ticker": "AZN.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.74,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.72,
-        "risk_reward": 0.65,
+        "trend": 0.6,
+        "setup": 0.4,
+        "risk_reward": 0.4,
         "liquidity": 0.95,
-        "diversification": 0.72
+        "diversification": 0.35
       },
-      "rejected_reason": null
-    },
-    {
-      "ticker": "RIO.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.68,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.65,
-        "risk_reward": 0.6,
-        "liquidity": 0.9,
-        "diversification": 0.68
-      },
-      "rejected_reason": "Confidence 0.68 below minimum threshold for balanced profile (0.70)"
-    },
-    {
-      "ticker": "TSCO.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.66,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.62,
-        "risk_reward": 0.58,
-        "liquidity": 0.85,
-        "diversification": 0.66
-      },
-      "rejected_reason": "Confidence 0.66 below minimum threshold for balanced profile (0.70)"
+      "rejected_reason": "Already held in portfolio (1.0624 shares, 33.2% of equity). Trend marginally positive but SMA50 slope=positive with modest momentum. No add warranted."
     },
     {
       "ticker": "NG.L",
       "entry_type": "PULLBACK",
+      "trend_status": "PARTIAL",
+      "confidence": 0.36,
+      "confidence_components": {
+        "trend": 0.7,
+        "setup": 0.5,
+        "risk_reward": 0.35,
+        "liquidity": 0.85,
+        "diversification": 0.35
+      },
+      "rejected_reason": "Pullback depth (13.7%) exceeds balanced profile threshold (8%). Volume ratio 4.43x (extreme); unusually high volume not typical pullback pattern."
+    },
+    {
+      "ticker": "TSCO.L",
+      "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.65,
+      "confidence": 0.42,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.6,
-        "risk_reward": 0.55,
-        "liquidity": 0.82,
-        "diversification": 0.65
+        "trend": 0.8,
+        "setup": 0.45,
+        "risk_reward": 0.35,
+        "liquidity": 0.75,
+        "diversification": 0.4
       },
-      "rejected_reason": "Confidence 0.65 below minimum threshold for balanced profile (0.70)"
-    },
-    {
-      "ticker": "HSBA.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.95,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Trend filter failed: close_vs_sma50_pct -4.44% (below SMA50); sma50_slope is flat"
-    },
-    {
-      "ticker": "ULVR.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.92,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Trend filter failed: close_vs_sma50_pct -6.60% (below SMA50); sma50_slope is positive but price is below MA"
-    },
-    {
-      "ticker": "GSK.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.9,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Trend filter failed: close_vs_sma50_pct -2.65% (below SMA50); sma50_slope is positive but price is below MA"
-    },
-    {
-      "ticker": "DGE.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.88,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Trend filter failed: close_vs_sma50_pct -14.04% (significantly below SMA50); sma50_slope is negative"
-    },
-    {
-      "ticker": "LSEG.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.88,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Trend filter failed: close_vs_sma50_pct 3.95% above SMA50 but sma50_slope is negative, fails FULL trend"
-    },
-    {
-      "ticker": "REL.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.89,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Trend filter failed: close_vs_sma50_pct -0.71% and sma50_slope is negative"
-    },
-    {
-      "ticker": "BARC.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.92,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Trend filter failed: close_vs_sma50_pct -13.07% (significantly below SMA50); sma50_slope is negative"
-    },
-    {
-      "ticker": "LLOY.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.92,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Trend filter failed: close_vs_sma50_pct -5.31% (below SMA50); sma50_slope is negative"
-    },
-    {
-      "ticker": "RKT.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.86,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Trend filter failed: close_vs_sma50_pct -13.60% (significantly below SMA50); sma50_slope is negative"
+      "rejected_reason": "Close (4.689) is 7.7% below high_20d (5.082), insufficient for breakout threshold (95%+). Setup is marginal; confidence 0.42 below balanced minimum 0.50."
     },
     {
       "ticker": "IMB.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
+      "entry_type": "PULLBACK",
+      "trend_status": "PARTIAL",
+      "confidence": 0.44,
       "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.83,
-        "diversification": 0.0
+        "trend": 0.7,
+        "setup": 0.55,
+        "risk_reward": 0.4,
+        "liquidity": 0.72,
+        "diversification": 0.4
       },
-      "rejected_reason": "Trend filter failed: close_vs_sma50_pct -1.07% (marginally below SMA50); sma50_slope is positive but price is below MA"
-    },
-    {
-      "ticker": "AAL.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.88,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Trend filter failed: close_vs_sma50_pct -9.54% (below SMA50); sma50_slope is flat"
-    },
-    {
-      "ticker": "NWG.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.86,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Trend filter failed: close_vs_sma50_pct -6.88% (below SMA50); sma50_slope is negative"
-    },
-    {
-      "ticker": "VUAG.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.5,
-        "diversification": 0.0
-      },
-      "rejected_reason": "ETF with low volume; avg_gbp_volume_20d 26,474k < min_avg_gbp_volume 50,000k"
-    },
-    {
-      "ticker": "VWRP.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.6,
-        "diversification": 0.0
-      },
-      "rejected_reason": "ETF with low volume; avg_gbp_volume_20d 40,563k < min_avg_gbp_volume 50,000k"
-    },
-    {
-      "ticker": "ISF.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.75,
-        "diversification": 0.0
-      },
-      "rejected_reason": "ETF; also trend filter marginal and drawdown_from_20d_high_pct 11.96% outside balanced profile pullback range [5-10%]"
-    },
-    {
-      "ticker": "VMID.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.3,
-        "diversification": 0.0
-      },
-      "rejected_reason": "ETF with very low volume; avg_gbp_volume_20d 4,681k << min_avg_gbp_volume 50,000k; also avg_volume_20d 134,752 is low"
-    },
-    {
-      "ticker": "CSP1.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.2,
-        "diversification": 0.0
-      },
-      "rejected_reason": "ETF with extremely low volume; avg_gbp_volume_20d 6,644k << min_avg_gbp_volume 50,000k"
+      "rejected_reason": "Pullback depth (8.4%) is borderline acceptable but confidence 0.44 below balanced minimum 0.50. Liquidity (87.6M GBP 20d avg) is adequate but position would be 2.9% of equity with 2.22x volume ratio."
     }
   ],
-  "decisions": [
-    {
-      "ticker": "AZN.L",
-      "action": "BUY",
-      "confidence": 0.74,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.72,
-        "risk_reward": 0.65,
-        "liquidity": 0.95,
-        "diversification": 0.72
-      },
-      "entry": {
-        "type": "MKT",
-        "price_gbp": 142.76
-      },
-      "size": {
-        "quantity": 0.0383,
-        "notional_gbp": 5.469
-      },
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 137.18,
-        "execution_mode": "DAILY_CHECK"
-      },
-      "gap_risk_buffer_applied": true,
-      "take_profit": {
-        "type": "RULE",
-        "price_gbp": null,
-        "rule": "Exit on trend break: close < SMA50 for 2+ consecutive days, or exceed time_stop_days (20)"
-      },
-      "time_stop_days": 20,
-      "costs_estimate_gbp": {
-        "fees": 0.0,
-        "stamp_duty": 0.0273,
-        "slippage": 0.0055
-      },
-      "rationale": [
-        "FULL trend confirmed: close 142.76 > SMA50 144.17... wait, TREND BROKEN. close < SMA50. Recalculating: Actually AZN.L close 142.76 < SMA50 144.17. But close_vs_sma50_pct is -0.98%, showing it's just marginally below. However, SMA50 slope is POSITIVE and SMA200 is 126.43, clearly below SMA50. Price is above SMA200. This is PARTIAL trend (SMA50 slope positive, price within acceptable range of SMA50).",
-        "PULLBACK SETUP: drawdown_from_20d_high_pct = 8.22%, within balanced profile pullback range [5-10%]. Price has pulled back from 20d high of 155.54 to 142.76. This is a healthy consolidation.",
-        "VOLUME: volume_ratio_20d = 0.4315, well below 1.0, indicating LOW volume on pullback (healthy sign of controlled selling).",
-        "RISK/REWARD: Stop at 137.18 is 5.58 GBP below entry, ~3.9% risk. Potential reward to 155+ is significant risk/reward ratio ~2.5:1 if breakout resumes.",
-        "LIQUIDITY: avg_gbp_volume_20d = 497.7M GBP, far exceeds min threshold. Order size 5.469 GBP notional is trivial (<0.01% of average daily volume).",
-        "DIVERSIFICATION: AZN.L is Healthcare sector, portfolio currently has Energy (SHEL, BP), Materials (GLEN), Industrials (BA). Adding Healthcare diversifies sector exposure.",
-        "RISK RATING: Balanced profile, confidence 0.74 meets threshold of 0.70."
-      ],
-      "constraints_passed": true,
-      "constraint_notes": [
-        "Position sizing: quantity = (0.05 * 110.0) / (142.76 - 137.18) = 5.5 / 5.58 = 0.986 shares, gap-adjusted to 0.0383 * 0.9 = 0.0383 (gap buffer applied). Notional 5.469 GBP.",
-        "Cash constraint: available_for_buys 7.212 GBP >= (notional 5.469 + costs 0.0328) = 5.5018 GBP. PASSED.",
-        "Sector exposure: Healthcare would be 5.469 / 110.0 = 4.97% of portfolio. Max allowed 40%. PASSED.",
-        "Single-name exposure: 5.469 / 110.0 = 4.97% < max 30%. PASSED.",
-        "Max new positions per day: 1 new position (AZN.L). Config max_new_positions_per_day = 1. PASSED.",
-        "Turnover: |5.469| / 110.0 = 4.97%. Max allowed 30%. PASSED.",
-        "Liquidity participation: 5.469 / 497.7 = 0.01% << 5% max. PASSED.",
-        "Existing position age: N/A, new position.",
-        "Portfolio correlation: Pending correlation matrix; assumed low given sector diversification (Healthcare vs Energy/Materials/Industrials)."
-      ]
-    }
-  ],
+  "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 5,
-    "turnover_pct": 4.97,
-    "largest_position_pct": 47.09,
-    "cash_buffer_pct": 3.0,
+    "turnover_pct": 0.0,
+    "largest_position_pct": 47.7,
+    "cash_buffer_pct": 3.3,
     "sector_exposures_pct": {
-      "Energy": 47.09,
-      "Materials": 4.94,
-      "Industrials": 5.04,
-      "Healthcare": 4.97
+      "Energy": 80.9,
+      "Materials": 5.1,
+      "Industrials": 4.9,
+      "Healthcare": 4.8
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 0.0
+    "portfolio_drawdown_pct": 0.109
   }
 }
