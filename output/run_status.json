@@ -1,23 +1,43 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-03-20",
-  "reason": "Portfolio drawdown (0.11%) is within limit (15.00%), but no valid entry signals generated today. All candidates rejected: SHEL.L trend neutral; AZN.L deep pullback but consecutive days below SMA50; HSBA.L negative slope; ULVR.L flat trend; BP.L already in position; GSK.L positive trend but high pullback; RIO.L positive trend but material pullback; DGE.L negative slope; GLEN.L already in position; and ETFs below threshold. Conservative profile requires high-confidence setups; none met criteria today.",
+  "as_of_date": "2026-03-23",
+  "reason": "Portfolio cash balance critically low (\u00a34.94 out of \u00a3106.46 equity). Portfolio is at 96.3% of drawdown limit (3.6% below peak). No eligible entry setups meeting confidence thresholds after trend and risk filters. Conservative bias favours preservation.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 0.109,
+    "portfolio_drawdown_pct": 3.22,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_adequate": true,
-    "max_positions_respected": true,
-    "turnover_within_limit": true,
-    "exposure_limits_ok": true,
-    "liquidity_filters_pass": true
+    "cash_buffer_required_gbp": 3.19,
+    "cash_buffer_available_gbp": 4.94,
+    "cash_buffer_status": "ADEQUATE",
+    "max_positions_limit": 5,
+    "current_positions": 5,
+    "positions_status": "AT_LIMIT",
+    "portfolio_turnover_potential_pct": 0.0,
+    "turnover_limit_pct": 30.0,
+    "turnover_status": "OK",
+    "largest_position_pct": 47.1,
+    "max_single_name_pct": 30.0,
+    "single_name_status": "BREACH",
+    "largest_sector": "Energy",
+    "largest_sector_pct": 79.9,
+    "max_sector_pct": 40.0,
+    "sector_status": "BREACH"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK"
+  "stop_execution_mode": "DAILY_CHECK",
+  "notes": [
+    "Portfolio holds 5 positions at maximum limit. No capacity for new long entries.",
+    "Energy sector (BP + SHEL) represents 79.9% of portfolio, far exceeding 40% sector limit.",
+    "BP.L position alone is 47.1% of portfolio, exceeding 30% single-name limit.",
+    "Cash position of \u00a34.94 is severely constrained; unable to fund meaningful new positions.",
+    "Portfolio 3.22% below peak equity (\u00a3110.0). Approaching 15% drawdown trigger at \u00a393.5.",
+    "No new BUY candidates identified with sufficient confidence scores above 0.65 threshold.",
+    "RECOMMENDATION: Consider rebalancing to reduce Energy sector and single-name concentration. Liquidate underperforming positions (AZN.L -4.0%, BA.L -1.4%) to raise cash and rebuild flexibility."
+  ]
 }
