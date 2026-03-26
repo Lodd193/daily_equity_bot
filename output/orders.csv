@@ -1,2 +1,5 @@
+```
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-(NO TRADES)
+1,BA.L,SELL,MKT,0.2378,,DAY,21.5,STOP_LOSS_BREACH
+2,AZN.L,SELL,MKT,0.0383,,DAY,137.18,TREND_BREAK_EXIT
+```
