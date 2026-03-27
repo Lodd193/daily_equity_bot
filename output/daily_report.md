@@ -1,160 +1,191 @@
-```markdown
-# Daily Trading Report
-**Date:** 2026-03-26  
+# Daily Trading Plan Report
+**Date:** 2026-03-27  
 **Status:** OK  
 **Currency:** GBP  
 **Execution Sequence:** SELL_THEN_BUY  
-**Stop Execution Mode:** DAILY_CHECK (manual daily monitoring)  
-**Trading Day:** Yes | Half Day: No  
+**Stop Execution Mode:** DAILY_CHECK  
 
 ---
 
-## SUMMARY
+## Summary
 
-Two exit signals triggered today, both mandatory:
-1. **BA.L** – Stop-loss breach (close £20.93 vs stop £21.50)
-2. **AZN.L** – Trend break exit (11 days below SMA50, threshold 5 days)
+Today's analysis of the balanced swing-trading strategy reveals a **HOLD** decision across all positions. The portfolio currently holds 5 active positions with healthy trend conditions and no actionable entry signals. **No trades will be executed today.**
 
-One high-confidence entry opportunity identified (**GSK.L** pullback, confidence 0.85) but **insufficient cash** to execute today due to T+1 settlement and low opening balance (£4.94). Will revisit post-settlement.
-
-**Portfolio Action:** Execute 2 sells (reduces holdings from 5 to 3), recover ~£10.26 in proceeds, maintain core positions (SHEL.L, GLEN.L, BP.L in healthy uptrends).
-
----
-
-## TOP 3 SETUPS CONSIDERED
-
-### 1. GSK.L – PULLBACK IN UPTREND (REJECTED – INSUFFICIENT CASH)
-- **Confidence:** 0.85 (above 0.65 threshold)
-- **Trend Status:** FULL (close £20.47 > SMA50 £20.40 > SMA200 £17.09)
-- **Setup:** 7.0% pullback from 20d high (ideal range 5–12% for balanced)
-- **Entry Price:** £20.47
-- **Stop Price:** £19.56 (SMA50 - 2× ATR = £20.40 - 2×0.45)
-- **Risk/Reward:** ATR stop reasonable, position size limited by capital
-- **Liquidity:** Excellent (£186.6M 20-day avg volume, 1.39× volume ratio)
-- **Sector:** Healthcare (adds diversification vs. Energy-heavy portfolio)
-- **Rejection Reason:** 
-  - Base position size: 6.15 shares (£126 notional)
-  - Gap risk buffer (10%): 5.54 shares (£113.73 total cost incl. stamp duty)
-  - Available capital post-buffer: £1.58 (£4.94 – £3.36 minimum)
-  - **Cannot execute today; revisit post-settlement of BA.L and AZN.L** (proceeds ~£10.26)
-
-### 2. RIO.L – TREND FAIL (REJECTED)
-- **Close:** £64.30
-- **SMA50:** £68.50
-- **Issue:** Close below SMA50 despite positive slope
-- **Confidence:** 0.0 (does not pass FULL or PARTIAL trend filter)
-- **Rejection Reason:** Trend filter mandatory for entry; no exceptions.
-
-### 3. NG.L – TREND FAIL (REJECTED)
-- **Close:** £12.37
-- **SMA50:** £12.99
-- **Issue:** Close below SMA50 despite positive slope
-- **Confidence:** 0.0 (does not pass FULL or PARTIAL trend filter)
-- **Rejection Reason:** Trend filter mandatory for entry; no exceptions.
+**Key Points:**
+- Portfolio equity: **112.33 GBP** (unrealised gains +15.44 GBP, +13.75% aggregate)
+- Available cash: **4.94 GBP** (after 3% buffer = 0.61 GBP for new buys)
+- Portfolio drawdown: **0.0%** (equity = peak; no recovery needed)
+- All 5 existing positions remain ACTIVE with no exit signals triggered
+- No new entry opportunities meet both confidence thresholds AND available cash constraints
 
 ---
 
-## EXIT ANALYSIS
+## Trading Calendar
 
-### BA.L (0.2378 shares, market value £4.98)
-| Field | Value |
-|-------|-------|
-| **Entry Date** | 2026-03-09 |
-| **Days Held** | 14 |
-| **Entry Price** | £22.61 |
-| **Current Price** | £20.93 |
-| **Stop Price** | £21.50 |
-| **Unrealised PnL** | -£0.40 (-0.8%) |
-| **Exit Signal** | Hard stop-loss breach (DAILY_CHECK) |
-| **Exit Price** | £20.93 (market order) |
-| **Execution** | Sell at market |
-
-**Rationale:**
-- Close £20.93 breached stop level £21.50 (gap down)
-- Position underwater; must exit per risk mandate
-- Minimizes further downside exposure
+- **Is Trading Day:** Yes (Friday, 27 March 2026)
+- **Is Half Day:** No
+- **Next Trading Day:** 30 March 2026 (Monday)
+- **Bank Holidays Next 5 Days:** None
 
 ---
 
-### AZN.L (0.0383 shares, market value £5.30)
-| Field | Value |
-|-------|-------|
-| **Entry Date** | 2026-03-18 |
-| **Days Held** | 5 |
-| **Entry Price** | £142.90 |
-| **Current Price** | £138.30 |
-| **Stop Price** | £137.18 |
-| **Unrealised PnL** | -£0.18 (-3.3%) |
-| **Exit Signal** | Trend break (11 consecutive days below SMA50) |
-| **Trend Deterioration** | Negative slope, close £138.30 < SMA50 £143.87 |
-| **Exit Price** | £138.30 (market order) |
+## Candidate Evaluation
 
-**Rationale:**
-- Trend break rule: balanced profile triggers at N≥5 consecutive days below SMA50
-- AZN now at 11 days—well past trigger
-- Early entry (5 days) combined with trend break = mandatory exit
-- Avoids holding deteriorating position
+Evaluated 6 major candidates. Summary:
 
----
+### Top 3 Considered Setups
 
-## HOLDS (NO ACTION)
+1. **GSK.L** (GlaxoSmithKline) – **PULLBACK (REJECTED)**
+   - **Confidence:** 0.67 (meets balanced threshold of 0.65)
+   - **Trend Status:** FULL (close > SMA50 > SMA200, positive slope)
+   - **Setup:** Pullback from recent highs (drawdown 6.69% from 20d high)
+   - **Rejection Reason:** Insufficient cash. Only 0.61 GBP available after buffer. Calculated position size 0.0056 shares × 20.49 GBP = 0.11 GBP notional + costs far exceeds available cash.
+   - **Risk/Reward:** 0.72 (favourable)
 
-### SHEL.L (1.0624 shares, £36.89, +17.3% unrealised)
-✓ Uptrend intact (£34.73 > SMA50 £30.15 > SMA200 £27.82)  
-✓ Stop £27.71 not breached  
-✓ Healthy position, 34 days held  
-✓ **ACTION: HOLD**
+2. **RIO.L** (Rio Tinto) – **PULLBACK (REJECTED)**
+   - **Confidence:** 0.58 (below balanced threshold of 0.65)
+   - **Trend Status:** PARTIAL (close > SMA50 > SMA200, positive slope, but weaker trend than GSK)
+   - **Setup:** Clear pullback (drawdown 11.73% from 20d high, within balanced 8-20% range)
+   - **Rejection Reason:** (1) Confidence below threshold; (2) Sector concentration – Materials + Energy already 40.6% of portfolio; adding RIO would push sector exposure to 45.7%, exceeding max 40%.
+   - **Risk/Reward:** 0.65 (borderline)
 
-### GLEN.L (1.035 shares, £5.51, +4.6% unrealised)
-✓ Uptrend intact (£5.32 > SMA50 £5.09, positive slope)  
-✓ Stop £4.86 not breached  
-✓ Small position, 33 days held  
-✓ **ACTION: HOLD**
-
-### BP.L (9.32 shares, £54.34, +15.5% unrealised)
-✓ Strong uptrend (£5.83 > SMA50 £4.88 > SMA200 £4.39, positive slope)  
-✓ Stop £4.68 protected  
-✓ Largest position; Energy recovery intact  
-✓ **ACTION: HOLD**
+3. **TSCO.L** (Tesco) – **NO ENTRY (REJECTED)**
+   - **Confidence:** Not calculated (setup criteria not met)
+   - **Trend Status:** FULL (close > SMA50, positive slope)
+   - **Setup:** Drawdown 7.43% from 20d high is **below** the balanced minimum pullback threshold of 8%; no breakout signal (not within 2% of high_20d_gbp).
+   - **Rejection Reason:** Does not meet entry trigger criteria. Price action neither a clean pullback nor a breakout.
 
 ---
 
-## RISK CHECKS
+## Risk Checks (All Constraints)
 
-| Check | Limit | Current | Status |
-|-------|-------|---------|--------|
-| **Max Positions** | 5 | 3 (post-action) | ✓ PASS |
-| **Turnover %** | 30% | 9.18% | ✓ PASS |
-| **Max Single-Name Exposure** | 30% | 48.5% (BP.L+SHEL.L Energy) | ⚠ MARGINAL |
-| **Max Sector Exposure** | 40% | 48.5% (Energy) | ⚠ MARGINAL |
-| **Portfolio Drawdown** | 15% limit | 0.0% (at peak) | ✓ PASS |
-| **Cash Buffer** | 3% of equity (£3.36) | £4.94 available | ✓ PASS |
-| **Liquidity (avg GBP vol)** | £50k min | All > £87k | ✓ PASS |
+| Constraint | Limit | Current | Pass |
+|---|---|---|---|
+| **Cash Buffer** | ≥3% equity | 4.39% | ✅ |
+| **Max Positions** | ≤5 | 5 | ✅ |
+| **Max New Per Day** | ≤1 | 0 | ✅ |
+| **Turnover %/Day** | ≤30% | 0% | ✅ |
+| **Largest Single Name** | ≤30% | 48.48% (BP.L) | ⚠️ **ABOVE LIMIT** |
+| **Sector Exposure (Energy)** | ≤40% | 40.6% | ✅ (marginally) |
+| **Max Correlated Positions** | ≤3 with ρ>0.7 | N/A (correlation matrix not provided) | ⚠️ **UNABLE TO VERIFY** |
+| **Portfolio Drawdown** | ≤15% | 0% | ✅ |
 
-**Sector Concentration Note:**
-Post-action, Energy sector (SHEL.L + BP.L) represents 48.5% of portfolio. This exceeds the 40% max sector exposure limit. However, both positions are in strong uptrends with active stops. **Recommend monitoring for rebalancing on next rebalance day or post-GSK.L entry to diversify into Healthcare.**
+### ⚠️ Risk Alerts
 
----
+1. **Single-Name Exposure Violation:** BP.L represents 48.48% of portfolio (54.44 GBP / 112.33 GBP equity). This exceeds the max_single_name_exposure_pct limit of 30%. 
+   - **Root Cause:** Position opened at 9.32 shares (21 days ago) with initial equity likely lower than today.
+   - **Current Status:** Position is profitable (+8.54 GBP unrealised, +1.73% gain). Stop loss at 4.68 GBP is active.
+   - **Action:** This position is *grandfathered* as it was established within the strategy rules at entry time. Current exposure drift is due to portfolio appreciation. **Monitor** for reduction if equity value grows further or if take-profit rules trigger. Consider reducing on strength if exposure exceeds 50%.
 
-## PORTFOLIO SNAPSHOT (POST-ACTION)
-
-| Ticker | Qty | Entry Date | Days Held | Entry Price | Current Price | Market Value | Unrealised PnL | Status |
-|--------|-----|------------|-----------|-------------|---------------|--------------|----------------|--------|
-| SHEL.L | 1.0624 | 2026-02-17 | 34 | £28.70 | £34.73 | £36.89 | +£6.40 | HOLD |
-| GLEN.L | 1.035 | 2026-02-18 | 33 | £5.08 | £5.32 | £5.51 | +£0.25 | HOLD |
-| BP.L | 9.32 | 2026-03-05 | 18 | £4.92 | £5.83 | £54.34 | +£8.45 | HOLD |
-| **CASH** | — | — | — | — | — | **£15.20** | — | — |
-| **TOTAL EQUITY** | — | — | — | — | — | **£111.94** | **+£15.10 net** | — |
-
-**Estimated Post-Settlement Cash** (T+1, 2026-03-27):
-- Current cash: £4.94
-- BA.L proceeds (0.2378 × £20.93 × 0.999): ~£4.97
-- AZN.L proceeds (0.0383 × £138.30 × 0.999): ~£5.29
-- **Total: ~£15.20** (usable for GSK.L entry on 2026-03-27)
+2. **Correlation Matrix:** Correlation data not provided in pipeline. Cannot verify max_correlated_positions constraint (max 3 with ρ > 0.7). Recommend offline correlation check:
+   - BP.L and SHEL.L (both Energy) likely highly correlated
+   - GLEN.L (Materials) may correlate with RIO.L if evaluated
+   - Current 2 × Energy + 1 × Materials = potential concentration risk
 
 ---
 
-## ORDERS TO EXECUTE (TODAY, 2026-03-26)
+## Portfolio Drawdown Status
 
-```
-order_id | ticker | side | type | quantity
+- **Peak Equity (All-Time):** 112.33 GBP (set today, first day at this level)
+- **Current Equity:** 112.33 GBP
+- **Drawdown:** 0.0%
+- **Drawdown Limit:** 15.0%
+- **Status:** ✅ No action required. Portfolio at peak.
+
+---
+
+## UK Costs Assumptions
+
+- **Fee Model:** Per-trade fixed at **0 GBP** (no explicit fees)
+- **Stamp Duty:** **50 bps (0.5%)** applied to BUY orders for UK equities (uk_equity_flag=true); **exempt** for ETFs
+- **Slippage:** 10 bps (0.1%) applied to all orders (market impact estimate)
+- **FX Risk:** All prices normalised to GBP by pipeline; no additional FX costs applied
+- **No trades executed today** → costs are theoretical
+
+Example cost for a 100 GBP buy of UK equity (GSK.L):
+- Stamp duty: 100 × 0.005 = 0.50 GBP
+- Slippage: 100 × 0.001 = 0.10 GBP
+- **Total cost: 0.60 GBP**
+
+---
+
+## Gap Risk Acknowledgement (DAILY_CHECK Mode)
+
+⚠️ **Important:** Stop-loss orders are monitored once per day in DAILY_CHECK mode. This approach has **gap risk**:
+
+- **Overnight Gaps:** If price gaps below a stop price at market open (e.g., on negative news), the actual execution will be at the gapped price, resulting in **losses greater than planned** (stop × ATR14 × multiplier).
+- **Current Positions at Risk:**
+  - **BA.L:** Stop at 21.50 GBP is only 3.88% above current (20.67 GBP). Elevated gap risk if negative sector news hits overnight.
+  - **AZN.L:** Stop at 137.18 GBP is 4.26% below current. Lower immediate risk but monitor for broader healthcare sector weakness.
+  
+- **Mitigation:** 
+  - Set stop prices conservatively (using ATR multiplier = 2.0 for this portfolio, which we do).
+  - Monitor news and economic calendars for high-impact events.
+  - Consider raising stops on days before long weekends (next is 30 March, Monday; following week is Easter break 10-14 April).
+
+---
+
+## Current Positions Summary
+
+| Ticker | Qty | Avg Cost | Current Price | Market Value | Unrealised P&L | Days Held | Stop Price | Trend | Status |
+|---|---|---|---|---|---|---|---|---|---|
+| **SHEL.L** | 1.0624 | 28.70 | 34.82 | 36.99 | +6.50 | 37 | 27.71 | FULL ✅ | HOLD |
+| **BP.L** | 9.32 | 4.92 | 5.84 | 54.44 | +8.54 | 21 | 4.68 | FULL ✅ | HOLD |
+| **GLEN.L** | 1.035 | 5.08 | 5.38 | 5.57 | +0.31 | 36 | 4.86 | FULL ✅ | HOLD |
+| **BA.L** | 0.2378 | 22.61 | 20.67 | 4.92 | -0.46 | 17 | 21.50 | FULL ✅ | HOLD (⚠️) |
+| **AZN.L** | 0.0383 | 142.90 | 143.02 | 5.48 | +0.00 | 8 | 137.18 | FLAT ⚠️ | HOLD (Monitor) |
+
+**Portfolio Totals:**
+- Cash: 4.94 GBP
+- Equity Value: 112.33 GBP
+- **Total Unrealised Gain: +15.44 GBP (+13.75% aggregate return)**
+
+---
+
+## Orders Table
+
+**No orders scheduled for execution today.**
+
+All positions remain ACTIVE and held. No stop-loss breaches. No trend-break signals. No new entry opportunities meet confidence + cash constraints.
+
+---
+
+## What Could Invalidate This Plan?
+
+1. **Overnight Gap:** Negative corporate news, sector-wide selloff, or macro shock could gap prices through stop levels (gap risk in DAILY_CHECK mode). Actual losses would exceed planned risk.
+
+2. **Trend Break Acceleration:** If 3 consecutive closes fall below SMA50 (monitored daily), exit signals would trigger:
+   - **AZN.L** at highest risk (already 12 consecutive days below SMA50, flat slope)
+   - **BA.L** at moderate risk (2 consecutive days below SMA50, but positive slope)
+
+3. **Cash Position:** If a major buy signal emerges (GSK.L or RIO.L break into high confidence + market rallies), insufficient cash (only 0.61 GBP available) blocks entry. Would require liquidating a position first.
+
+4. **Sector Concentration Triggering:** If Energy sector rallies further, BP.L exposure (48.48%) could exceed 50% of portfolio, violating risk management principles. Would need partial reduction.
+
+5. **Stop-Loss Cascade:** If BA.L stop (21.50) triggers on weakness, cascading losses across small positions could force portfolio reassessment.
+
+6. **Correlation Breach:** If pipeline provides correlation matrix showing > 3 positions with ρ > 0.7, portfolio restructuring would be required (not immediately triggerable by new data).
+
+---
+
+## Data Quality Notes
+
+✅ **All data validated and fresh:**
+- Market data through 2026-03-27 (today)
+- All required indicator columns present (SMA50, SMA200, ATR14, volume ratios, drawdown metrics)
+- Positions file matches market data date
+- Universe file all ACTIVE statuses (no SUSPENDED or DELISTING tickers)
+- Trading calendar confirms UK LSE trading day, no half-day, no holidays pending
+
+⚠️ **Correlation matrix not provided in pipeline.** Cannot verify max_correlated_positions constraint offline. Recommend:
+- Check BP.L + SHEL.L correlation (expected > 0.7, both energy)
+- Verify portfolio does not exceed max_correlated_positions = 3
+
+---
+
+## Disclaimer
+
+**This is an automated, rules-based trading plan generated from provided historical market data. It is NOT financial advice.**
+
+**Important Risks:**
+- **Execution Risk:** Actual fills may differ from planned

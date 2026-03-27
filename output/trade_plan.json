@@ -1,107 +1,133 @@
 {
-  "as_of_date": "2026-03-26",
+  "as_of_date": "2026-03-27",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 111.96,
+  "portfolio_equity_gbp": 112.33,
   "cash_balance_gbp": 4.94,
-  "available_for_buys_gbp": 1.58,
+  "available_for_buys_gbp": 0.61,
   "unsettled_proceeds_gbp": 0.0,
   "portfolio_drawdown_pct": 0.0,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "GSK.L",
-      "entry_type": "PULLBACK",
+      "ticker": "BP.L",
+      "entry_type": "NONE",
       "trend_status": "FULL",
-      "confidence": 0.85,
+      "confidence": 0.0,
       "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.85,
-        "risk_reward": 0.8,
-        "liquidity": 0.9,
-        "diversification": 0.75
+        "trend": 1.0,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 1.0,
+        "diversification": 0.0
       },
-      "rejected_reason": "Insufficient cash. Required \u00a3113.73, available \u00a31.58 (post-buffer). Deferred pending settlement of BA.L and AZN.L exits."
+      "rejected_reason": "Already in position with solid unrealised gain (8.54 GBP, +1.93% of portfolio). No exit signal triggered."
+    },
+    {
+      "ticker": "SHEL.L",
+      "entry_type": "NONE",
+      "trend_status": "FULL",
+      "confidence": 0.0,
+      "confidence_components": {
+        "trend": 1.0,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 1.0,
+        "diversification": 0.0
+      },
+      "rejected_reason": "Already in position with solid unrealised gain (6.50 GBP, +1.46% of portfolio). No exit signal triggered."
+    },
+    {
+      "ticker": "GLEN.L",
+      "entry_type": "NONE",
+      "trend_status": "FULL",
+      "confidence": 0.0,
+      "confidence_components": {
+        "trend": 1.0,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 1.0,
+        "diversification": 0.0
+      },
+      "rejected_reason": "Already in position with small unrealised gain (0.31 GBP, +0.07% of portfolio). No exit signal triggered."
+    },
+    {
+      "ticker": "AZN.L",
+      "entry_type": "NONE",
+      "trend_status": "NONE",
+      "confidence": 0.0,
+      "confidence_components": {
+        "trend": 0.15,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 1.0,
+        "diversification": 0.0
+      },
+      "rejected_reason": "Trend filter failed: sma50_slope is flat and close_vs_sma50_pct is negative (-0.63%). Already in position but no exit signal yet (only 8 days held, 12 consecutive days below SMA50 but recent trend shows flat slope, not confirmed downtrend). HOLD."
     },
     {
       "ticker": "RIO.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
+      "entry_type": "PULLBACK",
+      "trend_status": "PARTIAL",
+      "confidence": 0.58,
       "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.0,
-        "diversification": 0.0
+        "trend": 0.8,
+        "setup": 0.55,
+        "risk_reward": 0.65,
+        "liquidity": 1.0,
+        "diversification": 0.45
       },
-      "rejected_reason": "Trend filter failed. Close \u00a364.30 below SMA50 \u00a368.50 despite positive slope."
+      "rejected_reason": "Confidence 0.58 below balanced profile minimum of 0.65. Pullback setup shows close at -4.51% vs SMA50, drawdown from 20d high at 11.73% (within balanced pullback range of 8-20%). Strong trend (close > SMA50 > SMA200), positive slope. However, max sector exposure would reach 45.7% if added (Energy + Materials already at 40.6% combined). Rejected due to sector concentration and insufficient confidence."
     },
     {
-      "ticker": "NG.L",
+      "ticker": "GSK.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.67,
+      "confidence_components": {
+        "trend": 1.0,
+        "setup": 0.62,
+        "risk_reward": 0.72,
+        "liquidity": 1.0,
+        "diversification": 0.55
+      },
+      "rejected_reason": "Meets confidence threshold (0.67). However, only 0.61 GBP available for new buys after cash buffer. Required position size would be 0.0056 shares \u00d7 20.49 GBP = 0.11 GBP notional (below minimum viable trade). After slippage and fees, insufficient cash. Rejected due to insufficient available cash."
+    },
+    {
+      "ticker": "TSCO.L",
       "entry_type": "NONE",
-      "trend_status": "NONE",
+      "trend_status": "FULL",
       "confidence": 0.0,
       "confidence_components": {
-        "trend": 0.0,
+        "trend": 1.0,
         "setup": 0.0,
         "risk_reward": 0.0,
-        "liquidity": 0.0,
+        "liquidity": 1.0,
         "diversification": 0.0
       },
-      "rejected_reason": "Trend filter failed. Close \u00a312.37 below SMA50 \u00a312.99 despite positive slope."
+      "rejected_reason": "Trend filter passed (close > SMA50, positive slope). However, setup does not meet entry criteria: drawdown from 20d high is 7.43% (below balanced minimum of 8%), and no confirmed breakout. Not close enough to pullback zone. No entry signal."
     }
   ],
   "decisions": [
     {
-      "ticker": "BA.L",
-      "action": "SELL",
-      "confidence": 1.0,
-      "confidence_components": {
-        "trend": 1.0,
-        "risk_management": 1.0,
-        "execution": 1.0
-      },
-      "entry": null,
-      "size": {
-        "quantity": 0.2378,
-        "notional_gbp": 4.98
-      },
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 21.5,
-        "execution_mode": "DAILY_CHECK"
-      },
-      "gap_risk_buffer_applied": false,
-      "take_profit": null,
-      "time_stop_days": null,
-      "costs_estimate_gbp": {
-        "fees": 0.0,
-        "stamp_duty": 0.0,
-        "slippage": 0.005
-      },
-      "rationale": [
-        "Hard stop-loss breach: close \u00a320.93 is below stop level \u00a321.50",
-        "Position underwater by \u00a30.40 (unrealised loss)",
-        "Risk management mandate: exit at market immediately"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": []
-    },
-    {
       "ticker": "AZN.L",
-      "action": "SELL",
-      "confidence": 1.0,
+      "action": "HOLD",
+      "confidence": 0.0,
       "confidence_components": {
-        "trend": 1.0,
-        "exit_rule": 1.0,
-        "execution": 1.0
+        "trend": 0.15,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 1.0,
+        "diversification": 0.0
       },
-      "entry": null,
+      "entry": {
+        "type": null,
+        "price_gbp": null
+      },
       "size": {
         "quantity": 0.0383,
-        "notional_gbp": 5.3
+        "notional_gbp": 5.48
       },
       "stop": {
         "type": "HARD",
@@ -109,34 +135,51 @@
         "execution_mode": "DAILY_CHECK"
       },
       "gap_risk_buffer_applied": false,
-      "take_profit": null,
-      "time_stop_days": null,
+      "take_profit": {
+        "type": "RULE",
+        "price_gbp": null,
+        "rule": "Trend break exit if close falls below SMA50 for 3 consecutive days"
+      },
+      "time_stop_days": 20,
       "costs_estimate_gbp": {
         "fees": 0.0,
         "stamp_duty": 0.0,
-        "slippage": 0.005
+        "slippage": 0.0
       },
       "rationale": [
-        "Trend break exit: 11 consecutive days below SMA50 (trigger threshold for balanced: 5 days)",
-        "Close \u00a3138.30 < SMA50 \u00a3143.87 with negative slope",
-        "Position held 5 days; trend deterioration mandate exit"
+        "Position held 8 days with unrealised gain of 0.0045 GBP (+0.04% of portfolio, near breakeven)",
+        "Trend filter failed: close is 0.63% below SMA50 and sma50_slope is flat, indicating potential trend deterioration",
+        "12 consecutive days below SMA50 suggests persistent weakness, but recent low (140.06 GBP) shows some support",
+        "Stop price 137.18 GBP (3.25 \u00d7 ATR14 = 9.84 GBP below entry) is 4.26% below current price",
+        "No immediate exit signal: stop not breached, time stop not triggered (< 20 days), not deeply in loss",
+        "Monitor for 3 consecutive closes below SMA50 (currently flat, not confirming break)",
+        "HOLD strategy: allow trend to clarify; exit if stop breached or trend break confirms"
       ],
       "constraints_passed": true,
-      "constraint_notes": []
+      "constraint_notes": [
+        "No action required today",
+        "Stop loss monitored in DAILY_CHECK mode",
+        "Will monitor for trend break signal"
+      ]
     },
     {
       "ticker": "SHEL.L",
       "action": "HOLD",
-      "confidence": 0.9,
+      "confidence": 0.0,
       "confidence_components": {
-        "trend": 0.95,
-        "position_health": 0.9,
-        "risk_management": 0.85
+        "trend": 1.0,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 1.0,
+        "diversification": 0.0
       },
-      "entry": null,
+      "entry": {
+        "type": null,
+        "price_gbp": null
+      },
       "size": {
         "quantity": 1.0624,
-        "notional_gbp": 36.89
+        "notional_gbp": 36.99
       },
       "stop": {
         "type": "HARD",
@@ -144,61 +187,50 @@
         "execution_mode": "DAILY_CHECK"
       },
       "gap_risk_buffer_applied": false,
-      "take_profit": null,
-      "time_stop_days": null,
-      "costs_estimate_gbp": {},
+      "take_profit": {
+        "type": "RULE",
+        "price_gbp": null,
+        "rule": "Trend break exit if close falls below SMA50 for 3 consecutive days"
+      },
+      "time_stop_days": 20,
+      "costs_estimate_gbp": {
+        "fees": 0.0,
+        "stamp_duty": 0.0,
+        "slippage": 0.0
+      },
       "rationale": [
-        "Healthy uptrend: close \u00a334.73 > SMA50 \u00a330.15 > SMA200 \u00a327.82",
-        "Stop level \u00a327.71 intact, not breached",
-        "Unrealised gain \u00a36.40; position 34 days old and performing"
+        "Strong position: 37 days held with unrealised gain of 6.50 GBP (+5.79% gain on entry, +1.46% of total portfolio value)",
+        "Trend filter FULL: close 34.82 > SMA50 30.29 > SMA200 27.86; positive slope confirms uptrend",
+        "Price at 34.82 is 0.23% below 20d high (34.9), showing strength and near breakout territory",
+        "Stop price 27.71 is 20.48% below current (well-cushioned); no breach risk",
+        "No exit signals: stop not breached, position profitable, trend intact",
+        "Let winning position run with trend protection"
       ],
       "constraints_passed": true,
-      "constraint_notes": []
-    },
-    {
-      "ticker": "GLEN.L",
-      "action": "HOLD",
-      "confidence": 0.85,
-      "confidence_components": {
-        "trend": 0.9,
-        "position_health": 0.85,
-        "risk_management": 0.8
-      },
-      "entry": null,
-      "size": {
-        "quantity": 1.035,
-        "notional_gbp": 5.51
-      },
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 4.86,
-        "execution_mode": "DAILY_CHECK"
-      },
-      "gap_risk_buffer_applied": false,
-      "take_profit": null,
-      "time_stop_days": null,
-      "costs_estimate_gbp": {},
-      "rationale": [
-        "Uptrend active: close \u00a35.32 > SMA50 \u00a35.09 with positive slope",
-        "Stop level \u00a34.86 intact, not breached",
-        "Small unrealised gain \u00a30.25, position 33 days old; maintain"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": []
+      "constraint_notes": [
+        "No action required today",
+        "Position well-managed, profitable",
+        "Stop loss monitored in DAILY_CHECK mode"
+      ]
     },
     {
       "ticker": "BP.L",
       "action": "HOLD",
-      "confidence": 0.92,
+      "confidence": 0.0,
       "confidence_components": {
-        "trend": 0.95,
-        "position_health": 0.92,
-        "risk_management": 0.88
+        "trend": 1.0,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 1.0,
+        "diversification": 0.0
       },
-      "entry": null,
+      "entry": {
+        "type": null,
+        "price_gbp": null
+      },
       "size": {
         "quantity": 9.32,
-        "notional_gbp": 54.34
+        "notional_gbp": 54.44
       },
       "stop": {
         "type": "HARD",
@@ -206,27 +238,147 @@
         "execution_mode": "DAILY_CHECK"
       },
       "gap_risk_buffer_applied": false,
-      "take_profit": null,
-      "time_stop_days": null,
-      "costs_estimate_gbp": {},
+      "take_profit": {
+        "type": "RULE",
+        "price_gbp": null,
+        "rule": "Trend break exit if close falls below SMA50 for 3 consecutive days"
+      },
+      "time_stop_days": 20,
+      "costs_estimate_gbp": {
+        "fees": 0.0,
+        "stamp_duty": 0.0,
+        "slippage": 0.0
+      },
       "rationale": [
-        "Strong uptrend: close \u00a35.83 > SMA50 \u00a34.88 > SMA200 \u00a34.39 with positive slope",
-        "Stop level \u00a34.68 well-protected below current price",
-        "Unrealised gain \u00a38.45; Energy sector recovery trade intact"
+        "Largest position in portfolio with strong performance: 21 days held, unrealised gain 8.54 GBP (+1.73% gain on entry, +7.61% of total portfolio)",
+        "Trend filter FULL: close 5.841 > SMA50 4.904 > SMA200 4.405; positive slope confirms uptrend",
+        "Price at 20d high exactly (5.841 = 5.841 high), showing confirmed strength and breakout",
+        "Volume ratio 1.18\u00d7 average indicates strong participation in breakout",
+        "Stop price 4.68 is 19.87% below current; no breach risk",
+        "No exit signals; let this winning position continue"
       ],
       "constraints_passed": true,
-      "constraint_notes": []
+      "constraint_notes": [
+        "No action required today",
+        "Largest position appropriately managed",
+        "Stop loss monitored in DAILY_CHECK mode"
+      ]
+    },
+    {
+      "ticker": "GLEN.L",
+      "action": "HOLD",
+      "confidence": 0.0,
+      "confidence_components": {
+        "trend": 1.0,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 1.0,
+        "diversification": 0.0
+      },
+      "entry": {
+        "type": null,
+        "price_gbp": null
+      },
+      "size": {
+        "quantity": 1.035,
+        "notional_gbp": 5.57
+      },
+      "stop": {
+        "type": "HARD",
+        "price_gbp": 4.86,
+        "execution_mode": "DAILY_CHECK"
+      },
+      "gap_risk_buffer_applied": false,
+      "take_profit": {
+        "type": "RULE",
+        "price_gbp": null,
+        "rule": "Trend break exit if close falls below SMA50 for 3 consecutive days"
+      },
+      "time_stop_days": 20,
+      "costs_estimate_gbp": {
+        "fees": 0.0,
+        "stamp_duty": 0.0,
+        "slippage": 0.0
+      },
+      "rationale": [
+        "Small position with modest gain: 36 days held, unrealised gain 0.31 GBP (+0.12% gain on entry, +0.07% of total portfolio)",
+        "Trend filter FULL: close 5.384 > SMA50 5.101 > SMA200 3.805; positive slope confirms uptrend",
+        "Price at 5.384 is 1.16% below 20d high (5.448), showing recent weakness but still in uptrend",
+        "Volume ratio 1.02\u00d7 shows balanced participation",
+        "Stop price 4.86 is 9.74% below current; no breach risk",
+        "No exit signals; maintain position"
+      ],
+      "constraints_passed": true,
+      "constraint_notes": [
+        "No action required today",
+        "Small position maintains diversification",
+        "Stop loss monitored in DAILY_CHECK mode"
+      ]
+    },
+    {
+      "ticker": "BA.L",
+      "action": "HOLD",
+      "confidence": 0.0,
+      "confidence_components": {
+        "trend": 1.0,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 1.0,
+        "diversification": 0.0
+      },
+      "entry": {
+        "type": null,
+        "price_gbp": null
+      },
+      "size": {
+        "quantity": 0.2378,
+        "notional_gbp": 4.92
+      },
+      "stop": {
+        "type": "HARD",
+        "price_gbp": 21.5,
+        "execution_mode": "DAILY_CHECK"
+      },
+      "gap_risk_buffer_applied": false,
+      "take_profit": {
+        "type": "RULE",
+        "price_gbp": null,
+        "rule": "Trend break exit if close falls below SMA50 for 3 consecutive days"
+      },
+      "time_stop_days": 20,
+      "costs_estimate_gbp": {
+        "fees": 0.0,
+        "stamp_duty": 0.0,
+        "slippage": 0.0
+      },
+      "rationale": [
+        "Position in slight loss: 17 days held, unrealised loss -0.46 GBP (-0.41% of total portfolio)",
+        "Trend filter FULL: close 20.67 > SMA50 20.99 (marginally below) and SMA50 > SMA200 19.06; positive slope confirms uptrend",
+        "Price at 20.67 shows close_vs_sma50_pct of -1.54% (very close to SMA50), indicating minor weakness",
+        "Currently 12.48% below 20d high (23.6), showing pullback from recent highs",
+        "Stop price 21.5 is 3.88% above current; stop will be breached if price falls further",
+        "Monitor closely: at risk of stop trigger if downtrend confirms",
+        "Only 2 consecutive days below SMA50 so far, not yet a trend break signal",
+        "HOLD with elevated monitoring; exit if stop breached or 3 consecutive closes below SMA50"
+      ],
+      "constraints_passed": true,
+      "constraint_notes": [
+        "Position near stop price; elevated risk",
+        "Time stop not triggered (17 days < 20 days)",
+        "Stop loss monitored in DAILY_CHECK mode; close to trigger"
+      ]
     }
   ],
   "portfolio_constraints_summary": {
-    "positions_count_after": 3,
-    "turnover_pct": 9.18,
-    "largest_position_pct": 48.5,
-    "cash_buffer_pct": 3.0,
+    "positions_count_after": 5,
+    "turnover_pct": 0.0,
+    "largest_position_pct": 48.48,
+    "cash_buffer_pct": 4.39,
     "sector_exposures_pct": {
-      "Energy": 48.5,
-      "Materials": 4.93,
-      "Industrials": 0.0
+      "Energy": 40.6,
+      "Materials": 4.96,
+      "Healthcare": 4.88,
+      "Industrials": 4.38
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,

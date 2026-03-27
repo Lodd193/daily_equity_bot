@@ -1,7 +1,7 @@
 {
   "status": "OK",
-  "as_of_date": "2026-03-26",
-  "reason": "Two stop-loss/trend-break exit signals identified. GSK.L pullback opportunity identified but insufficient cash post-settlement. Execute available exits only.",
+  "as_of_date": "2026-03-27",
+  "reason": "Trading day confirmed. All data fresh and valid. Portfolio below drawdown limit. Proceeding with plan generation.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
@@ -11,11 +11,11 @@
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "max_positions_check": "PASS (3 positions post-action, limit 5)",
-    "turnover_check": "PASS (9.2% vs limit 30%)",
-    "cash_buffer_check": "PASS (\u00a34.94 available, \u00a33.36 required minimum)",
-    "liquidity_check": "PASS (all positions liquid)",
-    "stop_breach_check": "BA.L stop breached at \u00a320.93 vs stop \u00a321.50"
+    "kill_switch_active": false,
+    "cash_buffer_adequate": true,
+    "max_positions_respected": true,
+    "no_margin_detected": true,
+    "no_shorts_detected": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
