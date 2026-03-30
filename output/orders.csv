@@ -1,2 +1,2 @@
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-(No orders to execute today. All existing positions held. No new buy opportunities meet confidence and cash constraints. No stop-loss breaches detected.)
+(No trades generated due to insufficient cash balance)
