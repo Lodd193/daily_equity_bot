@@ -1,2 +1,2 @@
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-(No trades generated due to insufficient cash balance)
+(no orders generated today)

@@ -1,72 +1,28 @@
 {
-  "as_of_date": "2026-03-30",
+  "as_of_date": "2026-03-31",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 115.23,
+  "portfolio_equity_gbp": 116.22,
   "cash_balance_gbp": 4.9385,
-  "available_for_buys_gbp": 1.48,
+  "available_for_buys_gbp": 0.6225,
   "unsettled_proceeds_gbp": 0.0,
   "portfolio_drawdown_pct": 0.0,
   "strategy_profile": "balanced",
-  "portfolio_constraints_summary": {
-    "positions_count_current": 5,
-    "positions_count_after": 5,
-    "turnover_pct": 0.0,
-    "largest_position_pct": 48.64,
-    "cash_buffer_pct": 3.0,
-    "sector_exposures_pct": {
-      "Energy": 48.93,
-      "Materials": 5.74,
-      "Industrials": 4.4,
-      "Healthcare": 4.89
-    },
-    "portfolio_beta": null,
-    "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 0.0
-  },
   "candidates_considered": [
     {
-      "ticker": "BP.L",
-      "entry_type": "NONE",
+      "ticker": "RIO.L",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.0,
+      "confidence": 0.72,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 1.0,
-        "diversification": 0.0
+        "trend": 0.95,
+        "setup": 0.65,
+        "risk_reward": 0.7,
+        "liquidity": 0.75,
+        "diversification": 0.55
       },
-      "rejected_reason": "Already held. Not considering additions due to position size limits and insufficient cash."
-    },
-    {
-      "ticker": "SHEL.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 1.0,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Already held. Not considering additions due to position size limits and insufficient cash."
-    },
-    {
-      "ticker": "GLEN.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 1.0,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Already held. Not considering additions due to position size limits and insufficient cash."
+      "rejected_reason": "Insufficient cash. Required \u00a32.18, available \u00a30.62. Turnover would exceed limit."
     },
     {
       "ticker": "GSK.L",
@@ -74,58 +30,97 @@
       "trend_status": "FULL",
       "confidence": 0.68,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.65,
-        "risk_reward": 0.6,
-        "liquidity": 1.0,
-        "diversification": 0.5
+        "trend": 0.9,
+        "setup": 0.62,
+        "risk_reward": 0.68,
+        "liquidity": 0.8,
+        "diversification": 0.52
       },
-      "rejected_reason": "Insufficient cash. Required for entry: \u00a325.73 (entry) + \u00a31.27 (costs) = \u00a327.00. Available: \u00a31.48. Trade cannot be executed in current cash state."
+      "rejected_reason": "Insufficient cash. Required \u00a31.95, available \u00a30.62."
     },
     {
-      "ticker": "RIO.L",
-      "entry_type": "BREAKOUT",
+      "ticker": "NG.L",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.72,
+      "confidence": 0.64,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.75,
-        "risk_reward": 0.7,
-        "liquidity": 1.0,
-        "diversification": 0.5
+        "trend": 0.88,
+        "setup": 0.6,
+        "risk_reward": 0.65,
+        "liquidity": 0.72,
+        "diversification": 0.48
       },
-      "rejected_reason": "Insufficient cash. Required for entry: \u00a367.72 (entry) + \u00a33.39 (costs) = \u00a371.11. Available: \u00a31.48. Trade cannot be executed in current cash state."
+      "rejected_reason": "Insufficient cash. Required \u00a30.95, available \u00a30.62."
+    },
+    {
+      "ticker": "TSCO.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.61,
+      "confidence_components": {
+        "trend": 0.85,
+        "setup": 0.58,
+        "risk_reward": 0.62,
+        "liquidity": 0.68,
+        "diversification": 0.45
+      },
+      "rejected_reason": "Insufficient cash. Required \u00a30.38, available \u00a30.62. Marginal but cash buffer constraint prevents entry."
+    },
+    {
+      "ticker": "SHEL.L",
+      "entry_type": "NONE",
+      "trend_status": "FULL",
+      "confidence": 0.0,
+      "confidence_components": {},
+      "rejected_reason": "Already held, 41 days, unrealised P&L +\u00a37.58. Hold and monitor. Stop at \u00a327.71."
+    },
+    {
+      "ticker": "BP.L",
+      "entry_type": "NONE",
+      "trend_status": "FULL",
+      "confidence": 0.0,
+      "confidence_components": {},
+      "rejected_reason": "Already held, 25 days, unrealised P&L +\u00a310.61. Hold and monitor. Stop at \u00a34.68."
+    },
+    {
+      "ticker": "GLEN.L",
+      "entry_type": "NONE",
+      "trend_status": "FULL",
+      "confidence": 0.0,
+      "confidence_components": {},
+      "rejected_reason": "Already held, 40 days, unrealised P&L +\u00a30.59. Hold and monitor. Stop at \u00a34.86."
     },
     {
       "ticker": "BA.L",
       "entry_type": "NONE",
       "trend_status": "FULL",
       "confidence": 0.0,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 1.0,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Already held. Not considering additions due to position size limits and insufficient cash."
+      "confidence_components": {},
+      "rejected_reason": "Already held, 21 days, unrealised P&L -\u00a30.15. Underwater but hold. Stop at \u00a321.50."
     },
     {
       "ticker": "AZN.L",
       "entry_type": "NONE",
       "trend_status": "FULL",
       "confidence": 0.0,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 1.0,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Already held. Not considering additions due to position size limits and insufficient cash."
+      "confidence_components": {},
+      "rejected_reason": "Already held, 12 days, unrealised P&L +\u00a30.15. Young position. Hold. Stop at \u00a3137.18."
     }
   ],
   "decisions": [],
-  "note": "All positions held. Cash insufficient for new entries. No stop-loss breaches detected. Recommend reviewing portfolio allocation and considering liquidations to free capital for higher-confidence setups.",
-  "execution_plan": "SELL_THEN_BUY: No sells. No buys. Portfolio held."
+  "portfolio_constraints_summary": {
+    "positions_count_after": 5,
+    "turnover_pct": 0.0,
+    "largest_position_pct": 48.65,
+    "cash_buffer_pct": 4.25,
+    "sector_exposures_pct": {
+      "Energy": 48.65,
+      "Materials": 5.04,
+      "Industrials": 4.5,
+      "Healthcare": 4.84
+    },
+    "portfolio_beta": null,
+    "max_pairwise_correlation": null,
+    "portfolio_drawdown_pct": 0.0
+  }
 }

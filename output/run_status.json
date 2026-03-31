@@ -1,7 +1,7 @@
 {
   "status": "OK",
-  "as_of_date": "2026-03-30",
-  "reason": "Trading day, data fresh, no constraints breached. Generating trade plan.",
+  "as_of_date": "2026-03-31",
+  "reason": "Trading day, data fresh, no kill-switch, no drawdown breach. Portfolio in green. Ready for execution.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
@@ -11,11 +11,16 @@
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "kill_switch_active": false,
-    "portfolio_within_drawdown_limit": true,
-    "cash_buffer_adequate": false,
-    "cash_available_for_new_trades": false,
-    "critical_issue": "Insufficient cash. Portfolio equity \u00a3115.23, cash balance \u00a34.94, required buffer \u00a33.46, available for buys \u00a31.48. Cannot execute new BUY orders."
+    "positions_count": 5,
+    "max_positions_limit": 5,
+    "positions_limit_ok": true,
+    "current_drawdown_pct": 0.0,
+    "drawdown_limit_pct": 15.0,
+    "drawdown_ok": true,
+    "cash_balance_gbp": 4.9385,
+    "unsettled_proceeds_gbp": 0.0,
+    "available_for_buys_gbp": 0.6225,
+    "liquidity_warning": "Cash buffer constraint severely limits new buys."
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
