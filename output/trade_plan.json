@@ -1,126 +1,154 @@
 {
-  "as_of_date": "2026-03-31",
+  "as_of_date": "2026-04-02",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 116.22,
+  "portfolio_equity_gbp": 114.83,
   "cash_balance_gbp": 4.9385,
-  "available_for_buys_gbp": 0.6225,
+  "available_for_buys_gbp": 1.5265,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 0.0,
+  "portfolio_drawdown_pct": 1.19,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
       "ticker": "RIO.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.72,
+      "confidence": 0.78,
       "confidence_components": {
         "trend": 0.95,
-        "setup": 0.65,
-        "risk_reward": 0.7,
-        "liquidity": 0.75,
-        "diversification": 0.55
+        "setup": 0.75,
+        "risk_reward": 0.72,
+        "liquidity": 0.85,
+        "diversification": 0.65
       },
-      "rejected_reason": "Insufficient cash. Required \u00a32.18, available \u00a30.62. Turnover would exceed limit."
-    },
-    {
-      "ticker": "GSK.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.68,
-      "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.62,
-        "risk_reward": 0.68,
-        "liquidity": 0.8,
-        "diversification": 0.52
-      },
-      "rejected_reason": "Insufficient cash. Required \u00a31.95, available \u00a30.62."
-    },
-    {
-      "ticker": "NG.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.64,
-      "confidence_components": {
-        "trend": 0.88,
-        "setup": 0.6,
-        "risk_reward": 0.65,
-        "liquidity": 0.72,
-        "diversification": 0.48
-      },
-      "rejected_reason": "Insufficient cash. Required \u00a30.95, available \u00a30.62."
-    },
-    {
-      "ticker": "TSCO.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.61,
-      "confidence_components": {
-        "trend": 0.85,
-        "setup": 0.58,
-        "risk_reward": 0.62,
-        "liquidity": 0.68,
-        "diversification": 0.45
-      },
-      "rejected_reason": "Insufficient cash. Required \u00a30.38, available \u00a30.62. Marginal but cash buffer constraint prevents entry."
+      "rejected_reason": null
     },
     {
       "ticker": "SHEL.L",
       "entry_type": "NONE",
       "trend_status": "FULL",
       "confidence": 0.0,
-      "confidence_components": {},
-      "rejected_reason": "Already held, 41 days, unrealised P&L +\u00a37.58. Hold and monitor. Stop at \u00a327.71."
+      "confidence_components": {
+        "trend": 0.95,
+        "setup": 0.35,
+        "risk_reward": 0.0,
+        "liquidity": 0.9,
+        "diversification": 0.0
+      },
+      "rejected_reason": "Already held in portfolio; no reentry without reset period"
     },
     {
-      "ticker": "BP.L",
-      "entry_type": "NONE",
+      "ticker": "GSK.L",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.0,
-      "confidence_components": {},
-      "rejected_reason": "Already held, 25 days, unrealised P&L +\u00a310.61. Hold and monitor. Stop at \u00a34.68."
+      "confidence": 0.72,
+      "confidence_components": {
+        "trend": 0.92,
+        "setup": 0.68,
+        "risk_reward": 0.7,
+        "liquidity": 0.88,
+        "diversification": 0.5
+      },
+      "rejected_reason": "Insufficient cash after position sizing"
     },
     {
-      "ticker": "GLEN.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.0,
-      "confidence_components": {},
-      "rejected_reason": "Already held, 40 days, unrealised P&L +\u00a30.59. Hold and monitor. Stop at \u00a34.86."
-    },
-    {
-      "ticker": "BA.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.0,
-      "confidence_components": {},
-      "rejected_reason": "Already held, 21 days, unrealised P&L -\u00a30.15. Underwater but hold. Stop at \u00a321.50."
+      "ticker": "LSEG.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FLAT",
+      "confidence": 0.55,
+      "confidence_components": {
+        "trend": 0.6,
+        "setup": 0.65,
+        "risk_reward": 0.62,
+        "liquidity": 0.82,
+        "diversification": 0.35
+      },
+      "rejected_reason": "SMA50 slope flat; trend filter not fully passed"
     },
     {
       "ticker": "AZN.L",
       "entry_type": "NONE",
       "trend_status": "FULL",
       "confidence": 0.0,
-      "confidence_components": {},
-      "rejected_reason": "Already held, 12 days, unrealised P&L +\u00a30.15. Young position. Hold. Stop at \u00a3137.18."
+      "confidence_components": {
+        "trend": 0.9,
+        "setup": 0.3,
+        "risk_reward": 0.0,
+        "liquidity": 0.92,
+        "diversification": 0.0
+      },
+      "rejected_reason": "Already held in portfolio; position sizing insufficient for new entry"
     }
   ],
-  "decisions": [],
+  "decisions": [
+    {
+      "ticker": "RIO.L",
+      "action": "BUY",
+      "confidence": 0.78,
+      "confidence_components": {
+        "trend": 0.95,
+        "setup": 0.75,
+        "risk_reward": 0.72,
+        "liquidity": 0.85,
+        "diversification": 0.65
+      },
+      "entry": {
+        "type": "MKT",
+        "price_gbp": 71.02
+      },
+      "size": {
+        "quantity": 0.0208,
+        "notional_gbp": 1.4773
+      },
+      "stop": {
+        "type": "HARD",
+        "price_gbp": 67.02,
+        "execution_mode": "DAILY_CHECK"
+      },
+      "gap_risk_buffer_applied": true,
+      "take_profit": {
+        "type": "RULE",
+        "price_gbp": null,
+        "rule": "Exit on trend break (close below SMA50) or time stop after 20 days"
+      },
+      "time_stop_days": 20,
+      "costs_estimate_gbp": {
+        "fees": 0.0,
+        "stamp_duty": 0.0037,
+        "slippage": 0.0147
+      },
+      "rationale": [
+        "Trend fully confirmed: close 71.02 > SMA50 68.97 > SMA200 55.24",
+        "Pullback setup: 8.24% drawdown from 20-day high within balanced profile target (5-15%)",
+        "Risk-reward attractive: stop distance 4.00 GBP vs potential 3-5 GBP upside to 74-76 GBP",
+        "Liquidity excellent: 20-day avg volume 3.79M shares, avg notional \u00a3251M",
+        "Adds Materials sector diversification; portfolio impact minimal at 1.29%"
+      ],
+      "constraints_passed": true,
+      "constraint_notes": [
+        "Position size 1.29% of portfolio equity (limit 30%)",
+        "Materials sector exposure would be 4.88% (limit 40%)",
+        "Does not breach max_correlated_positions (correlation data not provided)",
+        "Settlement: T+1, cash available same day for settlement"
+      ]
+    }
+  ],
   "portfolio_constraints_summary": {
-    "positions_count_after": 5,
-    "turnover_pct": 0.0,
-    "largest_position_pct": 48.65,
-    "cash_buffer_pct": 4.25,
+    "positions_count_after": 6,
+    "turnover_pct": 0.22,
+    "largest_position_pct": 47.94,
+    "cash_buffer_pct": 3.44,
     "sector_exposures_pct": {
-      "Energy": 48.65,
-      "Materials": 5.04,
-      "Industrials": 4.5,
-      "Healthcare": 4.84
+      "Energy": 35.85,
+      "Materials": 4.88,
+      "Industrials": 4.73,
+      "Healthcare": 5.1,
+      "Broad Market": 0.0,
+      "Cash": 3.44
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 0.0
+    "portfolio_drawdown_pct": 1.19
   }
 }
