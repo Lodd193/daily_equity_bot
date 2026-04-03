@@ -1,23 +1,6 @@
 {
-  "status": "OK",
-  "as_of_date": "2026-04-02",
-  "reason": "Trading day; data fresh; no drawdown breach; quality entry opportunities identified",
-  "data_checks": {
-    "market_data_fresh": true,
-    "all_required_columns_present": true,
-    "trading_day": true,
-    "is_half_day": false,
-    "portfolio_drawdown_pct": 1.19,
-    "drawdown_limit_breached": false
-  },
-  "risk_checks": {
-    "kill_switch": false,
-    "max_positions_check": "4 current + 1 planned = 5 (OK)",
-    "cash_available_check": "4.94 GBP available; order costs ~0.25 GBP (OK)",
-    "turnover_check": "Estimated 0.22% (OK, limit 30%)",
-    "max_risk_per_trade_check": "Risk per trade ~2.50 GBP vs limit 5.74 GBP (OK)"
-  },
-  "currency": "GBP",
-  "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK"
+  "status": "NO_TRADES",
+  "as_of_date": "2026-04-03",
+  "reason": "Non-trading day",
+  "currency": "GBP"
 }

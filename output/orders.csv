@@ -1,2 +1,1 @@
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-ORD001,RIO.L,BUY,MKT,0.0208,71.02,GTC,67.02,PULLBACK_ENTRY_BALANCED
