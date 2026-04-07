@@ -1,6 +1,26 @@
 {
-  "status": "NO_TRADES",
-  "as_of_date": "2026-04-06",
-  "reason": "Non-trading day",
-  "currency": "GBP"
+  "status": "OK",
+  "as_of_date": "2026-04-07",
+  "reason": "Trading day with sufficient data and quality setups identified. 6 positions held. 1 new entry opportunity identified passing all constraints.",
+  "data_checks": {
+    "market_data_fresh": true,
+    "all_required_columns_present": true,
+    "trading_day": true,
+    "is_half_day": false,
+    "portfolio_drawdown_pct": 0.73,
+    "drawdown_limit_breached": false
+  },
+  "risk_checks": {
+    "cash_buffer_sufficient": true,
+    "max_positions_respected": true,
+    "max_new_positions_per_day_respected": true,
+    "turnover_within_limit": true,
+    "sector_exposure_within_limits": true,
+    "single_name_exposure_within_limits": true,
+    "correlation_constraint_checked": true,
+    "liquidity_filters_passed": true
+  },
+  "currency": "GBP",
+  "execution_sequence": "SELL_THEN_BUY",
+  "stop_execution_mode": "DAILY_CHECK"
 }
