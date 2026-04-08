@@ -1,117 +1,118 @@
+```markdown
 # Daily Trading Report
-**Date:** 2026-04-07 | **Status:** OK (No Trades Executed) | **Currency:** GBP | **Execution Sequence:** SELL_THEN_BUY | **Stop Mode:** DAILY_CHECK
+**Date:** 2026-04-08 (Wednesday)
+**Status:** NO_TRADES
+**Currency:** GBP
+**Execution Sequence:** SELL_THEN_BUY
+**Stop Execution Mode:** DAILY_CHECK
 
 ---
 
 ## Trading Calendar
-- **Is Trading Day:** Yes (LSE)
-- **Half Day:** No
-- **Next Trading Day:** 2026-04-08
-- **Bank Holidays (Next 5 Days):** None
+✓ Is trading day: YES
+✓ Is half-day: NO
+✓ Next trading day: 2026-04-09
+✓ Bank holidays next 5 days: NONE
 
 ---
 
 ## Executive Summary
-The bot evaluated 25 instruments from the allowlist and identified **3 high-confidence new entry opportunities** but **executed no trades** due to **critical cash constraint**. The portfolio holds 6 active positions with **3.45 GBP cash** remaining (3% of equity value), which is insufficient for entry into any qualifying setup after accounting for stamp duty, slippage, and buffer preservation.
 
-**Decision:** Hold all existing positions. Monitor for potential selling opportunities to raise capital for stronger setups.
+**No trades executed today due to portfolio constraint violations.**
 
----
+The portfolio currently violates multiple hard risk constraints that prevent new position entry:
+1. **Position count:** 6 active positions vs. max 5 allowed
+2. **Energy sector exposure:** 80% vs. 40% maximum
+3. **Single-name concentrations:** BP.L at 47.4%, SHEL.L at 32.6% (max 30% each)
+4. **Cash balance:** 3.45 GBP (insufficient to fund new entries)
 
-## Top 3 Setup Opportunities Considered (REJECTED – Insufficient Cash)
+While one eligible swing trade candidate was identified (NG.L with 0.88 confidence score), it cannot be executed due to insufficient cash and portfolio constraint violations.
 
-### 1. **ISF.L** (iShares Core FTSE 100 ETF)
-- **Confidence:** 70.0% (Highest)
-- **Type:** Pullback Entry in Uptrend
-- **Trend Status:** FULL (close > sma50 > sma200; positive slope)
-- **Setup Quality:**
-  - Drawdown from 20d high: 1.27% (healthy pullback zone for balanced profile)
-  - Volume ratio: 1.25× (above threshold; good participation)
-  - Close vs SMA50: +0.10% (above moving average)
-- **Entry Price (Market):** 10.134 GBP
-- **Estimated Quantity (Fractional):** 0.0876 shares
-- **Estimated Notional:** ~0.89 GBP + 0.004 GBP stamp duty
-- **Rejection Reason:** **Insufficient cash available (0.8876 GBP after buffer)**. Trade requires 0.894 GBP gross. Portfolio cash constraint is binding.
-
-### 2. **HSBA.L** (HSBC, Financials)
-- **Confidence:** 68.0%
-- **Type:** Pullback Entry in Uptrend
-- **Trend Status:** FULL (close > sma50 > sma200; positive slope)
-- **Setup Quality:**
-  - Drawdown from 20d high: 2.29% (within balanced profile range)
-  - Volume ratio: 0.39× (low participation; conservative signal)
-  - Close vs SMA50: +0.34% (above moving average)
-- **Entry Price (Market):** 12.674 GBP
-- **Estimated Quantity (Fractional):** 0.0701 shares
-- **Estimated Notional:** ~0.89 GBP
-- **Rejection Reason:** **Insufficient cash after stamp duty and buffer**. Would require liquidating existing position or waiting for cash settlement.
-
-### 3. **NG.L** (National Grid, Utilities)
-- **Confidence:** 62.0%
-- **Type:** Pullback Entry in Uptrend
-- **Trend Status:** FULL (close > sma50 > sma200; positive slope)
-- **Setup Quality:**
-  - Drawdown from 20d high: 5.06% (mid-range pullback)
-  - Volume ratio: 0.46× (low participation)
-  - Close vs SMA50: +0.48% (above moving average)
-- **Entry Price (Market):** 13.164 GBP
-- **Estimated Quantity (Fractional):** 0.0674 shares
-- **Estimated Notional:** ~0.89 GBP
-- **Rejection Reason:** **Cash insufficient for entry**. Bank holidays and low volume make timing suboptimal.
+**Recommendation:** Operator should rebalance portfolio in next trading session by trimming Energy sector exposure (sell either SHEL.L or BP.L) to restore compliance with risk policies.
 
 ---
 
-## Risk Checks & Constraints
+## Existing Position Reviews
+
+All 6 existing positions remain ACTIVE with no stop-loss breaches or trend breaks:
+
+| Ticker | Qty | Avg Cost | Current Price | PnL | Days Held | Stop | Trend |
+|--------|-----|----------|---------------|-----|-----------|------|-------|
+| SHEL.L | 1.0624 | 28.70 | 34.01 | +5.64 GBP | 49 | 27.71 | UP (close > sma50 > sma200) |
+| GLEN.L | 1.0350 | 5.08 | 5.628 | +0.57 GBP | 48 | 4.86 | UP |
+| BP.L | 9.3200 | 4.92 | 5.627 | +6.55 GBP | 33 | 4.68 | UP |
+| BA.L | 0.2378 | 22.61 | 22.885 | +0.06 GBP | 29 | 21.50 | UP |
+| AZN.L | 0.0383 | 142.90 | 152.16 | +0.35 GBP | 20 | 137.18 | UP |
+| RIO.L | 0.0208 | 71.09 | 73.32 | +0.05 GBP | 5 | 67.02 | UP |
+
+**All positions are profitable and trend-intact. No exits triggered.**
+
+---
+
+## New Entry Opportunities Evaluated
+
+### Top 3 Candidates Ranked by Confidence
+
+#### 1. NG.L (National Grid) — PULLBACK — Confidence: 0.88
+- **Trend Status:** FULL (close 13.316 > sma50 12.127 > sma200 11.534)
+- **Setup:** Pullback from 20d high (13.865), drawdown 3.96% (healthy for swing)
+- **Volume:** ratio 0.86 (< 1.0, indicating low-volume pullback—preferred)
+- **Risk/Reward:** Favorable. ATR14 = 0.3331 GBP, stop at 12.65 GBP = 0.67 GBP risk
+- **Confidence Components:** Trend 0.40 + Pullback setup 0.25 + Risk/Reward 0.15 + Liquidity 0.08 = **0.88**
+- **Position Sizing:** 7.47 shares (after 10% gap buffer) × 13.316 = 99.5 GBP notional + 0.60 GBP costs = **100.1 GBP required**
+- **Rejection Reason:** **INSUFFICIENT CASH** (3.45 GBP available vs. 100.1 GBP required). Additionally, portfolio is in constraint violation, preventing new entries.
+- **Sector Impact:** Utilities (not currently held). Would diversify away from Energy concentration.
+
+#### 2. HSBA.L (HSBC) — PULLBACK — Confidence: 0.65
+- **Trend Status:** FULL (close 13.348 > sma50 12.650 > sma200 10.909)
+- **Setup:** Very shallow pullback (1.8% drawdown), weak entry signal
+- **Volume:** ratio 1.11 (neutral-to-high)
+- **Confidence:** 0.40 + 0.10 + 0.10 + 0.05 = **0.65** (below 0.70 threshold)
+- **Rejection Reason:** WEAK_SETUP (shallow drawdown, confidence below threshold)
+
+#### 3. TSCO.L (Tesco) — PULLBACK — Confidence: 0.65
+- **Trend Status:** FULL (close 4.8565 > sma50 4.6952 > sma200 4.4295)
+- **Setup:** Shallow pullback (2.2% drawdown), high volume ratio 1.27
+- **Confidence:** 0.40 + 0.10 + 0.10 + 0.05 = **0.65** (below threshold)
+- **Rejection Reason:** WEAK_SETUP (shallow drawdown, less ideal volume pattern)
+
+---
+
+## Risk Constraint Compliance Check
 
 | Constraint | Limit | Current | Status | Notes |
-|---|---|---|---|---|
-| **Cash Buffer** | 3.0% equity | 3.0% | ✓ PASS | 3.45 GBP maintained |
-| **Max Positions** | 5 | 6 | ✓ PASS | 6 active (allowable; RIO entry today) |
-| **Max New Per Day** | 1 | 0 | ✓ PASS | No new entries executed |
-| **Max Turnover %** | 30.0% | 0.0% | ✓ PASS | Hold-only day |
-| **Sector Exposure – Energy** | 40.0% | 40.1% | ⚠ AT LIMIT | (SHEL + BP) at constraint ceiling |
-| **Sector Exposure – Other** | Within limits | Yes | ✓ PASS | Materials 6.45%, Healthcare 4.96% |
-| **Single-Name (BP.L)** | 30.0% | 48.2% | ⚠ EXCEEDS | BP at 48.2% (risk concentration) |
-| **Liquidity (Avg GBP Vol)** | 50,000 | All PASS | ✓ PASS | All holdings meet minimum |
-| **Price Floor** | 1.0 GBP | All > 1.0 | ✓ PASS | Minimum price met |
-| **Portfolio Drawdown** | 15.0% | 0.73% | ✓ PASS | Portfolio near peak (only -0.73% down) |
-| **Data Freshness** | Today | 2026-04-07 | ✓ PASS | Market data current |
+|-----------|-------|---------|--------|-------|
+| **Max Positions** | 5 | 6 | ❌ VIOLATED | Portfolio has 6 active positions; max 5 allowed. |
+| **Max Sector (Energy)** | 40% | 80.0% | ❌ VIOLATED | SHEL.L + BP.L = 88.57 GBP of 110.65 total = 80%. Excessive concentration. |
+| **Max Single-Name (BP.L)** | 30% | 47.4% | ❌ VIOLATED | BP.L market value 52.44 GBP / equity 110.65 = 47.4%. |
+| **Max Single-Name (SHEL.L)** | 30% | 32.6% | ❌ VIOLATED | SHEL.L market value 36.13 GBP / equity 110.65 = 32.6%. |
+| **Max Correlated Positions** | 3 | N/A | ✓ OK | Correlation matrix not provided; flagged for future monitoring. |
+| **Cash Available** | > 0 | 3.45 GBP | ⚠️ TIGHT | After 3% buffer (3.32 GBP required), only 0.13 GBP surplus. Insufficient for new buys. |
+| **Max Turnover (Daily)** | 30% | 0% | ✓ OK | No trades proposed. |
+| **Portfolio Drawdown** | ≤ 15% | 4.80% | ✓ OK | Current equity 110.65 vs. peak 116.22 = -4.80% drawdown. Well within limit. |
 
-### Detailed Risk Assessment
-
-**Portfolio Drawdown:** 0.73% below all-time peak (115.43 / 116.22 = 99.27% of peak)
-- Status: ✓ Well within 15.0% drawdown limit
-- Action: No defensive liquidation required
-
-**Cash Position (T+1 Settlement):**
-- Cash balance: 3.45 GBP
-- Unsettled proceeds: 0 GBP
-- Required buffer (3% of 115.43): 3.46 GBP
-- Available for buys: 0.8876 GBP (after buffer)
-- **Constraint:** Insufficient to enter any position > 0.89 GBP notional with stamp duty
-
-**Sector Concentration (At Risk):**
-- Energy sector: 40.08% (at 40% limit)
-  - SHEL.L: 32.85%
-  - BP.L: 48.24% (largest single position)
-- Risk: Heavy BP concentration creates outsized single-name risk. Consider reducing after confirmation that trend remains intact.
-
-**Position Age & Anti-Churn:**
-- SHEL.L: 44 days (long-held; stable)
-- GLEN.L: 43 days (long-held; stable)
-- BP.L: 28 days (intermediate; profitable)
-- BA.L: 24 days (intermediate; breakeven)
-- AZN.L: 15 days (recent; modest gain)
-- RIO.L: 0 days (entered today; micro position)
-
-All positions above 2-day minimum age except RIO. No churn violations.
+**Conclusion:** Portfolio is in constraint violation and does NOT comply with hard risk limits. New positions cannot be opened until constraints are restored.
 
 ---
 
-## Portfolio Snapshot (as_of_date: 2026-04-07)
+## Cash & Liquidity Analysis
 
-| Ticker | Qty | Avg Cost | Market Value | Unrealised P&L | % Gain | Days Held | Stop Price | Sector |
-|---|---|---|---|---|---|---|---|---|
-| BP.L | 9.32 | 4.92 | 55.69 | +9.79 | +17.6% | 28 | 4.68 | Energy |
-| SHEL.L | 1.0624 | 28.70 | 37.91 | +7.42 | +19.5% | 44 | 27.71 | Energy |
-| AZN.L | 0.0383 | 142.90 | 5.73 | +0.26 | +1.0% |
+| Item | Value (GBP) |
+|------|-------------|
+| Settled Cash | 3.45 |
+| Unsettled Proceeds | 0.00 |
+| Total Available | 3.45 |
+| **Required Buffer (3%)** | 3.32 |
+| **Surplus After Buffer** | 0.13 |
+| NG.L Buy Notional (with costs) | 100.10 |
+| **Cash Shortfall** | **-99.97** |
+
+**Liquidity Status:** INSUFFICIENT. Even the smallest eligible trade (NG.L) requires 30x current liquid cash.
+
+---
+
+## Portfolio Composition & Concentration
+
+### By Sector (Current)
+- **Energy:** 80.0% (SHEL.L 32.6% + BP.L 47.4%) — **VIOLATES 40% MAX**
+- **Materials:** 5.3% (GLEN.L
