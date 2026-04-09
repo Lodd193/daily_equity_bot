@@ -1,15 +1,4 @@
 {
-  "as_of_date": "2026-04-02",
-  "entries": [
-    {
-      "ticker": "RIO.L",
-      "action": "BUY",
-      "planned_price_gbp": 71.02,
-      "planned_quantity": 0.0208,
-      "stop_price_gbp": 67.02,
-      "confidence": 0.78,
-      "entry_type": "PULLBACK",
-      "rationale_summary": "Pullback entry in full uptrend (close > SMA50 > SMA200). 8.24% drawdown from 20-day high within balanced profile target. Excellent liquidity (\u00a3251M avg notional). Adds Materials sector diversification to concentrated Energy portfolio. Risk-reward 1:1.2 at 20-day target."
-    }
-  ]
+  "as_of_date": "2026-04-09",
+  "entries": []
 }
