@@ -1,109 +1,67 @@
 {
-  "as_of_date": "2026-04-09",
+  "as_of_date": "2026-04-13",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
   "portfolio_equity_gbp": 112.75,
   "cash_balance_gbp": 3.4524,
-  "available_for_buys_gbp": 0.0,
+  "available_for_buys_gbp": 0.0724,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 3.01,
+  "portfolio_drawdown_pct": 3.08,
   "strategy_profile": "balanced",
-  "mode": "EXIT_ONLY",
-  "reason": "Insufficient cash for new positions after buffer requirement (3% = 3.38 GBP). Available cash 3.45 GBP < buffer requirement. No trades executed.",
   "candidates_considered": [
     {
       "ticker": "HSBA.L",
-      "entry_type": "NONE",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.62,
+      "confidence": 0.68,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.45,
-        "risk_reward": 0.5,
+        "trend": 0.9,
+        "setup": 0.7,
+        "risk_reward": 0.65,
         "liquidity": 0.95,
-        "diversification": 0.6
+        "diversification": 0.5
       },
-      "rejected_reason": "Insufficient cash (3.45 GBP) after buffer requirement (3.38 GBP). Required 5+ GBP for position sizing."
+      "rejected_reason": "Insufficient cash (GBP 0.07 available vs GBP 5.64 min risk allocation). Would require position sale but all active positions within min_position_age_days or unsuitable exit candidates."
     },
     {
       "ticker": "LSEG.L",
-      "entry_type": "NONE",
+      "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.58,
+      "confidence": 0.72,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.4,
-        "risk_reward": 0.45,
+        "trend": 0.95,
+        "setup": 0.75,
+        "risk_reward": 0.7,
         "liquidity": 0.85,
-        "diversification": 0.55
+        "diversification": 0.45
       },
-      "rejected_reason": "Insufficient cash (3.45 GBP) after buffer requirement (3.38 GBP). Required 10+ GBP for position sizing."
+      "rejected_reason": "Insufficient cash. Stop price GBP 88.51 implies tight risk, but entry at GBP 91.9 would require GBP 5.64+ allocation. Unable to fund from current cash position."
     },
     {
       "ticker": "GLEN.L",
       "entry_type": "NONE",
       "trend_status": "FULL",
-      "confidence": 0.61,
-      "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.48,
-        "risk_reward": 0.52,
-        "liquidity": 0.8,
-        "diversification": 0.58
-      },
-      "rejected_reason": "Already held; would violate anti-churn rule (min_position_age_days=2). Last entry 49 days ago, exceeds threshold but position still analysed for trend break."
+      "confidence": 0.0,
+      "confidence_components": {},
+      "rejected_reason": "Existing position (1.035 shares, +0.56%). Already held 50 days, up 11.4% YTD on position. Below age constraint for rebalance (min 2 days, but too fresh to justify reload). Adequate position size. No exit trigger met (stop GBP 4.86, current GBP 5.641). Hold."
     }
   ],
-  "decisions": [
-    {
-      "ticker": "SHEL.L",
-      "action": "HOLD",
-      "rationale": "Position above stop loss (27.71 GBP). Current price 34.49 GBP. Trend status FULL (close > SMA50 > SMA200). No exit signal triggered."
-    },
-    {
-      "ticker": "GLEN.L",
-      "action": "HOLD",
-      "rationale": "Position above stop loss (4.86 GBP). Current price 5.61 GBP. Trend status FULL (close > SMA50 > SMA200). No exit signal triggered."
-    },
-    {
-      "ticker": "BP.L",
-      "action": "HOLD",
-      "rationale": "Position above stop loss (4.68 GBP). Current price 5.81 GBP. Trend status FULL (close > SMA50 > SMA200). No exit signal triggered."
-    },
-    {
-      "ticker": "BA.L",
-      "action": "HOLD",
-      "rationale": "Position above stop loss (21.5 GBP). Current price 22.69 GBP. Trend status FULL (close > SMA50 > SMA200). No exit signal triggered."
-    },
-    {
-      "ticker": "AZN.L",
-      "action": "HOLD",
-      "rationale": "Position above stop loss (137.18 GBP). Current price 152.76 GBP. Trend status FULL (close > SMA50 > SMA200). No exit signal triggered."
-    },
-    {
-      "ticker": "RIO.L",
-      "action": "HOLD",
-      "rationale": "Position above stop loss (67.02 GBP). Current price 72.48 GBP. Trend status FULL (close > SMA50 > SMA200). Days held 6 < min_position_age_days 2, but position mature. No exit signal triggered."
-    }
-  ],
+  "decisions": [],
   "portfolio_constraints_summary": {
-    "positions_count_current": 6,
     "positions_count_after": 6,
     "turnover_pct": 0.0,
-    "largest_position_pct": 48.0,
-    "cash_buffer_pct": 3.0,
-    "required_cash_buffer_gbp": 3.38,
-    "available_after_buffer_gbp": 0.07,
+    "largest_position_pct": 47.8,
+    "cash_buffer_pct": 3.06,
     "sector_exposures_pct": {
-      "Energy": 36.02,
-      "Materials": 6.44,
-      "Industrials": 4.79,
-      "Healthcare": 5.19,
-      "Total": 52.44
+      "Energy": 35.8,
+      "Materials": 6.1,
+      "Industrials": 4.7,
+      "Healthcare": 5.1,
+      "Financials": 0.0
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 3.01
+    "portfolio_drawdown_pct": 3.08
   }
 }

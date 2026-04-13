@@ -1,2 +1,1 @@
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-NONE_TODAY,N/A,N/A,N/A,N/A,N/A,N/A,N/A,No trades executed. Portfolio cash insufficient for new positions after 3% buffer requirement. All existing positions held above stop-loss levels.
