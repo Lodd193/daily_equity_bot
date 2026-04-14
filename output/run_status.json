@@ -1,31 +1,23 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-04-13",
-  "reason": "Portfolio in severe liquidity crisis. Cash balance GBP 3.45 insufficient to execute any meaningful trades. Max position size limited by risk rule to <1 GBP per trade given tight stops. All position exits blocked due to min_position_age_days constraint (most positions within 7-51 days, minimum 2 days required but effective trading blocked by liquidity).",
+  "as_of_date": "2026-04-14",
+  "reason": "Portfolio at max_positions (6 held vs limit 5) with insufficient cash buffer to deploy new positions. Available cash \u00a33.45 cannot fund minimum viable entry. All existing positions remain in valid trends with no exit signals.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 3.08,
+    "portfolio_drawdown_pct": 5.06,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_constraint_passed": false,
-    "liquidity_constraint_passed": false,
-    "max_positions_constraint": true,
-    "turnover_constraint": true,
-    "sector_exposure_constraint": true,
-    "drawdown_constraint": true
+    "max_positions_exceeded": true,
+    "cash_buffer_adequate": false,
+    "stop_losses_triggered": false,
+    "settlement_risk": false,
+    "liquidity_risk": false
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK",
-  "critical_issues": [
-    "Cash balance GBP 3.45 with equity GBP 112.75 and 3% buffer (GBP 3.38 required) leaves near-zero available cash",
-    "Risk constraint: max_risk_per_trade_pct=0.05 * GBP 112.75 = GBP 5.64 per trade",
-    "Most positions within min_position_age_days=2 constraint (RIO.L at 7 days, BA.L at 31 days, AZN.L at 22 days, BP.L at 35 days, GLEN.L at 50 days, SHEL.L at 51 days)",
-    "Entry logic blocked by tight liquidity and position age constraints",
-    "No valid exit candidates meet both age and quality criteria"
-  ]
+  "stop_execution_mode": "DAILY_CHECK"
 }
