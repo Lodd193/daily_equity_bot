@@ -1,67 +1,72 @@
 {
-  "as_of_date": "2026-04-13",
+  "as_of_date": "2026-04-16",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 112.75,
+  "portfolio_equity_gbp": 112.11,
   "cash_balance_gbp": 3.4524,
-  "available_for_buys_gbp": 0.0724,
+  "available_for_buys_gbp": 3.1123,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 3.08,
+  "portfolio_drawdown_pct": 3.53,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
       "ticker": "HSBA.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.68,
+      "confidence": 0.72,
       "confidence_components": {
-        "trend": 0.9,
+        "trend": 0.95,
         "setup": 0.7,
         "risk_reward": 0.65,
         "liquidity": 0.95,
+        "diversification": 0.45
+      },
+      "rejected_reason": "Insufficient cash to open position (requires ~7.5 GBP notional; available 3.1 GBP)"
+    },
+    {
+      "ticker": "RIO.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.68,
+      "confidence_components": {
+        "trend": 0.9,
+        "setup": 0.68,
+        "risk_reward": 0.62,
+        "liquidity": 0.85,
         "diversification": 0.5
       },
-      "rejected_reason": "Insufficient cash (GBP 0.07 available vs GBP 5.64 min risk allocation). Would require position sale but all active positions within min_position_age_days or unsuitable exit candidates."
+      "rejected_reason": "Already held; position within 2.7% of high; diversification concern (Materials already 4.1% of portfolio)"
     },
     {
       "ticker": "LSEG.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.72,
+      "confidence": 0.65,
       "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.75,
-        "risk_reward": 0.7,
-        "liquidity": 0.85,
-        "diversification": 0.45
+        "trend": 0.92,
+        "setup": 0.6,
+        "risk_reward": 0.58,
+        "liquidity": 0.88,
+        "diversification": 0.55
       },
-      "rejected_reason": "Insufficient cash. Stop price GBP 88.51 implies tight risk, but entry at GBP 91.9 would require GBP 5.64+ allocation. Unable to fund from current cash position."
-    },
-    {
-      "ticker": "GLEN.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.0,
-      "confidence_components": {},
-      "rejected_reason": "Existing position (1.035 shares, +0.56%). Already held 50 days, up 11.4% YTD on position. Below age constraint for rebalance (min 2 days, but too fresh to justify reload). Adequate position size. No exit trigger met (stop GBP 4.86, current GBP 5.641). Hold."
+      "rejected_reason": "Insufficient cash for ~10 GBP notional position; extreme volume spike (2.31x) increases gap risk"
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 6,
     "turnover_pct": 0.0,
-    "largest_position_pct": 47.8,
-    "cash_buffer_pct": 3.06,
+    "largest_position_pct": 32.1,
+    "cash_buffer_pct": 2.77,
     "sector_exposures_pct": {
-      "Energy": 35.8,
-      "Materials": 6.1,
-      "Industrials": 4.7,
+      "Energy": 37.5,
+      "Materials": 4.1,
       "Healthcare": 5.1,
-      "Financials": 0.0
+      "Industrials": 4.7
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 3.08
+    "portfolio_drawdown_pct": 3.53
   }
 }
