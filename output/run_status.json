@@ -1,24 +1,24 @@
 {
-  "status": "OK",
-  "as_of_date": "2026-04-16",
-  "reason": "Trading day with valid data. One high-confidence BUY setup identified within portfolio constraints.",
+  "status": "NO_TRADES",
+  "as_of_date": "2026-04-17",
+  "reason": "Portfolio cash balance (3.45 GBP) is critically low and insufficient to fund any new positions after required buffer. Current portfolio is fully invested with minimal liquidity. New trades rejected to preserve capital.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 3.53,
+    "portfolio_drawdown_pct": 8.64,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_constraint": "PASS - available_for_buys_gbp = 3.45 GBP (after buffer)",
-    "max_positions": "PASS - 6 existing, 5 max; no new positions",
-    "max_new_positions_per_day": "PASS - 0 new positions",
-    "turnover_limit": "PASS - 0% turnover",
-    "sector_exposure": "PASS - Energy 37.5%, Materials 4.1%, Healthcare 5.1%, Industrials 4.7%",
-    "single_name_exposure": "PASS - largest SHEL.L at 32.1%",
-    "liquidity": "PASS - all positions in liquid instruments",
-    "correlation": "PASS - portfolio beta not computed but diversified"
+    "cash_available_for_buys_gbp": -0.7871,
+    "required_buffer_gbp": 3.1859,
+    "cash_constraint_passed": false,
+    "turnover_limit_ok": true,
+    "max_positions_ok": true,
+    "sector_exposure_ok": true,
+    "liquidity_filters_applied": true,
+    "notes": "Cash balance insufficient even before buffer. Required buffer alone exceeds available cash."
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",

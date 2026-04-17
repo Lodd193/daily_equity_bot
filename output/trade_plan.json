@@ -1,72 +1,73 @@
 {
-  "as_of_date": "2026-04-16",
+  "as_of_date": "2026-04-17",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 112.11,
+  "portfolio_equity_gbp": 106.19,
   "cash_balance_gbp": 3.4524,
-  "available_for_buys_gbp": 3.1123,
+  "available_for_buys_gbp": -0.7871,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 3.53,
+  "portfolio_drawdown_pct": 8.64,
   "strategy_profile": "balanced",
   "candidates_considered": [
-    {
-      "ticker": "HSBA.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.72,
-      "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.7,
-        "risk_reward": 0.65,
-        "liquidity": 0.95,
-        "diversification": 0.45
-      },
-      "rejected_reason": "Insufficient cash to open position (requires ~7.5 GBP notional; available 3.1 GBP)"
-    },
-    {
-      "ticker": "RIO.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.68,
-      "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.68,
-        "risk_reward": 0.62,
-        "liquidity": 0.85,
-        "diversification": 0.5
-      },
-      "rejected_reason": "Already held; position within 2.7% of high; diversification concern (Materials already 4.1% of portfolio)"
-    },
     {
       "ticker": "LSEG.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.65,
+      "confidence": 0.72,
+      "confidence_components": {
+        "trend": 0.95,
+        "setup": 0.68,
+        "risk_reward": 0.65,
+        "liquidity": 0.8,
+        "diversification": 0.6
+      },
+      "rejected_reason": "Insufficient cash to execute trade after required 3.19 GBP buffer"
+    },
+    {
+      "ticker": "AZN.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.68,
+      "confidence_components": {
+        "trend": 0.98,
+        "setup": 0.65,
+        "risk_reward": 0.62,
+        "liquidity": 0.75,
+        "diversification": 0.5
+      },
+      "rejected_reason": "Position already held; no new entry. Insufficient cash for scale-up."
+    },
+    {
+      "ticker": "REL.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.66,
       "confidence_components": {
         "trend": 0.92,
-        "setup": 0.6,
-        "risk_reward": 0.58,
-        "liquidity": 0.88,
-        "diversification": 0.55
+        "setup": 0.63,
+        "risk_reward": 0.61,
+        "liquidity": 0.78,
+        "diversification": 0.62
       },
-      "rejected_reason": "Insufficient cash for ~10 GBP notional position; extreme volume spike (2.31x) increases gap risk"
+      "rejected_reason": "Insufficient cash constraint binding"
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 6,
     "turnover_pct": 0.0,
-    "largest_position_pct": 32.1,
-    "cash_buffer_pct": 2.77,
+    "largest_position_pct": 47.46,
+    "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Energy": 37.5,
-      "Materials": 4.1,
-      "Healthcare": 5.1,
-      "Industrials": 4.7
+      "Energy": 40.55,
+      "Materials": 10.58,
+      "Industrials": 5.05,
+      "Healthcare": 5.45,
+      "Other": 38.37
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 3.53
+    "portfolio_drawdown_pct": 8.64
   }
 }
