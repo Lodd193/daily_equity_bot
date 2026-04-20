@@ -1,73 +1,79 @@
 {
-  "as_of_date": "2026-04-17",
+  "as_of_date": "2026-04-20",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 106.19,
+  "portfolio_equity_gbp": 108.42,
   "cash_balance_gbp": 3.4524,
-  "available_for_buys_gbp": -0.7871,
+  "available_for_buys_gbp": 0.2024,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 8.64,
+  "portfolio_drawdown_pct": 6.64,
   "strategy_profile": "balanced",
   "candidates_considered": [
-    {
-      "ticker": "LSEG.L",
-      "entry_type": "BREAKOUT",
-      "trend_status": "FULL",
-      "confidence": 0.72,
-      "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.68,
-        "risk_reward": 0.65,
-        "liquidity": 0.8,
-        "diversification": 0.6
-      },
-      "rejected_reason": "Insufficient cash to execute trade after required 3.19 GBP buffer"
-    },
-    {
-      "ticker": "AZN.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.68,
-      "confidence_components": {
-        "trend": 0.98,
-        "setup": 0.65,
-        "risk_reward": 0.62,
-        "liquidity": 0.75,
-        "diversification": 0.5
-      },
-      "rejected_reason": "Position already held; no new entry. Insufficient cash for scale-up."
-    },
     {
       "ticker": "REL.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.66,
+      "confidence": 0.76,
       "confidence_components": {
-        "trend": 0.92,
-        "setup": 0.63,
-        "risk_reward": 0.61,
-        "liquidity": 0.78,
-        "diversification": 0.62
+        "trend": 1.0,
+        "setup": 0.82,
+        "risk_reward": 0.68,
+        "liquidity": 0.92,
+        "diversification": 0.72
       },
-      "rejected_reason": "Insufficient cash constraint binding"
+      "rejected_reason": "Insufficient cash available after buffer. Required notional GBP 20.27 far exceeds available GBP 0.20."
+    },
+    {
+      "ticker": "LSEG.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.74,
+      "confidence_components": {
+        "trend": 1.0,
+        "setup": 0.8,
+        "risk_reward": 0.65,
+        "liquidity": 0.88,
+        "diversification": 0.7
+      },
+      "rejected_reason": "Insufficient cash available after buffer. Required notional GBP 18.82 far exceeds available GBP 0.20."
+    },
+    {
+      "ticker": "HSBA.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.71,
+      "confidence_components": {
+        "trend": 1.0,
+        "setup": 0.76,
+        "risk_reward": 0.62,
+        "liquidity": 0.95,
+        "diversification": 0.68
+      },
+      "rejected_reason": "Insufficient cash available after buffer. Sector (Financials) already has exposure. Portfolio position limit exceeded."
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 6,
+    "positions_count_limit": 5,
+    "position_count_constraint_status": "VIOLATED",
     "turnover_pct": 0.0,
-    "largest_position_pct": 47.46,
+    "turnover_limit_pct": 30.0,
+    "largest_position_pct": 47.9,
+    "largest_position_ticker": "BP.L",
     "cash_buffer_pct": 3.0,
+    "cash_buffer_required_gbp": 3.25,
+    "cash_buffer_actual_gbp": 3.4524,
     "sector_exposures_pct": {
-      "Energy": 40.55,
-      "Materials": 10.58,
-      "Industrials": 5.05,
-      "Healthcare": 5.45,
-      "Other": 38.37
+      "Energy": 41.1,
+      "Materials": 6.6,
+      "Industrials": 4.9,
+      "Healthcare": 5.3
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 8.64
+    "portfolio_drawdown_pct": 6.64,
+    "portfolio_peak_equity_gbp": 116.22
   }
 }

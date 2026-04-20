@@ -1,26 +1,38 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-04-17",
-  "reason": "Portfolio cash balance (3.45 GBP) is critically low and insufficient to fund any new positions after required buffer. Current portfolio is fully invested with minimal liquidity. New trades rejected to preserve capital.",
+  "as_of_date": "2026-04-20",
+  "reason": "Insufficient available cash to execute any qualifying trades after buffer and settlement constraints. Portfolio is heavily constrained by low cash balance (GBP 3.45) relative to equity value (GBP 108.42). No new positions can be sized given risk management rules.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 8.64,
+    "portfolio_drawdown_pct": 6.64,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_available_for_buys_gbp": -0.7871,
-    "required_buffer_gbp": 3.1859,
-    "cash_constraint_passed": false,
-    "turnover_limit_ok": true,
-    "max_positions_ok": true,
-    "sector_exposure_ok": true,
-    "liquidity_filters_applied": true,
-    "notes": "Cash balance insufficient even before buffer. Required buffer alone exceeds available cash."
+    "cash_buffer_required_gbp": 3.25,
+    "cash_available_after_buffer_gbp": 0.2,
+    "max_positions_current": 6,
+    "max_positions_limit": 5,
+    "over_position_limit": true,
+    "portfolio_already_over_position_limit": true,
+    "max_new_positions_today": 1,
+    "turnover_constraint_pct": 30.0,
+    "estimated_turnover_pct": 0.0,
+    "largest_position_pct": 47.9,
+    "sector_energy_exposure_pct": 41.1
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK"
+  "stop_execution_mode": "DAILY_CHECK",
+  "notes": [
+    "Portfolio currently holds 6 positions, exceeding max_positions limit of 5.",
+    "Cash buffer requirement (GBP 3.25) consumes nearly all available cash.",
+    "Cash available for new trades after buffer: only GBP 0.20, insufficient for any meaningful position sizing.",
+    "No stop-loss exits triggered today based on low_gbp >= current_stop_gbp for all positions.",
+    "Recommend rebalancing on next trading session to reduce position count and free capital.",
+    "No corporate action exits required (all positions ACTIVE).",
+    "All positions above min_position_age_days threshold (minimum 15 days held)."
+  ]
 }
