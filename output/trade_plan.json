@@ -1,79 +1,86 @@
 {
-  "as_of_date": "2026-04-20",
+  "as_of_date": "2026-04-21",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 108.42,
-  "cash_balance_gbp": 3.4524,
-  "available_for_buys_gbp": 0.2024,
+  "portfolio_equity_gbp": 108.64,
+  "cash_balance_gbp": 3.45,
+  "available_for_buys_gbp": 0.19,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 6.64,
+  "portfolio_drawdown_pct": 6.54,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "REL.L",
-      "entry_type": "BREAKOUT",
+      "ticker": "HSBA.L",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.76,
+      "confidence": 0.82,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.82,
-        "risk_reward": 0.68,
-        "liquidity": 0.92,
-        "diversification": 0.72
+        "trend": 0.95,
+        "setup": 0.8,
+        "risk_reward": 0.78,
+        "liquidity": 0.9,
+        "diversification": 0.75
       },
-      "rejected_reason": "Insufficient cash available after buffer. Required notional GBP 20.27 far exceeds available GBP 0.20."
+      "rejected_reason": "Insufficient cash (\u00a30.19 available), portfolio at max positions (6/5), and single-name exposure limits prevent entry despite high quality setup"
     },
     {
       "ticker": "LSEG.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.74,
+      "confidence": 0.85,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.8,
-        "risk_reward": 0.65,
-        "liquidity": 0.88,
+        "trend": 0.98,
+        "setup": 0.88,
+        "risk_reward": 0.82,
+        "liquidity": 0.85,
         "diversification": 0.7
       },
-      "rejected_reason": "Insufficient cash available after buffer. Required notional GBP 18.82 far exceeds available GBP 0.20."
+      "rejected_reason": "Insufficient cash (\u00a30.19 available), portfolio at max positions (6/5), sector concentration in Financials (already have HSBA.L quality trade blocked)"
     },
     {
-      "ticker": "HSBA.L",
+      "ticker": "BARC.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.71,
+      "confidence": 0.65,
       "confidence_components": {
-        "trend": 1.0,
-        "setup": 0.76,
-        "risk_reward": 0.62,
-        "liquidity": 0.95,
-        "diversification": 0.68
+        "trend": 0.85,
+        "setup": 0.58,
+        "risk_reward": 0.68,
+        "liquidity": 0.92,
+        "diversification": 0.55
       },
-      "rejected_reason": "Insufficient cash available after buffer. Sector (Financials) already has exposure. Portfolio position limit exceeded."
+      "rejected_reason": "Drawdown 13.72% exceeds balanced profile pullback range (1-5%), confidence below threshold; also portfolio full"
+    },
+    {
+      "ticker": "AZN.L",
+      "entry_type": "NONE",
+      "trend_status": "NONE",
+      "confidence": 0.0,
+      "confidence_components": {
+        "trend": 0.0,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 0.0,
+        "diversification": 0.0
+      },
+      "rejected_reason": "EXISTING POSITION: close_vs_sma50_pct = -1.40% (1 day below SMA50); trend break monitor mode only, not yet forced exit (threshold typically 3-5 consecutive days for balanced profile)"
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 6,
-    "positions_count_limit": 5,
-    "position_count_constraint_status": "VIOLATED",
     "turnover_pct": 0.0,
-    "turnover_limit_pct": 30.0,
-    "largest_position_pct": 47.9,
-    "largest_position_ticker": "BP.L",
+    "largest_position_pct": 48.31,
     "cash_buffer_pct": 3.0,
-    "cash_buffer_required_gbp": 3.25,
-    "cash_buffer_actual_gbp": 3.4524,
     "sector_exposures_pct": {
-      "Energy": 41.1,
-      "Materials": 6.6,
-      "Industrials": 4.9,
-      "Healthcare": 5.3
+      "Energy": 39.98,
+      "Materials": 6.48,
+      "Industrials": 4.69,
+      "Healthcare": 5.14
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 6.64,
-    "portfolio_peak_equity_gbp": 116.22
+    "portfolio_drawdown_pct": 6.54
   }
 }
