@@ -1,86 +1,73 @@
 {
-  "as_of_date": "2026-04-21",
+  "as_of_date": "2026-04-22",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 108.64,
-  "cash_balance_gbp": 3.45,
-  "available_for_buys_gbp": 0.19,
+  "portfolio_equity_gbp": 109.82,
+  "cash_balance_gbp": 3.4524,
+  "available_for_buys_gbp": 0.1578,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 6.54,
+  "portfolio_drawdown_pct": 5.51,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "HSBA.L",
-      "entry_type": "PULLBACK",
+      "ticker": "VWRP.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.8615,
+      "confidence_components": {
+        "trend": 0.95,
+        "setup": 0.85,
+        "risk_reward": 0.88,
+        "liquidity": 0.8,
+        "diversification": 0.85
+      },
+      "rejected_reason": "Insufficient cash. Required: 234.44 GBP (notional + fees + slippage), Available: 0.16 GBP"
+    },
+    {
+      "ticker": "CSP1.L",
+      "entry_type": "BREAKOUT",
       "trend_status": "FULL",
       "confidence": 0.82,
       "confidence_components": {
-        "trend": 0.95,
+        "trend": 0.92,
         "setup": 0.8,
-        "risk_reward": 0.78,
-        "liquidity": 0.9,
-        "diversification": 0.75
+        "risk_reward": 0.85,
+        "liquidity": 0.8,
+        "diversification": 0.85
       },
-      "rejected_reason": "Insufficient cash (\u00a30.19 available), portfolio at max positions (6/5), and single-name exposure limits prevent entry despite high quality setup"
+      "rejected_reason": "Insufficient cash. Required: ~567 GBP, Available: 0.16 GBP"
     },
     {
       "ticker": "LSEG.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.85,
+      "confidence": 0.7975,
       "confidence_components": {
-        "trend": 0.98,
-        "setup": 0.88,
-        "risk_reward": 0.82,
+        "trend": 0.95,
+        "setup": 0.8,
+        "risk_reward": 0.75,
         "liquidity": 0.85,
         "diversification": 0.7
       },
-      "rejected_reason": "Insufficient cash (\u00a30.19 available), portfolio at max positions (6/5), sector concentration in Financials (already have HSBA.L quality trade blocked)"
-    },
-    {
-      "ticker": "BARC.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.65,
-      "confidence_components": {
-        "trend": 0.85,
-        "setup": 0.58,
-        "risk_reward": 0.68,
-        "liquidity": 0.92,
-        "diversification": 0.55
-      },
-      "rejected_reason": "Drawdown 13.72% exceeds balanced profile pullback range (1-5%), confidence below threshold; also portfolio full"
-    },
-    {
-      "ticker": "AZN.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.0,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.0,
-        "diversification": 0.0
-      },
-      "rejected_reason": "EXISTING POSITION: close_vs_sma50_pct = -1.40% (1 day below SMA50); trend break monitor mode only, not yet forced exit (threshold typically 3-5 consecutive days for balanced profile)"
+      "rejected_reason": "Insufficient cash. Required: ~195 GBP, Available: 0.16 GBP"
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 6,
     "turnover_pct": 0.0,
-    "largest_position_pct": 48.31,
+    "largest_position_pct": 48.6,
     "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Energy": 39.98,
-      "Materials": 6.48,
-      "Industrials": 4.69,
-      "Healthcare": 5.14
+      "Energy": 32.2,
+      "Materials": 6.7,
+      "Industrials": 4.6,
+      "Healthcare": 5.1,
+      "Financials": 0.0
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 6.54
+    "portfolio_drawdown_pct": 5.51
   }
 }
