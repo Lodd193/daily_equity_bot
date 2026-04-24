@@ -1,73 +1,82 @@
 {
-  "as_of_date": "2026-04-22",
+  "as_of_date": "2026-04-24",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 109.82,
+  "portfolio_equity_gbp": 109.34,
   "cash_balance_gbp": 3.4524,
-  "available_for_buys_gbp": 0.1578,
+  "available_for_buys_gbp": 0.17,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 5.51,
+  "portfolio_drawdown_pct": 5.97,
   "strategy_profile": "balanced",
   "candidates_considered": [
-    {
-      "ticker": "VWRP.L",
-      "entry_type": "BREAKOUT",
-      "trend_status": "FULL",
-      "confidence": 0.8615,
-      "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.85,
-        "risk_reward": 0.88,
-        "liquidity": 0.8,
-        "diversification": 0.85
-      },
-      "rejected_reason": "Insufficient cash. Required: 234.44 GBP (notional + fees + slippage), Available: 0.16 GBP"
-    },
-    {
-      "ticker": "CSP1.L",
-      "entry_type": "BREAKOUT",
-      "trend_status": "FULL",
-      "confidence": 0.82,
-      "confidence_components": {
-        "trend": 0.92,
-        "setup": 0.8,
-        "risk_reward": 0.85,
-        "liquidity": 0.8,
-        "diversification": 0.85
-      },
-      "rejected_reason": "Insufficient cash. Required: ~567 GBP, Available: 0.16 GBP"
-    },
     {
       "ticker": "LSEG.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.7975,
+      "confidence": 0.78,
       "confidence_components": {
         "trend": 0.95,
-        "setup": 0.8,
-        "risk_reward": 0.75,
+        "setup": 0.72,
+        "risk_reward": 0.65,
         "liquidity": 0.85,
         "diversification": 0.7
       },
-      "rejected_reason": "Insufficient cash. Required: ~195 GBP, Available: 0.16 GBP"
+      "rejected_reason": "Insufficient cash for execution (requires ~\u00a350 min notional, available \u00a30.17). Portfolio under-capitalised."
+    },
+    {
+      "ticker": "REL.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.75,
+      "confidence_components": {
+        "trend": 0.92,
+        "setup": 0.68,
+        "risk_reward": 0.7,
+        "liquidity": 0.82,
+        "diversification": 0.65
+      },
+      "rejected_reason": "Insufficient cash for execution. Portfolio cash insufficient."
+    },
+    {
+      "ticker": "HSBA.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.72,
+      "confidence_components": {
+        "trend": 0.88,
+        "setup": 0.65,
+        "risk_reward": 0.68,
+        "liquidity": 0.9,
+        "diversification": 0.6
+      },
+      "rejected_reason": "Insufficient cash. Also, already at max_positions (6 current vs 5 allowed). Position closure required first."
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 6,
+    "positions_count_limit": 5,
+    "positions_count_breach": true,
     "turnover_pct": 0.0,
-    "largest_position_pct": 48.6,
-    "cash_buffer_pct": 3.0,
+    "largest_position_pct": 48.73,
+    "cash_buffer_required_pct": 3.0,
+    "cash_buffer_available_gbp": 3.28,
+    "cash_buffer_actual_pct": 3.0,
     "sector_exposures_pct": {
-      "Energy": 32.2,
-      "Materials": 6.7,
-      "Industrials": 4.6,
-      "Healthcare": 5.1,
-      "Financials": 0.0
+      "Energy": 48.73,
+      "Materials": 19.78,
+      "Financials": 4.89,
+      "Industrials": 4.39,
+      "Healthcare": 4.89
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 5.51
+    "portfolio_drawdown_pct": 5.97,
+    "notes": [
+      "Portfolio at max_positions limit (6 vs 5 allowed). No new positions permitted without closure.",
+      "Energy sector exposure (48.7%) exceeds balanced strategy comfort zone but remains under 50% limit.",
+      "Available cash for buys is \u00a30.17 after buffer, insufficient for any equity trade minimum size."
+    ]
   }
 }
