@@ -1,23 +1,26 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-04-24",
-  "reason": "Portfolio equity is extremely low (\u00a3109.34) with minimal cash available (\u00a33.45). Current cash buffer requirement (\u00a33.28) consumes 95% of available cash, leaving insufficient liquidity for any new positions. Additionally, portfolio is in a weak state with unrealised losses in 2 of 6 positions and high sector concentration (Energy 48.5%, Materials 19.8%). Risk-first principle prioritises capital preservation over low-quality entry setups.",
+  "as_of_date": "2026-04-27",
+  "reason": "Portfolio drawdown of 6.40% is within acceptable range, but analysis of eligible universe reveals insufficient high-quality entry setups meeting confidence threshold for balanced profile. All new entry candidates either lack complete trend confirmation, fail liquidity filters, or have confidence scores below 0.65 minimum. Conservative capital preservation bias applied.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 5.97,
+    "portfolio_drawdown_pct": 6.4,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_insufficient": true,
-    "portfolio_too_small_for_new_positions": true,
-    "sector_concentration_high": true,
-    "available_for_buys_gbp": 0.17,
-    "required_minimum_for_smallest_trade_gbp": 50.0,
-    "max_positions_count": 5,
-    "current_positions_count": 6
+    "cash_buffer_adequate": true,
+    "cash_balance_gbp": 3.4524,
+    "required_buffer_gbp": 3.2634,
+    "available_for_buys_gbp": 0.189,
+    "max_positions_headroom": 5,
+    "current_positions": 6,
+    "position_count_constraint_violated": true,
+    "turnover_constraint_ok": true,
+    "sector_exposure_check": "Energy 41.15%, Materials 6.59%, Industrials 4.45%, Healthcare 4.91%",
+    "liquidity_filter_applied": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",

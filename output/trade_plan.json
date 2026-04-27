@@ -1,82 +1,110 @@
 {
-  "as_of_date": "2026-04-24",
+  "as_of_date": "2026-04-27",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 109.34,
+  "portfolio_equity_gbp": 108.78,
   "cash_balance_gbp": 3.4524,
-  "available_for_buys_gbp": 0.17,
+  "available_for_buys_gbp": 0.189,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 5.97,
+  "portfolio_drawdown_pct": 6.4,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
       "ticker": "LSEG.L",
-      "entry_type": "BREAKOUT",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.78,
+      "confidence": 0.68,
       "confidence_components": {
         "trend": 0.95,
-        "setup": 0.72,
-        "risk_reward": 0.65,
-        "liquidity": 0.85,
-        "diversification": 0.7
+        "setup": 0.65,
+        "risk_reward": 0.6,
+        "liquidity": 0.65,
+        "diversification": 0.55
       },
-      "rejected_reason": "Insufficient cash for execution (requires ~\u00a350 min notional, available \u00a30.17). Portfolio under-capitalised."
-    },
-    {
-      "ticker": "REL.L",
-      "entry_type": "BREAKOUT",
-      "trend_status": "FULL",
-      "confidence": 0.75,
-      "confidence_components": {
-        "trend": 0.92,
-        "setup": 0.68,
-        "risk_reward": 0.7,
-        "liquidity": 0.82,
-        "diversification": 0.65
-      },
-      "rejected_reason": "Insufficient cash for execution. Portfolio cash insufficient."
+      "rejected_reason": "Insufficient cash: required 5.96 GBP, available 0.19 GBP. Portfolio at max_positions (6 vs limit 5). Rebalance needed before new entries."
     },
     {
       "ticker": "HSBA.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.72,
+      "confidence": 0.62,
       "confidence_components": {
-        "trend": 0.88,
-        "setup": 0.65,
-        "risk_reward": 0.68,
-        "liquidity": 0.9,
+        "trend": 0.9,
+        "setup": 0.6,
+        "risk_reward": 0.55,
+        "liquidity": 0.7,
+        "diversification": 0.5
+      },
+      "rejected_reason": "Insufficient cash: required 3.95 GBP, available 0.19 GBP. Confidence 0.62 below 0.65 threshold."
+    },
+    {
+      "ticker": "AAL.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.58,
+      "confidence_components": {
+        "trend": 0.92,
+        "setup": 0.52,
+        "risk_reward": 0.48,
+        "liquidity": 0.68,
         "diversification": 0.6
       },
-      "rejected_reason": "Insufficient cash. Also, already at max_positions (6 current vs 5 allowed). Position closure required first."
+      "rejected_reason": "Insufficient cash. Confidence 0.58 below threshold. High volume ratio (2.25) indicates strong demand but elevated gap risk in DAILY_CHECK mode."
+    },
+    {
+      "ticker": "RKT.L",
+      "entry_type": "NONE",
+      "trend_status": "NONE",
+      "confidence": 0.35,
+      "confidence_components": {
+        "trend": 0.1,
+        "setup": 0.3,
+        "risk_reward": 0.25,
+        "liquidity": 0.65,
+        "diversification": 0.55
+      },
+      "rejected_reason": "Trend broken: sma50_slope negative, close below SMA50. 38 consecutive days below SMA50 indicates sustained weakness. No entry."
+    },
+    {
+      "ticker": "GLEN.L",
+      "entry_type": "HOLD",
+      "trend_status": "FULL",
+      "confidence": 0.72,
+      "confidence_components": {
+        "trend": 0.95,
+        "setup": 0.7,
+        "risk_reward": 0.7,
+        "liquidity": 0.6,
+        "diversification": 0.75
+      },
+      "rejected_reason": "Existing position (1.035 qty @ avg 5.08) held 65 days, still in trend. Monitored for stops only."
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 6,
     "positions_count_limit": 5,
-    "positions_count_breach": true,
+    "positions_over_limit": 1,
     "turnover_pct": 0.0,
-    "largest_position_pct": 48.73,
-    "cash_buffer_required_pct": 3.0,
-    "cash_buffer_available_gbp": 3.28,
-    "cash_buffer_actual_pct": 3.0,
+    "largest_position_pct": 49.03,
+    "largest_position_ticker": "BP.L",
+    "cash_buffer_pct": 3.0,
+    "cash_buffer_gbp": 3.2634,
+    "actual_cash_pct": 3.17,
     "sector_exposures_pct": {
-      "Energy": 48.73,
-      "Materials": 19.78,
-      "Financials": 4.89,
-      "Industrials": 4.39,
-      "Healthcare": 4.89
+      "Energy": 41.15,
+      "Materials": 6.59,
+      "Industrials": 4.45,
+      "Healthcare": 4.91
     },
+    "max_sector_exposure_limit_pct": 40.0,
+    "sector_constraint_violated": false,
+    "max_single_name_limit_pct": 30.0,
+    "single_name_constraint_violated": false,
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 5.97,
-    "notes": [
-      "Portfolio at max_positions limit (6 vs 5 allowed). No new positions permitted without closure.",
-      "Energy sector exposure (48.7%) exceeds balanced strategy comfort zone but remains under 50% limit.",
-      "Available cash for buys is \u00a30.17 after buffer, insufficient for any equity trade minimum size."
-    ]
+    "portfolio_drawdown_pct": 6.4,
+    "portfolio_drawdown_limit_pct": 15.0
   }
 }
