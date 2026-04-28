@@ -1,6 +1,4 @@
 {
-  "as_of_date": "2026-04-27",
-  "trading_day_status": "NO_TRADES_EXECUTED",
-  "reason": "Position limit exceeded (6 vs 5), cash insufficient, no candidates above confidence threshold",
+  "as_of_date": "2026-04-28",
   "entries": []
 }
