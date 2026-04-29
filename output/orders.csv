@@ -1,2 +1,5 @@
+```csv
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-NO_TRADES
+ORD001,BA.L,SELL,MKT,0.2378,,GTC,,Trend break exit: 7 consecutive days below SMA50
+ORD002,AZN.L,SELL,MKT,0.0383,,GTC,,Trend break exit: 7 consecutive days below SMA50
+```

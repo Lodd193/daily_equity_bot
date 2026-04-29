@@ -1,24 +1,28 @@
 {
-  "status": "NO_TRADES",
-  "as_of_date": "2026-04-28",
-  "reason": "Portfolio drawdown (5.94%) combined with constrained cash position (\u00a33.45 vs \u00a33.29 buffer) leaves insufficient liquidity for new positions. Max 1 new position per day permitted, but no high-confidence setups identified that justify deploying scarce cash given current portfolio stress and risk constraints.",
+  "status": "OK",
+  "as_of_date": "2026-04-29",
+  "reason": "Trend break exits identified; new entry rejected due to insufficient cash for risk-adjusted position sizing",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 5.94,
+    "portfolio_drawdown_pct": 6.03,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_sufficient": true,
+    "cash_buffer_maintained": true,
+    "turnover_within_limit": true,
     "positions_within_limit": true,
-    "sector_exposure_compliant": true,
-    "turnover_compliant": true,
-    "liquidity_adequate": false,
-    "stop_loss_checks_pending": false
+    "sector_exposure_within_limit": true,
+    "single_name_exposure_within_limit": true,
+    "liquidity_sufficient": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK"
+  "stop_execution_mode": "DAILY_CHECK",
+  "positions_before": 6,
+  "positions_after": 4,
+  "sells_executed": 2,
+  "buys_executed": 0
 }
