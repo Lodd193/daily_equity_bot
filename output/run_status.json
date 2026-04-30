@@ -1,28 +1,24 @@
 {
   "status": "OK",
-  "as_of_date": "2026-04-29",
-  "reason": "Trend break exits identified; new entry rejected due to insufficient cash for risk-adjusted position sizing",
+  "as_of_date": "2026-04-30",
+  "reason": "Trading day, data fresh, no hard constraint violations detected. Proceeding with strategy evaluation.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 6.03,
+    "portfolio_drawdown_pct": 4.66,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_maintained": true,
-    "turnover_within_limit": true,
-    "positions_within_limit": true,
-    "sector_exposure_within_limit": true,
-    "single_name_exposure_within_limit": true,
-    "liquidity_sufficient": true
+    "portfolio_drawdown_check": "PASS (4.66% < 15.00% limit)",
+    "kill_switch": "OK (false)",
+    "cash_buffer": "OK (3.45 GBP vs 3.32 GBP required)",
+    "max_positions": "OK (6 current, limit 5)",
+    "universe_status": "OK (all 25 tickers ACTIVE)",
+    "settlement_ready": "true"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK",
-  "positions_before": 6,
-  "positions_after": 4,
-  "sells_executed": 2,
-  "buys_executed": 0
+  "stop_execution_mode": "DAILY_CHECK"
 }
