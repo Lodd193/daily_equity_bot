@@ -1,22 +1,6 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-05-01",
-  "reason": "Portfolio in severe drawdown (6.06% from peak). Strong sell signals on existing positions; no high-confidence new entries identified. Conservative stance: prioritizing capital preservation over new entry attempts.",
-  "data_checks": {
-    "market_data_fresh": true,
-    "all_required_columns_present": true,
-    "trading_day": true,
-    "is_half_day": false,
-    "portfolio_drawdown_pct": 6.06,
-    "drawdown_limit_breached": false
-  },
-  "risk_checks": {
-    "cash_buffer_check": "PASS (3.45 GBP available, 3.27 GBP buffer required)",
-    "portfolio_constraints": "PASS (6 positions, under max 5 threshold but aged positions dominating)",
-    "liquidity_check": "PASS (all holdings meet min_avg_gbp_volume)",
-    "trend_filter_check": "FAIL - 4 of 6 positions showing negative trend signals (AZN, GLEN, RIO below SMA50 or extended holding with decay)"
-  },
-  "currency": "GBP",
-  "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK"
+  "as_of_date": "2026-05-04",
+  "reason": "Non-trading day",
+  "currency": "GBP"
 }
