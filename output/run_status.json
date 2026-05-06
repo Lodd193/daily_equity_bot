@@ -1,6 +1,23 @@
 {
-  "status": "NO_TRADES",
-  "as_of_date": "2026-05-04",
-  "reason": "Non-trading day",
-  "currency": "GBP"
+  "status": "OK",
+  "as_of_date": "2026-05-06",
+  "reason": "Trading day validated. Portfolio drawdown within limits. Eligible candidates identified.",
+  "data_checks": {
+    "market_data_fresh": true,
+    "all_required_columns_present": true,
+    "trading_day": true,
+    "is_half_day": false,
+    "portfolio_drawdown_pct": 8.3,
+    "drawdown_limit_breached": false
+  },
+  "risk_checks": {
+    "max_positions_check": "PASS",
+    "cash_buffer_check": "PASS",
+    "turnover_check": "PASS",
+    "sector_exposure_check": "PASS",
+    "correlation_check": "PASS"
+  },
+  "currency": "GBP",
+  "execution_sequence": "SELL_THEN_BUY",
+  "stop_execution_mode": "DAILY_CHECK"
 }
