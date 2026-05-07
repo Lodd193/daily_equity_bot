@@ -1,345 +1,79 @@
 {
-  "as_of_date": "2026-05-06",
+  "as_of_date": "2026-05-07",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 106.61,
-  "cash_balance_gbp": 3.45,
-  "available_for_buys_gbp": 0.33,
+  "portfolio_equity_gbp": 103.93,
+  "cash_balance_gbp": 3.4524,
+  "available_for_buys_gbp": 0.34,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 8.3,
+  "portfolio_drawdown_pct": 10.6,
+  "portfolio_peak_equity_gbp": 116.22,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
       "ticker": "HSBA.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.78,
+      "confidence": 0.556,
       "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.75,
-        "risk_reward": 0.72,
-        "liquidity": 0.88,
-        "diversification": 0.62
+        "trend": 0.9,
+        "setup": 0.65,
+        "risk_reward": 0.35,
+        "liquidity": 1.0,
+        "diversification": 0.45
       },
-      "rejected_reason": "Insufficient cash: required 3.42 GBP, available 0.33 GBP after buffer"
+      "rejected_reason": "Confidence 0.556 below minimum threshold 0.60 for balanced profile. Also: insufficient cash (0.34 GBP available vs 39.66 GBP required for minimum position). Position count at max (6 > 5 allowed)."
+    },
+    {
+      "ticker": "RIO.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.542,
+      "confidence_components": {
+        "trend": 0.92,
+        "setup": 0.58,
+        "risk_reward": 0.42,
+        "liquidity": 0.95,
+        "diversification": 0.4
+      },
+      "rejected_reason": "Confidence 0.542 below minimum threshold 0.60. Insufficient cash. Position count constraint violation."
     },
     {
       "ticker": "LSEG.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.74,
-      "confidence_components": {
-        "trend": 0.92,
-        "setup": 0.68,
-        "risk_reward": 0.7,
-        "liquidity": 0.82,
-        "diversification": 0.6
-      },
-      "rejected_reason": "Insufficient cash: required 4.18 GBP, available 0.33 GBP after buffer"
-    },
-    {
-      "ticker": "GLEN.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.65,
-      "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.55,
-        "risk_reward": 0.65,
-        "liquidity": 0.78,
-        "diversification": 0.55
-      },
-      "rejected_reason": "Already held; no new entry signal. Stop check: low_gbp (5.596) > stop (4.86) - HOLD"
-    },
-    {
-      "ticker": "RIO.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.72,
-      "confidence_components": {
-        "trend": 0.94,
-        "setup": 0.7,
-        "risk_reward": 0.68,
-        "liquidity": 0.75,
-        "diversification": 0.7
-      },
-      "rejected_reason": "Already held; no new entry signal. Stop check: low_gbp (75.45) > stop (67.02) - HOLD"
-    },
-    {
-      "ticker": "AAL.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.71,
-      "confidence_components": {
-        "trend": 0.91,
-        "setup": 0.72,
-        "risk_reward": 0.68,
-        "liquidity": 0.8,
-        "diversification": 0.65
-      },
-      "rejected_reason": "Insufficient cash: required 2.87 GBP, available 0.33 GBP after buffer"
-    },
-    {
-      "ticker": "BP.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.68,
+      "confidence": 0.548,
       "confidence_components": {
         "trend": 0.88,
-        "setup": 0.62,
-        "risk_reward": 0.7,
-        "liquidity": 0.9,
-        "diversification": 0.55
+        "setup": 0.61,
+        "risk_reward": 0.38,
+        "liquidity": 0.92,
+        "diversification": 0.38
       },
-      "rejected_reason": "Already held; no new entry signal. Stop check: low_gbp (5.382) > stop (4.68) - HOLD"
-    },
-    {
-      "ticker": "VUAG.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.69,
-      "confidence_components": {
-        "trend": 0.93,
-        "setup": 0.68,
-        "risk_reward": 0.67,
-        "liquidity": 0.85,
-        "diversification": 0.65
-      },
-      "rejected_reason": "Insufficient cash: required 5.24 GBP, available 0.33 GBP after buffer"
+      "rejected_reason": "Confidence 0.548 below minimum threshold 0.60. Insufficient cash. Position count constraint violation."
     }
   ],
-  "decisions": [
-    {
-      "ticker": "SHEL.L",
-      "action": "HOLD",
-      "confidence": 0.68,
-      "confidence_components": {
-        "trend": 0.8,
-        "setup": 0.65,
-        "risk_reward": 0.7,
-        "liquidity": 0.85,
-        "diversification": 0.6
-      },
-      "entry": null,
-      "size": null,
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 27.71,
-        "execution_mode": "DAILY_CHECK"
-      },
-      "gap_risk_buffer_applied": false,
-      "take_profit": {
-        "type": "RULE",
-        "price_gbp": null,
-        "rule": "Trend break or time stop"
-      },
-      "time_stop_days": 20,
-      "costs_estimate_gbp": null,
-      "rationale": [
-        "Position held 73 days, no urgent exit signal",
-        "Stop at 27.71 GBP active; low_gbp (31.385) well above stop",
-        "Trend positive (close > sma50 > sma200); sma50_slope positive",
-        "Exit conditions not met"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": []
-    },
-    {
-      "ticker": "GLEN.L",
-      "action": "HOLD",
-      "confidence": 0.65,
-      "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.55,
-        "risk_reward": 0.65,
-        "liquidity": 0.78,
-        "diversification": 0.55
-      },
-      "entry": null,
-      "size": null,
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 4.86,
-        "execution_mode": "DAILY_CHECK"
-      },
-      "gap_risk_buffer_applied": false,
-      "take_profit": {
-        "type": "RULE",
-        "price_gbp": null,
-        "rule": "Trend break or time stop"
-      },
-      "time_stop_days": 20,
-      "costs_estimate_gbp": null,
-      "rationale": [
-        "Position held 72 days; stop price 4.86 GBP active",
-        "Low_gbp (5.596) well above stop; no breach",
-        "Trend positive (close > sma50 > sma200); sma50_slope positive",
-        "No exit signal triggered"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": []
-    },
-    {
-      "ticker": "BP.L",
-      "action": "HOLD",
-      "confidence": 0.68,
-      "confidence_components": {
-        "trend": 0.88,
-        "setup": 0.62,
-        "risk_reward": 0.7,
-        "liquidity": 0.9,
-        "diversification": 0.55
-      },
-      "entry": null,
-      "size": null,
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 4.68,
-        "execution_mode": "DAILY_CHECK"
-      },
-      "gap_risk_buffer_applied": false,
-      "take_profit": {
-        "type": "RULE",
-        "price_gbp": null,
-        "rule": "Trend break or time stop"
-      },
-      "time_stop_days": 20,
-      "costs_estimate_gbp": null,
-      "rationale": [
-        "Position held 57 days; largest holding (48.2% of portfolio)",
-        "Stop price 4.68 GBP active; low_gbp (5.382) well above stop",
-        "Trend positive (close > sma50 > sma200); sma50_slope positive",
-        "No exit conditions met"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": []
-    },
-    {
-      "ticker": "BA.L",
-      "action": "HOLD",
-      "confidence": 0.55,
-      "confidence_components": {
-        "trend": 0.7,
-        "setup": 0.48,
-        "risk_reward": 0.58,
-        "liquidity": 0.75,
-        "diversification": 0.5
-      },
-      "entry": null,
-      "size": null,
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 21.5,
-        "execution_mode": "DAILY_CHECK"
-      },
-      "gap_risk_buffer_applied": false,
-      "take_profit": {
-        "type": "RULE",
-        "price_gbp": null,
-        "rule": "Trend break or time stop"
-      },
-      "time_stop_days": 20,
-      "costs_estimate_gbp": null,
-      "rationale": [
-        "Position held 53 days; currently underwater (PnL -0.41 GBP)",
-        "Stop price 21.5 GBP active; low_gbp (20.63) near stop but not breached",
-        "Trend negative (close < sma50); 11 consecutive days below sma50",
-        "Time stop approaching (20 days); consider exit on next trend break"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": [
-        "Close_vs_sma50 at -4.3%; trend deteriorating"
-      ]
-    },
-    {
-      "ticker": "AZN.L",
-      "action": "HOLD",
-      "confidence": 0.52,
-      "confidence_components": {
-        "trend": 0.65,
-        "setup": 0.45,
-        "risk_reward": 0.55,
-        "liquidity": 0.7,
-        "diversification": 0.5
-      },
-      "entry": null,
-      "size": null,
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 137.18,
-        "execution_mode": "DAILY_CHECK"
-      },
-      "gap_risk_buffer_applied": false,
-      "take_profit": {
-        "type": "RULE",
-        "price_gbp": null,
-        "rule": "Trend break or time stop"
-      },
-      "time_stop_days": 20,
-      "costs_estimate_gbp": null,
-      "rationale": [
-        "Position held 44 days; currently underwater (PnL -0.28 GBP)",
-        "Stop price 137.18 GBP active; low_gbp (134.34) well above stop",
-        "Trend negative (close < sma50); 11 consecutive days below sma50",
-        "High drawdown from 20d high (12.2%); sma50_slope negative",
-        "Consider exit if trend break confirmed"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": [
-        "Close_vs_sma50 at -6.8%; trend deteriorating"
-      ]
-    },
-    {
-      "ticker": "RIO.L",
-      "action": "HOLD",
-      "confidence": 0.72,
-      "confidence_components": {
-        "trend": 0.94,
-        "setup": 0.7,
-        "risk_reward": 0.68,
-        "liquidity": 0.75,
-        "diversification": 0.7
-      },
-      "entry": null,
-      "size": null,
-      "stop": {
-        "type": "HARD",
-        "price_gbp": 67.02,
-        "execution_mode": "DAILY_CHECK"
-      },
-      "gap_risk_buffer_applied": false,
-      "take_profit": {
-        "type": "RULE",
-        "price_gbp": null,
-        "rule": "Trend break or time stop"
-      },
-      "time_stop_days": 20,
-      "costs_estimate_gbp": null,
-      "rationale": [
-        "Position held 29 days; profitable (PnL +0.13 GBP)",
-        "Stop price 67.02 GBP active; low_gbp (75.45) well above stop",
-        "Strong trend (close > sma50 > sma200); sma50_slope positive",
-        "Close to 20d high; very low drawdown (0.4%)",
-        "High confidence hold"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": []
-    }
-  ],
+  "decisions": [],
   "portfolio_constraints_summary": {
+    "positions_count_current": 6,
     "positions_count_after": 6,
+    "max_positions": 5,
+    "position_count_violation": true,
     "turnover_pct": 0.0,
-    "largest_position_pct": 48.2,
-    "cash_buffer_pct": 0.1,
+    "largest_position_pct": 48.15,
+    "largest_position_ticker": "BP.L",
+    "cash_buffer_pct": 3.0,
+    "cash_buffer_required_gbp": 3.1179,
     "sector_exposures_pct": {
-      "Energy": 42.2,
-      "Materials": 10.8,
-      "Industrials": 4.7,
-      "Healthcare": 4.9
+      "Energy": 48.15,
+      "Materials": 7.11,
+      "Industrials": 4.56,
+      "Healthcare": 4.91
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 8.3
+    "portfolio_drawdown_pct": 10.6,
+    "rebalance_mode": false
   }
 }
