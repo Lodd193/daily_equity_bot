@@ -1,79 +1,72 @@
 {
-  "as_of_date": "2026-05-07",
+  "as_of_date": "2026-05-08",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 103.93,
+  "portfolio_equity_gbp": 103.51,
   "cash_balance_gbp": 3.4524,
-  "available_for_buys_gbp": 0.34,
+  "available_for_buys_gbp": 0.4626,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 10.6,
-  "portfolio_peak_equity_gbp": 116.22,
+  "portfolio_drawdown_pct": 10.9,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
       "ticker": "HSBA.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.556,
+      "confidence": 0.72,
       "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.65,
-        "risk_reward": 0.35,
-        "liquidity": 1.0,
+        "trend": 0.95,
+        "setup": 0.68,
+        "risk_reward": 0.65,
+        "liquidity": 0.9,
         "diversification": 0.45
       },
-      "rejected_reason": "Confidence 0.556 below minimum threshold 0.60 for balanced profile. Also: insufficient cash (0.34 GBP available vs 39.66 GBP required for minimum position). Position count at max (6 > 5 allowed)."
+      "rejected_reason": "Insufficient cash available for position sizing. Required 5.98 GBP, available only 0.46 GBP after buffer."
     },
     {
       "ticker": "RIO.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.542,
+      "confidence": 0.7,
       "confidence_components": {
         "trend": 0.92,
-        "setup": 0.58,
-        "risk_reward": 0.42,
-        "liquidity": 0.95,
-        "diversification": 0.4
+        "setup": 0.65,
+        "risk_reward": 0.7,
+        "liquidity": 0.75,
+        "diversification": 0.5
       },
-      "rejected_reason": "Confidence 0.542 below minimum threshold 0.60. Insufficient cash. Position count constraint violation."
+      "rejected_reason": "Insufficient cash available for position sizing. Required 4.15 GBP, available only 0.46 GBP after buffer."
     },
     {
-      "ticker": "LSEG.L",
-      "entry_type": "BREAKOUT",
+      "ticker": "AAL.L",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.548,
+      "confidence": 0.68,
       "confidence_components": {
-        "trend": 0.88,
-        "setup": 0.61,
-        "risk_reward": 0.38,
-        "liquidity": 0.92,
-        "diversification": 0.38
+        "trend": 0.9,
+        "setup": 0.62,
+        "risk_reward": 0.68,
+        "liquidity": 0.82,
+        "diversification": 0.48
       },
-      "rejected_reason": "Confidence 0.548 below minimum threshold 0.60. Insufficient cash. Position count constraint violation."
+      "rejected_reason": "Insufficient cash available for position sizing. Required 3.42 GBP, available only 0.46 GBP after buffer."
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
-    "positions_count_current": 6,
     "positions_count_after": 6,
-    "max_positions": 5,
-    "position_count_violation": true,
     "turnover_pct": 0.0,
-    "largest_position_pct": 48.15,
-    "largest_position_ticker": "BP.L",
+    "largest_position_pct": 48.3,
     "cash_buffer_pct": 3.0,
-    "cash_buffer_required_gbp": 3.1179,
     "sector_exposures_pct": {
-      "Energy": 48.15,
-      "Materials": 7.11,
-      "Industrials": 4.56,
-      "Healthcare": 4.91
+      "Energy": 41.6,
+      "Materials": 6.4,
+      "Industrials": 4.4,
+      "Healthcare": 4.9
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 10.6,
-    "rebalance_mode": false
+    "portfolio_drawdown_pct": 10.9
   }
 }

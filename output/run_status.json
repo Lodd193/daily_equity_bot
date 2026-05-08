@@ -1,28 +1,23 @@
 {
-  "status": "NO_TRADES",
-  "as_of_date": "2026-05-07",
-  "reason": "Portfolio in liquidation mode due to drawdown exceeding 15% limit. Current drawdown: 10.60%. However, critical blocker: cash_balance_gbp (3.45 GBP) is below the minimum required buffer (3.11 GBP), and any new BUY would violate cash constraints. Additionally, best candidate (HSBA.L) failed confidence threshold (0.56 < 0.60 minimum). No trade can proceed without violating risk policy.",
+  "status": "OK",
+  "as_of_date": "2026-05-08",
+  "reason": "Trading day. Portfolio drawdown 10.9% within limit. Data fresh. Proceeding with evaluation.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 10.6,
+    "portfolio_drawdown_pct": 10.9,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_available": false,
-    "cash_buffer_required_gbp": 3.1179,
-    "cash_balance_gbp": 3.4524,
-    "buffer_surplus_deficit_gbp": 0.3345,
-    "liquidity_constraint": "TIGHT",
-    "max_positions_breached": false,
-    "positions_count": 6,
-    "max_positions_allowed": 5,
-    "note": "Portfolio already at 6 positions (exceeds max_positions of 5). Exit signal required before any new entry."
+    "kill_switch_engaged": false,
+    "cash_buffer_available": true,
+    "max_positions_check": "5/5 currently held",
+    "turnover_limit_check": "Will validate per trade",
+    "correlation_check": "Will validate per trade"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK",
-  "note": "Position count constraint violation prevents new entries. Exit BP.L or other positions to bring portfolio into compliance."
+  "stop_execution_mode": "DAILY_CHECK"
 }

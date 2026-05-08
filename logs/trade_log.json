@@ -88,5 +88,30 @@
         "rationale_summary": "Pullback entry in full uptrend (close > SMA50 > SMA200). 8.24% drawdown from 20-day high within balanced profile target. Excellent liquidity (\u00a3251M avg notional). Adds Materials sector diversification to concentrated Energy portfolio. Risk-reward 1:1.2 at 20-day target."
       }
     ]
+  },
+  {
+    "as_of_date": "2026-05-08",
+    "entries": [
+      {
+        "ticker": "AZN.L",
+        "action": "SELL",
+        "planned_price_gbp": 133.44,
+        "planned_quantity": 0.0383,
+        "stop_price_gbp": 137.18,
+        "confidence": 0.95,
+        "entry_type": "STOP_EXIT",
+        "rationale_summary": "Stop price 137.18 already above current market price 133.44 (stop breached). Trend broken with 13 consecutive days below SMA50. Exit rule triggered. Days held 50 (> 2 day minimum). Recommend market sell at next daily check."
+      },
+      {
+        "ticker": "BA.L",
+        "action": "SELL",
+        "planned_price_gbp": 19.338,
+        "planned_quantity": 0.2378,
+        "stop_price_gbp": 21.5,
+        "confidence": 0.95,
+        "entry_type": "STOP_EXIT",
+        "rationale_summary": "Stop price 21.50 already above current market price 19.338 (stop breached). Trend broken with 13 consecutive days below SMA50. Exit rule triggered. Days held 59 (> 2 day minimum). Recommend market sell at next daily check."
+      }
+    ]
   }
 ]

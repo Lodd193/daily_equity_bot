@@ -1,16 +1,25 @@
 {
-  "as_of_date": "2026-05-07",
+  "as_of_date": "2026-05-08",
   "entries": [
+    {
+      "ticker": "AZN.L",
+      "action": "SELL",
+      "planned_price_gbp": 133.44,
+      "planned_quantity": 0.0383,
+      "stop_price_gbp": 137.18,
+      "confidence": 0.95,
+      "entry_type": "STOP_EXIT",
+      "rationale_summary": "Stop price 137.18 already above current market price 133.44 (stop breached). Trend broken with 13 consecutive days below SMA50. Exit rule triggered. Days held 50 (> 2 day minimum). Recommend market sell at next daily check."
+    },
     {
       "ticker": "BA.L",
       "action": "SELL",
-      "planned_price_gbp": 19.918,
+      "planned_price_gbp": 19.338,
       "planned_quantity": 0.2378,
       "stop_price_gbp": 21.5,
-      "confidence": 1.0,
+      "confidence": 0.95,
       "entry_type": "STOP_EXIT",
-      "rationale_summary": "Stop-loss breach: low_gbp (19.615) penetrated stop_price (21.50). Trade executed via DAILY_CHECK mode. Locks loss and improves cash position by ~4.74 GBP. Days held: 58 (meets minimum). Reduces portfolio to 5 positions, enabling future buys.",
-      "note": "Recommended execution at next market open or at market."
+      "rationale_summary": "Stop price 21.50 already above current market price 19.338 (stop breached). Trend broken with 13 consecutive days below SMA50. Exit rule triggered. Days held 59 (> 2 day minimum). Recommend market sell at next daily check."
     }
   ]
 }

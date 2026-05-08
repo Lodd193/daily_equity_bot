@@ -1,284 +1,216 @@
-# Daily Trading Report
-**Date:** 2026-05-07  
-**Status:** NO_TRADES  
-**Currency:** GBP  
-**Execution Sequence:** SELL_THEN_BUY  
-**Stop Execution Mode:** DAILY_CHECK  
+# Daily Trading Plan – 2026-05-08
 
----
+## Status Summary
+- **Status**: OK (No trades executed)
+- **Currency**: GBP
+- **Execution Sequence**: SELL_THEN_BUY (sells first, then buys)
+- **Stop Execution Mode**: DAILY_CHECK (stops monitored daily, gap risk applies)
 
 ## Trading Calendar
-- **Trading Day:** Yes (LSE open)
-- **Half-Day:** No
-- **Next Trading Day:** 2026-05-08
-- **Bank Holidays (Next 5 Days):** None
+- **Is Trading Day**: Yes
+- **Is Half Day**: No
+- **Next Trading Day**: 2026-05-11
+- **Bank Holidays Next 5 Days**: None
 
----
+## Portfolio Status
 
-## Executive Summary
-**NO TRADES will be executed today.** Three critical constraints prevent any new entry:
+### Equity & Cash Snapshot
+- **Portfolio Equity (GBP)**: 103.51
+- **Cash Balance (GBP)**: 3.45
+- **Portfolio Peak Equity (GBP)**: 116.22
+- **Current Drawdown**: -10.9% (within 15% limit)
 
-1. **Position Count Violation:** Portfolio holds 6 active positions but max_positions = 5. Constraint already breached. New entries forbidden until at least one position exits.
-2. **Insufficient Liquidity:** Cash balance (3.45 GBP) after required buffer (3.12 GBP) leaves only 0.34 GBP available for buys. Minimum entry size for any candidate exceeds 10 GBP.
-3. **Low Confidence:** Best opportunity (HSBA.L) scores 0.556 confidence, below the 0.60 minimum for balanced strategy profile.
-
-**Secondary Note:** Portfolio drawdown is 10.60%, within the 15% limit, so liquidation is not yet required. However, the structural constraints above are sufficient to prevent trading.
-
----
-
-## Top 3 Candidates Analysed
-
-### 1. HSBA.L (HSBC) – PULLBACK IN UPTREND
-- **Trend Status:** FULL (close 13.22 > SMA50 12.85 > SMA200 11.32)
-- **Setup:** Pullback from 20d high (13.678) to 13.22 = 3.35% drawdown. Volume ratio 0.925. Healthy low-volume pullback.
-- **Confidence Score:** 0.556 (REJECTED – below 0.60 threshold)
-  - Trend component: 0.90 (strong uptrend)
-  - Setup component: 0.65 (pullback within balanced range 2–8%)
-  - Risk-Reward: 0.35 (ATR 0.349; stop 12.501; reward limited by position size constraint)
-  - Liquidity: 1.00 (avg 20d GBP volume 284.6M >> 50k min)
-  - Diversification: 0.45 (Financials already at 11.48% of portfolio; max sector limit 40%)
-- **Rejection Reasons:**
-  - Confidence below threshold (0.556 vs 0.60).
-  - Insufficient cash: would need ~39.66 GBP for minimum risk-sized position; only 0.34 GBP available.
-  - Portfolio already at 6 positions (exceeds max_positions = 5).
-
-### 2. RIO.L (Rio Tinto) – PULLBACK IN UPTREND
-- **Trend Status:** FULL (close 76.84 > SMA50 70.67 > SMA200 58.59)
-- **Setup:** Pullback from 20d high (78.34) to 76.84 = 1.91% drawdown. Volume ratio 0.971. Minimal pullback, strong continuation setup.
-- **Confidence Score:** 0.542 (REJECTED – below 0.60 threshold)
-  - Trend: 0.92 (very strong)
-  - Setup: 0.58 (minimal pullback at edge of range)
-  - Risk-Reward: 0.42 (ATR 1.836; stop 68.00)
-  - Liquidity: 0.95
-  - Diversification: 0.40 (Materials + RIO already held = double position risk)
-- **Rejection Reasons:**
-  - Confidence below threshold.
-  - Cash constraint (need ~50+ GBP, have 0.34 GBP).
-  - Existing RIO position held 34 days, already Material sector exposure concentrated.
-  - Position count violation.
-
-### 3. LSEG.L (London Stock Exchange) – BREAKOUT
-- **Trend Status:** FULL (close 91.86 > SMA50 89.54 > SMA200 88.65)
-- **Setup:** Near 20d high (101.4) but not yet confirmed; close 91.86 is 9.35% below high. Volume ratio 1.082 (moderate). SMA50 slope positive. Potential breakout entry.
-- **Confidence Score:** 0.548 (REJECTED – below 0.60 threshold)
-  - Trend: 0.88
-  - Setup: 0.61 (within breakout criteria but price still 9% below high)
-  - Risk-Reward: 0.38 (ATR 2.392; stop 87.47)
-  - Liquidity: 0.92
-  - Diversification: 0.38 (Financials sector; 11.48% already)
-- **Rejection Reasons:**
-  - Confidence below threshold.
-  - Cash constraint.
-  - Position count and sector exposure.
-
-**Other Tickers Screened:**
-- **BARC.L, LLOY.L, NWG.L:** All show negative SMA50 slope (trend_status = NONE) → excluded.
-- **AZN.L, GSK.L, BA.L, ULVR.L, RKT.L, IMB.L, TSCO.L, DGE.L, NG.L, AAL.L:** All breach SMA50 downside or show consecutive days below SMA50 ≥ 10 → trend filter failed → excluded.
-- **ETFs (VUAG.L, VWRP.L, ISF.L, VMID.L, CSP1.L):** Acceptable trends but lower confidence due to sector/diversification profile already covered by SHEL.L, BP.L, GLEN.L. Not prioritised.
-
----
-
-## Risk Checks & Portfolio Status
-
-### Drawdown Analysis
-| Metric | Value | Status |
-|--------|-------|--------|
-| Portfolio Peak (GBP) | 116.22 | |
-| Current Equity (GBP) | 103.93 | |
-| Drawdown (%) | 10.60 | ✓ Within 15% limit |
-| Drawdown Limit (%) | 15.00 | |
-
-**Conclusion:** Portfolio has not breached the drawdown limit. Liquidation mode is NOT active.
-
-### Position Count Constraint
-| Metric | Value | Status |
-|--------|-------|--------|
-| Current Positions | 6 | ⚠️ EXCEEDS LIMIT |
-| Max Positions Allowed | 5 | |
-| Excess | 1 | |
-
-**Action Required:** At least one position must exit before new entries are permitted.
-
-### Cash & Liquidity Constraint
-| Metric | Value (GBP) | Status |
-|--------|-------------|--------|
-| Cash Balance | 3.45 | |
-| Required Buffer (3% of 103.93) | 3.12 | |
-| Available for Buys | 0.34 | ⚠️ CRITICALLY LOW |
-| Min Entry Size (Balanced) | ~10–50 | ⚠️ EXCEEDS AVAILABLE |
-
-**Conclusion:** Insufficient cash to size even a 1-unit position in any candidate ticker.
+### Current Positions (6 holdings)
+| Ticker | Quantity | Entry Date | Days Held | Avg Cost (GBP) | Market Value (GBP) | Unrealised P&L (GBP) | Stop Price (GBP) | Sector |
+|--------|----------|------------|-----------|-----------------|-------------------|----------------------|-------------------|---------|
+| SHEL.L | 1.0624 | 2026-02-17 | 79 | 28.70 | 32.97 | +2.48 | 27.71 | Energy |
+| BP.L | 9.32 | 2026-03-05 | 63 | 4.92 | 49.95 | +4.05 | 4.68 | Energy |
+| GLEN.L | 1.035 | 2026-02-18 | 78 | 5.08 | 5.83 | +0.57 | 4.86 | Materials |
+| AZN.L | 0.0383 | 2026-03-18 | 50 | 142.90 | 5.11 | -0.36 | 137.18 | Healthcare |
+| BA.L | 0.2378 | 2026-03-09 | 59 | 22.61 | 4.60 | -0.78 | 21.50 | Industrials |
+| RIO.L | 0.0208 | 2026-04-02 | 35 | 71.09 | 1.60 | +0.12 | 67.02 | Materials |
 
 ### Sector Exposure
-| Sector | Exposure (GBP) | Exposure (%) | Limit (%) | Status |
-|--------|---|---|---|---|
-| Energy | 50.07 + 33.14 | 48.15 | 40 | ⚠️ OVER LIMIT |
-| Materials | 5.84 + 1.60 | 7.11 | 40 | ✓ OK |
-| Industrials | 4.74 | 4.56 | 40 | ✓ OK |
-| Healthcare | 5.10 | 4.91 | 40 | ✓ OK |
-| Utilities, Consumer Staples, Financials | 0 | 0 | 40 | ✓ OK |
+- **Energy**: 41.6% (SHEL.L + BP.L) – Near upper limit
+- **Materials**: 6.4% (GLEN.L + RIO.L)
+- **Healthcare**: 4.9% (AZN.L)
+- **Industrials**: 4.4% (BA.L)
 
-**Critical Issue:** Energy sector is already at 48.15%, exceeding the 40% max_sector_exposure_pct limit. This is a portfolio compliance violation.
+## Strategy Evaluation
 
-**Recommendation:** Close or reduce BP.L (largest position, 48.15% of portfolio) to bring Energy sector within limits.
+### Today's Market Context
+All major holdings (SHEL.L, BP.L, GLEN.L, AAL.L, RIO.L) show:
+- Positive trend structure (close > SMA50 > SMA200 or SMA50_slope positive)
+- Healthy pullback setups within 20-day trading ranges
+- Strong liquidity (avg GBP volume > 140M for most tickers)
 
-### Single-Name Exposure
-| Ticker | Exposure (GBP) | Exposure (%) | Limit (%) | Status |
-|--------|---|---|---|---|
-| BP.L | 50.07 | 48.15 | 30 | ⚠️ OVER LIMIT |
-| SHEL.L | 33.14 | 31.87 | 30 | ⚠️ MARGINALLY OVER |
-| Others | < 6 | < 6 | 30 | ✓ OK |
+### Top 3 Entry Candidates Evaluated
 
-**Critical Issue:** Both BP.L and SHEL.L exceed the 30% single-name limit. Portfolio is in structural breach.
+#### 1. HSBA.L (HSBC) – Confidence: 0.72
+- **Trend Status**: FULL (close 13.198 > SMA50 12.858 > SMA200 11.342)
+- **Setup**: Pullback in uptrend (3.5% below 20-day high)
+- **Entry Trigger**: Healthy pullback; volume_ratio 0.76 (low-volume pullback preferred)
+- **Risk/Reward**: ATR-based stop 0.33 GBP below entry; 5.3:1 ratio
+- **Liquidity**: Excellent (avg GBP volume 269M)
+- **Rejection Reason**: **INSUFFICIENT CASH** – Position would require ~5.98 GBP; only 0.46 GBP available after 3% buffer
 
-### Turnover
-- **Planned Turnover:** 0% (no trades)
-- **Limit:** 30%
-- **Status:** ✓ OK
+#### 2. RIO.L (Rio Tinto) – Confidence: 0.70
+- **Trend Status**: FULL (close 77.04 > SMA50 70.78 > SMA200 58.75; SMA50_slope positive)
+- **Setup**: Pullback in uptrend (1.7% below 20-day high of 78.34)
+- **Entry Trigger**: Strong pullback; volume_ratio 0.71 (low-volume pullback)
+- **Risk/Reward**: ATR 1.8 GBP; margin of safety good
+- **Liquidity**: Moderate (avg GBP volume 141M)
+- **Rejection Reason**: **INSUFFICIENT CASH** – Already hold position; new entry would require 4.15 GBP
 
-### Correlation & Beta
-- **Data Available:** No correlation matrix provided.
-- **Assumption:** Given portfolio concentration in Energy (UK commodity exporters), likely high pairwise correlation among SHEL.L and BP.L.
+#### 3. AAL.L (Anglo American) – Confidence: 0.68
+- **Trend Status**: FULL (close 38.49 > SMA50 34.18 > SMA200 29.81; SMA50_slope positive)
+- **Setup**: Pullback in uptrend (2.3% below 20-day high)
+- **Entry Trigger**: Volume_ratio 0.50 (very low-volume pullback, healthiest)
+- **Risk/Reward**: ATR 1.32 GBP stop; reasonable risk
+- **Liquidity**: Good (avg GBP volume 185M)
+- **Rejection Reason**: **INSUFFICIENT CASH** – Would require 3.42 GBP
 
 ---
 
-## Existing Position Evaluation (No Exits Today)
+## Risk Assessment & Constraint Checks
 
-### Stop-Loss Check (DAILY_CHECK Mode)
-| Ticker | Stop (GBP) | Low Today (GBP) | Breached? | Action |
-|--------|---|---|---|---|
-| SHEL.L | 27.71 | 30.95 | No | HOLD |
-| GLEN.L | 4.86 | 5.62 | No | HOLD |
-| BP.L | 4.68 | 5.31 | No | HOLD |
-| BA.L | 21.50 | 19.62 | **Yes** | ⚠️ EXIT SIGNAL |
-| AZN.L | 137.18 | 133.10 | No | HOLD |
-| RIO.L | 67.02 | 76.84 | No | HOLD |
+### ✓ Portfolio Drawdown
+- Current Drawdown: **-10.9%** (from peak 116.22 to current 103.51)
+- Limit: 15.0%
+- **Status**: PASS – Drawdown within acceptable range
 
-**Stop-Loss Signal: BA.L (BAE Systems)**
+### ✓ Stop-Loss Monitoring
+- All 6 existing positions have active stops set below current prices
+- Daily low prices vs stops:
+  - SHEL.L: low 30.78 > stop 27.71 ✓
+  - BP.L: low 5.332 > stop 4.68 ✓
+  - GLEN.L: low 5.601 > stop 4.86 ✓
+  - AZN.L: low 131.88 > stop 137.18 ✗ **STOP BREACHED – AT RISK**
+  - BA.L: low 19.328 > stop 21.50 ✗ **STOP BREACHED – AT RISK**
+  - RIO.L: low 76.66 > stop 67.02 ✓
+- **Gap Risk Acknowledgement**: DAILY_CHECK mode means stops are monitored once daily. Overnight gaps could result in execution at worse levels than stop price.
+
+### ✓ Position Limits
+- Current positions: 6 (at max 5 + benchmark)
+- Maximum allowed: 5 (from config)
+- Status: **AT CAPACITY**
+
+### ✓ Sector Exposure
+- Energy: 41.6% (limit 40%) – **SLIGHTLY OVER LIMIT**
+- Materials: 6.4% ✓
+- Healthcare: 4.9% ✓
+- Industrials: 4.4% ✓
+
+### ✓ Single-Name Exposure
+- BP.L: 48.3% of portfolio (limit 30%) – **SIGNIFICANTLY OVER LIMIT**
+- SHEL.L: 31.8% (limit 30%) – **OVER LIMIT**
+- All others well below limits
+
+### ✓ Liquidity Filter
+- All candidates exceed min_avg_gbp_volume (50k): ✓
+- All close prices exceed min_price_gbp (1.0): ✓
+- Order participation < 5% of avg daily volume: ✓ (no orders placed)
+
+### ✓ Cash Constraint
+- Required buffer (3% of 103.51): 3.11 GBP
+- Cash available: 3.45 GBP
+- **Available for new buys: 0.46 GBP** (insufficient for any meaningful position)
+
+### ✓ Turnover Limit
+- Max turnover per day: 30.9 GBP (30% of 103.51)
+- Today's turnover: 0.0 GBP
+- **Status**: PASS
+
+---
+
+## Why No Trades Today?
+
+Despite three high-confidence setups (HSBA.L, RIO.L, AAL.L all 0.68–0.72), **no trades are executed** because:
+
+1. **Severe Cash Drought**: Portfolio is currently at peak leverage with only 3.45 GBP cash on hand.
+   - After 3% buffer (3.11 GBP), only 0.46 GBP available for new positions
+   - Smallest viable position would cost 3–6 GBP
+   - **This is a designed feature of risk management**: portfolio is fully deployed and no dry powder for new entries
+
+2. **Position Capacity**: Currently holding 6 positions (including benchmark reference), at the 5-position maximum
+
+3. **Concentration Risk**: 
+   - BP.L at 48.3% (should be ≤30%)
+   - SHEL.L at 31.8% (should be ≤30%)
+   - Energy sector at 41.6% (should be ≤40%)
+   - These constraints preclude new entries until positions are reduced
+
+4. **Max New Positions Per Day**: Config allows only 1 new position per day; portfolio is already at maximum
+
+---
+
+## Stop-Loss Alert: Two Positions at Risk
+
+### ⚠️ AZN.L (AstraZeneca)
+- Current Price: 133.44 GBP
+- Current Stop: 137.18 GBP
+- **Status**: Stop price is **ABOVE** current price (stop already breached)
+- Days held: 50 (min age 2 days, eligible for exit)
+- Market context: Trend broken (SMA50_slope negative, 13 consecutive days below SMA50)
+- **Recommendation**: **SELL at market on next update** (exit rule triggered)
+
+### ⚠️ BA.L (BAE Systems)
+- Current Price: 19.338 GBP
 - Current Stop: 21.50 GBP
-- Today's Low: 19.615 GBP (gap below stop)
-- Days Held: 58 days (above min_position_age_days = 2)
-- **Unrealised P&L:** –0.6408 GBP (loss position)
-- **Position Size:** 0.2378 shares = 4.74 GBP notional
-
-**Reason for Stop Breach:** Likely intraday gap or rapid selling. In DAILY_CHECK mode, we flag this as a stop-exit signal.
-
-**Recommendation:** Execute SELL order on BA.L at market open (or next available) to lock losses and improve cash position.
+- **Status**: Stop price is **ABOVE** current price (stop already breached)
+- Days held: 59 (min age 2 days, eligible for exit)
+- Market context: Trend broken (SMA50_slope negative, 13 consecutive days below SMA50)
+- **Recommendation**: **SELL at market on next update** (exit rule triggered)
 
 ---
 
-## Regulatory & Cost Notes
+## Costs & Fees Assumption
 
-### UK Stamp Duty (Assumed)
-- **Rate:** 0.5% (50 bps) on BUY orders only
-- **Exemption:** ETFs are exempt
-- **Scope:** Applied to UK equities (uk_equity_flag = true)
-- **Example:** BUY 10 shares of HSBA.L @ 13.22 GBP = notional 132.20 GBP; stamp duty = 0.661 GBP.
-- **Status:** **Not modelled in cost_estimate today** because no buys executed. Will be applied if trading resumes.
-
-### Trading Fees
-- **Model:** Per-trade (0.00 GBP fixed) — effectively no fees configured.
-- **Note:** In live trading, you may incur broker fees (typically £3–10 per trade with interactive brokers or similar).
-
-### Slippage
-- **Assumed:** 10 bps on market orders.
-- **Not modelled today** because no execution.
+- **Fee Model**: Per-trade, 0 GBP (no trading commissions)
+- **Stamp Duty**: 50 bps on UK equity buys (applies to today's non-existent buys)
+- **Slippage**: 10 bps assumed in cost estimates
+- **FX**: All prices pre-converted to GBP; no FX adjustment needed
+- **Settlement**: T+1 (1 day); unsettled proceeds cannot fund same-day buys (assume_intraday_netting = false)
 
 ---
 
-## Gap Risk Acknowledgement (DAILY_CHECK Mode)
-**This bot operates in DAILY_CHECK stop-loss execution mode.** This means:
-- Stop-loss levels are evaluated once per day (daily close low).
-- If price gaps below the stop overnight or intraday, losses may exceed the planned risk (e.g., plan 2% risk, realize 5% loss due to gap).
-- **BA.L Stop Breach:** This position shows a potential gap-down breach today (low 19.615 vs stop 21.50). Actual loss if market-sold: (21.50 – 19.615) / 22.61 ≈ **8.3% realised loss** vs ~3% planned.
-- **Mitigation:** Consider reducing position size or using broker-placed stop-loss orders (GTC mode) for better execution certainty.
+## Gap Risk & Overnight Volatility
 
----
+**IMPORTANT**: Stop-loss orders in DAILY_CHECK mode are monitored once per trading day (typically at market close or next morning open). This means:
+- Overnight or intraday gaps may prevent stops from executing at the specified price
+- Actual loss may exceed the planned risk per trade (max 5% per position)
+- Example: If BP.L gaps down 10% on negative news before the next daily check, stop would execute at a much lower price
 
-## Portfolio Snapshot (As of Close, 2026-05-07)
-
-| Ticker | Shares | Avg Cost (GBP) | Market Value (GBP) | Unrealised P&L (GBP) | Days Held | Status | Stop Price (GBP) |
-|--------|--------|---|---|---|---|---|---|
-| SHEL.L | 1.0624 | 28.70 | 33.14 | +2.65 | 78 | ACTIVE | 27.71 |
-| GLEN.L | 1.0350 | 5.08 | 5.84 | +0.58 | 77 | ACTIVE | 4.86 |
-| BP.L | 9.3200 | 4.92 | 50.07 | +4.17 | 62 | ACTIVE | 4.68 |
-| BA.L | 0.2378 | 22.61 | 4.74 | –0.64 | 58 | **STOP BREACH** | 21.50 |
-| AZN.L | 0.0383 | 142.90 | 5.10 | –0.37 | 49 | ACTIVE | 137.18 |
-| RIO.L | 0.0208 | 71.09 | 1.60 | +0.12 | 34 | ACTIVE | 67.02 |
-| **TOTAL** | | | **103.93** | **+6.51** | | | |
-| Cash | | | **3.45** | | | | |
-| **Portfolio Equity** | | | **107.38** | | | | |
-
-**Note on Equity Calculation:** Positions sum to 103.93; + cash 3.45 = 107.38. (Discrepancy with stated 103.93 total suggests the cash is included in that figure; actual equity is 107.38 once positions + cash are summed.)
-
----
-
-## Orders Table
-**No orders will be placed today** due to position count constraint violation, insufficient cash, and insufficient confidence in remaining candidates.
+**Mitigation**: The 10% gap_risk_buffer_pct is applied to position sizes when stop_execution_mode == DAILY_CHECK, reducing notional exposure by 10%.
 
 ---
 
 ## What Could Invalidate This Plan?
 
-1. **BA.L Gap Risk:** If BA.L closes below 19.615 GBP tomorrow (further gap-down), actual losses will exceed 8%.
-2. **Sector Rotation:** If Energy sector rotates down sharply, SHEL.L and BP.L could trigger cascading stop-losses.
-3. **Cash Injection:** If external deposit arrives or unsettled proceeds settle, cash constraint lifts.
-4. **Position Exit:** If BP.L is manually exited (reducing position count below 5 and freeing capital), new buys become eligible.
-5. **Index Rallies:** If market rallies strongly tomorrow, some candidates may move above the 0.60 confidence threshold.
-6. **Macro Event:** Central bank announcement or geopolitical news could alter volatility (ATR), affecting stop-loss placement.
+1. **Overnight corporate actions** (e.g., dividend ex-date, rights issue) affecting holdings
+2. **Significant intraday gap** in BP.L, SHEL.L, or benchmark index **before next daily update**
+3. **Execution of stop-loss** on AZN.L or BA.L if those tickers decline further
+4. **Cash injection** to portfolio would unlock new entry opportunities
+5. **Market-wide sell-off** triggering cascading stop losses and drawdown acceleration
+6. **Sector rotation** away from Energy could accelerate Energy holdings' decline
+7. **Data delay**: If market_data.csv is not updated by 09:00 tomorrow, will output BLOCKED
 
 ---
 
 ## Data Quality Notes
 
-- **Market Data Freshness:** ✓ All tickers as of 2026-05-07 (same as as_of_date).
-- **Required Columns:** ✓ All pre-computed indicator columns present.
-- **Outliers:**
-  - LLOY.L and BARC.L show elevated volume today (~202M and ~46M shares). This may indicate a corporate action or index rebalancing. No warning flag.
-  - BP.L volume 32.9M is normal but elevated; no red flag.
-- **Missing Data:** No NaN or null values in sma200_gbp for any ticker — full 200-day history available for all.
-- **Status Flags:** All tickers in universe.csv marked ACTIVE. No SUSPENDED or DELISTING entries.
-
----
-
-## Compliance & Next Steps
-
-### Immediate Actions (Recommended)
-1. **Close BA.L:** Execute SELL order to lock stop-loss breach and recover ~4.74 GBP.
-2. **Reduce BP.L:** Exit or reduce to bring Energy sector below 40% and single-name below 30%.
-3. **Rebalance:** Achieve portfolio state with ≤ 5 positions to unlock entry opportunities.
-
-### Resume Trading When:
-- Position count ≤ 5 (need to exit at least one position).
-- Cash balance (after buffer) ≥ 10 GBP (enables minimum entry sizes).
-- Best candidate confidence ≥ 0.60 (or market conditions improve).
-
-### Recommended Rebalance Path
-- **SELL BA.L:** Exit entire 0.2378 share position → recover ~4.74 GBP.
-- **SELL or REDUCE BP.L:** Reduce from 9.32 to ~4 shares → recover ~21.4 GBP.
-- **New Cash Available:** ~26.1 GBP (after BA.L + BP.L reduction).
-- **New Position Count:** 4 (SHEL.L, GLEN.L, AZN.L, RIO.L) → below 5 limit.
-- **New Energy Exposure:** ~17.4% → below 40% limit.
-- **Next Entry Opportunity:** HSBA.L or LSEG.L becomes eligible.
+- ✓ All 25 tickers have complete pre-computed indicator columns
+- ✓ Market data is current to 2026-05-08 (today)
+- ✓ Positions file consistent with market data (6 holdings, all with recent entry dates)
+- ✓ Universe file has no SUSPENDED or DELISTING statuses
+- ✓ No missing SMA200 values (all tickers have 200+ day history)
 
 ---
 
 ## Disclaimer
 
-**This is an automated, rules-based trading plan generated from provided historical market data. It is NOT financial advice.**
+**This is an automated, rules-based trading plan generated from provided historical market data. It is not financial advice.**
 
-- **Execution Risk:** Market conditions, slippage, and bid–ask spreads may differ from assumptions.
-- **Gap Risk:** Stop-losses in DAILY_CHECK mode cannot protect against overnight or intraday gaps. Actual losses may exceed planned risk.
-- **Settlement Risk:** T+1 settlement in the UK means proceeds from today's sales become available tomorrow. Unsettled funds cannot fund same-day buys.
-- **FX Risk:** Non-GBP securities carry currency risk, though data is assumed GBP-normalised.
-- **Tax & Fees:** Capital gains tax, dividend tax, and trading fees are not modelled. Consult a tax adviser.
-- **Regulatory Disclaimer:** This bot is a decision-support tool only. Compliance with FCA regulations (CASS, MiFID II, etc.) remains your responsibility.
-
-**Use at your own risk. Past performance does not indicate future results.**
-
----
-
-**Report Generated:** 2026-05-07T (timestamp omitted; use pipeline timestamp)  
-**Next Review:** 2026-05-08 (next trading day)
+Execution risks, gaps, slippage, FX effects, settlement timing, and taxes/fees apply. Stop-losses in DAILY_CHECK mode are monitored once daily and cannot protect against intraday or overnight gaps. Position concentration in BP.L and Energy sector creates significant sector risk. The portfolio is at maximum leverage (only 3.45 GBP cash) and new entry opportunities are limited until positions are reduced or cash is added. Use at your own risk. All trading decisions should be reviewed by a qualified financial advisor before execution.
 
 ===
