@@ -1,13 +1,13 @@
 {
-  "as_of_date": "2026-05-08",
+  "as_of_date": "2026-05-11",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 103.51,
+  "portfolio_equity_gbp": 104.27,
   "cash_balance_gbp": 3.4524,
-  "available_for_buys_gbp": 0.4626,
+  "available_for_buys_gbp": 0.3243,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 10.9,
+  "portfolio_drawdown_pct": 10.23,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
@@ -16,57 +16,66 @@
       "trend_status": "FULL",
       "confidence": 0.72,
       "confidence_components": {
-        "trend": 0.95,
+        "trend": 0.85,
         "setup": 0.68,
-        "risk_reward": 0.65,
-        "liquidity": 0.9,
-        "diversification": 0.45
+        "risk_reward": 0.7,
+        "liquidity": 0.95,
+        "diversification": 0.55
       },
-      "rejected_reason": "Insufficient cash available for position sizing. Required 5.98 GBP, available only 0.46 GBP after buffer."
+      "rejected_reason": "Insufficient available cash and portfolio at capacity (6 positions > 5 max). No sells planned."
     },
     {
       "ticker": "RIO.L",
-      "entry_type": "PULLBACK",
+      "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.7,
+      "confidence": 0.78,
       "confidence_components": {
-        "trend": 0.92,
-        "setup": 0.65,
-        "risk_reward": 0.7,
-        "liquidity": 0.75,
-        "diversification": 0.5
+        "trend": 0.9,
+        "setup": 0.75,
+        "risk_reward": 0.72,
+        "liquidity": 0.82,
+        "diversification": 0.6
       },
-      "rejected_reason": "Insufficient cash available for position sizing. Required 4.15 GBP, available only 0.46 GBP after buffer."
+      "rejected_reason": "Insufficient available cash and portfolio at capacity. Position already held; no add-on."
     },
     {
-      "ticker": "AAL.L",
+      "ticker": "LSEG.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
       "confidence": 0.68,
       "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.62,
+        "trend": 0.82,
+        "setup": 0.65,
         "risk_reward": 0.68,
-        "liquidity": 0.82,
-        "diversification": 0.48
+        "liquidity": 0.85,
+        "diversification": 0.5
       },
-      "rejected_reason": "Insufficient cash available for position sizing. Required 3.42 GBP, available only 0.46 GBP after buffer."
+      "rejected_reason": "Insufficient available cash and portfolio at capacity."
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 6,
+    "positions_exceed_max": true,
+    "positions_at_max_capacity": 6,
+    "max_positions_allowed": 5,
     "turnover_pct": 0.0,
-    "largest_position_pct": 48.3,
+    "largest_position_pct": 48.23,
     "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Energy": 41.6,
-      "Materials": 6.4,
-      "Industrials": 4.4,
-      "Healthcare": 4.9
+      "Energy": 48.23,
+      "Materials": 8.43,
+      "Industrials": 4.39,
+      "Healthcare": 4.96
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 10.9
+    "portfolio_drawdown_pct": 10.23,
+    "constraint_notes": [
+      "Portfolio has 6 positions but max_positions is 5",
+      "Available cash for new buys is \u00a30.32 (after 3% buffer)",
+      "Would require SELL to open new position",
+      "No existing positions meet hard exit criteria (stop-loss, trend break, time stop)"
+    ]
   }
 }

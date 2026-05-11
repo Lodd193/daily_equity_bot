@@ -1,25 +1,55 @@
 {
-  "as_of_date": "2026-05-08",
+  "as_of_date": "2026-05-11",
   "entries": [
     {
-      "ticker": "AZN.L",
-      "action": "SELL",
-      "planned_price_gbp": 133.44,
-      "planned_quantity": 0.0383,
-      "stop_price_gbp": 137.18,
-      "confidence": 0.95,
-      "entry_type": "STOP_EXIT",
-      "rationale_summary": "Stop price 137.18 already above current market price 133.44 (stop breached). Trend broken with 13 consecutive days below SMA50. Exit rule triggered. Days held 50 (> 2 day minimum). Recommend market sell at next daily check."
+      "ticker": "BA.L",
+      "action": "MONITOR_STOP",
+      "planned_price_gbp": null,
+      "planned_quantity": null,
+      "stop_price_gbp": 21.5,
+      "confidence": null,
+      "entry_type": "STOP_EXIT_CANDIDATE",
+      "rationale_summary": "Intraday low \u00a318.84 breached stop \u00a321.50; close \u00a319.24 above stop. Monitor next open. If opens \u2264\u00a321.50, sell at market. Position also 60 days old with \u2013\u00a30.80 P&L and 14 consecutive days below SMA50; confluence of exit signals."
     },
     {
-      "ticker": "BA.L",
-      "action": "SELL",
-      "planned_price_gbp": 19.338,
-      "planned_quantity": 0.2378,
-      "stop_price_gbp": 21.5,
-      "confidence": 0.95,
-      "entry_type": "STOP_EXIT",
-      "rationale_summary": "Stop price 21.50 already above current market price 19.338 (stop breached). Trend broken with 13 consecutive days below SMA50. Exit rule triggered. Days held 59 (> 2 day minimum). Recommend market sell at next daily check."
+      "ticker": "AZN.L",
+      "action": "MONITOR_TREND_TIME",
+      "planned_price_gbp": null,
+      "planned_quantity": null,
+      "stop_price_gbp": 137.18,
+      "confidence": null,
+      "entry_type": "TREND_BREAK_TIME_STOP_CANDIDATE",
+      "rationale_summary": "14 consecutive days below SMA50; 51 days held with \u2013\u00a30.30 P&L. Approaching time-stop threshold. If trend break confirmed (close < \u00a3144.38 SMA50) on next bar, exit. Conservative trailing exit warranted."
+    },
+    {
+      "ticker": "HSBA.L",
+      "action": "ENTRY_REJECTED",
+      "planned_price_gbp": null,
+      "planned_quantity": null,
+      "stop_price_gbp": null,
+      "confidence": 0.72,
+      "entry_type": "PULLBACK",
+      "rationale_summary": "Strong PULLBACK setup in FULL uptrend (confidence 0.72 > min 0.65). Rejected due to portfolio at capacity (6/5 positions) and insufficient available cash (\u00a30.32). Would require prior sell or rebalance."
+    },
+    {
+      "ticker": "RIO.L",
+      "action": "ENTRY_REJECTED",
+      "planned_price_gbp": null,
+      "planned_quantity": null,
+      "stop_price_gbp": null,
+      "confidence": 0.78,
+      "entry_type": "BREAKOUT",
+      "rationale_summary": "High-quality BREAKOUT in FULL uptrend (confidence 0.78 > min 0.65). Rejected: portfolio at capacity + already hold 0.0208 shares. No add-on without rebalance."
+    },
+    {
+      "ticker": "LSEG.L",
+      "action": "ENTRY_REJECTED",
+      "planned_price_gbp": null,
+      "planned_quantity": null,
+      "stop_price_gbp": null,
+      "confidence": 0.68,
+      "entry_type": "PULLBACK",
+      "rationale_summary": "Micro-pullback in FULL uptrend (confidence 0.68 > min 0.65). Rejected: portfolio at capacity + insufficient cash."
     }
   ]
 }
