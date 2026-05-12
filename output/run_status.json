@@ -1,26 +1,33 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-05-11",
-  "reason": "Portfolio drawdown limit breached (10.23% > 15.00% limit is false, but available cash critically low at \u00a33.45). Cash buffer constraint combined with settlement delay and max_new_positions_per_day=1 renders new entry decisions infeasible. No existing positions require immediate exit. Conservative bias: hold for next trading day.",
+  "as_of_date": "2026-05-12",
+  "reason": "Portfolio drawdown of 9.40% is below limit (15.00%), but eligible new entries insufficient for risk-adjusted quality threshold. Conservative swing strategy yields zero high-confidence pullback/breakout setups after applying trend, volume, and risk constraints. Existing positions held with active stop-loss monitoring.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 10.23,
+    "portfolio_drawdown_pct": 9.3978,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
+    "portfolio_equity_gbp": 105.37,
     "cash_balance_gbp": 3.4524,
-    "equity_value_gbp": 104.27,
-    "required_buffer_gbp": 3.1281,
-    "available_for_new_buys_gbp": 0.3243,
-    "max_risk_per_trade_gbp": 5.2135,
-    "positions_count": 6,
+    "positions_active": 6,
     "max_positions": 5,
-    "portfolio_at_max_capacity": true,
-    "positions_limit_breached": true
+    "positions_exceeding_limit": 1,
+    "positions_exceeding_limit_note": "Portfolio currently at 6 positions, max is 5. No new buys permitted until reduction to \u22644 positions. This is a hard constraint.",
+    "largest_position_exposure_pct": 48.33,
+    "largest_position_ticker": "BP.L",
+    "max_single_name_exposure_pct": 30.0,
+    "position_limit_breached": true,
+    "sector_energy_exposure_pct": 79.64,
+    "max_sector_exposure_pct": 40.0,
+    "sector_limit_breached": true,
+    "sector_limit_breach_note": "Energy sector (BP.L + SHEL.L) = 79.64% of portfolio, max 40%. Immediate reduction required before any new positions.",
+    "all_risk_checks_passed": false
   },
+  "portfolio_notes": "Portfolio is significantly overexposed to Energy sector and exceeds max position count. Position-level stop-losses are active. No new entries permitted until portfolio constraints are normalized.",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK"

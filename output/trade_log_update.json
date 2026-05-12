@@ -1,55 +1,82 @@
 {
-  "as_of_date": "2026-05-11",
-  "entries": [
-    {
-      "ticker": "BA.L",
-      "action": "MONITOR_STOP",
-      "planned_price_gbp": null,
-      "planned_quantity": null,
-      "stop_price_gbp": 21.5,
-      "confidence": null,
-      "entry_type": "STOP_EXIT_CANDIDATE",
-      "rationale_summary": "Intraday low \u00a318.84 breached stop \u00a321.50; close \u00a319.24 above stop. Monitor next open. If opens \u2264\u00a321.50, sell at market. Position also 60 days old with \u2013\u00a30.80 P&L and 14 consecutive days below SMA50; confluence of exit signals."
-    },
-    {
-      "ticker": "AZN.L",
-      "action": "MONITOR_TREND_TIME",
-      "planned_price_gbp": null,
-      "planned_quantity": null,
-      "stop_price_gbp": 137.18,
-      "confidence": null,
-      "entry_type": "TREND_BREAK_TIME_STOP_CANDIDATE",
-      "rationale_summary": "14 consecutive days below SMA50; 51 days held with \u2013\u00a30.30 P&L. Approaching time-stop threshold. If trend break confirmed (close < \u00a3144.38 SMA50) on next bar, exit. Conservative trailing exit warranted."
-    },
-    {
-      "ticker": "HSBA.L",
-      "action": "ENTRY_REJECTED",
-      "planned_price_gbp": null,
-      "planned_quantity": null,
-      "stop_price_gbp": null,
-      "confidence": 0.72,
-      "entry_type": "PULLBACK",
-      "rationale_summary": "Strong PULLBACK setup in FULL uptrend (confidence 0.72 > min 0.65). Rejected due to portfolio at capacity (6/5 positions) and insufficient available cash (\u00a30.32). Would require prior sell or rebalance."
-    },
+  "as_of_date": "2026-05-12",
+  "status": "NO_TRADES",
+  "reason": "Portfolio constraint violations prevent new entries: position count 6 exceeds limit 5, BP.L exposure 48.33% exceeds single-name limit 30%, Energy sector 79.64% exceeds sector limit 40%.",
+  "entries": [],
+  "stop_loss_monitoring": {
+    "monitoring_active": true,
+    "mode": "DAILY_CHECK",
+    "monitored_positions": [
+      {
+        "ticker": "SHEL.L",
+        "current_stop_gbp": 27.71,
+        "current_price_gbp": 31.575,
+        "distance_to_stop_gbp": 3.865,
+        "distance_to_stop_pct": 12.23,
+        "status": "ACTIVE"
+      },
+      {
+        "ticker": "GLEN.L",
+        "current_stop_gbp": 4.86,
+        "current_price_gbp": 5.734,
+        "distance_to_stop_gbp": 0.874,
+        "distance_to_stop_pct": 15.24,
+        "status": "ACTIVE"
+      },
+      {
+        "ticker": "BP.L",
+        "current_stop_gbp": 4.68,
+        "current_price_gbp": 5.466,
+        "distance_to_stop_gbp": 0.786,
+        "distance_to_stop_pct": 14.38,
+        "status": "ACTIVE"
+      },
+      {
+        "ticker": "BA.L",
+        "current_stop_gbp": 21.5,
+        "current_price_gbp": 19.26,
+        "distance_to_stop_gbp": -2.24,
+        "distance_to_stop_pct": -11.62,
+        "status": "AT_RISK",
+        "note": "Current price below stop loss. SELL signal active for next trading session."
+      },
+      {
+        "ticker": "AZN.L",
+        "current_stop_gbp": 137.18,
+        "current_price_gbp": 137.48,
+        "distance_to_stop_gbp": 0.3,
+        "distance_to_stop_pct": 0.22,
+        "status": "CRITICAL",
+        "note": "Stop loss very close to current price. Minor downside risk triggers exit."
+      },
+      {
+        "ticker": "RIO.L",
+        "current_stop_gbp": 67.02,
+        "current_price_gbp": 79.2,
+        "distance_to_stop_gbp": 12.18,
+        "distance_to_stop_pct": 15.38,
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "candidate_rejections": [
     {
       "ticker": "RIO.L",
-      "action": "ENTRY_REJECTED",
-      "planned_price_gbp": null,
-      "planned_quantity": null,
-      "stop_price_gbp": null,
-      "confidence": 0.78,
-      "entry_type": "BREAKOUT",
-      "rationale_summary": "High-quality BREAKOUT in FULL uptrend (confidence 0.78 > min 0.65). Rejected: portfolio at capacity + already hold 0.0208 shares. No add-on without rebalance."
+      "entry_type": "PULLBACK",
+      "confidence": 0.72,
+      "rejection_reason": "Portfolio constraint: exceeds max_positions"
     },
     {
       "ticker": "LSEG.L",
-      "action": "ENTRY_REJECTED",
-      "planned_price_gbp": null,
-      "planned_quantity": null,
-      "stop_price_gbp": null,
-      "confidence": 0.68,
       "entry_type": "PULLBACK",
-      "rationale_summary": "Micro-pullback in FULL uptrend (confidence 0.68 > min 0.65). Rejected: portfolio at capacity + insufficient cash."
+      "confidence": 0.65,
+      "rejection_reason": "Portfolio constraint: exceeds max_positions"
+    },
+    {
+      "ticker": "AAL.L",
+      "entry_type": "BREAKOUT",
+      "confidence": 0.61,
+      "rejection_reason": "Portfolio constraint: exceeds max_positions"
     }
   ]
 }
