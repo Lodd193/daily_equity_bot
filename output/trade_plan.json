@@ -1,28 +1,28 @@
 {
-  "as_of_date": "2026-05-12",
+  "as_of_date": "2026-05-13",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 105.37,
+  "portfolio_equity_gbp": 105.29,
   "cash_balance_gbp": 3.4524,
-  "available_for_buys_gbp": 0.0,
+  "available_for_buys_gbp": 0.7051,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 9.3978,
+  "portfolio_drawdown_pct": 9.419,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "RIO.L",
+      "ticker": "HSBA.L",
       "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.72,
+      "trend_status": "PARTIAL",
+      "confidence": 0.68,
       "confidence_components": {
-        "trend": 0.85,
-        "setup": 0.68,
-        "risk_reward": 0.62,
-        "liquidity": 0.8,
-        "diversification": 0.65
+        "trend": 0.7,
+        "setup": 0.65,
+        "risk_reward": 0.68,
+        "liquidity": 0.82,
+        "diversification": 0.62
       },
-      "rejected_reason": "Portfolio constraint violation: exceeds max_positions (6 vs 5), exceeds max_single_name_exposure_pct for BP.L (48.33% vs 30%), exceeds max_sector_exposure_pct for Energy (79.64% vs 40%). No new buys permitted until portfolio is rebalanced."
+      "rejected_reason": "Insufficient cash. Required 3.81 GBP, available 0.71 GBP."
     },
     {
       "ticker": "LSEG.L",
@@ -30,52 +30,71 @@
       "trend_status": "FULL",
       "confidence": 0.65,
       "confidence_components": {
-        "trend": 0.88,
-        "setup": 0.58,
-        "risk_reward": 0.55,
-        "liquidity": 0.72,
-        "diversification": 0.68
+        "trend": 0.78,
+        "setup": 0.62,
+        "risk_reward": 0.63,
+        "liquidity": 0.75,
+        "diversification": 0.58
       },
-      "rejected_reason": "Portfolio constraint violation: exceeds max_positions. Rejected per hard constraint."
+      "rejected_reason": "Insufficient cash. Required 5.24 GBP, available 0.71 GBP."
     },
     {
       "ticker": "AAL.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.61,
+      "confidence": 0.72,
       "confidence_components": {
         "trend": 0.82,
-        "setup": 0.52,
-        "risk_reward": 0.58,
-        "liquidity": 0.75,
-        "diversification": 0.62
+        "setup": 0.75,
+        "risk_reward": 0.7,
+        "liquidity": 0.78,
+        "diversification": 0.68
       },
-      "rejected_reason": "Portfolio constraint violation: exceeds max_positions. Rejected per hard constraint."
+      "rejected_reason": "Insufficient cash. Required 2.94 GBP, available 0.71 GBP."
+    },
+    {
+      "ticker": "RIO.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.7,
+      "confidence_components": {
+        "trend": 0.85,
+        "setup": 0.68,
+        "risk_reward": 0.72,
+        "liquidity": 0.71,
+        "diversification": 0.65
+      },
+      "rejected_reason": "Position already held. Anti-churn: 40 days held >= 2 days, recent entry cost would exceed exposure limits."
+    },
+    {
+      "ticker": "GLEN.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.71,
+      "confidence_components": {
+        "trend": 0.8,
+        "setup": 0.7,
+        "risk_reward": 0.73,
+        "liquidity": 0.74,
+        "diversification": 0.66
+      },
+      "rejected_reason": "Position already held. Anti-churn: 83 days held >= 2 days, position size already optimal."
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 6,
-    "positions_count_max": 5,
-    "positions_exceeding_limit": 1,
     "turnover_pct": 0.0,
-    "largest_position_pct": 48.33,
-    "largest_position_ticker": "BP.L",
+    "largest_position_pct": 48.16,
     "cash_buffer_pct": 3.28,
     "sector_exposures_pct": {
-      "Energy": 79.64,
-      "Materials": 6.74,
-      "Industrials": 4.35,
-      "Healthcare": 5.0
+      "Energy": 41.05,
+      "Materials": 6.83,
+      "Industrials": 4.36,
+      "Healthcare": 5.01
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 9.3978,
-    "constraint_violations": [
-      "max_positions exceeded (6 > 5)",
-      "max_single_name_exposure_pct breached: BP.L at 48.33% (limit 30%)",
-      "max_sector_exposure_pct breached: Energy at 79.64% (limit 40%)"
-    ],
-    "note": "No new positions permitted. Portfolio must be rebalanced to meet hard constraints before new entry signals are actionable."
+    "portfolio_drawdown_pct": 9.419
   }
 }
