@@ -1,21 +1,21 @@
 {
-  "status": "OK",
-  "as_of_date": "2026-05-13",
-  "reason": "Trading day. Kill switch off. Portfolio drawdown 9.4% < 15% limit. Data fresh and complete.",
+  "status": "NO_TRADES",
+  "as_of_date": "2026-05-14",
+  "reason": "Portfolio in drawdown recovery mode. Current drawdown 9.64% exceeds rebalance threshold; all positions holding. No new entries during recovery. Existing stop-losses monitored daily.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 9.419,
+    "portfolio_drawdown_pct": 9.64,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "kill_switch": false,
-    "cash_buffer_adequate": true,
-    "max_positions_respected": true,
-    "no_margin": true,
-    "no_shorting": true
+    "max_positions_ok": true,
+    "cash_buffer_ok": true,
+    "sector_limits_ok": true,
+    "turnover_ok": true,
+    "liquidity_ok": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
