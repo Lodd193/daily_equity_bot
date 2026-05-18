@@ -1,21 +1,29 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-05-14",
-  "reason": "Portfolio in drawdown recovery mode. Current drawdown 9.64% exceeds rebalance threshold; all positions holding. No new entries during recovery. Existing stop-losses monitored daily.",
+  "as_of_date": "2026-05-18",
+  "reason": "Portfolio is severely undercapitalized (\u00a3108.52 equity, \u00a33.45 cash). After applying 3% cash buffer (\u00a33.26) and accounting for stamp duty on UK equities, available buying power is effectively zero. Maximum risk per trade = \u00a35.43 (5% of equity), but typical stop distances and position sizing would require fractional shares with quantities < 0.001 GBP notional. Portfolio is in recovery mode (13.7% drawdown from peak). No high-confidence entries justify rebalancing risk at this scale.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 9.64,
+    "portfolio_drawdown_pct": 6.65,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "max_positions_ok": true,
-    "cash_buffer_ok": true,
-    "sector_limits_ok": true,
-    "turnover_ok": true,
-    "liquidity_ok": true
+    "cash_buffer_required_gbp": 3.2556,
+    "available_for_buys_gbp": 0.1968,
+    "max_risk_per_trade_pct": 0.05,
+    "max_risk_per_trade_gbp": 5.426,
+    "max_positions": 5,
+    "current_positions": 6,
+    "over_max_positions": true,
+    "max_turnover_pct_per_day": 0.3,
+    "max_new_positions_per_day": 1,
+    "settlement_days": 1,
+    "assume_intraday_netting": false,
+    "execution_sequence": "SELL_THEN_BUY",
+    "stop_execution_mode": "DAILY_CHECK"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
