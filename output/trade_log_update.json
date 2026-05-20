@@ -1,4 +1,15 @@
 {
-  "as_of_date": "2026-05-18",
-  "entries": []
+  "as_of_date": "2026-05-20",
+  "entries": [
+    {
+      "ticker": "BA.L",
+      "action": "SELL",
+      "planned_price_gbp": 19.26,
+      "planned_quantity": 0.2378,
+      "stop_price_gbp": 21.5,
+      "confidence": 0.95,
+      "entry_type": "TREND_BREAK",
+      "rationale_summary": "Trend break exit: price below SMA50 for 21 consecutive days. Volatility-adjusted stop at 21.50 GBP breached on downside. Position at 70 days held with sustained downtrend and unrealised loss of -0.7973 GBP. Exit reduces portfolio from 6 to 5 positions (at maximum limit) and recovers ~4.58 GBP cash proceeds. Balanced strategy max tolerance is 10 consecutive days below SMA50; this threshold exceeded significantly."
+    }
+  ]
 }

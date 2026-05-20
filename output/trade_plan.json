@@ -1,39 +1,97 @@
 {
-  "as_of_date": "2026-05-18",
+  "as_of_date": "2026-05-20",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 108.52,
-  "cash_balance_gbp": 3.4524,
-  "available_for_buys_gbp": 0.1968,
+  "portfolio_equity_gbp": 107.91,
+  "cash_balance_gbp": 3.45,
+  "available_for_buys_gbp": 0.17,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 6.65,
+  "portfolio_drawdown_pct": 7.15,
   "strategy_profile": "balanced",
-  "candidates_considered": [],
-  "decisions": [],
-  "portfolio_constraints_summary": {
-    "positions_count_after": 6,
-    "positions_count_before": 6,
-    "max_positions_limit": 5,
-    "over_limit": true,
-    "turnover_pct": 0.0,
-    "largest_position_pct": 48.69,
-    "cash_buffer_pct": 3.0,
-    "cash_buffer_required_gbp": 3.2556,
-    "sector_exposures_pct": {
-      "Energy": 36.3,
-      "Materials": 7.48,
-      "Industrials": 4.12,
-      "Healthcare": 4.84
+  "candidates_considered": [
+    {
+      "ticker": "RIO.L",
+      "entry_type": "NONE",
+      "trend_status": "FULL",
+      "confidence": 0.62,
+      "confidence_components": {
+        "trend": 0.85,
+        "setup": 0.55,
+        "risk_reward": 0.6,
+        "liquidity": 0.75,
+        "diversification": 0.5
+      },
+      "rejected_reason": "Insufficient cash available after buffer requirement"
     },
-    "portfolio_beta": null,
-    "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 6.65
-  },
-  "halt_reasons": [
-    "Portfolio currently over max_positions limit (6 vs 5 allowed)",
-    "Available buying power after buffer: \u00a30.20 (essentially zero after costs)",
-    "Max risk per trade (\u00a35.43) exceeds meaningful diversification benefit at this portfolio scale",
-    "No BUY opportunities evaluated due to capital constraints"
-  ]
+    {
+      "ticker": "HSBA.L",
+      "entry_type": "NONE",
+      "trend_status": "FULL",
+      "confidence": 0.64,
+      "confidence_components": {
+        "trend": 0.88,
+        "setup": 0.58,
+        "risk_reward": 0.62,
+        "liquidity": 0.85,
+        "diversification": 0.45
+      },
+      "rejected_reason": "Insufficient cash available after buffer requirement"
+    },
+    {
+      "ticker": "LSEG.L",
+      "entry_type": "NONE",
+      "trend_status": "FULL",
+      "confidence": 0.66,
+      "confidence_components": {
+        "trend": 0.89,
+        "setup": 0.6,
+        "risk_reward": 0.65,
+        "liquidity": 0.8,
+        "diversification": 0.48
+      },
+      "rejected_reason": "Insufficient cash available after buffer requirement"
+    }
+  ],
+  "decisions": [
+    {
+      "ticker": "BA.L",
+      "action": "SELL",
+      "confidence": 0.95,
+      "confidence_components": {
+        "trend_break": 0.98,
+        "position_quality": 0.85,
+        "risk_management": 0.99,
+        "portfolio_balance": 0.88
+      },
+      "size": {
+        "quantity": 0.2378,
+        "notional_gbp": 4.58
+      },
+      "rationale": [
+        "Position below SMA50 for 21 consecutive days - confirmed trend break",
+        "Price 9.75% below SMA50 (close: 19.26, SMA50: 21.3401)",
+        "Unrealised loss of -0.7973 GBP with negative momentum",
+        "Reduces portfolio count from 6 to 5 positions (at max limit)",
+        "Exit generates ~4.58 GBP proceeds to improve cash position"
+      ],
+      "constraints_passed": true,
+      "constraint_notes": []
+    }
+  ],
+  "portfolio_constraints_summary": {
+    "positions_count_after": 5,
+    "turnover_pct": 0.08,
+    "largest_position_pct": 48.64,
+    "cash_buffer_pct": 3.22,
+    "sector_exposures_pct": {
+      "Energy": 40.41,
+      "Materials": 8.68,
+      "Healthcare": 4.95,
+      "Industrials": 0.0
+    },
+    "portfolio_beta": 0.92,
+    "max_pairwise_correlation": 0.78,
+    "portfolio_drawdown_pct": 7.15
+  }
 }
