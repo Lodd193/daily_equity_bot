@@ -1,2 +1,2 @@
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-1,BA.L,SELL,MKT,0.2378,,GTC,,TREND_BREAK_EXIT
+(No trades - all constraints violated due to portfolio imbalance and insufficient capital)

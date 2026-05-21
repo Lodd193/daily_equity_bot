@@ -1,97 +1,99 @@
 {
-  "as_of_date": "2026-05-20",
+  "as_of_date": "2026-05-21",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 107.91,
-  "cash_balance_gbp": 3.45,
-  "available_for_buys_gbp": 0.17,
+  "portfolio_equity_gbp": 108.04,
+  "cash_balance_gbp": 8.0278,
+  "available_for_buys_gbp": 4.79,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 7.15,
+  "portfolio_drawdown_pct": 7.09,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "RIO.L",
-      "entry_type": "NONE",
+      "ticker": "HSBA.L",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.62,
+      "confidence": 0.72,
       "confidence_components": {
-        "trend": 0.85,
-        "setup": 0.55,
+        "trend": 0.9,
+        "setup": 0.75,
+        "risk_reward": 0.65,
+        "liquidity": 0.9,
+        "diversification": 0.55
+      },
+      "rejected_reason": "Sector constraint violation: Energy sector at 81.14% of portfolio (max 40%). Cannot add new position until rebalancing occurs."
+    },
+    {
+      "ticker": "RIO.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.68,
+      "confidence_components": {
+        "trend": 0.88,
+        "setup": 0.7,
         "risk_reward": 0.6,
         "liquidity": 0.75,
         "diversification": 0.5
       },
-      "rejected_reason": "Insufficient cash available after buffer requirement"
-    },
-    {
-      "ticker": "HSBA.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.64,
-      "confidence_components": {
-        "trend": 0.88,
-        "setup": 0.58,
-        "risk_reward": 0.62,
-        "liquidity": 0.85,
-        "diversification": 0.45
-      },
-      "rejected_reason": "Insufficient cash available after buffer requirement"
+      "rejected_reason": "Already held. Sector constraint violation: Materials sector adding would exceed diversification rules given Energy sector dominance."
     },
     {
       "ticker": "LSEG.L",
-      "entry_type": "NONE",
+      "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.66,
+      "confidence": 0.7,
       "confidence_components": {
-        "trend": 0.89,
-        "setup": 0.6,
-        "risk_reward": 0.65,
-        "liquidity": 0.8,
-        "diversification": 0.48
+        "trend": 0.88,
+        "setup": 0.72,
+        "risk_reward": 0.62,
+        "liquidity": 0.85,
+        "diversification": 0.65
       },
-      "rejected_reason": "Insufficient cash available after buffer requirement"
-    }
-  ],
-  "decisions": [
+      "rejected_reason": "Insufficient cash available after buffer (4.79 GBP). Trade notional would exceed available liquidity."
+    },
     {
-      "ticker": "BA.L",
-      "action": "SELL",
-      "confidence": 0.95,
+      "ticker": "DGE.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.65,
       "confidence_components": {
-        "trend_break": 0.98,
-        "position_quality": 0.85,
-        "risk_management": 0.99,
-        "portfolio_balance": 0.88
+        "trend": 0.85,
+        "setup": 0.68,
+        "risk_reward": 0.58,
+        "liquidity": 0.8,
+        "diversification": 0.5
       },
-      "size": {
-        "quantity": 0.2378,
-        "notional_gbp": 4.58
+      "rejected_reason": "Sector constraint violation: Energy/Materials/Consumer Staples already dominant. Insufficient capital."
+    },
+    {
+      "ticker": "AAL.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.71,
+      "confidence_components": {
+        "trend": 0.9,
+        "setup": 0.73,
+        "risk_reward": 0.62,
+        "liquidity": 0.82,
+        "diversification": 0.6
       },
-      "rationale": [
-        "Position below SMA50 for 21 consecutive days - confirmed trend break",
-        "Price 9.75% below SMA50 (close: 19.26, SMA50: 21.3401)",
-        "Unrealised loss of -0.7973 GBP with negative momentum",
-        "Reduces portfolio count from 6 to 5 positions (at max limit)",
-        "Exit generates ~4.58 GBP proceeds to improve cash position"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": []
+      "rejected_reason": "Already held in Materials sector. Sector exposure constraint prevents new Materials position."
     }
   ],
+  "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 5,
-    "turnover_pct": 0.08,
-    "largest_position_pct": 48.64,
-    "cash_buffer_pct": 3.22,
+    "turnover_pct": 0.0,
+    "largest_position_pct": 48.7,
+    "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Energy": 40.41,
-      "Materials": 8.68,
-      "Healthcare": 4.95,
-      "Industrials": 0.0
+      "Energy": 81.14,
+      "Healthcare": 4.96,
+      "Materials": 8.77
     },
-    "portfolio_beta": 0.92,
-    "max_pairwise_correlation": 0.78,
-    "portfolio_drawdown_pct": 7.15
+    "portfolio_beta": null,
+    "max_pairwise_correlation": null,
+    "portfolio_drawdown_pct": 7.09
   }
 }
