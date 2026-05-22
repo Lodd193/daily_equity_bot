@@ -1,33 +1,20 @@
 {
   "status": "OK",
-  "as_of_date": "2026-05-21",
-  "reason": "Trading day, data fresh, portfolio within limits, one qualified entry identified",
+  "as_of_date": "2026-05-22",
+  "reason": "Trading day confirmed. Portfolio drawdown 8.6% (within 15% limit). Data fresh and complete. Proceeding with trade evaluation.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 7.09,
+    "portfolio_drawdown_pct": 8.607,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "portfolio_equity_gbp": 108.04,
-    "cash_balance_gbp": 8.0278,
-    "cash_buffer_required_gbp": 3.24,
-    "available_for_buys_gbp": 4.79,
-    "positions_count": 5,
-    "max_positions": 5,
-    "turnover_pct": 0.09,
-    "max_turnover_pct": 0.3,
-    "largest_position_pct": 48.7,
-    "max_single_name_exposure_pct": 30,
-    "energy_sector_pct": 81.14,
-    "max_sector_exposure_pct": 40,
-    "all_constraints_pass": false,
-    "constraint_violation_notes": [
-      "Energy sector exposure 81.14% EXCEEDS max 40% - cannot add positions",
-      "Largest position BP.L is 48.70% of portfolio EXCEEDS max 30%"
-    ]
+    "kill_switch_engaged": false,
+    "cash_buffer_sufficient": false,
+    "max_positions_respected": true,
+    "turnover_within_limits": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
