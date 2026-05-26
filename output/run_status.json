@@ -1,6 +1,23 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-05-25",
-  "reason": "Non-trading day",
-  "currency": "GBP"
+  "as_of_date": "2026-05-26",
+  "reason": "Portfolio in severe drawdown (10.2% below peak). Portfolio drawdown limit (15%) not yet breached, but no quality entry opportunities pass confidence threshold. All candidate tickers either fail trend filters, have unfavorable risk-reward, or insufficient liquidity. Conservative bias applied.",
+  "data_checks": {
+    "market_data_fresh": true,
+    "all_required_columns_present": true,
+    "trading_day": true,
+    "is_half_day": false,
+    "portfolio_drawdown_pct": 10.2,
+    "drawdown_limit_breached": false
+  },
+  "risk_checks": {
+    "max_positions_breached": false,
+    "max_turnover_breached": false,
+    "cash_buffer_sufficient": true,
+    "all_stops_valid": true,
+    "liquidity_adequate": true
+  },
+  "currency": "GBP",
+  "execution_sequence": "SELL_THEN_BUY",
+  "stop_execution_mode": "DAILY_CHECK"
 }
