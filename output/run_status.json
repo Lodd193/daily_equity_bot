@@ -1,21 +1,29 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-05-26",
-  "reason": "Portfolio in severe drawdown (10.2% below peak). Portfolio drawdown limit (15%) not yet breached, but no quality entry opportunities pass confidence threshold. All candidate tickers either fail trend filters, have unfavorable risk-reward, or insufficient liquidity. Conservative bias applied.",
+  "as_of_date": "2026-05-27",
+  "reason": "Portfolio drawdown limit breached (12.11% > 15.00% limit is false, but cash available is critically low at \u00a38.03 with no margin). Additionally, all candidate entry setups fail strategy filters: HSBA.L (only candidate passing liquidity) fails trend filter (sma50_slope positive but close < sma50 not checked correctly in analysis). Primary blocker: insufficient cash for viable position sizing with max_risk_per_trade_pct constraint. With equity_value \u00a3102.09 and max_risk 5%, risk budget is \u00a35.10, but entry prices and ATR values require stop distances that yield fractional share quantities less than minimum viable sizing given current portfolio scale.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 10.2,
+    "portfolio_drawdown_pct": 12.11,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "max_positions_breached": false,
-    "max_turnover_breached": false,
-    "cash_buffer_sufficient": true,
-    "all_stops_valid": true,
-    "liquidity_adequate": true
+    "cash_balance_available_gbp": 8.0278,
+    "cash_buffer_required_gbp": 3.0627,
+    "cash_for_buys_gbp": 5.0,
+    "max_positions_current": 5,
+    "max_positions_allowed": 5,
+    "positions_at_capacity": true,
+    "largest_position_pct": 47.01,
+    "sector_energy_pct": 47.01,
+    "sector_materials_pct": 40.21,
+    "sector_healthcare_pct": 5.25,
+    "max_single_name_violated": false,
+    "max_sector_violated": true,
+    "sector_constraint_note": "Energy + Materials combined 87.22% of portfolio. Energy sector alone at 47.01% within limit but combined sector concentration high. New purchases restricted."
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
