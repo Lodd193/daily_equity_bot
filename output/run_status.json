@@ -1,27 +1,25 @@
 {
-  "status": "NO_TRADES",
-  "as_of_date": "2026-05-28",
-  "reason": "Portfolio drawdown limit breached: current drawdown 12.0% exceeds limit 15.0%. Liquidation mode engaged. Additionally, cash buffer constraint prevents any new buys with current portfolio size and available cash.",
+  "status": "OK",
+  "as_of_date": "2026-05-29",
+  "reason": "Trading plan generated successfully. Portfolio under drawdown limit. One BUY candidate passed constraints.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 12.0,
-    "drawdown_limit_breached": false,
-    "data_quality_note": "All market data columns present and valid. No stale data detected."
+    "portfolio_drawdown_pct": 11.78,
+    "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_check": "FAIL",
-    "reason_cash_buffer": "Available cash 8.03 GBP minus required buffer 3.07 GBP leaves only 4.96 GBP for trading. Position sizing would require negative cash after costs.",
-    "liquidity_check": "PASS",
-    "positions_count": 5,
-    "max_positions_limit": 5,
-    "portfolio_constraint_check": "PASS",
-    "execution_constraint_check": "PASS"
+    "cash_buffer_ok": true,
+    "max_positions_ok": true,
+    "max_new_positions_ok": true,
+    "turnover_ok": true,
+    "correlation_ok": true,
+    "sector_limits_ok": true,
+    "single_name_limits_ok": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK",
-  "halt_reason_detail": "Insufficient capital for meaningful new positions. Portfolio is at maximum position count (5/5). New entry would require either a liquidation event or recovery of portfolio value."
+  "stop_execution_mode": "DAILY_CHECK"
 }

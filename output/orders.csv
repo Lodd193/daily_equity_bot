@@ -1,2 +1,2 @@
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-(No orders - cash and position constraints prevent new trades)
+1,HSBA.L,BUY,MKT,0.3328,,GTC,13.168,Pullback in uptrend. Confidence 0.68. Trend full (close > SMA50 > SMA200). Setup: 1.64% drawdown from 20d high. Risk 5.13 GBP at stop 13.168.
