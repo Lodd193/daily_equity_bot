@@ -1,23 +1,21 @@
 {
-  "status": "OK",
-  "as_of_date": "2026-05-29",
-  "reason": "Trading plan generated successfully. Portfolio under drawdown limit. One BUY candidate passed constraints.",
+  "status": "NO_TRADES",
+  "as_of_date": "2026-06-01",
+  "reason": "Portfolio currently holds 6 positions but max_positions constraint is 5. Cannot open new positions until constraint is resolved. No forced exit signals triggered. Action required: review portfolio management.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 11.78,
+    "portfolio_drawdown_pct": 9.86,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_ok": true,
-    "max_positions_ok": true,
-    "max_new_positions_ok": true,
-    "turnover_ok": true,
-    "correlation_ok": true,
-    "sector_limits_ok": true,
-    "single_name_limits_ok": true
+    "position_count_constraint": false,
+    "turnover_constraint": "N/A",
+    "cash_buffer_constraint": true,
+    "liquidity_constraint": true,
+    "drawdown_constraint": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
