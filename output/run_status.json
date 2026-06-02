@@ -1,21 +1,22 @@
 {
-  "status": "NO_TRADES",
-  "as_of_date": "2026-06-01",
-  "reason": "Portfolio currently holds 6 positions but max_positions constraint is 5. Cannot open new positions until constraint is resolved. No forced exit signals triggered. Action required: review portfolio management.",
+  "status": "OK",
+  "as_of_date": "2026-06-02",
+  "reason": "Trading day confirmed. Data fresh and complete. Three exit signals generated (1 stop-loss, 2 trend breaks). No new entries due to insufficient available cash after buffer. Strategy executing sell-first with no qualifying buys.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 9.86,
+    "portfolio_drawdown_pct": 9.34,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "position_count_constraint": false,
-    "turnover_constraint": "N/A",
-    "cash_buffer_constraint": true,
-    "liquidity_constraint": true,
-    "drawdown_constraint": true
+    "cash_buffer_satisfied": true,
+    "liquidity_filter_passed": true,
+    "leverage_check": "no_margin",
+    "position_limit_respected": true,
+    "max_turnover_not_exceeded": true,
+    "correlation_limit_satisfied": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",

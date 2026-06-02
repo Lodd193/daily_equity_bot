@@ -1,2 +1,6 @@
+```csv
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-(No trades - position count constraint violation)
+1,AZN.L,SELL,MKT,0.0383,,DAY,,STOP_LOSS: low 131.32 breached stop 137.18
+2,SHEL.L,SELL,MKT,1.0624,,DAY,,TREND_BREAK: 19 consecutive days below SMA50
+3,BP.L,SELL,MKT,9.32,,DAY,,TREND_BREAK: 7 consecutive days below SMA50
+```
