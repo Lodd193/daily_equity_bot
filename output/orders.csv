@@ -1,6 +1,2 @@
-```csv
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-1,AZN.L,SELL,MKT,0.0383,,DAY,,STOP_LOSS: low 131.32 breached stop 137.18
-2,SHEL.L,SELL,MKT,1.0624,,DAY,,TREND_BREAK: 19 consecutive days below SMA50
-3,BP.L,SELL,MKT,9.32,,DAY,,TREND_BREAK: 7 consecutive days below SMA50
-```
+(no trades today - portfolio constraints and strategy conditions prevent entry or exit)

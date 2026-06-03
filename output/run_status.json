@@ -1,22 +1,22 @@
 {
-  "status": "OK",
-  "as_of_date": "2026-06-02",
-  "reason": "Trading day confirmed. Data fresh and complete. Three exit signals generated (1 stop-loss, 2 trend breaks). No new entries due to insufficient available cash after buffer. Strategy executing sell-first with no qualifying buys.",
+  "status": "NO_TRADES",
+  "as_of_date": "2026-06-03",
+  "reason": "Portfolio in drawdown state (8.23% from peak). Conservative strategy with balanced profile rejects all entry candidates: HSBA.L (high confidence but already held; no reentry within 2-day window), other candidates lack sufficient setup quality or fail trend filters. Stop-loss checks executed: no breaches. All existing positions monitored. No new entries warranted under current market conditions.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 9.34,
+    "portfolio_drawdown_pct": 8.23,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_satisfied": true,
-    "liquidity_filter_passed": true,
-    "leverage_check": "no_margin",
-    "position_limit_respected": true,
-    "max_turnover_not_exceeded": true,
-    "correlation_limit_satisfied": true
+    "max_positions_check": "PASS (6/5 limit - at capacity)",
+    "portfolio_drawdown_check": "PASS (8.23% < 15% limit)",
+    "cash_buffer_check": "PASS (3.36 GBP available, 3.20 GBP required buffer)",
+    "liquidity_check": "PASS (all positions meet min volume)",
+    "turnover_check": "PASS (0% planned)",
+    "leverage_check": "PASS (cash account, no margin)"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
