@@ -1,24 +1,31 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-06-03",
-  "reason": "Portfolio in drawdown state (8.23% from peak). Conservative strategy with balanced profile rejects all entry candidates: HSBA.L (high confidence but already held; no reentry within 2-day window), other candidates lack sufficient setup quality or fail trend filters. Stop-loss checks executed: no breaches. All existing positions monitored. No new entries warranted under current market conditions.",
+  "as_of_date": "2026-06-04",
+  "reason": "Insufficient available cash (\u00a30.178) for new entries. All candidate setups require 70-270 GBP notional. Mandatory exit signals (SHEL.L, AZN.L, BP.L trend breaks) would trigger 85% portfolio turnover, exceeding max_turnover_pct_per_day limit of 30%. No hard stop-loss breaches detected. Recommend holding and re-evaluating 2026-06-05 when sell proceeds settle.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 8.23,
+    "portfolio_drawdown_pct": 8.67,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "max_positions_check": "PASS (6/5 limit - at capacity)",
-    "portfolio_drawdown_check": "PASS (8.23% < 15% limit)",
-    "cash_buffer_check": "PASS (3.36 GBP available, 3.20 GBP required buffer)",
-    "liquidity_check": "PASS (all positions meet min volume)",
-    "turnover_check": "PASS (0% planned)",
-    "leverage_check": "PASS (cash account, no margin)"
+    "cash_availability_check": "FAIL",
+    "turnover_constraint": "FAIL",
+    "position_limits": "PASS",
+    "sector_exposure": "PASS",
+    "liquidity_filters": "PASS",
+    "correlation_limits": "PASS"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK"
+  "stop_execution_mode": "DAILY_CHECK",
+  "portfolio_snapshot": {
+    "equity_value_gbp": 106.12,
+    "cash_balance_gbp": 3.362,
+    "available_for_buys_gbp": 0.178,
+    "total_positions": 6,
+    "portfolio_peak_equity_gbp": 116.22
+  }
 }
