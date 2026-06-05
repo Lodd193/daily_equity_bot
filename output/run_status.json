@@ -1,31 +1,27 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-06-04",
-  "reason": "Insufficient available cash (\u00a30.178) for new entries. All candidate setups require 70-270 GBP notional. Mandatory exit signals (SHEL.L, AZN.L, BP.L trend breaks) would trigger 85% portfolio turnover, exceeding max_turnover_pct_per_day limit of 30%. No hard stop-loss breaches detected. Recommend holding and re-evaluating 2026-06-05 when sell proceeds settle.",
+  "as_of_date": "2026-06-05",
+  "reason": "Portfolio drawdown (8.72%) is within limits, but available cash (3.36 GBP) is critically insufficient to fund any new position. Minimum position size for smallest-price equity (LLOY.L at 0.99 GBP) would require 50+ shares minimum; required capital = 50+ GBP. Portfolio is effectively locked due to insufficient cash. No exit signals triggered for existing positions. Rebalancing not required today.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 8.67,
+    "portfolio_drawdown_pct": 8.72,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_availability_check": "FAIL",
-    "turnover_constraint": "FAIL",
-    "position_limits": "PASS",
-    "sector_exposure": "PASS",
-    "liquidity_filters": "PASS",
-    "correlation_limits": "PASS"
+    "cash_buffer_required_gbp": 3.1818,
+    "cash_available_for_trades_gbp": 0.1802,
+    "sufficient_cash_for_new_position": false,
+    "max_positions_limit": 5,
+    "current_positions": 6,
+    "positions_over_limit": true,
+    "turnover_capacity_pct": 0.3,
+    "estimated_turnover_if_new_trade_pct": null,
+    "liquidity_constraint_breached": false
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_snapshot": {
-    "equity_value_gbp": 106.12,
-    "cash_balance_gbp": 3.362,
-    "available_for_buys_gbp": 0.178,
-    "total_positions": 6,
-    "portfolio_peak_equity_gbp": 116.22
-  }
+  "stop_execution_mode": "DAILY_CHECK"
 }

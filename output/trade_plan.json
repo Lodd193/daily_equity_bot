@@ -1,96 +1,75 @@
 {
-  "as_of_date": "2026-06-04",
+  "as_of_date": "2026-06-05",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 106.12,
+  "portfolio_equity_gbp": 106.06,
   "cash_balance_gbp": 3.362,
-  "available_for_buys_gbp": 0.178,
+  "available_for_buys_gbp": 0.1802,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 8.67,
+  "portfolio_drawdown_pct": 8.72,
   "strategy_profile": "balanced",
   "candidates_considered": [
+    {
+      "ticker": "LSEG.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.78,
+      "confidence_components": {
+        "trend": 1.0,
+        "setup": 0.8,
+        "risk_reward": 0.75,
+        "liquidity": 0.7,
+        "diversification": 0.75
+      },
+      "rejected_reason": "Insufficient cash: would require ~32 GBP notional + costs. Available: 0.18 GBP."
+    },
     {
       "ticker": "BARC.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.78,
+      "confidence": 0.72,
       "confidence_components": {
-        "trend": 0.85,
-        "setup": 0.8,
-        "risk_reward": 0.7,
-        "liquidity": 0.95,
-        "diversification": 0.6
-      },
-      "rejected_reason": "Insufficient available cash. Required: \u00a370.05, Available: \u00a30.178"
-    },
-    {
-      "ticker": "VWRP.L",
-      "entry_type": "BREAKOUT",
-      "trend_status": "FULL",
-      "confidence": 0.82,
-      "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.85,
-        "risk_reward": 0.75,
-        "liquidity": 0.92,
+        "trend": 1.0,
+        "setup": 0.7,
+        "risk_reward": 0.65,
+        "liquidity": 0.8,
         "diversification": 0.7
       },
-      "rejected_reason": "Insufficient available cash. Required: \u00a3269.62, Available: \u00a30.178"
+      "rejected_reason": "Insufficient cash: would require ~15 GBP notional + costs. Available: 0.18 GBP."
     },
     {
-      "ticker": "VUAG.L",
-      "entry_type": "BREAKOUT",
+      "ticker": "LLOY.L",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
-      "confidence": 0.76,
+      "confidence": 0.68,
       "confidence_components": {
-        "trend": 0.88,
-        "setup": 0.82,
-        "risk_reward": 0.72,
-        "liquidity": 0.65,
-        "diversification": 0.75
+        "trend": 1.0,
+        "setup": 0.65,
+        "risk_reward": 0.65,
+        "liquidity": 0.8,
+        "diversification": 0.68
       },
-      "rejected_reason": "Liquidity constraint: avg_gbp_volume_20d (\u00a338.44M) below minimum (\u00a350k)"
-    },
-    {
-      "ticker": "SHEL.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {},
-      "rejected_reason": "Existing position: Trend break signal (21 consecutive days below SMA50). Would require exit, but exit + other mandatory exits would violate max_turnover_pct_per_day. Holding for constraint compliance."
-    },
-    {
-      "ticker": "AZN.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {},
-      "rejected_reason": "Existing position: Trend break signal (31 consecutive days below SMA50). Would require exit, but exit + other mandatory exits would violate max_turnover_pct_per_day. Holding for constraint compliance."
-    },
-    {
-      "ticker": "BP.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.0,
-      "confidence_components": {},
-      "rejected_reason": "Existing position: Trend break signal (9 consecutive days below SMA50). Would require exit, but exit + other mandatory exits would violate max_turnover_pct_per_day. Holding for constraint compliance."
+      "rejected_reason": "Insufficient cash: would require ~12 GBP notional + costs. Available: 0.18 GBP."
     }
   ],
   "decisions": [],
   "portfolio_constraints_summary": {
     "positions_count_after": 6,
+    "positions_over_max": true,
+    "max_positions_allowed": 5,
     "turnover_pct": 0.0,
-    "largest_position_pct": 47.8,
+    "largest_position_pct": 47.95,
     "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Energy": 41.2,
-      "Materials": 5.5,
-      "Healthcare": 4.9,
-      "Financials": 7.3
+      "Energy": 32.88,
+      "Materials": 18.07,
+      "Healthcare": 5.01,
+      "Financials": 4.27
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 8.67
+    "portfolio_drawdown_pct": 8.72,
+    "notes": "Portfolio has 6 positions vs. max 5 allowed. This likely resulted from earlier fills prior to position reduction. No rebalancing action possible due to cash constraint."
   }
 }
