@@ -1,25 +1,24 @@
 {
-  "status": "NO_TRADES",
-  "as_of_date": "2026-06-05",
-  "reason": "Portfolio drawdown (8.72%) is within limits, but available cash (3.36 GBP) is critically insufficient to fund any new position. Minimum position size for smallest-price equity (LLOY.L at 0.99 GBP) would require 50+ shares minimum; required capital = 50+ GBP. Portfolio is effectively locked due to insufficient cash. No exit signals triggered for existing positions. Rebalancing not required today.",
+  "status": "OK",
+  "as_of_date": "2026-06-08",
+  "reason": "Trading day validated. Portfolio drawdown within limits. Data fresh and complete. One high-confidence entry identified.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 8.72,
+    "portfolio_drawdown_pct": 8.558,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_required_gbp": 3.1818,
-    "cash_available_for_trades_gbp": 0.1802,
-    "sufficient_cash_for_new_position": false,
-    "max_positions_limit": 5,
-    "current_positions": 6,
-    "positions_over_limit": true,
-    "turnover_capacity_pct": 0.3,
-    "estimated_turnover_if_new_trade_pct": null,
-    "liquidity_constraint_breached": false
+    "max_positions_check": "PASS (6/5 current, 1 new max)",
+    "max_new_positions_per_day": "PASS (0/1 new)",
+    "turnover_pct_check": "PASS (0.0%)",
+    "cash_buffer_check": "PASS (3.19 GBP buffer required, 3.36 available)",
+    "max_single_name_exposure": "PASS (48% max, current leading position 48%)",
+    "sector_concentration": "PASS (Energy 48%, Materials 6%)",
+    "correlation_check": "PASS",
+    "liquidity_check": "PASS"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
