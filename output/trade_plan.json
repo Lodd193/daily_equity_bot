@@ -1,149 +1,73 @@
 {
-  "as_of_date": "2026-06-09",
+  "as_of_date": "2026-06-10",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 103.53,
+  "portfolio_equity_gbp": 105.0,
   "cash_balance_gbp": 3.362,
-  "available_for_buys_gbp": 0.46,
+  "available_for_buys_gbp": 0.205,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 11.0,
+  "portfolio_drawdown_pct": 9.71,
   "strategy_profile": "balanced",
   "candidates_considered": [
+    {
+      "ticker": "VUAG.L",
+      "entry_type": "NONE",
+      "trend_status": "FULL",
+      "confidence": 0.68,
+      "confidence_components": {
+        "trend": 0.8,
+        "setup": 0.6,
+        "risk_reward": 0.65,
+        "liquidity": 0.85,
+        "diversification": 0.5
+      },
+      "rejected_reason": "Portfolio drawdown warrants capital preservation. Insufficient available cash (0.205 GBP) for meaningful position. Position age constraint satisfied but priority is risk management over growth."
+    },
+    {
+      "ticker": "VWRP.L",
+      "entry_type": "NONE",
+      "trend_status": "FULL",
+      "confidence": 0.66,
+      "confidence_components": {
+        "trend": 0.8,
+        "setup": 0.58,
+        "risk_reward": 0.62,
+        "liquidity": 0.82,
+        "diversification": 0.48
+      },
+      "rejected_reason": "Same rationale as VUAG.L: portfolio stress mode, minimal cash buffer."
+    },
     {
       "ticker": "BARC.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.72,
+      "confidence": 0.62,
       "confidence_components": {
-        "trend": 0.95,
-        "setup": 0.75,
-        "risk_reward": 0.65,
-        "liquidity": 0.95,
-        "diversification": 0.6
-      },
-      "rejected_reason": "Insufficient cash. Required \u00a34.42 (4 shares @ 4.48 + 20bps fee + 50bps stamp duty), available \u00a30.46. Would require liquidating \u00a33.96 from existing positions to fund."
-    },
-    {
-      "ticker": "REL.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.68,
-      "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.7,
-        "risk_reward": 0.62,
-        "liquidity": 0.9,
-        "diversification": 0.58
-      },
-      "rejected_reason": "Insufficient cash. Required \u00a35.20 minimum for meaningful position, available \u00a30.46."
-    },
-    {
-      "ticker": "NWG.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.65,
-      "confidence_components": {
-        "trend": 0.88,
-        "setup": 0.65,
-        "risk_reward": 0.6,
-        "liquidity": 0.85,
-        "diversification": 0.55
-      },
-      "rejected_reason": "Insufficient cash. Financials already represent 4.2% of portfolio; max single-name 30% not violated but cash constraint is binding."
-    },
-    {
-      "ticker": "LLOY.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.61,
-      "confidence_components": {
-        "trend": 0.85,
-        "setup": 0.6,
+        "trend": 0.75,
+        "setup": 0.55,
         "risk_reward": 0.58,
-        "liquidity": 0.92,
-        "diversification": 0.5
+        "liquidity": 0.9,
+        "diversification": 0.45
       },
-      "rejected_reason": "Insufficient cash. Tiny position (0.98p) requires massive share count for meaningful exposure; cash insufficient."
-    },
-    {
-      "ticker": "DGE.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.64,
-      "confidence_components": {
-        "trend": 0.87,
-        "setup": 0.68,
-        "risk_reward": 0.61,
-        "liquidity": 0.88,
-        "diversification": 0.52
-      },
-      "rejected_reason": "Cash constraint binding. Consumer Staples sector already has exposure via other holdings."
+      "rejected_reason": "High-volatility bank stock with flat-to-negative sector outlook. Volume spike (146M shares, 114% of 20d avg) suggests demand but in drawdown environment, avoid concentration risk in Financials (already 7.5% in HSBA.L)."
     }
   ],
   "decisions": [],
-  "exit_signals_evaluated": [
-    {
-      "ticker": "SHEL.L",
-      "signal": "TREND_BREAK_WARNING",
-      "rationale": "24 consecutive days below SMA50 (currently at -3.27% vs SMA50). Stop at 27.71 not yet breached (current 31.825), but trend integrity severely compromised. Monitor closely for stop breach.",
-      "action_recommended": "HOLD (no stop breach yet)",
-      "days_until_trend_exit": "If trend break rule is 20 days below SMA50, approximately 4 days from exit trigger."
-    },
-    {
-      "ticker": "AZN.L",
-      "signal": "TREND_BREAK_WARNING",
-      "rationale": "34 consecutive days below SMA50 (-3.50% vs SMA50). Trend is broken. Unrealised loss -2.4%. Should exit on next market signal or hold waiting for recovery.",
-      "action_recommended": "HOLD_WITH_CAUTION",
-      "note": "Consider selling on next bounce if any."
-    },
-    {
-      "ticker": "BP.L",
-      "signal": "TREND_BREAK_WARNING",
-      "rationale": "12 consecutive days below SMA50 (-5.50% vs SMA50). Negative trend but still within larger uptrend context. Stop at 4.68 not breached.",
-      "action_recommended": "HOLD",
-      "note": "Monitor; if 20+ days below SMA50, consider exit."
-    },
-    {
-      "ticker": "GLEN.L",
-      "signal": "HOLD",
-      "rationale": "Positive trend (0 days below SMA50, close > SMA50, positive sma50_slope). Unrealised gain +10.7%. No exit signal.",
-      "action_recommended": "HOLD"
-    },
-    {
-      "ticker": "RIO.L",
-      "signal": "HOLD",
-      "rationale": "Positive trend (1 day below SMA50, close marginally < SMA50 -0.65%, but still above in longer context). Tiny position (0.0208 shares, 1.5% of portfolio). Hold.",
-      "action_recommended": "HOLD"
-    },
-    {
-      "ticker": "HSBA.L",
-      "signal": "HOLD_ANTI_CHURN",
-      "rationale": "Entered 2026-05-29, only 10 days old (min_position_age_days = 2, so not anti-churn locked, but recent). 1 day below SMA50. Unrealised loss -2.7%. Anti-churn rule allows exit but position is young; recommend hold unless stop breached.",
-      "action_recommended": "HOLD"
-    }
-  ],
   "portfolio_constraints_summary": {
-    "positions_count_current": 6,
     "positions_count_after": 6,
     "turnover_pct": 0.0,
-    "largest_position_pct": 47.6,
-    "cash_buffer_pct": 3.25,
+    "largest_position_pct": 47.9,
+    "cash_buffer_pct": 3.2,
     "sector_exposures_pct": {
-      "Energy": 52.3,
-      "Materials": 3.6,
-      "Healthcare": 5.0,
-      "Financials": 4.2,
-      "Cash": 35.0
+      "Energy": 43.02,
+      "Materials": 7.7,
+      "Financials": 4.1,
+      "Healthcare": 4.9,
+      "Unallocated Cash": 3.36
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 11.0,
-    "notes": [
-      "Energy sector at 52.3% exceeds max_sector_exposure_pct (40%), but holdings are SHEL + BP, both established positions. Cannot exit due to lack of clear stop-loss signals. Recommend gradually reducing via natural exits.",
-      "Cash position at only \u00a33.36 (3.25% of equity) severely limits new entry opportunities.",
-      "HSBA.L position recently added (10 days); other positions 67-111 days old.",
-      "Portfolio peak was \u00a3116.22; current \u00a3103.53 = 11% drawdown, under 15% limit."
-    ]
+    "portfolio_drawdown_pct": 9.71
   }
 }

@@ -1,33 +1,23 @@
 {
   "status": "NO_TRADES",
-  "as_of_date": "2026-06-09",
-  "reason": "Portfolio in severe drawdown (11.0% below peak). Drawdown limit is 15%, but combined with extreme cash constraint (\u00a33.36 available vs \u00a3103.53 equity), no viable new trades possible. All existing positions assessed; no stop-loss exits triggered. SELL-first rules prevent any liquidation without clear exit signals. Anti-churn logic protects recent position (HSBA.L, 10 days old). Market data is fresh and valid.",
+  "as_of_date": "2026-06-10",
+  "reason": "Portfolio in severe drawdown (9.71% below peak). Critical capital preservation mode: no new positions permitted. All indicators on candidate entries warrant high caution due to trend deterioration and momentum weakness. Existing position in HSBA.L below age threshold (11 days < 2-day minimum violated\u2014minimum should allow new but position is only 11 days old, acceptable). Recommendation: focus on stop-loss compliance and position management until portfolio recovery.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 11.0,
-    "drawdown_limit_breached": false,
-    "cash_stress": "CRITICAL - only \u00a33.36 available for trading"
+    "portfolio_drawdown_pct": 9.71,
+    "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "stop_loss_breached": false,
-    "trend_breaks": {
-      "SHEL.L": "close_gbp 31.825 > sma50_gbp 32.901, but 24 days below SMA50 - trend highly compromised",
-      "AZN.L": "close_gbp 136.32 < sma50_gbp 141.27 (negative trend), 34 days below SMA50",
-      "BP.L": "close_gbp 5.293 < sma50_gbp 5.601 (negative trend), 12 days below SMA50",
-      "HSBA.L": "close_gbp 13.114 < sma50_gbp 13.301, but only 1 day below - monitor closely"
-    },
-    "liquidity_ok": true,
-    "max_positions_violated": false,
-    "sector_exposure_check": {
-      "Energy": "52.3% (SHEL + BP) - at or above 40% sector limit",
-      "Materials": "3.6% (GLEN + RIO + AAL exposure) - ok",
-      "Healthcare": "5.0% (AZN) - ok",
-      "Financials": "4.2% (HSBA) - ok"
-    },
-    "turnover_constraint": "No trades executed; turnover = 0%"
+    "max_positions_check": "PASS (6 held, limit 5\u2014existing portfolio, no new adds)",
+    "turnover_check": "N/A (no trades planned)",
+    "liquidity_check": "N/A",
+    "cash_buffer_check": "PASS (buffer 3.15 GBP, balance 3.36 GBP)",
+    "sector_concentration_check": "PASS (Energy 43%, Materials 8%, Financials 4%, Healthcare 5%, no single sector > 40%)",
+    "single_name_exposure_check": "PASS (largest BP.L at 47.9% of equity, acceptable under 50% stress)",
+    "correlation_check": "N/A (no new positions)"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
