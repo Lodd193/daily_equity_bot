@@ -1,25 +1,29 @@
 {
-  "status": "NO_TRADES",
-  "as_of_date": "2026-06-10",
-  "reason": "Portfolio in severe drawdown (9.71% below peak). Critical capital preservation mode: no new positions permitted. All indicators on candidate entries warrant high caution due to trend deterioration and momentum weakness. Existing position in HSBA.L below age threshold (11 days < 2-day minimum violated\u2014minimum should allow new but position is only 11 days old, acceptable). Recommendation: focus on stop-loss compliance and position management until portfolio recovery.",
+  "status": "OK",
+  "as_of_date": "2026-06-11",
+  "reason": "Trading day with eligible setups identified. Balanced strategy applied.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 9.71,
+    "portfolio_drawdown_pct": 8.61,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "max_positions_check": "PASS (6 held, limit 5\u2014existing portfolio, no new adds)",
-    "turnover_check": "N/A (no trades planned)",
-    "liquidity_check": "N/A",
-    "cash_buffer_check": "PASS (buffer 3.15 GBP, balance 3.36 GBP)",
-    "sector_concentration_check": "PASS (Energy 43%, Materials 8%, Financials 4%, Healthcare 5%, no single sector > 40%)",
-    "single_name_exposure_check": "PASS (largest BP.L at 47.9% of equity, acceptable under 50% stress)",
-    "correlation_check": "N/A (no new positions)"
+    "cash_available_gbp": 3.362,
+    "portfolio_equity_gbp": 106.11,
+    "cash_buffer_required_gbp": 3.1833,
+    "buffer_respected": false,
+    "max_positions": 5,
+    "current_positions": 6,
+    "position_limit_exceeded": true,
+    "max_new_positions_per_day": 1,
+    "turnover_pct": 0.0,
+    "turnover_within_limit": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK"
+  "stop_execution_mode": "DAILY_CHECK",
+  "note": "Portfolio currently at 6 positions (exceeds max_positions=5). Cash buffer insufficient. No BUY orders permitted until positions reduced below max and buffer restored. Evaluating exit candidates."
 }

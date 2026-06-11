@@ -1,73 +1,139 @@
 {
-  "as_of_date": "2026-06-10",
+  "as_of_date": "2026-06-11",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 105.0,
+  "portfolio_equity_gbp": 106.11,
   "cash_balance_gbp": 3.362,
-  "available_for_buys_gbp": 0.205,
+  "available_for_buys_gbp": 0.0,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 9.71,
+  "portfolio_drawdown_pct": 8.61,
   "strategy_profile": "balanced",
+  "portfolio_constraints_status": {
+    "positions_count_current": 6,
+    "positions_count_max": 5,
+    "exceeds_max": true,
+    "cash_buffer_required_gbp": 3.1833,
+    "cash_buffer_pct": 0.03,
+    "cash_balance_gbp": 3.362,
+    "buffer_satisfied": false
+  },
   "candidates_considered": [
     {
-      "ticker": "VUAG.L",
+      "ticker": "RIO.L",
       "entry_type": "NONE",
       "trend_status": "FULL",
-      "confidence": 0.68,
+      "confidence": 0.0,
       "confidence_components": {
         "trend": 0.8,
-        "setup": 0.6,
-        "risk_reward": 0.65,
-        "liquidity": 0.85,
-        "diversification": 0.5
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 0.8,
+        "diversification": 0.6
       },
-      "rejected_reason": "Portfolio drawdown warrants capital preservation. Insufficient available cash (0.205 GBP) for meaningful position. Position age constraint satisfied but priority is risk management over growth."
-    },
-    {
-      "ticker": "VWRP.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.66,
-      "confidence_components": {
-        "trend": 0.8,
-        "setup": 0.58,
-        "risk_reward": 0.62,
-        "liquidity": 0.82,
-        "diversification": 0.48
-      },
-      "rejected_reason": "Same rationale as VUAG.L: portfolio stress mode, minimal cash buffer."
+      "rejected_reason": "Cash constraints and portfolio oversize prevent new BUY orders. Required buffer not satisfied."
     },
     {
       "ticker": "BARC.L",
-      "entry_type": "BREAKOUT",
+      "entry_type": "NONE",
       "trend_status": "FULL",
-      "confidence": 0.62,
+      "confidence": 0.0,
       "confidence_components": {
         "trend": 0.75,
-        "setup": 0.55,
-        "risk_reward": 0.58,
-        "liquidity": 0.9,
-        "diversification": 0.45
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 0.8,
+        "diversification": 0.5
       },
-      "rejected_reason": "High-volatility bank stock with flat-to-negative sector outlook. Volume spike (146M shares, 114% of 20d avg) suggests demand but in drawdown environment, avoid concentration risk in Financials (already 7.5% in HSBA.L)."
+      "rejected_reason": "Cash constraints and portfolio oversize prevent new BUY orders. Required buffer not satisfied."
+    },
+    {
+      "ticker": "GLEN.L",
+      "entry_type": "NONE",
+      "trend_status": "FULL",
+      "confidence": 0.0,
+      "confidence_components": {
+        "trend": 0.8,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 0.7,
+        "diversification": 0.0
+      },
+      "rejected_reason": "Already held. Not eligible for new entry. Evaluating for exit."
     }
   ],
-  "decisions": [],
+  "decisions": [
+    {
+      "ticker": "HSBA.L",
+      "action": "SELL",
+      "reason": "TREND_BREAK",
+      "confidence": 0.7,
+      "entry_date": "2026-05-29",
+      "days_held": 12,
+      "entry_type": "EXIT_TREND_BREAK",
+      "current_price_gbp": 13.218,
+      "avg_cost_gbp": 13.9499,
+      "market_value_gbp": 4.399,
+      "unrealised_pnl_gbp": -0.2435,
+      "exit": {
+        "type": "MKT",
+        "price_gbp": 13.218
+      },
+      "size": {
+        "quantity": 0.3328,
+        "notional_gbp": 4.399
+      },
+      "costs_estimate_gbp": {
+        "fees": 0.0,
+        "stamp_duty": 0.0,
+        "slippage": 0.0022
+      },
+      "rationale": [
+        "HSBA.L has exceeded 3 consecutive days below SMA50 (currently 3 days), breaching trend continuation.",
+        "Close (13.218) significantly below SMA50 (13.3439) with negative slope, signaling trend weakness.",
+        "Position held 12 days, eligible for trend-break exit (min_position_age_days=2 satisfied).",
+        "Smallest position by notional value; exit frees capital and reduces portfolio count from 6 to 5."
+      ],
+      "constraints_passed": true,
+      "constraint_notes": [
+        "Trend-break exit always permitted regardless of portfolio size constraints.",
+        "Proceeds approx \u00a34.40 will improve cash position and buffer satisfaction."
+      ]
+    }
+  ],
+  "exit_evaluation_summary": {
+    "trend_break_candidates": [
+      {
+        "ticker": "HSBA.L",
+        "consecutive_days_below_sma50": 3,
+        "close_vs_sma50_pct": -0.009434,
+        "exit_triggered": true,
+        "action": "SELL"
+      }
+    ],
+    "stop_loss_candidates": [],
+    "time_stop_candidates": [],
+    "corporate_action_candidates": []
+  },
   "portfolio_constraints_summary": {
-    "positions_count_after": 6,
-    "turnover_pct": 0.0,
-    "largest_position_pct": 47.9,
-    "cash_buffer_pct": 3.2,
+    "positions_count_before": 6,
+    "positions_count_after": 5,
+    "turnover_pct": 4.14,
+    "largest_position_pct": 47.84,
+    "energy_sector_pct": 47.84,
+    "materials_sector_pct": 7.13,
+    "financials_sector_pct": 5.43,
+    "healthcare_sector_pct": 4.9,
+    "cash_buffer_after_pct": 0.05,
     "sector_exposures_pct": {
-      "Energy": 43.02,
-      "Materials": 7.7,
-      "Financials": 4.1,
+      "Energy": 47.84,
+      "Materials": 7.13,
       "Healthcare": 4.9,
-      "Unallocated Cash": 3.36
+      "Financials": 5.43,
+      "Cash": 34.7
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 9.71
+    "portfolio_drawdown_pct": 8.61
   }
 }

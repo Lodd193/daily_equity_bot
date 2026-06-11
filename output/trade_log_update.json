@@ -1,4 +1,22 @@
 {
-  "as_of_date": "2026-06-10",
-  "entries": []
+  "as_of_date": "2026-06-11",
+  "entries": [
+    {
+      "ticker": "HSBA.L",
+      "action": "SELL",
+      "planned_price_gbp": 13.218,
+      "planned_quantity": 0.3328,
+      "planned_notional_gbp": 4.399,
+      "stop_price_gbp": null,
+      "confidence": 0.7,
+      "entry_type": "TREND_BREAK_EXIT",
+      "entry_date": "2026-05-29",
+      "exit_date": "2026-06-11",
+      "days_held": 12,
+      "avg_cost_gbp": 13.9499,
+      "unrealised_pnl_gbp": -0.2435,
+      "unrealised_pnl_pct": -5.25,
+      "rationale_summary": "Trend break exit: 3 consecutive days below SMA50 (breach of balanced profile threshold). Close \u00a313.218 vs. SMA50 \u00a313.344 with negative slope signals trend integrity loss. Position held 12 days (>2-day minimum age). Smallest position notional; exit reduces portfolio from 6 to 5 positions and improves cash buffer from 3.17% to ~7.3%. Stop price not breached (current \u00a313.168)."
+    }
+  ]
 }
