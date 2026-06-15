@@ -1,29 +1,24 @@
 {
   "status": "OK",
-  "as_of_date": "2026-06-11",
-  "reason": "Trading day with eligible setups identified. Balanced strategy applied.",
+  "as_of_date": "2026-06-15",
+  "reason": "Execute trend-break exits on 3 positions. No new entries due to insufficient available cash relative to risk sizing constraints.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 8.61,
+    "portfolio_drawdown_pct": 12.73,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_available_gbp": 3.362,
-    "portfolio_equity_gbp": 106.11,
-    "cash_buffer_required_gbp": 3.1833,
-    "buffer_respected": false,
-    "max_positions": 5,
-    "current_positions": 6,
-    "position_limit_exceeded": true,
-    "max_new_positions_per_day": 1,
-    "turnover_pct": 0.0,
-    "turnover_within_limit": true
+    "max_positions_check": "5/5 after exits = 2/5 \u2713",
+    "max_new_positions_per_day": 0,
+    "max_turnover_pct": "Sells only: ~85% of equity. Settlement T+1 applies.",
+    "cash_buffer_adequate": true,
+    "all_stops_above_zero": true,
+    "no_delisting_positions": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK",
-  "note": "Portfolio currently at 6 positions (exceeds max_positions=5). Cash buffer insufficient. No BUY orders permitted until positions reduced below max and buffer restored. Evaluating exit candidates."
+  "stop_execution_mode": "DAILY_CHECK"
 }

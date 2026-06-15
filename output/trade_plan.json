@@ -1,139 +1,227 @@
 {
-  "as_of_date": "2026-06-11",
+  "as_of_date": "2026-06-15",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 106.11,
-  "cash_balance_gbp": 3.362,
-  "available_for_buys_gbp": 0.0,
+  "portfolio_equity_gbp": 101.41,
+  "cash_balance_gbp": 7.7566,
+  "available_for_buys_gbp": 4.7143,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 8.61,
+  "portfolio_drawdown_pct": 12.73,
   "strategy_profile": "balanced",
-  "portfolio_constraints_status": {
-    "positions_count_current": 6,
-    "positions_count_max": 5,
-    "exceeds_max": true,
-    "cash_buffer_required_gbp": 3.1833,
-    "cash_buffer_pct": 0.03,
-    "cash_balance_gbp": 3.362,
-    "buffer_satisfied": false
-  },
   "candidates_considered": [
     {
-      "ticker": "RIO.L",
+      "ticker": "SHEL.L",
       "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.8,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.8,
-        "diversification": 0.6
-      },
-      "rejected_reason": "Cash constraints and portfolio oversize prevent new BUY orders. Required buffer not satisfied."
+      "trend_status": "NONE",
+      "action": "SELL",
+      "confidence": 0.85,
+      "exit_reason": "Trend break - close below SMA50 for 28 consecutive days",
+      "rejected_reason": null
+    },
+    {
+      "ticker": "BP.L",
+      "entry_type": "NONE",
+      "trend_status": "NONE",
+      "action": "SELL",
+      "confidence": 0.82,
+      "exit_reason": "Trend break - close below SMA50 for 16 consecutive days",
+      "rejected_reason": null
+    },
+    {
+      "ticker": "AZN.L",
+      "entry_type": "NONE",
+      "trend_status": "NONE",
+      "action": "SELL",
+      "confidence": 0.88,
+      "exit_reason": "Trend break - close below SMA50 for 38 consecutive days",
+      "rejected_reason": null
     },
     {
       "ticker": "BARC.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.75,
+      "confidence_components": {
+        "trend": 0.9,
+        "setup": 0.75,
+        "risk_reward": 0.7,
+        "liquidity": 0.65,
+        "diversification": 0.65
+      },
+      "rejected_reason": "Insufficient available cash (4.71 GBP) for sized position (55.45 GBP required)"
+    },
+    {
+      "ticker": "AAL.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.72,
+      "confidence_components": {
+        "trend": 0.85,
+        "setup": 0.7,
+        "risk_reward": 0.72,
+        "liquidity": 0.75,
+        "diversification": 0.65
+      },
+      "rejected_reason": "Insufficient available cash after exits; defer to next day"
+    },
+    {
+      "ticker": "VWRP.L",
       "entry_type": "NONE",
       "trend_status": "FULL",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.75,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.8,
-        "diversification": 0.5
-      },
-      "rejected_reason": "Cash constraints and portfolio oversize prevent new BUY orders. Required buffer not satisfied."
+      "confidence": 0.68,
+      "rejected_reason": "No cash available; prioritize exits first"
     },
     {
       "ticker": "GLEN.L",
       "entry_type": "NONE",
       "trend_status": "FULL",
-      "confidence": 0.0,
-      "confidence_components": {
-        "trend": 0.8,
-        "setup": 0.0,
-        "risk_reward": 0.0,
-        "liquidity": 0.7,
-        "diversification": 0.0
-      },
-      "rejected_reason": "Already held. Not eligible for new entry. Evaluating for exit."
+      "action": "HOLD",
+      "confidence": 0.7,
+      "exit_reason": "Maintain position - stable uptrend, 113 days held"
+    },
+    {
+      "ticker": "RIO.L",
+      "entry_type": "NONE",
+      "trend_status": "FULL",
+      "action": "HOLD",
+      "confidence": 0.68,
+      "exit_reason": "Maintain position - uptrend resuming, 70 days held"
     }
   ],
   "decisions": [
     {
-      "ticker": "HSBA.L",
+      "ticker": "SHEL.L",
       "action": "SELL",
-      "reason": "TREND_BREAK",
-      "confidence": 0.7,
-      "entry_date": "2026-05-29",
-      "days_held": 12,
-      "entry_type": "EXIT_TREND_BREAK",
-      "current_price_gbp": 13.218,
-      "avg_cost_gbp": 13.9499,
-      "market_value_gbp": 4.399,
-      "unrealised_pnl_gbp": -0.2435,
-      "exit": {
+      "confidence": 0.85,
+      "confidence_components": {
+        "trend_break_strength": 0.9,
+        "consecutive_days_below_sma50": 28,
+        "time_in_trade": 114,
+        "unrealised_pnl": 0.069,
+        "capital_redeployment": 0.75
+      },
+      "entry": {
         "type": "MKT",
-        "price_gbp": 13.218
+        "price_gbp": null
+      },
+      "exit": {
+        "type": "TREND_BREAK",
+        "price_gbp": 30.805,
+        "execution_mode": "DAILY_CHECK"
       },
       "size": {
-        "quantity": 0.3328,
-        "notional_gbp": 4.399
+        "quantity": 1.0624,
+        "notional_gbp": 32.72
       },
       "costs_estimate_gbp": {
-        "fees": 0.0,
-        "stamp_duty": 0.0,
-        "slippage": 0.0022
+        "fees": 0,
+        "stamp_duty": 0,
+        "slippage": 0.033
       },
       "rationale": [
-        "HSBA.L has exceeded 3 consecutive days below SMA50 (currently 3 days), breaching trend continuation.",
-        "Close (13.218) significantly below SMA50 (13.3439) with negative slope, signaling trend weakness.",
-        "Position held 12 days, eligible for trend-break exit (min_position_age_days=2 satisfied).",
-        "Smallest position by notional value; exit frees capital and reduces portfolio count from 6 to 5."
+        "Close (30.805) trading 5.6% below SMA50 (32.6465)",
+        "28 consecutive trading days below SMA50 = strong downtrend signal",
+        "SMA50 slope negative",
+        "Raise capital for redeployment"
       ],
       "constraints_passed": true,
-      "constraint_notes": [
-        "Trend-break exit always permitted regardless of portfolio size constraints.",
-        "Proceeds approx \u00a34.40 will improve cash position and buffer satisfaction."
-      ]
+      "constraint_notes": []
+    },
+    {
+      "ticker": "BP.L",
+      "action": "SELL",
+      "confidence": 0.82,
+      "confidence_components": {
+        "trend_break_strength": 0.85,
+        "consecutive_days_below_sma50": 16,
+        "time_in_trade": 98,
+        "unrealised_pnl": 0.048,
+        "capital_redeployment": 0.8
+      },
+      "entry": {
+        "type": "MKT",
+        "price_gbp": null
+      },
+      "exit": {
+        "type": "TREND_BREAK",
+        "price_gbp": 5.17,
+        "execution_mode": "DAILY_CHECK"
+      },
+      "size": {
+        "quantity": 9.32,
+        "notional_gbp": 48.18
+      },
+      "costs_estimate_gbp": {
+        "fees": 0,
+        "stamp_duty": 0,
+        "slippage": 0.048
+      },
+      "rationale": [
+        "Close (5.17) trading 6.9% below SMA50 (5.5534)",
+        "16 consecutive days below SMA50",
+        "SMA50 slope negative",
+        "Position largest holding; liquidate for dry powder"
+      ],
+      "constraints_passed": true,
+      "constraint_notes": []
+    },
+    {
+      "ticker": "AZN.L",
+      "action": "SELL",
+      "confidence": 0.88,
+      "confidence_components": {
+        "trend_break_strength": 0.95,
+        "consecutive_days_below_sma50": 38,
+        "time_in_trade": 85,
+        "unrealised_pnl": -0.083,
+        "stop_loss_momentum": 0.85
+      },
+      "entry": {
+        "type": "MKT",
+        "price_gbp": null
+      },
+      "exit": {
+        "type": "TREND_BREAK",
+        "price_gbp": 132.0,
+        "execution_mode": "DAILY_CHECK"
+      },
+      "size": {
+        "quantity": 0.0383,
+        "notional_gbp": 5.06
+      },
+      "costs_estimate_gbp": {
+        "fees": 0,
+        "stamp_duty": 0,
+        "slippage": 0.005
+      },
+      "rationale": [
+        "Close (132.0) trading 6.0% below SMA50 (140.5056)",
+        "38 consecutive days below SMA50 = extreme downtrend",
+        "SMA50 slope negative",
+        "Reduce loss exposure; use proceeds to rebuild"
+      ],
+      "constraints_passed": true,
+      "constraint_notes": []
     }
   ],
-  "exit_evaluation_summary": {
-    "trend_break_candidates": [
-      {
-        "ticker": "HSBA.L",
-        "consecutive_days_below_sma50": 3,
-        "close_vs_sma50_pct": -0.009434,
-        "exit_triggered": true,
-        "action": "SELL"
-      }
-    ],
-    "stop_loss_candidates": [],
-    "time_stop_candidates": [],
-    "corporate_action_candidates": []
-  },
   "portfolio_constraints_summary": {
-    "positions_count_before": 6,
-    "positions_count_after": 5,
-    "turnover_pct": 4.14,
-    "largest_position_pct": 47.84,
-    "energy_sector_pct": 47.84,
-    "materials_sector_pct": 7.13,
-    "financials_sector_pct": 5.43,
-    "healthcare_sector_pct": 4.9,
-    "cash_buffer_after_pct": 0.05,
+    "positions_count_current": 5,
+    "positions_count_after_exits": 2,
+    "positions_count_after_all_actions": 2,
+    "turnover_pct": 0.847,
+    "turnover_exceeds_limit": false,
+    "largest_position_pct_after": 0.474,
+    "cash_buffer_pct_after": 0.093,
     "sector_exposures_pct": {
-      "Energy": 47.84,
-      "Materials": 7.13,
-      "Healthcare": 4.9,
-      "Financials": 5.43,
-      "Cash": 34.7
+      "Energy": 0.0,
+      "Healthcare": 0.0,
+      "Materials": 0.059
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 8.61
+    "portfolio_drawdown_pct": 12.73,
+    "new_positions_opened": 0,
+    "new_positions_attempted": 0
   }
 }
