@@ -1,22 +1,24 @@
 {
-  "status": "OK",
-  "as_of_date": "2026-06-15",
-  "reason": "Execute trend-break exits on 3 positions. No new entries due to insufficient available cash relative to risk sizing constraints.",
+  "status": "NO_TRADES",
+  "as_of_date": "2026-06-16",
+  "reason": "No qualifying trades available. Two candidates (HSBA.L and BARC.L) passed trend and setup filters with confidence scores > 0.60, but both are Financials sector. Adding either would breach max_sector_exposure_pct limit (40% of portfolio equity = 40.556 GBP; both positions require ~75-85 GBP notional). Portfolio equity too small relative to sector constraints to accommodate sized positions.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 12.73,
+    "portfolio_drawdown_pct": 12.77,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "max_positions_check": "5/5 after exits = 2/5 \u2713",
-    "max_new_positions_per_day": 0,
-    "max_turnover_pct": "Sells only: ~85% of equity. Settlement T+1 applies.",
-    "cash_buffer_adequate": true,
-    "all_stops_above_zero": true,
-    "no_delisting_positions": true
+    "cash_available_gbp": 90.6,
+    "cash_buffer_applied_gbp": 3.042,
+    "max_positions_available": 3,
+    "max_new_positions_today": 1,
+    "sector_exposure_check": "FAILED - Financials positions would exceed 40% limit",
+    "liquidity_filter": "PASSED",
+    "leverage_check": "PASSED (cash account)",
+    "kill_switch": "OFF"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",

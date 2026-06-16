@@ -1,20 +1,20 @@
 {
-  "as_of_date": "2026-06-15",
-  "cash_balance_gbp": 7.7566,
-  "unsettled_sell_proceeds_gbp": 85.8813,
-  "settlement_due_date": "2026-06-16",
-  "equity_value_gbp": 101.32,
+  "as_of_date": "2026-06-16",
+  "cash_balance_gbp": 93.6379,
+  "unsettled_sell_proceeds_gbp": 0.0,
+  "settlement_due_date": null,
+  "equity_value_gbp": 101.39,
   "portfolio_peak_equity_gbp": 116.22,
   "positions": [
     {
       "ticker": "GLEN.L",
       "quantity": 1.035,
       "avg_cost_gbp": 5.0821,
-      "market_value_gbp": 6.034,
-      "unrealised_pnl_gbp": 0.774,
+      "market_value_gbp": 6.1127,
+      "unrealised_pnl_gbp": 0.8527,
       "sector": "Materials",
       "entry_date": "2026-02-18",
-      "days_held": 113,
+      "days_held": 117,
       "current_stop_gbp": 4.86,
       "status": "ACTIVE"
     },
@@ -22,11 +22,11 @@
       "ticker": "RIO.L",
       "quantity": 0.0208,
       "avg_cost_gbp": 71.091,
-      "market_value_gbp": 1.6482,
-      "unrealised_pnl_gbp": 0.1695,
+      "market_value_gbp": 1.6415,
+      "unrealised_pnl_gbp": 0.1628,
       "sector": "Materials",
       "entry_date": "2026-04-02",
-      "days_held": 70,
+      "days_held": 74,
       "current_stop_gbp": 67.02,
       "status": "ACTIVE"
     }
