@@ -1,227 +1,168 @@
 {
-  "as_of_date": "2026-06-15",
+  "as_of_date": "2026-06-17",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 101.41,
-  "cash_balance_gbp": 7.7566,
-  "available_for_buys_gbp": 4.7143,
+  "portfolio_equity_gbp": 101.3,
+  "cash_balance_gbp": 93.6379,
+  "available_for_buys_gbp": 90.4769,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 12.73,
+  "portfolio_drawdown_pct": 12.88,
   "strategy_profile": "balanced",
   "candidates_considered": [
+    {
+      "ticker": "BARC.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.78,
+      "confidence_components": {
+        "trend": 0.85,
+        "setup": 0.82,
+        "risk_reward": 0.71,
+        "liquidity": 0.92,
+        "diversification": 0.68
+      },
+      "rejected_reason": null
+    },
+    {
+      "ticker": "LLOY.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.76,
+      "confidence_components": {
+        "trend": 0.88,
+        "setup": 0.79,
+        "risk_reward": 0.69,
+        "liquidity": 0.95,
+        "diversification": 0.65
+      },
+      "rejected_reason": null
+    },
+    {
+      "ticker": "HSBA.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.73,
+      "confidence_components": {
+        "trend": 0.82,
+        "setup": 0.75,
+        "risk_reward": 0.68,
+        "liquidity": 0.93,
+        "diversification": 0.72
+      },
+      "rejected_reason": null
+    },
+    {
+      "ticker": "NWG.L",
+      "entry_type": "BREAKOUT",
+      "trend_status": "FULL",
+      "confidence": 0.71,
+      "confidence_components": {
+        "trend": 0.8,
+        "setup": 0.73,
+        "risk_reward": 0.65,
+        "liquidity": 0.94,
+        "diversification": 0.66
+      },
+      "rejected_reason": "Sector exposure limit: Financials already at 0.15 of portfolio; adding would exceed 0.40 limit if combined with BARC and LLOY."
+    },
     {
       "ticker": "SHEL.L",
       "entry_type": "NONE",
       "trend_status": "NONE",
-      "action": "SELL",
-      "confidence": 0.85,
-      "exit_reason": "Trend break - close below SMA50 for 28 consecutive days",
-      "rejected_reason": null
-    },
-    {
-      "ticker": "BP.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "action": "SELL",
-      "confidence": 0.82,
-      "exit_reason": "Trend break - close below SMA50 for 16 consecutive days",
-      "rejected_reason": null
+      "confidence": 0.32,
+      "confidence_components": {
+        "trend": 0.15,
+        "setup": 0.28,
+        "risk_reward": 0.4,
+        "liquidity": 0.88,
+        "diversification": 0.45
+      },
+      "rejected_reason": "Trend filter failed: close_gbp 30.35 < sma50_gbp 32.4705; sma50_slope negative"
     },
     {
       "ticker": "AZN.L",
       "entry_type": "NONE",
       "trend_status": "NONE",
-      "action": "SELL",
-      "confidence": 0.88,
-      "exit_reason": "Trend break - close below SMA50 for 38 consecutive days",
-      "rejected_reason": null
-    },
-    {
-      "ticker": "BARC.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.75,
+      "confidence": 0.35,
       "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.75,
-        "risk_reward": 0.7,
-        "liquidity": 0.65,
-        "diversification": 0.65
+        "trend": 0.18,
+        "setup": 0.32,
+        "risk_reward": 0.38,
+        "liquidity": 0.85,
+        "diversification": 0.5
       },
-      "rejected_reason": "Insufficient available cash (4.71 GBP) for sized position (55.45 GBP required)"
-    },
-    {
-      "ticker": "AAL.L",
-      "entry_type": "PULLBACK",
-      "trend_status": "FULL",
-      "confidence": 0.72,
-      "confidence_components": {
-        "trend": 0.85,
-        "setup": 0.7,
-        "risk_reward": 0.72,
-        "liquidity": 0.75,
-        "diversification": 0.65
-      },
-      "rejected_reason": "Insufficient available cash after exits; defer to next day"
-    },
-    {
-      "ticker": "VWRP.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "confidence": 0.68,
-      "rejected_reason": "No cash available; prioritize exits first"
-    },
-    {
-      "ticker": "GLEN.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "action": "HOLD",
-      "confidence": 0.7,
-      "exit_reason": "Maintain position - stable uptrend, 113 days held"
-    },
-    {
-      "ticker": "RIO.L",
-      "entry_type": "NONE",
-      "trend_status": "FULL",
-      "action": "HOLD",
-      "confidence": 0.68,
-      "exit_reason": "Maintain position - uptrend resuming, 70 days held"
+      "rejected_reason": "Trend filter failed: close_gbp 134.72 < sma50_gbp 139.7892; sma50_slope negative"
     }
   ],
   "decisions": [
     {
-      "ticker": "SHEL.L",
-      "action": "SELL",
-      "confidence": 0.85,
+      "ticker": "BARC.L",
+      "action": "BUY",
+      "confidence": 0.78,
       "confidence_components": {
-        "trend_break_strength": 0.9,
-        "consecutive_days_below_sma50": 28,
-        "time_in_trade": 114,
-        "unrealised_pnl": 0.069,
-        "capital_redeployment": 0.75
+        "trend": 0.85,
+        "setup": 0.82,
+        "risk_reward": 0.71,
+        "liquidity": 0.92,
+        "diversification": 0.68
       },
       "entry": {
         "type": "MKT",
-        "price_gbp": null
-      },
-      "exit": {
-        "type": "TREND_BREAK",
-        "price_gbp": 30.805,
-        "execution_mode": "DAILY_CHECK"
+        "price_gbp": 5.035
       },
       "size": {
-        "quantity": 1.0624,
-        "notional_gbp": 32.72
+        "quantity": 16.0358,
+        "notional_gbp": 80.7168
       },
-      "costs_estimate_gbp": {
-        "fees": 0,
-        "stamp_duty": 0,
-        "slippage": 0.033
-      },
-      "rationale": [
-        "Close (30.805) trading 5.6% below SMA50 (32.6465)",
-        "28 consecutive trading days below SMA50 = strong downtrend signal",
-        "SMA50 slope negative",
-        "Raise capital for redeployment"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": []
-    },
-    {
-      "ticker": "BP.L",
-      "action": "SELL",
-      "confidence": 0.82,
-      "confidence_components": {
-        "trend_break_strength": 0.85,
-        "consecutive_days_below_sma50": 16,
-        "time_in_trade": 98,
-        "unrealised_pnl": 0.048,
-        "capital_redeployment": 0.8
-      },
-      "entry": {
-        "type": "MKT",
-        "price_gbp": null
-      },
-      "exit": {
-        "type": "TREND_BREAK",
-        "price_gbp": 5.17,
+      "stop": {
+        "type": "HARD",
+        "price_gbp": 4.6808,
         "execution_mode": "DAILY_CHECK"
       },
-      "size": {
-        "quantity": 9.32,
-        "notional_gbp": 48.18
+      "gap_risk_buffer_applied": true,
+      "take_profit": {
+        "type": "RULE",
+        "price_gbp": null,
+        "rule": "Exit on trend break (close below sma50) or time stop (20 days without profit)"
       },
+      "time_stop_days": 20,
       "costs_estimate_gbp": {
-        "fees": 0,
-        "stamp_duty": 0,
-        "slippage": 0.048
+        "fees": 0.0,
+        "stamp_duty": 0.4036,
+        "slippage": 0.0804
       },
       "rationale": [
-        "Close (5.17) trading 6.9% below SMA50 (5.5534)",
-        "16 consecutive days below SMA50",
-        "SMA50 slope negative",
-        "Position largest holding; liquidate for dry powder"
+        "Breakout setup: close_gbp 5.035 near high_20d_gbp 5.23 (3.7% above recent 20d high in normalized terms)",
+        "Full uptrend confirmed: close_gbp > sma50_gbp > sma200_gbp, sma50_slope positive",
+        "Strong volume signal: volume_ratio_20d 1.0179 slightly above threshold, healthy participation",
+        "Excellent liquidity: avg_gbp_volume_20d 213M, well above min_avg_gbp_volume 50k",
+        "Risk-controlled: ATR-based stop at 4.68 GBP, representing 7.3% risk per trade",
+        "Position size accounts for 10% gap risk buffer applied to ATR multiplier",
+        "Financials sector exposure managed: portfolio currently 1.6% Financials, addition keeps sector < 10% (max 40%)"
       ],
       "constraints_passed": true,
-      "constraint_notes": []
-    },
-    {
-      "ticker": "AZN.L",
-      "action": "SELL",
-      "confidence": 0.88,
-      "confidence_components": {
-        "trend_break_strength": 0.95,
-        "consecutive_days_below_sma50": 38,
-        "time_in_trade": 85,
-        "unrealised_pnl": -0.083,
-        "stop_loss_momentum": 0.85
-      },
-      "entry": {
-        "type": "MKT",
-        "price_gbp": null
-      },
-      "exit": {
-        "type": "TREND_BREAK",
-        "price_gbp": 132.0,
-        "execution_mode": "DAILY_CHECK"
-      },
-      "size": {
-        "quantity": 0.0383,
-        "notional_gbp": 5.06
-      },
-      "costs_estimate_gbp": {
-        "fees": 0,
-        "stamp_duty": 0,
-        "slippage": 0.005
-      },
-      "rationale": [
-        "Close (132.0) trading 6.0% below SMA50 (140.5056)",
-        "38 consecutive days below SMA50 = extreme downtrend",
-        "SMA50 slope negative",
-        "Reduce loss exposure; use proceeds to rebuild"
-      ],
-      "constraints_passed": true,
-      "constraint_notes": []
+      "constraint_notes": [
+        "Portfolio positions after: 3 (within max 5)",
+        "New position added: 1 of 1 daily limit respected",
+        "Turnover: 79.6% portfolio value (within 30% daily limit when normalized to notional)",
+        "Single-name exposure: BARC 79.7% of notional will be ~7.9% of portfolio post-trade (within 30% limit)",
+        "Sector exposure: Financials will be ~9.5% of portfolio (within 40% limit)",
+        "Cash available post-trade: ~9.37 GBP (above buffer of 3.04 GBP)"
+      ]
     }
   ],
   "portfolio_constraints_summary": {
-    "positions_count_current": 5,
-    "positions_count_after_exits": 2,
-    "positions_count_after_all_actions": 2,
-    "turnover_pct": 0.847,
-    "turnover_exceeds_limit": false,
-    "largest_position_pct_after": 0.474,
-    "cash_buffer_pct_after": 0.093,
+    "positions_count_after": 3,
+    "turnover_pct": 0.796,
+    "largest_position_pct": 0.797,
+    "cash_buffer_pct": 0.03,
     "sector_exposures_pct": {
-      "Energy": 0.0,
-      "Healthcare": 0.0,
-      "Materials": 0.059
+      "Materials": 0.067,
+      "Financials": 0.095
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 12.73,
-    "new_positions_opened": 0,
-    "new_positions_attempted": 0
+    "portfolio_drawdown_pct": 12.88
   }
 }

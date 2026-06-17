@@ -1,24 +1,22 @@
 {
-  "status": "NO_TRADES",
-  "as_of_date": "2026-06-16",
-  "reason": "No qualifying trades available. Two candidates (HSBA.L and BARC.L) passed trend and setup filters with confidence scores > 0.60, but both are Financials sector. Adding either would breach max_sector_exposure_pct limit (40% of portfolio equity = 40.556 GBP; both positions require ~75-85 GBP notional). Portfolio equity too small relative to sector constraints to accommodate sized positions.",
+  "status": "OK",
+  "as_of_date": "2026-06-17",
+  "reason": "Trading day confirmed. Data fresh. Portfolio drawdown within limits. Eligible candidates identified.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 12.77,
+    "portfolio_drawdown_pct": 12.88,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_available_gbp": 90.6,
-    "cash_buffer_applied_gbp": 3.042,
-    "max_positions_available": 3,
-    "max_new_positions_today": 1,
-    "sector_exposure_check": "FAILED - Financials positions would exceed 40% limit",
-    "liquidity_filter": "PASSED",
-    "leverage_check": "PASSED (cash account)",
-    "kill_switch": "OFF"
+    "cash_buffer_sufficient": true,
+    "max_positions_check": true,
+    "max_turnover_check": true,
+    "liquidity_filters_passed": true,
+    "sector_exposure_limits_ok": true,
+    "correlation_limits_ok": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",

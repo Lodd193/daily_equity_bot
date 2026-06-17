@@ -150,5 +150,20 @@
         "rationale_summary": "Trend break exit: 3 consecutive days below SMA50 (breach of balanced profile threshold). Close \u00a313.218 vs. SMA50 \u00a313.344 with negative slope signals trend integrity loss. Position held 12 days (>2-day minimum age). Smallest position notional; exit reduces portfolio from 6 to 5 positions and improves cash buffer from 3.17% to ~7.3%. Stop price not breached (current \u00a313.168)."
       }
     ]
+  },
+  {
+    "as_of_date": "2026-06-17",
+    "entries": [
+      {
+        "ticker": "BARC.L",
+        "action": "BUY",
+        "planned_price_gbp": 5.035,
+        "planned_quantity": 16.0358,
+        "stop_price_gbp": 4.6808,
+        "confidence": 0.78,
+        "entry_type": "BREAKOUT",
+        "rationale_summary": "Breakout setup in confirmed full uptrend (close > SMA50 > SMA200); close near 20-day high with volume confirmation (ratio 1.018); ATR-based stop at 4.68 GBP; excellent liquidity (213M GBP daily volume). Gap risk buffer 10% applied to position sizing."
+      }
+    ]
   }
 ]
