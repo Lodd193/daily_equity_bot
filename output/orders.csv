@@ -1,3 +1,2 @@
 order_id,ticker,side,order_type,quantity,limit_price_gbp,time_in_force,stop_price_gbp,reason
-1,BARC.L,BUY,MKT,16.0358,,DAY,4.6808,BREAKOUT entry in uptrend with strong volume confirmation and liquidity
-===
+1,BARC.L,SELL,MKT,16.0358,,,Anti-churn policy exit (0 days held)

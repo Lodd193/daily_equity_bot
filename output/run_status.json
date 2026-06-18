@@ -1,22 +1,24 @@
 {
   "status": "OK",
-  "as_of_date": "2026-06-17",
-  "reason": "Trading day confirmed. Data fresh. Portfolio drawdown within limits. Eligible candidates identified.",
+  "as_of_date": "2026-06-18",
+  "reason": "BARC.L anti-churn exit only; no new entries due to insufficient cash liquidity. Portfolio at 13.86% drawdown (within 15% limit).",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 12.88,
+    "portfolio_drawdown_pct": 13.86,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "cash_buffer_sufficient": true,
-    "max_positions_check": true,
-    "max_turnover_check": true,
-    "liquidity_filters_passed": true,
-    "sector_exposure_limits_ok": true,
-    "correlation_limits_ok": true
+    "max_positions_violated": false,
+    "turnover_constraint_violated": true,
+    "turnover_violation_reason": "BARC.L anti-churn exit (0 days held) requires sale at 80.2% of equity; exceeds 30% max_turnover_pct_per_day. Anti-churn policy overrides turnover limit for policy compliance.",
+    "sector_limits_ok": true,
+    "single_name_limits_ok": true,
+    "cash_buffer_ok": true,
+    "liquidity_ok": false,
+    "liquidity_issue": "Post-BARC.L sale, available cash ~\u00a317 GBP; insufficient for any quality new position (all setups require \u00a390+ notional)"
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",

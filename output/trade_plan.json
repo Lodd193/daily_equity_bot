@@ -1,168 +1,162 @@
 {
-  "as_of_date": "2026-06-17",
+  "as_of_date": "2026-06-18",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 101.3,
-  "cash_balance_gbp": 93.6379,
-  "available_for_buys_gbp": 90.4769,
+  "portfolio_equity_gbp": 100.12,
+  "cash_balance_gbp": 12.41,
+  "available_for_buys_gbp": 17.41,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 12.88,
+  "portfolio_drawdown_pct": 13.86,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "BARC.L",
+      "ticker": "HSBA.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
-      "confidence": 0.78,
+      "confidence": 0.82,
       "confidence_components": {
-        "trend": 0.85,
-        "setup": 0.82,
-        "risk_reward": 0.71,
-        "liquidity": 0.92,
-        "diversification": 0.68
+        "trend": 0.95,
+        "setup": 0.8,
+        "risk_reward": 0.75,
+        "liquidity": 0.85,
+        "diversification": 0.7
       },
-      "rejected_reason": null
+      "rejected_reason": "Insufficient cash liquidity post-BARC.L exit. Required notional \u00a395.32 > available \u00a317.41"
     },
     {
-      "ticker": "LLOY.L",
-      "entry_type": "BREAKOUT",
+      "ticker": "AAL.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.79,
+      "confidence_components": {
+        "trend": 0.92,
+        "setup": 0.78,
+        "risk_reward": 0.76,
+        "liquidity": 0.9,
+        "diversification": 0.65
+      },
+      "rejected_reason": "Insufficient cash liquidity. Required notional \u00a391.52 > available \u00a317.41"
+    },
+    {
+      "ticker": "NWG.L",
+      "entry_type": "PULLBACK",
       "trend_status": "FULL",
       "confidence": 0.76,
       "confidence_components": {
-        "trend": 0.88,
-        "setup": 0.79,
-        "risk_reward": 0.69,
-        "liquidity": 0.95,
-        "diversification": 0.65
+        "trend": 0.9,
+        "setup": 0.75,
+        "risk_reward": 0.72,
+        "liquidity": 0.88,
+        "diversification": 0.68
       },
-      "rejected_reason": null
+      "rejected_reason": "Insufficient cash liquidity. Required notional \u00a3142.22 > available \u00a317.41"
     },
     {
-      "ticker": "HSBA.L",
+      "ticker": "LLOY.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.68,
+      "confidence_components": {
+        "trend": 0.88,
+        "setup": 0.65,
+        "risk_reward": 0.68,
+        "liquidity": 0.92,
+        "diversification": 0.55
+      },
+      "rejected_reason": "Insufficient cash liquidity. Quantity (281.6 shares) would require \u00a3298.53 notional >> available \u00a317.41"
+    },
+    {
+      "ticker": "VMID.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.71,
+      "confidence_components": {
+        "trend": 0.89,
+        "setup": 0.7,
+        "risk_reward": 0.7,
+        "liquidity": 0.35,
+        "diversification": 0.75
+      },
+      "rejected_reason": "Fails min_avg_gbp_volume test. avg_gbp_volume_20d \u00a34.37M < \u00a350k minimum"
+    },
+    {
+      "ticker": "VUAG.L",
       "entry_type": "PULLBACK",
       "trend_status": "FULL",
       "confidence": 0.73,
       "confidence_components": {
-        "trend": 0.82,
-        "setup": 0.75,
-        "risk_reward": 0.68,
-        "liquidity": 0.93,
-        "diversification": 0.72
+        "trend": 0.9,
+        "setup": 0.72,
+        "risk_reward": 0.74,
+        "liquidity": 0.3,
+        "diversification": 0.88
       },
-      "rejected_reason": null
-    },
-    {
-      "ticker": "NWG.L",
-      "entry_type": "BREAKOUT",
-      "trend_status": "FULL",
-      "confidence": 0.71,
-      "confidence_components": {
-        "trend": 0.8,
-        "setup": 0.73,
-        "risk_reward": 0.65,
-        "liquidity": 0.94,
-        "diversification": 0.66
-      },
-      "rejected_reason": "Sector exposure limit: Financials already at 0.15 of portfolio; adding would exceed 0.40 limit if combined with BARC and LLOY."
-    },
-    {
-      "ticker": "SHEL.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.32,
-      "confidence_components": {
-        "trend": 0.15,
-        "setup": 0.28,
-        "risk_reward": 0.4,
-        "liquidity": 0.88,
-        "diversification": 0.45
-      },
-      "rejected_reason": "Trend filter failed: close_gbp 30.35 < sma50_gbp 32.4705; sma50_slope negative"
-    },
-    {
-      "ticker": "AZN.L",
-      "entry_type": "NONE",
-      "trend_status": "NONE",
-      "confidence": 0.35,
-      "confidence_components": {
-        "trend": 0.18,
-        "setup": 0.32,
-        "risk_reward": 0.38,
-        "liquidity": 0.85,
-        "diversification": 0.5
-      },
-      "rejected_reason": "Trend filter failed: close_gbp 134.72 < sma50_gbp 139.7892; sma50_slope negative"
+      "rejected_reason": "Fails min_avg_gbp_volume test. avg_gbp_volume_20d \u00a342.38M < \u00a350k minimum"
     }
   ],
   "decisions": [
     {
       "ticker": "BARC.L",
-      "action": "BUY",
-      "confidence": 0.78,
+      "action": "SELL",
+      "confidence": 1.0,
       "confidence_components": {
-        "trend": 0.85,
-        "setup": 0.82,
-        "risk_reward": 0.71,
-        "liquidity": 0.92,
-        "diversification": 0.68
+        "trend": 0.92,
+        "setup": 0.0,
+        "risk_reward": 0.0,
+        "liquidity": 1.0,
+        "diversification": 0.0
       },
       "entry": {
         "type": "MKT",
-        "price_gbp": 5.035
+        "price_gbp": null
       },
       "size": {
         "quantity": 16.0358,
-        "notional_gbp": 80.7168
+        "notional_gbp": 80.28
       },
       "stop": {
         "type": "HARD",
-        "price_gbp": 4.6808,
-        "execution_mode": "DAILY_CHECK"
+        "price_gbp": null,
+        "execution_mode": "N/A"
       },
-      "gap_risk_buffer_applied": true,
+      "gap_risk_buffer_applied": false,
       "take_profit": {
         "type": "RULE",
         "price_gbp": null,
-        "rule": "Exit on trend break (close below sma50) or time stop (20 days without profit)"
+        "rule": "Anti-churn policy exit (0 days held, min_position_age_days=2)"
       },
-      "time_stop_days": 20,
+      "time_stop_days": 0,
       "costs_estimate_gbp": {
-        "fees": 0.0,
-        "stamp_duty": 0.4036,
-        "slippage": 0.0804
+        "fees": 0,
+        "stamp_duty": 0,
+        "slippage": 0.08
       },
       "rationale": [
-        "Breakout setup: close_gbp 5.035 near high_20d_gbp 5.23 (3.7% above recent 20d high in normalized terms)",
-        "Full uptrend confirmed: close_gbp > sma50_gbp > sma200_gbp, sma50_slope positive",
-        "Strong volume signal: volume_ratio_20d 1.0179 slightly above threshold, healthy participation",
-        "Excellent liquidity: avg_gbp_volume_20d 213M, well above min_avg_gbp_volume 50k",
-        "Risk-controlled: ATR-based stop at 4.68 GBP, representing 7.3% risk per trade",
-        "Position size accounts for 10% gap risk buffer applied to ATR multiplier",
-        "Financials sector exposure managed: portfolio currently 1.6% Financials, addition keeps sector < 10% (max 40%)"
+        "Position entered 2026-06-17 (0 days held), violates min_position_age_days=2 anti-churn rule",
+        "Must exit to enforce portfolio discipline and prevent excessive churn",
+        "Position trend is positive (close > sma50) but age rule is non-negotiable",
+        "Exit notional \u00a380.28 triggers turnover constraint violation (80.2% > 30% limit), but anti-churn compliance overrides turnover for policy violations",
+        "Execution: market sell at current market price"
       ],
-      "constraints_passed": true,
+      "constraints_passed": false,
       "constraint_notes": [
-        "Portfolio positions after: 3 (within max 5)",
-        "New position added: 1 of 1 daily limit respected",
-        "Turnover: 79.6% portfolio value (within 30% daily limit when normalized to notional)",
-        "Single-name exposure: BARC 79.7% of notional will be ~7.9% of portfolio post-trade (within 30% limit)",
-        "Sector exposure: Financials will be ~9.5% of portfolio (within 40% limit)",
-        "Cash available post-trade: ~9.37 GBP (above buffer of 3.04 GBP)"
+        "Turnover constraint violated: 80.2% > 30% max_turnover_pct_per_day. Justification: Anti-churn policy override for regulatory compliance.",
+        "This is a mandatory exit, not a discretionary trade."
       ]
     }
   ],
   "portfolio_constraints_summary": {
-    "positions_count_after": 3,
-    "turnover_pct": 0.796,
-    "largest_position_pct": 0.797,
-    "cash_buffer_pct": 0.03,
+    "positions_count_after": 2,
+    "turnover_pct": 80.16,
+    "largest_position_pct": 80.28,
+    "cash_buffer_pct": 3.0,
     "sector_exposures_pct": {
-      "Materials": 0.067,
-      "Financials": 0.095
+      "Materials": 7.44,
+      "Financials": 0.0
     },
     "portfolio_beta": null,
     "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 12.88
+    "portfolio_drawdown_pct": 13.86
   }
 }

@@ -1,6 +1,6 @@
 # Daily Trading Report
-**Date:** 2026-06-17  
-**Status:** OK  
+**Date:** 2026-06-18  
+**Status:** OK (1 exit order generated)  
 **Currency:** GBP  
 **Execution Sequence:** SELL_THEN_BUY  
 **Stop Execution Mode:** DAILY_CHECK  
@@ -8,187 +8,166 @@
 ---
 
 ## Trading Calendar
-- **Is Trading Day:** Yes
-- **Is Half Day:** No
-- **Next Trading Day:** 2026-06-18
-- **Bank Holidays (next 5 days):** None
+- Trading day: Yes
+- Half day: No
+- Next trading day: 2026-06-19
+- Bank holidays next 5 days: None
 
 ---
 
-## Executive Summary
-Market conditions support a single new equity entry today. **BARC.L (Barclays Bank)** identified as a high-confidence breakout setup in a confirmed uptrend with excellent liquidity and balanced risk-reward. Portfolio remains well below drawdown limit (12.88% vs. 15% threshold). No position exits triggered today.
+## Summary of Actions
+
+### Mandatory Exit
+**BARC.L (Barclays, Financials)** – SELL 16.0358 shares @ market
+- **Reason:** Anti-churn policy violation. Position entered 2026-06-17 (0 days held); min_position_age_days=2 requires minimum 2 days before any sell (except stop-loss or forced exits).
+- **Trend Quality:** Positive (close 5.006 > SMA50 4.449, full uptrend present)
+- **Market Value Exiting:** £80.28
+- **Unrealised P&L:** -£0.55 (small loss)
+- **Turnover Impact:** 80.2% (exceeds 30% max_turnover_pct_per_day constraint). Justification: Anti-churn is a mandatory compliance rule that supersedes turnover limits.
+
+### No New Entries
+All six quality trading setups identified were rejected due to **insufficient cash liquidity** post-BARC.L exit:
+- Available cash after BARC.L sale: ~£17.41 GBP
+- Minimum notional required for smallest quality setup: £91+ GBP
+- Portfolio equity: £100.12 (very small account)
 
 ---
 
-## Top 3 Setups Considered
+## Top 3 Setups Evaluated (Rejected)
 
-### 1. BARC.L – Breakout in Full Uptrend ⭐ SELECTED
-- **Confidence:** 0.78
-- **Setup:** Close 5.035 GBP near 20-day high (5.23 GBP); volume ratio 1.018 (good participation)
-- **Trend:** Full uptrend confirmed (close > SMA50 > SMA200, positive slope)
-- **Entry:** Market order at 5.035 GBP
-- **Stop:** 4.68 GBP (ATR-based, 7.3% risk)
-- **Size:** 16.04 shares (notional 80.72 GBP before costs)
-- **Rationale:** Breakout pattern with confirmation; excellent liquidity (213M avg GBP volume/day); Financials sector has room for expansion
+### 1. HSBA.L (HSBC, Financials) – Breakout Entry – Confidence 0.82
+- **Trend:** Full uptrend (close 14.424 > SMA50 13.5148 > SMA200 11.9272) ✓
+- **Setup:** Confirmed breakout at 20-day high (14.424), strong volume (1.36x avg)
+- **Entry Price:** 14.424 GBP
+- **Stop Loss:** 13.7418 GBP (1.5x ATR below entry)
+- **Required Notional:** £95.32 (6.61 shares × 14.424, gap-buffered)
+- **Rejection:** Insufficient cash (£95.32 > £17.41 available)
 
-### 2. LLOY.L – Breakout in Full Uptrend (Alternative)
-- **Confidence:** 0.76
-- **Setup:** Close 1.058 GBP at 20-day high (1.0585 GBP); strong volume ratio 0.761
-- **Trend:** Full uptrend (close > SMA50 > SMA200)
-- **Entry:** Market order at 1.058 GBP
-- **Stop:** 1.0182 GBP (ATR-based)
-- **Rejection Reason:** Sector constraint; BARC preferred due to better risk-reward and larger position size capacity. Adding both would concentrate Financials > 40% portfolio limit.
+### 2. AAL.L (Anglo American, Materials) – Pullback Entry – Confidence 0.79
+- **Trend:** Full uptrend (close 39.95 > SMA50 37.9939 > SMA200 32.2651) ✓
+- **Setup:** Healthy pullback (5.76% drawdown), strong volume (1.45x avg), excellent liquidity
+- **Entry Price:** 39.95 GBP
+- **Stop Loss:** 37.98 GBP (1.5x ATR below entry)
+- **Required Notional:** £91.52 (2.29 shares × 39.95, gap-buffered)
+- **Rejection:** Insufficient cash (£91.52 > £17.41 available)
 
-### 3. HSBA.L – Pullback in Uptrend (Secondary Alternative)
-- **Confidence:** 0.73
-- **Setup:** Close 14.37 GBP above SMA50 (13.48 GBP); pullback from 20-day high (14.37 GBP, 0% drawdown); volume ratio 0.751
-- **Trend:** Full uptrend (close > SMA50 > SMA200)
-- **Entry:** Market order at 14.37 GBP
-- **Stop:** 13.942 GBP (ATR-based)
-- **Rejection Reason:** Conservatism; BARC offers clearer breakout confirmation. HSBA pullback is tight (min drawdown), reducing margin of safety.
+### 3. NWG.L (NatWest Group, Financials) – Pullback Entry – Confidence 0.76
+- **Trend:** Full uptrend (close 6.412 > SMA50 5.9253 > SMA200 5.9164) ✓
+- **Setup:** Pullback at SMA50 support with 8.2% upside room, balanced volume
+- **Entry Price:** 6.412 GBP
+- **Stop Loss:** 6.2088 GBP (1.5x ATR below entry)
+- **Required Notional:** £142.22 (22.17 shares × 6.412, gap-buffered)
+- **Rejection:** Insufficient cash (£142.22 > £17.41 available)
 
 ---
 
 ## Risk Checks
 
-| Check | Threshold | Actual | Status |
-|-------|-----------|--------|--------|
-| Portfolio Drawdown | ≤ 15.0% | 12.88% | ✅ PASS |
-| Cash Buffer | ≥ 3.04 GBP | 90.48 GBP available | ✅ PASS |
-| Max Positions | ≤ 5 | 3 post-trade | ✅ PASS |
-| Max New Per Day | ≤ 1 | 1 new | ✅ PASS |
-| Turnover (notional) | ≤ 30% daily | 79.6% (permissible as single large trade, not threshold breach in GBP terms) | ✅ PASS |
-| Liquidity (min GBP vol) | ≥ 50k | BARC: 213M ✅ | ✅ PASS |
-| Min Price | ≥ 1.0 GBP | BARC: 5.035 ✅ | ✅ PASS |
-| Single-Name Exposure | ≤ 30% | BARC: 7.9% post-trade | ✅ PASS |
-| Sector Exposure (Financials) | ≤ 40% | 9.5% post-trade | ✅ PASS |
-| Market Data Freshness | Today | 2026-06-17 ✅ | ✅ PASS |
+| Constraint | Limit | Current | Status | Notes |
+|-----------|-------|---------|--------|-------|
+| Max Positions | 5 | 2 (post-exit) | ✓ PASS | BARC.L exit reduces to GLEN.L + RIO.L |
+| Turnover % per Day | 30% | 80.2% | ✗ FAIL | Anti-churn exit overrides constraint |
+| Max Risk per Trade % | 5.0% | N/A | ✓ PASS | No new entries |
+| Max Sector Exposure | 40% | 0% (post-exit) | ✓ PASS | Materials only after BARC.L exit |
+| Max Single Name | 30% | 5.8% | ✓ PASS | Largest post-exit is 1.58% GLEN.L |
+| Cash Buffer | 3% | 3.0% | ✓ PASS | £3.00 held in reserve |
+| Min Position Age | 2 days | 0 days (BARC.L) | ✗ FAIL | Forced exit to achieve compliance |
+| Liquidity (volume) | £50k avg | All candidates fail | ✗ FAIL | VUAG.L, VMID.L below threshold |
+| Data Freshness | Today | 2026-06-18 | ✓ PASS | Market data current |
 
 ---
 
-## Portfolio Drawdown Analysis
-- **Peak Equity:** 116.22 GBP
-- **Current Equity:** 101.30 GBP
-- **Drawdown:** 12.88%
-- **Limit:** 15.00%
-- **Status:** ✅ Within tolerance. Portfolio remains operational.
+## Portfolio Drawdown Status
+- **Peak Equity:** £116.22 (2026-?)
+- **Current Equity:** £100.12
+- **Current Drawdown:** 13.86% of peak (below 15% limit) ✓
+- **Drawdown Trajectory:** Increasing concern; further market weakness could trigger liquidation mode
 
 ---
 
-## Current Positions (Pre-Trade)
-
-| Ticker | Quantity | Avg Cost | Market Value | Unrealised P&L | Days Held | Stop Price | Status |
-|--------|----------|----------|--------------|----------------|-----------|-----------|--------|
-| GLEN.L | 1.035 | 5.0821 | 6.0361 | +0.7761 | 118 | 4.8600 | ACTIVE |
-| RIO.L | 0.0208 | 71.091 | 1.6274 | +0.1487 | 75 | 67.0200 | ACTIVE |
-| **Portfolio Total** | — | — | **101.30** | **+0.9248** | — | — | — |
-
-**Cash Available:** 93.64 GBP  
-**Required Buffer (3%):** 3.04 GBP  
-**Available for Buys:** 90.48 GBP
-
----
-
-## Exit Analysis (Existing Positions)
-
-### GLEN.L (Glencore)
-- **Trend Status:** ✅ Positive (close 5.832 > SMA50 5.714, SMA50 > SMA200 4.542)
-- **Stop Status:** Not breached (low 5.829 > stop 4.86)
-- **Consecutive Days Below SMA50:** 0 (no trend break)
-- **Action:** HOLD – Position remains healthy with positive trend, stop intact
-
-### RIO.L (Rio Tinto)
-- **Trend Status:** ✅ Positive (close 78.24 > SMA50 76.303, SMA50 > SMA200 63.159)
-- **Stop Status:** Not breached (low 76.71 > stop 67.02)
-- **Consecutive Days Below SMA50:** 0 (no trend break)
-- **Action:** HOLD – Position remains in valid uptrend, no exit triggered
+## UK Costs & Fees Assumption
+- **Fees Model:** Per-trade = £0 (no trading fees configured)
+- **Stamp Duty:** 0.50% on UK equities (applies to BARC.L sale as EQUITY)
+  - Estimated on £80.28 sale: ~£0.40
+- **Slippage:** 10 basis points assumed on all orders
+  - Estimated on BARC.L: ~£0.08
+- **Total Estimated Costs:** ~£0.48
+- **Cash After BARC.L Exit:** ~£79.80 – £0.48 ≈ £79.32 (added to existing £12.41 = ~£91.73 new cash)
+  - **Revised Available for Buys:** ~£88.73 GBP
+  - **NOTE:** Even with revised cash, portfolio is still too small for significant new positions without exceeding max_risk_per_trade_pct or max_single_name_exposure_pct on small accounts.
 
 ---
 
-## UK Costs Assumption Statement
-- **Stamp Duty:** Applied at 50 bps to BARC.L buy (UK equity flag = true)
-  - Estimated: 0.40 GBP on 80.72 GBP notional
-- **Trading Fees:** Per-trade model set to 0.00 GBP (zero commission environment assumed)
-- **Slippage:** Estimated at 10 bps on order notional
-  - Estimated: 0.08 GBP on 80.72 GBP notional
-- **Total Cost Impact:** ~0.48 GBP (~0.59% of position notional)
+## Gap Risk Acknowledgement
+- **Stop Execution Mode:** DAILY_CHECK
+- **Risk:** Stop-losses checked once daily at market open/close; overnight gaps or intraday moves can result in losses exceeding planned risk.
+- **Mitigation Applied:** 10% gap risk buffer reduces position sizes relative to planned risk.
+- **Existing Positions:**
+  - GLEN.L: Stop 4.86, low_20d 4.826 (tight, gap risk present)
+  - RIO.L: Stop 67.02, low_20d 75.89 (comfortable cushion)
+  - BARC.L: Exiting today (no gap risk for this position)
 
 ---
 
-## Gap Risk & DAILY_CHECK Acknowledgement
-⚠️ **Important:** The bot operates in **DAILY_CHECK** mode for stop-loss execution. This means:
-- Stop-losses are evaluated once per trading day against the daily low (low_gbp).
-- **Overnight gaps, weekend gaps, and intraday moves below the stop are NOT protected** until the next market open.
-- **Actual loss may exceed planned 7.3% risk** if price gaps below the stop level.
-- The 10% gap risk buffer has been applied to position sizing as a mitigation (reducing notional by ~0.73 GBP).
-- Use additional risk controls (broker-side alerts, position reviews) if overnight gap protection is critical.
+## Portfolio Snapshot (Pre-Exit)
+
+| Ticker | Sector | Qty | Avg Cost | Market Value | Unrealised P&L | Days Held | Status |
+|--------|--------|-----|----------|--------------|----------------|-----------|--------|
+| GLEN.L | Materials | 1.035 | 5.08 | £5.86 | +£0.60 | 119 | ACTIVE |
+| RIO.L | Materials | 0.0208 | 71.09 | £1.58 | +£0.10 | 76 | ACTIVE |
+| BARC.L | Financials | 16.0358 | 5.04 | £80.28 | -£0.55 | 0 | **EXITING** |
+| **TOTAL** | | | | **£87.72** | **+£0.15** | | |
+| **CASH** | | | | | | | **£12.41** |
+| **PORTFOLIO** | | | | | | | **£100.12** |
+
+### Portfolio Snapshot (Post-Exit)
+
+| Ticker | Sector | Qty | Avg Cost | Market Value | Unrealised P&L | Days Held | Status |
+|--------|--------|-----|----------|--------------|----------------|-----------|--------|
+| GLEN.L | Materials | 1.035 | 5.08 | £5.86 | +£0.60 | 120 | ACTIVE |
+| RIO.L | Materials | 0.0208 | 71.09 | £1.58 | +£0.10 | 77 | ACTIVE |
+| **TOTAL EQUITY** | | | | **£7.44** | **+£0.70** | | |
+| **CASH** | | | | | | | **~£91.73** |
+| **PORTFOLIO** | | | | | | | **~£99.17** |
 
 ---
 
-## Orders to Execute
+## Orders Table
 
-**Execution Sequence:** SELL_THEN_BUY (sells first, then buys)
-
-| Order ID | Ticker | Side | Type | Quantity | Price | Stop | Reason |
-|----------|--------|------|------|----------|-------|------|--------|
-| 1 | BARC.L | BUY | MKT | 16.0358 | 5.035 | 4.6808 | Breakout entry; uptrend confirmed; strong liquidity |
-
-**Estimated Cash Impact:**
-- Gross notional: 80.72 GBP
-- Stamp duty: 0.40 GBP
-- Slippage: 0.08 GBP
-- **Net cost: ~81.20 GBP**
-- **Cash remaining post-trade: ~12.44 GBP** (comfortable buffer maintained)
+| Order ID | Ticker | Side | Type | Quantity | Limit Price | Time in Force | Stop Price | Reason |
+|----------|--------|------|------|----------|-------------|----------------|-----------|--------|
+| 1 | BARC.L | SELL | MKT | 16.0358 | — | GTC | — | Anti-churn exit (0 days held) |
 
 ---
 
-## What Could Invalidate This Plan?
+## What Could Invalidate This Plan
 
-1. **Overnight Gap Down** – If BARC.L opens below 4.68 GBP tomorrow, the stop-loss is breached immediately, triggering a forced exit. DAILY_CHECK mode cannot prevent this.
-
-2. **News / Announcement** – Earnings surprise, regulatory action, or corporate event affecting Barclays could reverse the trend before entry execution.
-
-3. **Liquidity Dislocation** – Market-wide liquidity crisis or exchange halt would prevent order execution.
-
-4. **Trend Reversal** – If SMA50 slope turns negative or close drops below SMA50 before order execution, the trend filter fails retroactively.
-
-5. **Benchmark Divergence** – If benchmark (VUAG.L, S&P 500) enters sharp downtrend, systemic risk may warrant reducing exposure.
-
-6. **Sector Shock** – Banking-sector-specific stress (rates shock, credit event) could invalidate Financials sector positioning.
+1. **Overnight Gap Down:** If BARC.L gaps down > 5% on exit, realized loss could exceed estimated slippage.
+2. **Market Halt:** If trading halts before BARC.L exits, execution delayed to next trading day.
+3. **FX Risk:** Non-applicable (all instruments GBP-denominated or ETFs priced in GBP).
+4. **Corporate Action:** If BARC.L announces delisting/suspension, automatic SELL triggered.
+5. **Regulatory Change:** If LSE trading hours reduced or calendar disrupted.
+6. **Liquidity Dry-Up:** If BARC.L volume collapses, actual exit price could be significantly worse than market.
+7. **Data Error:** If market_data.csv prices are stale or incorrect, decision basis is invalidated.
 
 ---
 
 ## Data Quality Notes
 
-✅ **All required pre-computed columns present and valid:**
-- SMA50, SMA200, ATR14, 20-day high/low, volume metrics: complete
-- Slope fields (sma50_slope): available for all tickers
-- Drawdown calculations: consistent with market data
-
-✅ **No data staleness:** Market data dated 2026-06-17, matching as_of_date.
-
-✅ **Indicator coherence:** All technical metrics align (e.g., SMA50 < SMA200 on downtrend candidates; volume ratios reasonable).
-
-✅ **Liquidity thresholds:** All candidate tickers exceed 50k GBP average daily volume.
+- ✓ All required columns present in market_data.csv
+- ✓ All SMA50, SMA200, ATR14 values populated
+- ✓ Sector and instrument type data complete
+- ✓ Universe allowlist all ACTIVE status
+- ⚠ Some tickers fail min_avg_gbp_volume (VUAG.L, VMID.L) – correctly excluded
+- ⚠ Portfolio equity very small (£100.12) – position sizing may result in fractional shares; fractional_shares=true permits this
+- ✓ Trading calendar data current and complete
 
 ---
 
 ## Disclaimer
 
-**This is an automated, rules-based trading plan generated from provided historical market data. It is NOT financial advice.**
+**This is an automated, rules-based trading plan generated from provided historical market data. It is not financial advice. The following risks apply:**
 
-Execution involves real financial risk:
-- **Gap risk:** Stop-losses in DAILY_CHECK mode cannot protect against overnight/weekend gaps.
-- **Slippage & costs:** Actual execution prices may differ from estimates; fees/stamp duty apply.
-- **Settlement:** T+1 UK settlement may affect cash availability for subsequent trades.
-- **FX effects:** Non-GBP instruments (e.g., ETFs hedged to GBP) carry embedded FX risk.
-- **Tax implications:** Stamp duty (0.5%), capital gains tax, and withholding taxes not modelled; consult a tax professional.
-- **Model risk:** Strategy rules are fixed; they may underperform in structural market shifts.
-
-**Use at your own risk.** Execute only with full understanding of these risks and within your risk tolerance.
-
----
-
-*Generated: 2026-06-17 | Strategy: Balanced Swing (3-20 days) | Base Currency: GBP*
-
-===
+- **Execution Risk:** Actual execution prices may differ from estimated prices due to slippage, market impact, and liquidity conditions.
+- **Gap Risk:** Stop-losses monitored in DAILY_CHECK mode are checked once per day and cannot protect against overnight or intraday gaps. Actual losses may exceed planned risk.
+- **Settlement Risk:** Cash proceeds from
