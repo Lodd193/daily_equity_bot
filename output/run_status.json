@@ -1,24 +1,29 @@
 {
   "status": "OK",
-  "as_of_date": "2026-06-18",
-  "reason": "BARC.L anti-churn exit only; no new entries due to insufficient cash liquidity. Portfolio at 13.86% drawdown (within 15% limit).",
+  "as_of_date": "2026-06-19",
+  "reason": "Trading day confirmed. Portfolio drawdown 13.98% (within 15% limit). 1 high-confidence entry opportunity identified. All constraints passed.",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 13.86,
+    "portfolio_drawdown_pct": 13.98,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "max_positions_violated": false,
-    "turnover_constraint_violated": true,
-    "turnover_violation_reason": "BARC.L anti-churn exit (0 days held) requires sale at 80.2% of equity; exceeds 30% max_turnover_pct_per_day. Anti-churn policy overrides turnover limit for policy compliance.",
-    "sector_limits_ok": true,
-    "single_name_limits_ok": true,
-    "cash_buffer_ok": true,
-    "liquidity_ok": false,
-    "liquidity_issue": "Post-BARC.L sale, available cash ~\u00a317 GBP; insufficient for any quality new position (all setups require \u00a390+ notional)"
+    "positions_count": 2,
+    "max_positions_limit": 5,
+    "turnover_pct": 0.0,
+    "max_turnover_pct": 0.3,
+    "largest_position_pct": 5.77,
+    "max_single_name_exposure_pct": 30.0,
+    "sector_exposures_pct": {
+      "Materials": 7.31
+    },
+    "max_sector_exposure_pct": 40.0,
+    "cash_buffer_pct": 0.927,
+    "required_cash_buffer_pct": 3.0,
+    "all_constraints_passed": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
