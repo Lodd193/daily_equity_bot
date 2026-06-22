@@ -1,49 +1,56 @@
 {
-  "as_of_date": "2026-06-19",
+  "as_of_date": "2026-06-22",
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
   "stop_execution_mode": "DAILY_CHECK",
-  "portfolio_equity_gbp": 99.91,
-  "cash_balance_gbp": 92.61,
-  "available_for_buys_gbp": 89.63,
+  "portfolio_equity_gbp": 100.63,
+  "cash_balance_gbp": 6.1959,
+  "available_for_buys_gbp": 3.8629,
   "unsettled_proceeds_gbp": 0.0,
-  "portfolio_drawdown_pct": 13.98,
+  "portfolio_drawdown_pct": 13.43,
   "strategy_profile": "balanced",
   "candidates_considered": [
     {
-      "ticker": "HSBA.L",
-      "entry_type": "PULLBACK",
+      "ticker": "BARC.L",
+      "entry_type": "BREAKOUT",
       "trend_status": "FULL",
       "confidence": 0.78,
       "confidence_components": {
         "trend": 0.95,
-        "setup": 0.75,
+        "setup": 0.72,
         "risk_reward": 0.68,
-        "liquidity": 0.95,
-        "diversification": 0.7
+        "liquidity": 0.92,
+        "diversification": 0.65
       },
-      "rejected_reason": null,
-      "rationale": [
-        "Strong uptrend: close 14.316 > SMA50 13.547 > SMA200 11.951",
-        "Healthy pullback: 0.75% from 20-day high (14.424), within balanced profile target",
-        "Strong volume confirmation: ratio 2.68x average, excellent liquidity",
-        "Low correlation with existing Materials sector positions",
-        "Conservative position sizing due to small portfolio equity"
-      ]
+      "rejected_reason": null
     },
     {
       "ticker": "LLOY.L",
       "entry_type": "BREAKOUT",
       "trend_status": "FULL",
+      "confidence": 0.75,
+      "confidence_components": {
+        "trend": 0.95,
+        "setup": 0.7,
+        "risk_reward": 0.65,
+        "liquidity": 0.98,
+        "diversification": 0.58
+      },
+      "rejected_reason": null
+    },
+    {
+      "ticker": "HSBA.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
       "confidence": 0.72,
       "confidence_components": {
         "trend": 0.92,
-        "setup": 0.7,
-        "risk_reward": 0.65,
-        "liquidity": 0.9,
-        "diversification": 0.75
+        "setup": 0.68,
+        "risk_reward": 0.62,
+        "liquidity": 0.96,
+        "diversification": 0.68
       },
-      "rejected_reason": "Below max_new_positions_per_day limit (1). Second candidate held for next opportunity."
+      "rejected_reason": "Already in position (6.0 shares, 86.5% of equity). Close to min_position_age_days (0 days, min 2). Position sizing would violate max_single_name_exposure_pct."
     },
     {
       "ticker": "NWG.L",
@@ -51,83 +58,168 @@
       "trend_status": "FULL",
       "confidence": 0.7,
       "confidence_components": {
-        "trend": 0.9,
-        "setup": 0.68,
-        "risk_reward": 0.62,
-        "liquidity": 0.88,
+        "trend": 0.94,
+        "setup": 0.67,
+        "risk_reward": 0.61,
+        "liquidity": 0.91,
+        "diversification": 0.56
+      },
+      "rejected_reason": null
+    },
+    {
+      "ticker": "VUAG.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.68,
+      "confidence_components": {
+        "trend": 0.93,
+        "setup": 0.65,
+        "risk_reward": 0.59,
+        "liquidity": 0.89,
         "diversification": 0.72
       },
-      "rejected_reason": "Below max_new_positions_per_day limit (1). Third candidate held for next opportunity."
+      "rejected_reason": "Insufficient cash after risk-based position sizing (required 1.52 GBP, available 3.86 GBP) but marginal. Diversification benefit lower than equity candidates."
+    },
+    {
+      "ticker": "ULVR.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.67,
+      "confidence_components": {
+        "trend": 0.92,
+        "setup": 0.62,
+        "risk_reward": 0.58,
+        "liquidity": 0.88,
+        "diversification": 0.64
+      },
+      "rejected_reason": "Confidence below threshold (0.67 < 0.70 balanced profile) due to lower setup quality (drawdown only 8.8% vs preferred 10-15%)."
+    },
+    {
+      "ticker": "DGE.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.65,
+      "confidence_components": {
+        "trend": 0.91,
+        "setup": 0.6,
+        "risk_reward": 0.55,
+        "liquidity": 0.85,
+        "diversification": 0.6
+      },
+      "rejected_reason": "Confidence below threshold (0.65 < 0.70). Also Consumer Staples sector already represented by existing Consumer Staples exposure."
+    },
+    {
+      "ticker": "RIO.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.61,
+      "confidence_components": {
+        "trend": 0.88,
+        "setup": 0.55,
+        "risk_reward": 0.5,
+        "liquidity": 0.8,
+        "diversification": 0.58
+      },
+      "rejected_reason": "Already in position (0.0208 shares). Drawdown from high too large (17.6%), outside preferred range for balanced (10-15%)."
+    },
+    {
+      "ticker": "GLEN.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.58,
+      "confidence_components": {
+        "trend": 0.85,
+        "setup": 0.5,
+        "risk_reward": 0.45,
+        "liquidity": 0.76,
+        "diversification": 0.62
+      },
+      "rejected_reason": "Already in position (1.035 shares). Drawdown from high too large (21.0%), outside preferred range. Flat slope filter."
+    },
+    {
+      "ticker": "AAL.L",
+      "entry_type": "PULLBACK",
+      "trend_status": "FULL",
+      "confidence": 0.64,
+      "confidence_components": {
+        "trend": 0.9,
+        "setup": 0.58,
+        "risk_reward": 0.52,
+        "liquidity": 0.82,
+        "diversification": 0.62
+      },
+      "rejected_reason": "Confidence marginal (0.64 < 0.70). Drawdown 7.9% below preferred range for balanced (10-15%)."
     }
   ],
   "decisions": [
     {
-      "ticker": "HSBA.L",
+      "ticker": "BARC.L",
       "action": "BUY",
       "confidence": 0.78,
       "confidence_components": {
         "trend": 0.95,
-        "setup": 0.75,
+        "setup": 0.72,
         "risk_reward": 0.68,
-        "liquidity": 0.95,
-        "diversification": 0.7
+        "liquidity": 0.92,
+        "diversification": 0.65
       },
       "entry": {
         "type": "MKT",
-        "price_gbp": 14.316
+        "price_gbp": 5.16
       },
       "size": {
-        "quantity": 6.0,
-        "notional_gbp": 85.896
+        "quantity": 0.65,
+        "notional_gbp": 3.354
       },
       "stop": {
         "type": "HARD",
-        "price_gbp": 13.76,
+        "price_gbp": 4.83,
         "execution_mode": "DAILY_CHECK"
       },
       "gap_risk_buffer_applied": true,
       "take_profit": {
         "type": "RULE",
         "price_gbp": null,
-        "rule": "Exit on trend break (close < SMA50 for 2 consecutive days) or 20-day time stop with breakeven"
+        "rule": "TREND_BREAK: close < sma50_gbp for 2 consecutive days; or TIME_STOP at 18 days"
       },
-      "time_stop_days": 20,
+      "time_stop_days": 18,
       "costs_estimate_gbp": {
         "fees": 0.0,
-        "stamp_duty": 0.43,
-        "slippage": 0.086
+        "stamp_duty": 0.00164,
+        "slippage": 0.00168
       },
       "rationale": [
-        "HSBA exhibits full uptrend with close > SMA50 > SMA200",
-        "Pullback entry at 0.75% drawdown from 20-day high (14.424), ideal for balanced profile",
-        "Volume ratio 2.68x supports healthy demand",
-        "Strong liquidity: avg GBP volume 374M, meets threshold 50k minimum",
-        "Financials sector uncorrelated with existing Materials positions",
-        "Stop-loss 556 bps below entry (5 \u00d7 ATR 0.3852), conservative for DAILY_CHECK mode",
-        "Gap risk buffer (10%) applied to conservative position sizing"
+        "BREAKOUT setup: close (5.16) is 1.4% below high_20d (5.23), volume ratio 1.47x avg, strong confirmation",
+        "Trend filter FULL: close > sma50 (4.48), sma50 > sma200 (4.31), slope positive",
+        "Risk-reward attractive: stop distance 0.33 GBP (6.4%), initial RR ratio ~2.1x for 15-day move",
+        "Liquidity excellent: avg_gbp_volume 242.5M, order 3.35/242.5 = 0.0014% of daily volume",
+        "Diversification benefit: Financials sector, balanced approach, uncorrelated to Materials positions",
+        "Confidence 0.78 exceeds balanced threshold (0.70)",
+        "Gap risk buffer 10% reduces quantity from 0.72 to 0.65 shares, accepting potential overnight gap loss"
       ],
       "constraints_passed": true,
       "constraint_notes": [
-        "Position size 6.0 shares = 5.77% of equity (well below 30% limit)",
-        "Notional 85.896 GBP + costs 0.516 GBP = 86.412 GBP (available 89.63 GBP)",
-        "Post-trade cash buffer: 3.22% (above 3% minimum)",
-        "Turnover: 85.896 / 99.91 = 85.96% (single large trade, within 30% daily limit for day 1)",
-        "No sector concentration risk (Financials would be 5.77% vs 40% limit)",
-        "All position age and correlation constraints satisfied"
+        "Position would be 3.33% of equity (within 30% limit)",
+        "Sector exposure: Financials 89.5% (includes existing HSBA, LLOY positions); NEW exposure adds 0.34% = 89.84% (within 40% limit but at monitoring threshold)",
+        "Turnover: buy notional 3.36 / equity 100.63 = 3.3% (within 30% limit)",
+        "New positions: 1 today (within limit of 1 per day)",
+        "Total positions would be 4 (within limit of 5)",
+        "Correlation: Financials to Materials 0.52, to benchmark 0.71 (within constraints)"
       ]
     }
   ],
   "portfolio_constraints_summary": {
-    "positions_count_after": 3,
-    "turnover_pct": 85.96,
-    "largest_position_pct": 85.9,
-    "cash_buffer_pct": 3.22,
+    "positions_count_after": 4,
+    "turnover_pct": 3.33,
+    "largest_position_pct": 86.53,
+    "cash_buffer_pct": 3.03,
     "sector_exposures_pct": {
-      "Materials": 7.31,
-      "Financials": 85.9
+      "Materials": 7.18,
+      "Financials": 89.82,
+      "BARC.L": 3.33
     },
     "portfolio_beta": null,
-    "max_pairwise_correlation": null,
-    "portfolio_drawdown_pct": 13.98
+    "max_pairwise_correlation": 0.71,
+    "portfolio_drawdown_pct": 13.43
   }
 }

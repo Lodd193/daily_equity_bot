@@ -1,15 +1,15 @@
 {
-  "as_of_date": "2026-06-19",
+  "as_of_date": "2026-06-22",
   "entries": [
     {
-      "ticker": "HSBA.L",
+      "ticker": "BARC.L",
       "action": "BUY",
-      "planned_price_gbp": 14.316,
-      "planned_quantity": 6.0,
-      "stop_price_gbp": 13.76,
+      "planned_price_gbp": 5.16,
+      "planned_quantity": 0.65,
+      "stop_price_gbp": 4.83,
       "confidence": 0.78,
-      "entry_type": "PULLBACK",
-      "rationale_summary": "Full uptrend entry (close > SMA50 > SMA200) with healthy 0.75% pullback from 20-day high. Strong volume confirmation (2.68x) and excellent liquidity (374M GBP avg daily volume). HSBC is mega-cap UK financial, uncorrelated with existing Materials positions. Stop-loss 556 bps (5 ATR) provides conservative defined risk. Gap risk buffer applied to position sizing given DAILY_CHECK execution mode."
+      "entry_type": "BREAKOUT",
+      "rationale_summary": "BREAKOUT in full uptrend: close 1.4% below high_20d, volume 1.47x avg. Trend filter strong (close > sma50 > sma200, positive slope). Risk-reward ~2.1x over swing horizon. Position sized at available cash with 10% gap risk buffer. Financials sector entry; high concentration risk noted."
     }
   ]
 }

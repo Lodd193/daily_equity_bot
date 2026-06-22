@@ -1,29 +1,23 @@
 {
   "status": "OK",
-  "as_of_date": "2026-06-19",
-  "reason": "Trading day confirmed. Portfolio drawdown 13.98% (within 15% limit). 1 high-confidence entry opportunity identified. All constraints passed.",
+  "as_of_date": "2026-06-22",
+  "reason": "Trading day, valid config, data fresh, no drawdown breach, eligible entries identified",
   "data_checks": {
     "market_data_fresh": true,
     "all_required_columns_present": true,
     "trading_day": true,
     "is_half_day": false,
-    "portfolio_drawdown_pct": 13.98,
+    "portfolio_drawdown_pct": 13.43,
     "drawdown_limit_breached": false
   },
   "risk_checks": {
-    "positions_count": 2,
-    "max_positions_limit": 5,
-    "turnover_pct": 0.0,
-    "max_turnover_pct": 0.3,
-    "largest_position_pct": 5.77,
-    "max_single_name_exposure_pct": 30.0,
-    "sector_exposures_pct": {
-      "Materials": 7.31
-    },
-    "max_sector_exposure_pct": 40.0,
-    "cash_buffer_pct": 0.927,
-    "required_cash_buffer_pct": 3.0,
-    "all_constraints_passed": true
+    "kill_switch": false,
+    "base_currency_ok": true,
+    "account_type_ok": true,
+    "execution_sequence_ok": true,
+    "settlement_ok": true,
+    "cash_available_ok": true,
+    "positions_within_limits": true
   },
   "currency": "GBP",
   "execution_sequence": "SELL_THEN_BUY",
