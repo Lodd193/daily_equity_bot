@@ -1,25 +1,6 @@
 {
-  "status": "OK",
-  "as_of_date": "2026-06-22",
-  "reason": "Trading day, valid config, data fresh, no drawdown breach, eligible entries identified",
-  "data_checks": {
-    "market_data_fresh": true,
-    "all_required_columns_present": true,
-    "trading_day": true,
-    "is_half_day": false,
-    "portfolio_drawdown_pct": 13.43,
-    "drawdown_limit_breached": false
-  },
-  "risk_checks": {
-    "kill_switch": false,
-    "base_currency_ok": true,
-    "account_type_ok": true,
-    "execution_sequence_ok": true,
-    "settlement_ok": true,
-    "cash_available_ok": true,
-    "positions_within_limits": true
-  },
-  "currency": "GBP",
-  "execution_sequence": "SELL_THEN_BUY",
-  "stop_execution_mode": "DAILY_CHECK"
+  "status": "BLOCKED",
+  "as_of_date": "2026-06-23",
+  "reason": "Decision engine error: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CcLk5yuwuiupUmcvAzCYf'}",
+  "currency": "GBP"
 }
