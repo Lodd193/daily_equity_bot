@@ -1,6 +1,6 @@
 {
   "status": "BLOCKED",
-  "as_of_date": "2026-07-08",
-  "reason": "Decision engine error: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011Ccq6e5Mh9kS871vZyk9DY'}",
+  "as_of_date": "2026-07-09",
+  "reason": "Decision engine error: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011Ccs1WU3QDd66SAHGkDMbE'}",
   "currency": "GBP"
 }
